@@ -1,0 +1,96 @@
+#combinatory
+if Init then
+	Init:=false;
+
+
+	Adr:=1;
+	(*C_xx*)
+	for ii:=120 to 150 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	(*Параметри*)
+	for ii:=300 to 564 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+	for ii:=566 to 622 by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+	(*C_xx продовження*)
+	for ii:=180 to 184 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	(*Параметри*)
+	for ii:=694 to 734 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+	(*CB лічильник кількості продувок*)
+	for ii:=800 to 812 by 2 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+(*20 reg*)
+	for ii:=746 to 760 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+
+	(*C_xx продовження*)
+	for ii:=186 to 190 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+(*21 reg*)
+	for ii:=768 to 790 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+	(*Продувка заспокоювача*)
+	for ii:=854 to 856 by 2 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	(*Бітові параметри*)
+	Adr:=1;
+	for ii:=623 to 684 by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+	for ii:=736 to 745 by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+	for ii:=762 to 767 by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+	for ii:=851 to 853 by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+
+end_if;
+
+

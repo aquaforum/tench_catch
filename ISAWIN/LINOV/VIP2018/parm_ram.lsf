@@ -1,0 +1,82 @@
+#combinatory
+if Init then
+	Init:=wdt_en(5000,true);
+
+	Init:=false;
+
+	Adr:=1;
+	(*C_xx*)
+	for ii:=122 to 160 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	(*Параметри*)
+	for ii:=300 to 608 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	for ii:=768 to 806 by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+	(*Додаток 2014р аміачна вода + лічильник води на фільтри*)	
+	Res:=Retain_X('F',164,Adr);
+	Adr:=Adr+1;
+
+	for ii:=610 to 618 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+	(*лічильник аміачки*)
+	Res:=Retain_X('F',72,Adr);
+	Adr:=Adr+1;
+
+	(*Решта аналогових виходів*)
+	for ii:=162 to 166 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+	
+
+	for ii:=620 to 648 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+	for ii:=756 to 763 by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+
+	for ii:=650 to 702 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+	(*Бітові параметри*)
+	Adr:=1;
+	for ii:=807 to 881 by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+	(*Таймери*)
+(*
+	Adr:=1;
+	for ii:=764 to 766 by 2 do
+		Res:=Retain_X('Т',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+*)
+
+end_if;
+
+

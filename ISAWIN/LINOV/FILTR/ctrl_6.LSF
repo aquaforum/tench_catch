@@ -1,0 +1,121 @@
+#combinatory
+(*Вимикання стейт-машини*)
+if NOT Amr_6_ OR Alarm_6_  OR NOT Dio_6_ then 
+	State_6_:=ST_OFF;
+end_if;
+
+
+(*Вмикання стейт-машини*)
+(*if redge(Amr_6_,re_Amr) then 
+	State_6_:=ST_START;
+end_if;*)
+
+IF State_6_>ST_START then (*Рахуємо час роботи фільтра*)
+	if Tfckl then 
+		Tf_6_:=Tf_6_+1;
+	end_if;
+	Tf_m_6_:=MOD(Tf_6_,60);
+	Tf_h_6_:=Tf_6_/60;
+else
+	Tf_m_6_:=0;
+	Tf_h_6_:=0;
+end_if;
+
+if State_6_ > ST_START AND NOT AM_6_ then  (*Якщо перемкнули на ручний режим*)
+	Vl_6_1:=false;
+	Vl_6_2:=false;
+	Vl_6_3:=false;
+	State_6_:=ST_START; (*Положення ST_START окрім іншого використовується для ручного управління*)
+end_if;
+
+
+(*Головна стейт-машина управління фільтром*)
+case State_6_ of
+
+ST_OFF: (*Все вимкнути*)
+	Vl_6_1:=false;
+	Vl_6_2:=false;
+	Vl_6_3:=false;
+	Alm_6_6:=false; (*Зняти аварію останньої вигрузки*)
+
+	res:=off_all(); (*Погасити всі Half і Full*)
+
+
+	(*Am_6_:=false; вимикати автомат*)
+	State_6_:=ST_START;
+
+ST_START: (*Запуск фільтра в роботу*)
+
+	if Tfr_6_ then (*Відслідкувати час роботи фільтра*)
+		Tf_6_:=0;
+	end_if;
+
+if Am_6_ then 
+	Full_6_:=false;		
+	Half_6_:=false;
+
+	Streg_6_:=false; (*Скинути команду регенерації*)
+	Man_6_:=false; (*Зняти команду ручного запуску регенерації*)
+
+	if NOT (Cl_6_2 OR Cl_6_3) then (*Якщо закриті клапани 2 та 3 тоді*)
+		Vl_6_1:=true; (*Відкрити клапан 1*)
+	end_if;
+
+	if Cl_6_1 then  (*Необхідність даної умови сумнівна*)
+		State_6_:=ST_FLT;
+	end_if;
+end_if;
+
+ST_FLT: (*Стадія фільтрування*)
+		Vl_6_1:=TRUE;
+		(*тут треба вписати умову закінчення фільтрації*)
+		if Streg_6_ OR Man_6_ then 
+			State_6_:=ST_STREG;
+
+			if r_6_ then (*правління індикацією на блоці*)
+				Full_6_:=true;
+			else
+				HAlf_6_:=true;
+			end_if;
+		end_if;
+
+
+St_STREG: (*Розпочати регенерацюю, закрити клапант 1 *)
+	Vl_6_1:=false; (*Закрити клапан подачі на фільтр*)
+	if not Cl_6_1	then (*Якщо заврався*)
+		if Nc_zd=3 then (* якщо випуск іде через клапан вивантаження*)
+			State_6_:=ST_V3;
+			Ls_start:=L_sus; (*Зберегти початковий рівень*)
+			Vl_6_3:=true; (*Відкрити клапан 3*)
+		else
+			State_6_:=ST_V2;
+			Vl_6_2:=true; (*Відкрити клапан 2*)
+		end_if;
+	end_if;
+ST_V2: (*Злив через кран 2*)
+	if T_v2_6_ then (*Якщо час вийшов*)
+		if r_6_ then (*Якщо із випуском осаду*)
+			Vl_6_3:=true; (*Відкрити клапан 3*)
+			Ls_start:=L_sus; (*Зберегти початковий рівень*)
+			State_6_:=ST_V3;
+		else (*інакше *)
+			Vl_6_2:=false; (*все закрити*)
+			Vl_6_3:=false;
+			State_6_:=ST_START;
+		end_if;
+	end_if;
+ST_V3: (*Злив через кран 3*)
+	if T_v3_6_ then  (*Коли вийшов час*)
+			Vl_6_2:=false; (*все закрити*)
+			Vl_6_3:=false;
+			Alm_6_6:=L_sus-Ls_start<d_L_sus_zd; (*Перевірити приріст рівня*)
+
+			State_6_:=ST_START; (*Погнали по новій*)
+
+	end_if;
+else
+	State_6_:=ST_OFF;
+
+end_case;
+
+

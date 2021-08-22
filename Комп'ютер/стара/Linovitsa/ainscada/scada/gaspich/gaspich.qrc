@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/gaspich">
+        <file>mnemo/arrow_down_big_on.png</file>
+        <file>mnemo/arrow_down_small_on.png</file>
+        <file>mnemo/arrow_up_big_on.png</file>
+        <file>mnemo/arrow_up_small_on.png</file>
+        <file>mnemo/mnemo_gp.svg</file>
+        <file>gpmnemo.ui</file>
+    </qresource>
+
+</RCC>

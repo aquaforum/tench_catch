@@ -1,0 +1,506 @@
+#combinatory
+(*--------------------------------------------------------------------------------------------------------------*)
+(*Розрахунок води на промивку цукру*)
+if Tvod_zd<10 then  (*Для правильності розрахунку Tvod_zd повинно бути більше 10 *)
+	Tvod_zd:=10;
+end_if;
+
+IF NOT rej_tvod THEN (*якщо працюємо не працюємо по датчику температури тоді *)
+	Tvod:=Tvod_zd; (*температура води рівна заданій*)
+END_IF;
+(*Розрахувати коефіцієнити перерахунку*)
+H0_1 := 0.0004 * real(Tvod*Tvod) - 0.0105*REAL(Tvod) + 2.1633; 
+HB_1 := 0.0004* real(Tvod_zd*Tvod_zd) - 0.0105*REAL(Tvod_zd) + 2.1633;
+
+IF rej_sir AND Psir>Psir_min THEN (*якщо включена промивка сиропом і тиск сиропу більше мінімального тоді*)
+	k_v:=kV_2; (*для розрахунку взяти коеіцієнт кількості води з сиропом*)
+ELSE (*інакше*)
+	k_v:=kV_1; (*для розрахунку взяти коеіцієнт кількості води без  сиропі*)
+END_IF;
+
+if  Status=ST_FUG then 
+if max_cI > Estart  then 
+	Gzag_tmp:=(max_cI-Estart)*Ekf/10.0;
+else
+	Gzag_tmp:=0.0;
+end_if;
+
+if Gzag_tmp>min_Gzag then 
+	Gzag:=Gzag_tmp;
+end_if;
+
+end_if;
+
+(*розрахувати кількість води на промивку цукру*)
+IF rej_tvod THEN 
+	Q_pr_zd:= Gzag	*k_v  * Hb_1/H0_1 / 100.0 + Q_k + nQ_k;
+ELSE
+	Q_pr_zd:= Gzag	*k_v  / 100.0 + Q_k + nQ_k;
+END_IF;
+(*--------------------------------------------------------------------------------------------------------------*)
+(*Управління сегрегатором*)				
+	IF Ts_t3 THEN  (*Якщо спрацював таймер затримки перемикання на зелену патоку тоді *)
+		y_Sgr:=TRUE; (*Переключити сегрегатор на зелену патоку*)
+		Sgr_zl:=FALSE; (*Виключити таймер*)
+	END_IF;
+	
+	IF Ts_t4 OR Ts_t5 THEN  (*Якщо зпрацював якийсь із таймерів затримки перемикання на білу патоку тоді*)
+		y_Sgr:=FALSE; (*Перемкнути сегрегатор на білу патоку*)
+		Sgr_bl_1:=FALSE; (*Вимкнути 1 таймер*)
+		Sgr_bl_2:=FALSE; (*Вимкнути 2 таймер*)
+	END_IF;
+
+IF x_Sgr_z AND NOT x_Sgr_b THEN (*Формування змінної Sgr_t для відображення графіку положення сегрегатора на панелі*)
+	Sgr_t := 800;
+ELSIF x_Sgr_b AND NOT x_Sgr_z THEN 
+	Sgr_t:= 200;
+ELSE
+	Sgr_t:=500;
+END_IF;
+
+(*--------------------------------------------------------------------------------------------------------------*)
+(*Ручна промивка*)
+IF pv_spd>1 AND (*Оберти більші 50 і*)
+  NOT x_Shib AND (*закритий шибер і*)
+  NOT (Status=St_reg) AND (*не стадія промивки сит і*)
+  NOT (Status >=St_pr_i1 AND Status<=St_pr_i3) THEN (*не стадія промивки цукру*)
+
+
+	IF redge(X_man,re_X4B)  THEN (*по передньому фронту команди ручної промивки*)
+		Q_m_m:=0.0;
+	END_IF;
+
+	IF x_man THEN  (*якщо включено ручну промивку тоді*)
+		IF Q_m_m < Q_man_zd THEN  (*коли об'єм дози не перевищує максимальну*)
+			y_pr:=TRUE; 
+		ELSE (*інакще, якщо дозу перевищено*)
+			y_pr:=FALSE; (*Закрити воду*)
+		END_IF;		
+	END_IF;
+
+
+	IF fedge(X_man,fe_x4B) THEN (*по задньому фронту команди ручної промивки*)
+		y_pr:=FALSE; (*зикрити клапан*)
+	END_IF;
+
+END_IF;	
+(*--------------------------------------------------------------------------------------------------------------*)
+(*Обрахунок кількості води*)
+	IF redge(X_vc,re_X6B) THEN (*По передньому фронту імпульса з лічильника води*)
+		Q_all:=Q_all+k_Imp; (*Збільшити загальний лічильник*)
+
+		IF Status=St_reg THEN  (*якщо стадія регенерації тоді*)
+			Q_reg:=Q_reg+k_Imp; (*Збільшити лічильник води на регенерацію*)
+		END_IF;
+	
+		IF Y_prl THEN (*Якщо відкритий клапан промивки лотка тоді*)
+			Q_prl:=Q_prl+k_Imp; (*Збільшити лічильник промивки лотка*)
+		END_IF;
+	
+		IF Status>=St_pr_i1  AND Status<=St_pr_i3 THEN  (*Якщо стадія промивки цукру тоді*)
+				Q_pr:=Q_pr+k_Imp; (*Збільшити лічильник води на промивку цукру*)
+		END_IF;
+	
+		IF X_man  AND NOT ((Status>=St_pr_i1  AND Status<=St_pr_i3) OR Status=St_reg) THEN (*Якщо клапан води відкритий вручно і не протимка цукру та не регенерація тоді*)
+			Q_m_m:=Q_m_m + k_Imp; (*Збільшити лічильник максимальної разової дози*)
+			Q_man:=Q_man+k_Imp; (*Збільшити лічильник води, вилитої оператором*)
+		END_IF;
+	END_IF;
+(*--------------------------------------------------------------------------------------------------------------*)
+(*Перерахунок в секунди таймерів*)
+if Status>St_Stop then 
+	T_all:=ANA(Tn_all)/1000;
+end_if;
+
+if Status=St_fug then 
+	T_fug:=ANA(Tn_fug)/1000;
+end_if;
+
+if Status=ST_reg then 
+	T_reg:=ANA(Tn_reg)/1000;
+end_if;
+
+if y_prl then 
+	T_prl:=ANA(Tn_prl)/1000;
+end_if;
+
+
+(*--------------------------------------------------------------------------------------------------------------*)
+(*Перевірки кнопок управління, та інших умов по ходу роботи центрифуги*)
+if Status > St_start then (*якщо центрифуга працює тоді*)
+	if x_Alarm or cf_fail or drv_fail then (*Натиснути аварійний стоп*)
+		
+		(*Вимкнути привод*)
+		pv_spd:=0;
+		sp_spd:=0; 
+		State:=0;
+		Status:=0;
+
+		y_Trom :=true; (*ключити тормоз*)
+		(*Закрити всі клапана*)
+		if NOT x_Shib then (*Якщо закритий шибер тоді*)
+			y_Lotok :=false; (*Закрити лоток*)
+		end_if;
+
+		y_Shib :=false;
+		y_prl :=false;
+		y_prsir :=false;
+		y_pr :=false;
+		y_Dsp :=false;
+		y_L_fw :=false;
+		y_L_bw :=false;
+		y_Trom:=NOT x_Alarm;
+
+		rej_nepr:=false;	
+	end_if;
+
+	if x_Vv then (*Якщо спрацював кінцевик вібрації вала тоді*)
+		a_vv:=true;
+		rej_nepr:=false;	
+
+		(*Закрити всі клапана*)
+		y_Shib :=false;
+		y_prl :=false;
+		y_prsir :=false;
+		y_pr :=false;
+
+		if sp_spd> SPD_ZAG then (*Якщо спрацювало на обертах*)
+				sp_spd:=SPD_ZAG; (*загальмувати*)
+				Status:=ST_WAIT;
+				rej_nepr:=false;	
+		end_if;
+		
+		if pv_spd=SPD_ZAG then 
+
+			State:=0;
+			pv_spd:=0;
+			sp_spd:=0;
+
+			Status:=St_stop;
+		end_if;
+	end_if;
+
+	if not x_Luk then (*Якщо відкрили люка*)
+		Status:=ST_STOP;
+		y_shib:=false; (*шибер*)
+		y_prl:=false; (*клапан промивки лотка*)
+		y_pr:=false; (*клапан промивки цукру*)
+		y_prsir:=false; (*клапан промивки сиропом*)
+
+		(*Вимкнути привод*)
+		pv_spd:=0;
+		sp_spd:=0; 
+		State:=0;
+		Status:=0;
+
+		y_Trom:=false;
+
+	end_if;
+
+end_if;
+
+	if redge(x_stop,re_x_stop) then (*кнопка стоп*)
+		rej_nepr:=false;	
+		(*все закрити*)
+		y_shib:=false; (*шибер*)
+		y_prl:=false; (*клапан промивки лотка*)
+		y_pr:=false; (*клапан промивки цукру*)
+		y_prsir:=false; (*клапан промивки сиропом*)
+
+		if Status=St_wait then (*якщо на стадії очікування - вимкнути*)
+			Status:=St_stop;
+			(*Вирубити двигуна*)
+			pv_spd:=0;
+			sp_spd:=0;
+			State:=0;
+			y_trom:=true;
+			y_Lotok:=false;
+
+		elsif Status=St_vigr then (*якщо натисли на стадії вивантаження*)
+			start:=false;
+			Status:=St_off;
+
+		elsif Status=St_off then 
+			y_Trom:=false;
+		elsif Status=St_test then
+			(*нічого не робити*)
+		else
+			sp_spd:=SPD_ZAG;
+			Status:=St_wait;
+		end_if;
+	end_if;
+
+(*змнено кінцевик шибера*)
+(*x_Shib := NOT %IX2.3;*)
+
+(*State-машина основного алгоритму*)
+
+case Status of
+	St_test:	(*Не робимо нічого*)
+		if redge(Etest,re_Etest) and PV_SPD=SPD_ZAG then 
+			sp_spd:=SPD_FUG;
+		end_if;
+
+		if Etest AND sp_spd=SPD_FUG then 
+				Estart:=max_cI;
+		end_if;
+		
+	St_stop:		(*Все вимкнуто*)
+		sp_spd:=SPD_STOP;
+		y_Shib :=false;
+		y_prl :=false;
+		y_prsir :=false;
+		y_pr :=false;
+		
+	IF Pusk and x_Luk then
+			Status:=St_start; (**)
+			a_vv:=false; (*Погасити сигналізацію вібрації вала, якщо була включена*)
+		end_if;
+	St_start:	(*Запустити двигун*)
+
+		if not x_Dsp_l then
+			Status:=st_stop;
+		end_if;
+
+		Q_all:=0.0;
+		Q_reg:=0.0;
+		Q_prl:=0.0;
+		Q_pr:=0.0;
+		Q_man:=0.0;
+
+		T_all:=0;
+		T_reg:=0;
+		T_prl:=0;
+		T_fug:=0;
+		T_pr:=0;
+		T_nt:=0;
+		T_zag:=t#0s;
+		Tsir:=t#0s;
+
+
+		
+		y_Trom:=TRUE; (*Розтормозити*)
+		sp_spd:=SPD_ZAG;
+		if pv_spd=SPD_ZAG then 
+			Status:=ST_REG; (*Провести регенерацію сит*)
+		end_if;
+		vc_fail:=false;
+		dz_fail:=false;
+
+	St_reg:		(*Промивка сит*)
+		y_pr:=Ts_wreg;
+		y_Lotok:=Ts_wreg; (*Опустити лоток із затримкою*)
+		if ts_Reg or Q_reg>Q_reg_zd then
+			vc_fail:=ts_Reg;
+			y_pr:=false;
+			Status:=St_wait;
+		end_if;
+	St_wait:
+
+
+		if (Pusk or rej_nepr) AND NOT (y_pr AND X_man) then 
+			
+(*			Status:=St_zag ;*)
+			Status:=St_sync ;
+
+(*
+			if NOT dz_off then
+				Rej_nepr:=false;
+			end_if; *)
+
+
+		end_if;
+
+	St_sync:
+		if  NOT net or dozvil or q_out  OR NOT rej_sync then 
+			Status:=St_zag;
+			Sgr_zl:=TRUE; (*Виключити таймер затримки перемикання на зелену*)
+		end_if;
+
+	St_zag:		(*Завантаження*)
+	T_zag:=Tt_zag;
+	if x_Lotok then 
+		if not y_shib  then (*якщо шибер закритий*)
+			if not dz_lock then 
+				y_shib:= true; (*выдкрити шибер якщо датчик завантаження в зоні чітливості*);
+				dz_fail:=false;
+			end_if;
+			if Pusk OR (NOT dz_off) then  (*якщо натиснути кнопка "пуск"*)
+				y_shib:=true; (*відкрити шибер*)
+			end_if;
+		end_if;
+	else
+		y_shib:=false;
+		Status:=ST_WAIT;
+	end_if;
+
+(*
+	if dz_fail_t and rej_nepr then 
+		dz_fail:=true;
+		Status:=ST_wait;
+		rej_nepr:=false;
+	end_if;
+*)
+		if ts_z or x_endz  or Gzag_end then (*якщо вийшов час відкриття шибера або нажато недогруз або спрацював ДЗ*)
+			y_shib:=false; (*Закрити щибер*)
+			Status:=St_fug; (*Перейти на стадію фугування*)
+			Gzag:=min_Gzag;
+			dz_fail:=false;
+			re_Fott:=false;
+			a_vv:=false; (*Погасити сигналізацію вібрації вала, якщо була включена*)
+		end_if;
+(*
+		if x_Endz or ts_z then 
+			Gzag:=Gzag_zd;
+		end_if;
+*)
+	St_fug: (*Фугування*)
+		if not x_Shib then (*якщо шибер закрився*)
+			Etest:=true;
+			
+			sp_spd:=SPD_FUG; (*виставити завдання на оберти фугування*)
+		end_if;
+
+		if Fott>Fott_zd then 
+			re_Fott:=true;
+		end_if;
+
+		if redge(Ts_lot,re_Ts_lot) then 		
+			y_prl:=true;
+		end_if;
+		if Q_prl>Q_prl_zd OR Ts_prl then 
+			vc_fail:=Ts_prl;
+			y_prl:=false;
+		end_if;
+
+		
+				IF (Ts_fug OR      (*Якщо вийшов час фугування або *)
+					( rej_fug AND  (* фугування включено по відходу і *)
+					Fott<=Fott_zd AND Fott_md and re_Fott)) AND pv_spd=SPD_FUG   THEN (*відход патоки менше заданого і є зв'язок з ПО-2 тоді*)
+
+					y_lotok:=false; (*підняти лоток*)
+					y_prl:=false; (*Закрили про всяск випадок клапан промивки лотка*)
+
+					IF rej_sir AND Psir>Psir_min THEN  (*Якщо включена промивка сиропом і тиск сиропу більше мінімального тоді*)
+						Status:=St_prsir; (*Перейти до фази промивки сиропом*)
+						Imp_t:=Imp-1;
+						if Imp_t<1 then 
+							Imp_t:=1;
+						end_if;
+						tstart(Tsir);
+					ELSE (*Інакше*)
+						Status:=St_pr_i1; (*Перейти до фази промивки водою *)
+						Imp_t:=Imp;
+					END_IF;
+
+					Sgr_bl_1:=TRUE; (*Запустити таймер перемикання сегрегатора на білу*)
+					(*Sgr_bl_2:=TRUE;*) (*Вимкнути 2 таймер*)
+				END_IF;
+	
+St_prsir: (*Пром. сиропом*)
+
+	y_prsir:= true;(* Відкрити сіропний клапан якщо опущена форсунка*)
+
+	if Ts_sir then (*Вийшов час промивки сиропом*)
+		Status:=St_prsir_1; (*Витримати паузу*)
+		tstop(Tsir);
+	end_if;
+
+
+St_prsir_1: (*Пром. Сиропом (закр кл)*)
+	Y_prsir:=false; (*Закрити сиропний клапан*)
+	if Ts_p then (*Якщо пройшла пауза між імпульсами *)
+		Status:=St_pr_i1; (*Перейти на стадію промивки цукру*)
+
+	end_if;
+
+St_pr_i1: (*Пром. Цукру 1 імп*)
+			y_pr:=true; (*відкрити клапан води*)			
+
+			T_p_s:=ANA(Tn_pr); (*Розрахувати час вілкриття клапана води *)
+			T_pr:=T_p_s/1000;
+
+			IF Ts_pr OR Q_pr >= Q_pr_zd/real(Imp_t) THEN (*Вийшов час або вилили об'єм води*)
+				vc_fail:=Ts_pr;
+				y_pr:=false;
+				CASE Imp_t OF (*Якщо 1 імпульс тоді*)
+					1:
+						Status:=St_sush; (*перейти до сушки*)
+					2,3: (*Інакше*)
+						Status:=St_pr_p1; (*Перейти до паузи між першим та другим імпульсами*)
+				END_CASE;
+			END_IF;
+
+St_pr_p1: (*Пром. Цукру 1 пауза*)
+
+			IF Ts_p THEN  (*Якщо вийшов час паузи між імпульсами тоді *)
+				Status:= St_pr_i2; (*Перейти до другого імпульсу*)
+			END_IF;		
+St_pr_i2: (*Пром. Цукру 2 імп*)
+			T_pr:=(T_p_s+ANA(Tn_pr))/1000;(*Розрахувати час відкриття клапана води*)
+			Y_pr:=TRUE;  (*Команда опустити форсуку*)
+
+
+			IF Imp_t=2 THEN (*Якщо настроєно на 2 імпульси тоді *)
+				IF Q_pr >=Q_pr_zd OR Ts_pr THEN (*Коли вийшов заданий об'єм або заданий час*)
+					vc_fail:=Ts_pr;
+					Y_pr:=FALSE; (*Закрити клапан води*)
+					Status:=St_sush; (*Перейти до стадії сушіння цікру*)
+				END_IF;
+			ELSE (*інакше (єдиний варіант - 3  імпульси)*)
+				IF Q_pr > Q_pr_zd * 0.6666666666 OR Ts_pr THEN (*Коли вийшло 2/3 заданого об'єму або заданий час*)
+					vc_fail:=Ts_pr;
+				y_pr:=false;
+					Status:=St_pr_p2; (*перейти до паузи між 2 та 3 імпульсами*)
+				END_IF;
+			END_IF;
+
+St_pr_p2: (*Пром. Цукру 2 пауза*)
+		if Ts_p then (*якщо час паузи вийшов тоді*)
+			T_p_s:=T_pr*1000; (*Скорегувати змінну T_p_s для наступного розрахунку часу відкриття клапана*)
+			Status:=St_pr_i3; (*Перейти до наступного імпульсу*)
+		end_if;
+
+St_pr_i3: (*Пром. Цукру 3 імп*)
+			T_pr:=(T_p_s+ANA(Tn_pr))/1000; (*Розрахувати час відкриття клапана*)
+			Y_pr:=TRUE; (*відкрити клапан води*)
+			IF Ts_pr OR Q_pr >= Q_pr_zd THEN  (*Якщо вийшов заданий час або заданий об'єм води тоді*)
+					vc_fail:=Ts_pr;
+					Y_pr:=FALSE; (*Закрити клапан води*)
+					Status:=St_sush; (*Перейти до стадії сушіння цікру*)
+			END_IF;
+St_sush: (*Сушіння*)
+			T_nt:=ANA(Tn_nt)/1000; (*Перерахунок в секунди часу сушіння*)
+
+			IF Ts_nt THEN  (*Якщо закінчився час сушіння тоді*)
+				Status:=St_torm; (*Перейти до стадії гальмування*)
+			END_IF;	
+	St_torm:
+		y_prl:=false;
+		y_prsir:=false;
+		y_pr:=false;
+		sp_spd:=SPD_VIGR;
+
+		if pv_spd=SPD_VIGR and Ts_KM1 then (*загальмували до нуля*)
+			sp_spd:=SPD_STOP;
+			Start:=true; (*Запустити вивантаження*)
+			y_Trom:=false;
+			Nc:=Nc+1;
+			Status:=St_vigr;
+		end_if;	
+St_vigr:
+		if x_dsp_l AND x_dsp_h then
+			rej_nepr:=false;
+		end_if;
+
+		if not Start and x_dsp_l then 
+			(*y_Trom:=false;*)
+			if rej_nepr then 
+				Status:=St_start;
+			else
+				Status:=St_stop;
+			end_if;
+		end_if;
+end_case;
+
+

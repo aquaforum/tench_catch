@@ -1,0 +1,359 @@
+#combinatory
+if Queue_run then (*Якщо треба просунути чергу*)
+
+Nom_cur:=Nom_cur+1;
+if Nom_cur>MAX_FILTER then 
+	Nom_cur:=1;
+end_if;
+
+(*Пошук першого включеного фільтра в батареї*)
+Nom_first:=0;
+for i:=MAX_FILTER to 1 by -1 do
+	case i of
+		1:
+			if Amr_1_ AND State_1_=ST_FLT AND Tst_1_ then 
+				Nom_first:=1;
+			end_if;
+		2:
+			if Amr_2_ AND State_2_=ST_FLT AND Tst_2_ then 
+				Nom_first:=2;
+			end_if;
+		3:
+			if Amr_3_ AND State_3_=ST_FLT AND Tst_3_ then 
+				Nom_first:=3;
+			end_if;
+		4:
+			if Amr_4_ AND State_4_=ST_FLT AND Tst_4_ then 
+				Nom_first:=4;
+			end_if;
+		5:
+			if Amr_5_ AND State_5_=ST_FLT AND Tst_5_ then 
+				Nom_first:=5;
+			end_if;
+		6: 
+			if Amr_6_ AND State_6_=ST_FLT AND Tst_6_ then 
+				Nom_first:=6;
+			end_if;
+		7: 
+			if Amr_7_ AND State_7_=ST_FLT AND Tst_7_ then 
+				Nom_first:=7;
+			end_if;
+		8: 
+			if Amr_8_ AND State_8_=ST_FLT AND Tst_8_ then 
+				Nom_first:=8;
+			end_if;
+	end_case;
+end_for;
+
+(*Пошук наступного фільтра в автоматі*)
+res:=true; (*Встановити прапор пошуку*)
+for i:=1 to MAX_FILTER by 1 do
+	if res then (*Поки пошук не завершино*)
+		case Nom_cur of (*Перевіряти режими*)
+			1:
+				if Amr_1_ AND State_1_=ST_FLT AND Tst_1_ then (*Якщо автомати увімкнути  тоді*)
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=2; (*внаступному циклі перевірити другий фільтр*)
+				end_if;
+			2:(*пов*)
+				if Amr_2_ AND State_2_=ST_FLT AND Tst_2_ then 
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=3;
+				end_if;
+			3:
+				if Amr_3_ AND State_3_=ST_FLT AND Tst_3_ then 
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=4;
+				end_if;
+			4:
+				if Amr_4_ AND State_4_=ST_FLT AND Tst_4_ then 
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=5;
+				end_if;
+			5:
+				if Amr_5_ AND State_5_=ST_FLT AND Tst_5_ then 
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=6;
+				end_if;
+			6:
+				if Amr_6_ AND State_6_=ST_FLT AND Tst_6_ then (*Якщо автомати вимкнутий тоді*)
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=7; (*Перевірити наступний*)
+				end_if;
+			7:
+				if Amr_7_ AND State_7_=ST_FLT AND Tst_7_ then (*Якщо автомати вимкнутий тоді*)
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=8; (*Перевірити наступний*)
+				end_if;
+			8:
+				if Amr_8_ AND State_8_=ST_FLT AND Tst_8_ then (*Якщо автомати вимкнутий тоді*)
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=1; (*Перевірити наступний*)
+				end_if;
+		end_case;
+	end_if;
+end_for;
+
+
+if not res then (*Якщо прапор пошуку зкинуто, значить знайдено фільтр який можна виводити на регенерацію*)
+
+(*Виставити команду регенерації*)
+case Nom_cur of
+	1:
+		Streg_1_:=true;
+	2:
+		Streg_2_:=true;
+	3:
+		Streg_3_:=true;
+	4:
+		Streg_4_:=true;
+	5:
+		Streg_5_:=true;
+	6:
+		Streg_6_:=true;
+	7:
+		Streg_7_:=true;
+	8:
+		Streg_8_:=true;
+end_case;
+
+
+(*Вибрати режим регенерації*)
+case Nc_zd of (*Перевірити режим роботи*)
+0,3: (*якщо з постійною вигрузкою*)
+	r_l:=true; (*Попередній також вивантажувався*)
+	case Nom_cur of (*Незалежно від номеру фільтра завжди на вигрузку*)
+		1:
+			r_1_:=true;
+		2:
+			r_2_:=true;
+		3:
+			r_3_:=true;
+		4:
+			r_4_:=true;		
+		5:
+			r_5_:=true;
+		6:
+			r_6_:=true;
+		7:
+			r_7_:=true;
+		8:
+			r_8_:=true;
+	end_case;
+	r_l:=true;
+1:
+	case Nom_cur of (*Незалежно від номеру фільтра завжди на вигрузку*)
+		1:
+			if Nom_cur=Nom_first then 
+				r_1_:=NOT  r_1_;
+			else
+				r_1_:=NOT r_l;
+			end_if;
+			r_l:=r_1_;
+		2:
+			if Nom_cur=Nom_first then 
+				Nf:=5;
+				r_2_:=NOT  r_2_;
+			else
+				r_2_:=NOT r_l;
+			end_if;
+			r_l:=r_2_;
+		3:
+			if Nom_cur=Nom_first then 
+				r_3_:=NOT  r_3_;
+			else
+				r_3_:=NOT r_l;
+			end_if;
+			r_l:=r_3_;
+		4:
+			if Nom_cur=Nom_first then 
+				r_4_:=NOT  r_4_;
+			else
+				r_4_:=NOT r_l;
+			end_if;
+			r_l:=r_4_;
+		5:
+			if Nom_cur=Nom_first then 
+				r_5_:=NOT  r_5_;
+			else
+				r_5_:=NOT r_l;
+			end_if;
+			r_l:=r_5_;
+		6:
+			if Nom_cur=Nom_first then 
+				r_6_:=NOT  r_6_;
+			else
+				r_6_:=NOT r_l;
+			end_if;
+			r_l:=r_6_;
+		7:
+			if Nom_cur=Nom_first then 
+				r_7_:=NOT  r_7_;
+			else
+				r_7_:=NOT r_l;
+			end_if;
+			r_l:=r_7_;
+		8:
+			if Nom_cur=Nom_first then 
+				r_8_:=NOT  r_8_;
+			else
+				r_8_:=NOT r_l;
+			end_if;
+			r_l:=r_8_;
+	end_case;
+	
+2:
+	case Nom_cur of
+		1:
+			if Nom_cur=Nom_first then 
+				Nf:=MAX_FILTER-1;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_1_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_1_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else;
+				Nf:=Nf-1;
+				r_1_:=mod(Nf+Nc_2,3)=2;
+			end_if;
+			r_l:=r_1_;
+		2:
+			if Nom_cur=Nom_first then 
+				Nf:=MAX_FILTER-1;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_2_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_2_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else;
+				Nf:=Nf-1;
+				r_2_:=mod(Nf+Nc_2,3)=2;
+			end_if;
+			r_l:=r_2_;
+		3:
+			if Nom_cur=Nom_first then 
+				Nf:=MAX_FILTER-1;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_3_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_3_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else
+				Nf:=Nf-1;
+				r_3_:=mod(Nf+Nc_2,3)=2;
+			end_if;
+			r_l:=r_3_;
+		4:
+			if Nom_cur=Nom_first then 
+				Nf:=MAX_FILTER-1;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_4_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_4_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else;
+				Nf:=Nf-1;
+				r_4_:=mod(Nf+Nc_2,3)=2;
+			end_if;
+			r_l:=r_4_;
+		5:
+			if Nom_cur=Nom_first then 
+				Nf:=MAX_FILTER-1;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_5_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_5_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else;
+				Nf:=Nf-1;
+				r_5_:=mod(Nf+Nc_2,3)=2;
+			end_if;
+			r_l:=r_5_;
+		6:
+			if Nom_cur=Nom_first then 
+				Nf:=MAX_FILTER-1;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_6_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_6_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else;
+				Nf:=Nf-1;
+				r_6_:=mod(Nf+Nc_2,3)=2;
+			end_if;
+			r_l:=r_6_;
+
+
+		7:
+			if Nom_cur=Nom_first then 
+				Nf:=MAX_FILTER-1;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_7_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_7_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else;
+				Nf:=Nf-1;
+				r_7_:=mod(Nf+Nc_2,3)=2;
+			end_if;
+			r_l:=r_6_;
+
+		8:
+			if Nom_cur=Nom_first then 
+				Nf:=MAX_FILTER-1;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_8_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_8_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else;
+				Nf:=Nf-1;
+				r_8_:=mod(Nf+Nc_2,3)=2;
+			end_if;
+			r_l:=r_8_;
+
+	end_case;
+3: (*Це буде хитрий режим, у якому вивантаження буде йти без часткового випорожнення.*)
+(*навіть не знаю що сюди писати........... цей момент треба буде добре протестувати!!!!!!*)
+
+end_case;
+
+
+end_if;
+
+end_if; (* if Queue_run then *) 
+
+Nom_cur_of:=Nom_cur+119; (*Розрахувати номер вікна для панелі*)
+
+
+
+(*Це стосується регулятора*)
+
+if Am_01 then 
+	X_01:=Xt_01;
+end_if;
+

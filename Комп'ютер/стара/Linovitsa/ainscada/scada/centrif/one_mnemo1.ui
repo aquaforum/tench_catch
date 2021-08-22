@@ -1,0 +1,3017 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>one_mnemo1</class>
+ <widget class="QWidget" name="one_mnemo1">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1728</width>
+    <height>979</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1604</width>
+    <height>979</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1900</width>
+    <height>979</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>one</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_9">
+   <item row="0" column="1" rowspan="2">
+    <widget class="QFrame" name="frame">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>821</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>3</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QGroupBox" name="cf_sel">
+        <property name="title">
+         <string/>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_8">
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <property name="spacing">
+          <number>4</number>
+         </property>
+         <item row="0" column="1">
+          <widget class="QRadioButton" name="cf_5">
+           <property name="text">
+            <string>Центрифуга &amp;5</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QRadioButton" name="cf_4">
+           <property name="text">
+            <string>Центрифуга &amp;4</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_11">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <property name="spacing">
+          <number>1</number>
+         </property>
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="cb_man">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_38">
+           <property name="text">
+            <string>Тест</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_10">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="spacing">
+          <number>1</number>
+         </property>
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="cb_stop">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_35">
+           <property name="text">
+            <string>Зупинено</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_9">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <property name="spacing">
+          <number>4</number>
+         </property>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_32">
+           <property name="minimumSize">
+            <size>
+             <width>239</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Об’єм води</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="6">
+          <widget class="QLabel" name="label_30">
+           <property name="text">
+            <string>Промивка сит</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="T_reg">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичний час промивки сита</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="label_45">
+           <property name="minimumSize">
+            <size>
+             <width>215</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Сегрегатор на ЗП</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3">
+          <widget class="QLabel" name="label_46">
+           <property name="text">
+            <string>с</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_34">
+           <property name="minimumSize">
+            <size>
+             <width>215</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Час</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QSpinBox" name="Ts_z_zd">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>244</red>
+                 <green>244</green>
+                 <blue>244</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="toolTip">
+            <string>Заданий час сушіння</string>
+           </property>
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>30</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="cb_reg">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QDoubleSpinBox" name="Q_reg_zd">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>244</red>
+                 <green>244</green>
+                 <blue>244</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="toolTip">
+            <string>Заданий об’єм води на промивку сита</string>
+           </property>
+           <property name="decimals">
+            <number>0</number>
+           </property>
+           <property name="minimum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>50.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLabel" name="label_31">
+           <property name="text">
+            <string>л</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="Q_reg">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичний об’єм води на промивку сита</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLabel" name="label_33">
+           <property name="text">
+            <string>с</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="5">
+          <widget class="QCheckBox" name="rej_sgr">
+           <property name="text">
+            <string>промой сит в зелену</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5" rowspan="2" colspan="2">
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_1">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_10">
+         <item row="0" column="1" rowspan="2" colspan="3">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Очікування</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_44">
+           <property name="minimumSize">
+            <size>
+             <width>325</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Об’єм води (оператор)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLabel" name="label_43">
+           <property name="text">
+            <string>л</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QLineEdit" name="Q_man">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичний об’єм води на промивку сита</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" rowspan="2">
+          <widget class="QCheckBox" name="cb_wait">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_2">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <property name="spacing">
+          <number>4</number>
+         </property>
+         <item row="1" column="4">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLineEdit" name="Gzag">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичне завантаження</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="4">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Завантаження</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>325</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Маса утфелю</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>кг</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="cb_load">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_3">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <property name="spacing">
+          <number>4</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="cb_prl">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="5">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Промивка лотка</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QDoubleSpinBox" name="Q_prl_zd">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>244</red>
+                 <green>244</green>
+                 <blue>244</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="toolTip">
+            <string>Заданий об’єм води на промивку лотка</string>
+           </property>
+           <property name="decimals">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <double>20.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="Q_prl">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичний об’єм води на промивку лотка</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>л</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5" rowspan="2">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_6">
+           <property name="minimumSize">
+            <size>
+             <width>239</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Об’єм води</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="T_prl">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичний час промивки лотка</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>с</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_8">
+           <property name="minimumSize">
+            <size>
+             <width>215</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Час</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_4">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <property name="spacing">
+          <number>4</number>
+         </property>
+         <item row="1" column="4">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>%</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_14">
+           <property name="minimumSize">
+            <size>
+             <width>215</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Час</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="Fott">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичне значення інтенсивності відходу патоки</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_12">
+           <property name="minimumSize">
+            <size>
+             <width>239</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Інтенсивність відходу</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="cb_fug">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="5">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Фугування</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5" rowspan="2">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="T_fug">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичний час фугування</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>с</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QSpinBox" name="Fott_zd">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>244</red>
+                 <green>244</green>
+                 <blue>244</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="toolTip">
+            <string>Задане значення інтенсивності відходу патоки для переходу до промивки цукру</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>50</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QSpinBox" name="T_fug_zd">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>244</red>
+                 <green>244</green>
+                 <blue>244</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="toolTip">
+            <string>Заданий час фугування</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>200</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="6" rowspan="2">
+          <widget class="QPushButton" name="rej_fug">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>По часу</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_13">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="7" rowspan="3">
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>252</width>
+             <height>55</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_20">
+           <property name="minimumSize">
+            <size>
+             <width>239</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Час</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="cb_sir">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5">
+          <widget class="QLineEdit" name="Tsir">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичний час фугування</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="label_42">
+           <property name="text">
+            <string>Промивка сиропом</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QSpinBox" name="T_sir_zd">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>244</red>
+                 <green>244</green>
+                 <blue>244</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="toolTip">
+            <string>Заданий час фугування</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>200</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="6">
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>с</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+        <zorder>horizontalSpacer_5</zorder>
+        <zorder>cb_sir</zorder>
+        <zorder>label_42</zorder>
+        <zorder>label_20</zorder>
+        <zorder>T_sir_zd</zorder>
+        <zorder>Tsir</zorder>
+        <zorder>label_21</zorder>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_5">
+        <property name="minimumSize">
+         <size>
+          <width>160</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <property name="spacing">
+          <number>4</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="cb_pr">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="6">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Промивка цукру</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLineEdit" name="Q_pr">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактична кількість води на промивку цукру</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>л</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="6" rowspan="4">
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_17">
+           <property name="minimumSize">
+            <size>
+             <width>215</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Об’єм води</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_19">
+           <property name="minimumSize">
+            <size>
+             <width>215</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Час</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="Q_pr_zd">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Задана кількість води на промивку цукру</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="label_23">
+           <property name="minimumSize">
+            <size>
+             <width>215</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Кількість імпульсів</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLabel" name="label_24">
+           <property name="minimumSize">
+            <size>
+             <width>215</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Час паузи між імпульсами</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QDoubleSpinBox" name="Q_k">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>244</red>
+                 <green>244</green>
+                 <blue>244</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="toolTip">
+            <string>Корекція кількості води на промивку цукру</string>
+           </property>
+           <property name="decimals">
+            <number>0</number>
+           </property>
+           <property name="minimum">
+            <double>-50.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>50.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QLineEdit" name="Imp">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Задана кількість імпульсів пробілювання</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="QLineEdit" name="T_p">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Заданий час паузи між імпульсами</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QLineEdit" name="T_pr">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичний час промивки цукру</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>с</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLabel" name="label_40">
+           <property name="minimumSize">
+            <size>
+             <width>215</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Сегрегатор на БП</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="QSpinBox" name="Ts_b_zd">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>244</red>
+                 <green>244</green>
+                 <blue>244</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="toolTip">
+            <string>Заданий час сушіння</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>30</number>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3">
+          <widget class="QLabel" name="label_25">
+           <property name="text">
+            <string>с</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <widget class="QLabel" name="label_41">
+           <property name="text">
+            <string>с</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_7">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <property name="spacing">
+          <number>4</number>
+         </property>
+         <item row="1" column="2">
+          <widget class="QSpinBox" name="Tnt_zd">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>244</red>
+                 <green>244</green>
+                 <blue>244</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="toolTip">
+            <string>Заданий час сушіння</string>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>200</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="cb_nt">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="label_27">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>239</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Час сушіння</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLabel" name="label_28">
+           <property name="text">
+            <string>c</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLineEdit" name="T_nt">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>80</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>Фактичний час сушіння цукру</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5">
+          <spacer name="horizontalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="1" colspan="5">
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>Сушіння</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_12">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="spacing">
+          <number>1</number>
+         </property>
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="cb_torm">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_39">
+           <property name="text">
+            <string>Гальмування</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="f_8">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>1</number>
+         </property>
+         <property name="leftMargin">
+          <number>4</number>
+         </property>
+         <property name="topMargin">
+          <number>4</number>
+         </property>
+         <property name="rightMargin">
+          <number>4</number>
+         </property>
+         <property name="bottomMargin">
+          <number>4</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="cb_vigr">
+           <property name="styleSheet">
+            <string notr="true">QCheckBox{
+min-width: 14px;
+min-height: 14px;
+max-width: 14px;
+max-height: 14px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+	
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 14px;
+	width: 14px;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>CheckBox</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_29">
+           <property name="text">
+            <string>Вивантаження</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QFrame" name="trcf">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QFrame" name="frameMnemoOne">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>900</width>
+       <height>600</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#frameMnemoOne
+{
+	background-image: url(:/cfmnemo/one.svg);
+	background-repeat: no-repeat;
+}
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="label_37">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>90</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Час циклу</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="T_all">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>120</y>
+        <width>113</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_36">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>150</y>
+        <width>150</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Кількість циклів</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Nc">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>180</y>
+        <width>113</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Xshib">
+      <property name="geometry">
+       <rect>
+        <x>436</x>
+        <y>311</y>
+        <width>21</width>
+        <height>39</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Кінцевик шибера</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCheckBox{
+min-width: 21px;
+min-height: 39px;
+max-width: 21px;
+max-height: 39px;
+}
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/val_0.png)
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/val_1.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 21px;
+	width: 39px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Ylot">
+      <property name="geometry">
+       <rect>
+        <x>436</x>
+        <y>367</y>
+        <width>20</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QCheckBox{
+min-width: 20px;
+min-height: 21px;
+max-width: 20px;
+max-height: 21px;
+}
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/arrow_d_0.png);
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/arrow_d_1.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 20px;
+	width: 21px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Xdsph">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>344</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Заборона завантаження</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QCheckBox{
+min-width: 16px;
+min-height: 16px;
+max-width: 16px;
+max-height: 16px;
+}
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/lamp_0.png)
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/lamp_g.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 16px;
+	width: 16px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Ysir">
+      <property name="geometry">
+       <rect>
+        <x>659</x>
+        <y>312</y>
+        <width>34</width>
+        <height>39</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Клапан сиропу</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QCheckBox{
+min-width: 34px;
+min-height: 39px;
+max-width: 34px;
+max-height: 39px;
+}
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/valve_r_0.png);
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/valve_r_1.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 34px;
+	width: 39px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Ypr">
+      <property name="geometry">
+       <rect>
+        <x>622</x>
+        <y>312</y>
+        <width>34</width>
+        <height>39</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Коапан промивки цукру</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QCheckBox{
+min-width: 34px;
+min-height: 39px;
+max-width: 34px;
+max-height: 39px;
+}
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/valve_l_0.png);
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/valve_l_1.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 34px;
+	width: 39px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Yshib">
+      <property name="geometry">
+       <rect>
+        <x>424</x>
+        <y>322</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Заборона завантаження</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QCheckBox{
+min-width: 16px;
+min-height: 16px;
+max-width: 16px;
+max-height: 16px;
+}
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/lamp_0.png)
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/lamp_g.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 16px;
+	width: 16px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Ob">
+      <property name="geometry">
+       <rect>
+        <x>524</x>
+        <y>49</y>
+        <width>56</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>1000</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Yprl">
+      <property name="geometry">
+       <rect>
+        <x>463</x>
+        <y>311</y>
+        <width>34</width>
+        <height>39</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Клапан промивки лотка</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QCheckBox{
+min-width: 34px;
+min-height: 39px;
+max-width: 34px;
+max-height: 39px;
+}
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/valve_r_0.png);
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/valve_r_1.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 34px;
+	width: 39px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="State">
+      <property name="geometry">
+       <rect>
+        <x>449</x>
+        <y>429</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Невизначено</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Xdspl">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>370</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Заборона завантаження</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QCheckBox{
+min-width: 16px;
+min-height: 16px;
+max-width: 16px;
+max-height: 16px;
+}
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/lamp_0.png)
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/lamp_g.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 16px;
+	width: 16px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Ydsp">
+      <property name="geometry">
+       <rect>
+        <x>544</x>
+        <y>367</y>
+        <width>20</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QCheckBox{
+min-width: 20px;
+min-height: 21px;
+max-width: 20px;
+max-height: 21px;
+}
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/arrow_u_0.png);
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/arrow_u_1.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 20px;
+	width: 21px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="Q_all">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>279</y>
+        <width>51</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>12.5</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="cfNom">
+      <property name="geometry">
+       <rect>
+        <x>534</x>
+        <y>109</y>
+        <width>36</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>5</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Ysgr">
+      <property name="geometry">
+       <rect>
+        <x>672</x>
+        <y>504</y>
+        <width>12</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Клапан сегрегатора</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCheckBox{
+min-width: 12px;
+min-height: 35px;
+max-width: 12px;
+max-height: 35px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/indicators/sgr_g.png);
+}
+
+QCheckBox:unchecked
+{
+	
+	image: url(:/indicators/sgr_w.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 12px;
+	width: 35px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="I_a">
+      <property name="geometry">
+       <rect>
+        <x>605</x>
+        <y>80</y>
+        <width>56</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>1000</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="I_b">
+      <property name="geometry">
+       <rect>
+        <x>605</x>
+        <y>110</y>
+        <width>56</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>1000</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Xsgrz">
+      <property name="geometry">
+       <rect>
+        <x>672</x>
+        <y>538</y>
+        <width>38</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Кінцевик сегрегатора</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCheckBox{
+min-width: 38px;
+min-height: 34px;
+max-width: 38px;
+max-height: 34px;
+}
+QCheckBox:unchecked
+{
+	image: url(:/indicators/sgr_g_0.png);
+}
+
+QCheckBox:checked
+{
+	
+	image: url(:/indicators/sgr_g_1.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 38px;
+	width: 34px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Xsgrb">
+      <property name="geometry">
+       <rect>
+        <x>646</x>
+        <y>538</y>
+        <width>38</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Кінцевик сегрегатора</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCheckBox{
+min-width: 38px;
+min-height: 34px;
+max-width: 38px;
+max-height: 34px;
+}
+QCheckBox:checked
+{
+	image: url(:/indicators/sgr_w_1.png);
+}
+
+QCheckBox:unchecked
+{
+	image: url(:/indicators/sgr_w_0.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 38px;
+	width: 34px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="mnemo/cfmnemo.qrc"/>
+  <include location="../../../../lib/picture.qrc"/>
+ </resources>
+ <connections/>
+</ui>

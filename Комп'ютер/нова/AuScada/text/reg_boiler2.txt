@@ -1,0 +1,8 @@
+1. Рівень в барабані	Ldrum	Fpara	Fwater		cPump	Sp0001	Sp0007		AM001			Kp0001	Ti0001	Td0001	Xmin0001	Xmax0001		K2001						.
+2. Тиск повітря на пальник	Pair				cFan	Sp0002			AM002			Kp0002	Ti0002	Td0002	Xmin0002	Xmax0002								.
+3. Розрідження в топці	Pvac				cExh	Sp0003			AM003			Kp0003	Ti0003	Td0003	Xmin0003	Xmax0003								.
+4. Тиск пари в барабані	Pp7a	Fpara	gGas		cGas	Sp0004	Sp0007		AM004			Kp0004	Ti0004	Td0004	Xmin0004	Xmax0004								.
+5. Температура пари	Tpar				cTerm	Sp0005			AM005			Kp0005	Ti0005	Td0005	Xmin0005	Xmax0005								.
+6. Концентрація О2	QO2fume	Pair			cFan	Sp0006	Sp0009		AM006			Kp0006	Ti0006	Td0006	Xmin0006	Xmax0006								.
+7. Витрата пари (омеження	Fpara	Ppara	gGas		cGas	Sp0007	Sp0004		AM004			Kp0007	Ti0007	Td0007	Xmin0007	Xmax0007								.
+8. Температура в топці	Tk				cGas	Sp0008			AM008			Kp0008	Ti0008	Td0008	Xmin0008	Xmax0008								.

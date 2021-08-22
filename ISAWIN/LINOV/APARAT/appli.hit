@@ -1,0 +1,11 @@
+[PrgCom]
+ios=
+t2msg=
+control=Модуль управління апаратом
+mmi_con=Модуль HMI
+ebus_drv=
+totime=
+exit=
+mova_bak=
+move_bak=
+parm_sto=

@@ -1,0 +1,54 @@
+#combinatory
+
+(*Реалызацыя переходу ручний-автомат*)
+
+if AM0001 AND L0001 then 
+	C0001:=Xt0001;
+end_if;
+
+
+if AM0002 AND L0002 then 
+	C0002:=Xt0002;
+end_if;
+
+
+
+
+if AM0001 AND AM0002 then 
+	IF redge(V0007<SP2001,reS1) then
+		(*Переключити регулятори*)
+		L0001:=false;
+		lC0001:=C0001;
+		C0001:=0.0;
+
+		L0002:=true;
+		C0002:=lC0002;
+	end_if;
+
+
+	if redge(V0007>SP2001+K2001*40.0,reS2) then 
+		L0001:=true;
+		C0001:=lC0001;
+
+		L0002:=false;
+		lC0002:=C0002;
+		C0002:=0.0;
+	end_if;
+
+else
+	L0001:=true;
+	L0002:=true;
+end_if;
+
+
+
+
+
+if AM0003 then 
+	C0003:=Xt0003;
+end_if;
+
+if AM0004 then 
+	C0004:=Xt0004;
+end_if;
+

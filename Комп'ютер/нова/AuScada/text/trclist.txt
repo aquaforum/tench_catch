@@ -1,0 +1,13 @@
+plcdifuz	V_14	V_10	SP_06	SPR_06	C_06
+plcdifuz	V_18	V_19	V_20	V_21	V_22	V_23
+plcdifuz	V_22	V_15	SP_09	SP2_09	C_09
+plcsatur	V_03	V_04	V_01
+plcsatur	V_11	C_15	V_14	SP2_15	Spr_15
+plcsatur	V_21	C_04	SP_04
+plcsatur	V_08	V_43	C_12
+plcsatur	V_22	C_14	SP_14
+plcvipar	V_03	C_01	SP_01	V_06	V_26
+plcvipar	V_01	C_16	SP_04
+plcvipar	V_02	C_02	SP_02
+plcvipar	V_15	C_03	SP_03
+plcvipar	V_04	C_04	SP2_04	V_05	V_27	V_40

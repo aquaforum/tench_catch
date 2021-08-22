@@ -1,0 +1,1370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MnemoBoiler2</class>
+ <widget class="QWidget" name="MnemoBoiler2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1830</width>
+    <height>1010</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#MnemoBoiler2
+{
+	
+	background-image: url(:/mnemo/boiler2.svg);
+	background-repeat: no-repeat;
+}</string>
+  </property>
+  <widget class="QLabel" name="Fgas">
+   <property name="geometry">
+    <rect>
+     <x>377</x>
+     <y>381</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gGas">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>318</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pg15a">
+   <property name="geometry">
+    <rect>
+     <x>686</x>
+     <y>381</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pair">
+   <property name="geometry">
+    <rect>
+     <x>674</x>
+     <y>444</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cFan">
+   <property name="geometry">
+    <rect>
+     <x>721</x>
+     <y>615</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gTerm">
+   <property name="geometry">
+    <rect>
+     <x>973</x>
+     <y>541</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="gSupp">
+   <property name="geometry">
+    <rect>
+     <x>1061</x>
+     <y>540</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cPump">
+   <property name="geometry">
+    <rect>
+     <x>1191</x>
+     <y>615</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Fwater">
+   <property name="geometry">
+    <rect>
+     <x>1178</x>
+     <y>543</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pp7a">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>120</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cExh">
+   <property name="geometry">
+    <rect>
+     <x>1339</x>
+     <y>535</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Pvac">
+   <property name="geometry">
+    <rect>
+     <x>1057</x>
+     <y>195</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Tv4a">
+   <property name="geometry">
+    <rect>
+     <x>1187</x>
+     <y>114</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: red;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Tp18a">
+   <property name="geometry">
+    <rect>
+     <x>857</x>
+     <y>560</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: red;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Tp17a">
+   <property name="geometry">
+    <rect>
+     <x>1078</x>
+     <y>620</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: red;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Tv3a">
+   <property name="geometry">
+    <rect>
+     <x>1253</x>
+     <y>566</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: red;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Tk">
+   <property name="geometry">
+    <rect>
+     <x>966</x>
+     <y>454</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: red;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="QO2fume">
+   <property name="geometry">
+    <rect>
+     <x>1350</x>
+     <y>410</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: white;
+	background: black;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Ta5a">
+   <property name="geometry">
+    <rect>
+     <x>1320</x>
+     <y>180</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: white;
+	background: black;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Ta6a">
+   <property name="geometry">
+    <rect>
+     <x>1350</x>
+     <y>440</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: white;
+	background: black;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Tpar">
+   <property name="geometry">
+    <rect>
+     <x>1269</x>
+     <y>15</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>25</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: white;
+	background: black;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Ppara">
+   <property name="geometry">
+    <rect>
+     <x>1270</x>
+     <y>56</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>25</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: white;
+	background: black;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Fpara">
+   <property name="geometry">
+    <rect>
+     <x>1270</x>
+     <y>95</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>25</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: white;
+	background: black;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="AM001">
+   <property name="geometry">
+    <rect>
+     <x>1158</x>
+     <y>616</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/man.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/avt.svg</pixmap>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="AM002">
+   <property name="geometry">
+    <rect>
+     <x>688</x>
+     <y>616</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/man.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/avt.svg</pixmap>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="AM003">
+   <property name="geometry">
+    <rect>
+     <x>1306</x>
+     <y>536</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/man.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/avt.svg</pixmap>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="AM004">
+   <property name="geometry">
+    <rect>
+     <x>625</x>
+     <y>320</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/man.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/avt.svg</pixmap>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="AM005">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>542</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/man.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/avt.svg</pixmap>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="xDrumLl2">
+   <property name="geometry">
+    <rect>
+     <x>803</x>
+     <y>240</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../../../../AuLib/picture.qrc">:/butons/pict/lamp_r_16x16.png</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../../../../AuLib/picture.qrc">:/butons/pict/bool_green_false_16x16.png</pixmap>
+   </property>
+   <property name="lamp">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="xDrumLl1">
+   <property name="geometry">
+    <rect>
+     <x>803</x>
+     <y>214</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../../../../AuLib/picture.qrc">:/butons/pict/lamp_r_16x16.png</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../../../../AuLib/picture.qrc">:/butons/pict/bool_green_false_16x16.png</pixmap>
+   </property>
+   <property name="lamp">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="xDrumLH1">
+   <property name="geometry">
+    <rect>
+     <x>803</x>
+     <y>186</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../../../../AuLib/picture.qrc">:/butons/pict/bool_green_false_16x16.png</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../../../../AuLib/picture.qrc">:/butons/pict/lamp_r_16x16.png</pixmap>
+   </property>
+   <property name="lamp">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="xDrumLH2">
+   <property name="geometry">
+    <rect>
+     <x>803</x>
+     <y>160</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../../../../AuLib/picture.qrc">:/butons/pict/bool_green_false_16x16.png</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../../../../AuLib/picture.qrc">:/butons/pict/lamp_r_16x16.png</pixmap>
+   </property>
+   <property name="lamp">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="xTight">
+   <property name="geometry">
+    <rect>
+     <x>512</x>
+     <y>355</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/gas_0.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/gas_1.svg</pixmap>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="lamp">
+    <number>0</number>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="yLitherVal">
+   <property name="geometry">
+    <rect>
+     <x>582</x>
+     <y>224</y>
+     <width>60</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/val_g_0.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/val_g_1.svg</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="yCutofVal">
+   <property name="geometry">
+    <rect>
+     <x>438</x>
+     <y>348</y>
+     <width>60</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/val_g_0.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/val_g_1.svg</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="yBurnerVal">
+   <property name="geometry">
+    <rect>
+     <x>542</x>
+     <y>348</y>
+     <width>60</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/val_g_0.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/val_g_1.svg</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="ySafeVal">
+   <property name="geometry">
+    <rect>
+     <x>505</x>
+     <y>276</y>
+     <width>30</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/val_v_0.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/val_v_1.svg</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnReg_04">
+   <property name="geometry">
+    <rect>
+     <x>637</x>
+     <y>346</y>
+     <width>68</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../auscada.qrc">
+     <normaloff>:/mnemo/val_g_0.svg</normaloff>:/mnemo/val_g_0.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnReg_05">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>570</y>
+     <width>68</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../auscada.qrc">
+     <normaloff>:/mnemo/val_g_0.svg</normaloff>:/mnemo/val_g_0.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnReg_02">
+   <property name="geometry">
+    <rect>
+     <x>718</x>
+     <y>573</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../auscada.qrc">
+     <normaloff>:/pr_36x34_2.png</normaloff>:/pr_36x34_2.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>36</width>
+     <height>34</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnReg_01">
+   <property name="geometry">
+    <rect>
+     <x>1181</x>
+     <y>573</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../auscada.qrc">
+     <normaloff>:/pr_36x34_0.png</normaloff>:/pr_36x34_0.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>36</width>
+     <height>34</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnReg_03">
+   <property name="geometry">
+    <rect>
+     <x>1350</x>
+     <y>490</y>
+     <width>41</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../auscada.qrc">
+     <normaloff>:/pr_36x34_0.png</normaloff>:/pr_36x34_0.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>36</width>
+     <height>34</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="flame">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>320</y>
+     <width>130</width>
+     <height>90</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="../auscada.qrc">:/mnemo/flame_0.svg</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="../auscada.qrc">:/mnemo/flame_3.svg</pixmap>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnReg_06">
+   <property name="geometry">
+    <rect>
+     <x>1050</x>
+     <y>570</y>
+     <width>68</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="../auscada.qrc">
+     <normaloff>:/mnemo/val_g_0.svg</normaloff>:/mnemo/val_g_0.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="pb_Ldrum">
+   <property name="geometry">
+    <rect>
+     <x>872</x>
+     <y>151</y>
+     <width>31</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>0</number>
+   </property>
+   <property name="maximum">
+    <number>4000</number>
+   </property>
+   <property name="value">
+    <number>2000</number>
+   </property>
+   <property name="textVisible">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Ldrum">
+   <property name="geometry">
+    <rect>
+     <x>902</x>
+     <y>191</y>
+     <width>60</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel
+{
+	color: yellow;
+}</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="sl_SP0001">
+   <property name="geometry">
+    <rect>
+     <x>855</x>
+     <y>151</y>
+     <width>16</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QSlider::groove:vertical {
+     background: rgba(0, 0, 0, 0);
+/*     position: absolute;  абсолютная позиция в 4px слева и справа от виджета. установка полей виджета также будет работать... */
+/*     left: 4px; right: 4px;*/
+ }
+
+ QSlider::handle:vertical {
+	image: url(:/slider/pict/SPR_1.png);
+ }
+</string>
+   </property>
+   <property name="maximum">
+    <number>4000</number>
+   </property>
+   <property name="value">
+    <number>2500</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame1">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>680</y>
+     <width>551</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>1</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frame_01">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="frame2">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>680</y>
+     <width>551</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>1</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frame_02">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="frame3">
+   <property name="geometry">
+    <rect>
+     <x>1260</x>
+     <y>680</y>
+     <width>551</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="spacing">
+     <number>1</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frame_03">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AuLamp</class>
+   <extends>QWidget</extends>
+   <header>AuWidget/aulamp.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../auscada.qrc"/>
+  <include location="../../../../AuLib/picture.qrc"/>
+  <include location="../../../../AuLib/picture.qrc"/>
+  <include location="../../../AuLib/picture.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 96 48"
+   enable-background="new 0 0 1000 1000"
+   xml:space="preserve"
+   id="svg14874"
+   sodipodi:docname="AM_1.svg"
+   width="96"
+   height="48"
+   inkscape:version="1.0rc1 (09960d6f05, 2020-04-09)"><defs
+   id="defs14878" /><sodipodi:namedview
+   inkscape:document-rotation="0"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1890"
+   inkscape:window-height="1043"
+   id="namedview14876"
+   showgrid="false"
+   inkscape:zoom="3.2644314"
+   inkscape:cx="119.52302"
+   inkscape:cy="109.40435"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg14874" />
+<metadata
+   id="metadata14866"> Svg Vector Icons : http://www.onlinewebfonts.com/icon <rdf:RDF><cc:Work
+     rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata>
+
+<rect
+   style="fill:#ffffff;stroke:#000000;stroke-width:0.999996;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+   id="rect15441"
+   width="95"
+   height="47.000004"
+   x="0.499998"
+   y="0.499998" /><g
+   id="g6211"
+   transform="matrix(0.04489796,0,0,0.05238095,24.55102,-2.190476)"
+   style="stroke-width:20.6205"><path
+     id="path6209"
+     d="m 220,500 h 70 L 150,290 10,500 h 70 c 0,231.9 188.1,420 420,420 49.1,0 96.2,-8.9 140,-24.5 V 741.2 C 598.7,765.3 551.2,780 500,780 345.4,780 220,654.6 220,500 Z m 700,0 C 920,268.1 731.8,80 500,80 c -49.1,0 -96.2,8.9 -140,24.4 v 154.4 c 41.3,-24.1 88.8,-38.9 140,-38.9 154.6,0 280,125.4 280,280 h -70 l 140,210 140,-210 h -70 z"
+     inkscape:connector-curvature="0"
+     style="stroke-width:20.6205" /></g></svg>

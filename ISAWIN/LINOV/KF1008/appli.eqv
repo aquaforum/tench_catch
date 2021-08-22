@@ -1,0 +1,30 @@
+#define ST_TEST -1
+#define ST_WAIT 0
+#define ST_START 1
+#define ST_PRESH 2
+#define ST_FILTERING 4
+#define ST_DISSUGARING 5
+#define ST_WASHING 6
+#define ST_SCAVENGING 7
+#define ST_DRYING 8
+#define ST_BLEED 9
+#define ST_STARTPTS 10
+#define ST_UPLOADING 11
+#define ST_PALARM 12
+#define ST_STOPALL 13
+#define ST_STARTQUERY 16 (*0b00010000*)
+#define ST_UNCLAMP 14
+#define ST_UPLOADQUERY 32 (*0b00100000*)
+#define ST_NOSUSP 64 (*0b01000000*)
+#define ST_UPLDPR 128
+ (*-----------------*)
+#define ST_OFF 0
+#define ST_STARTDC 1
+#define ST_MOVETAIL 2
+#define ST_CAPTURE 3
+#define ST_RCAPT 4
+#define ST_RMBACK 5
+#define ST_STOP 6
+#define ST_XPAUSE 7
+#define ST_WPAUSE 8
+

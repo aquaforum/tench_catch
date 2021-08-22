@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+ssh -i ~/.ssh/lnfab rou rm /usr/local/bin/scada /usr/local/bin/ioserv
+scp -i ~/.ssh/lnfab ../ainscada/scada/scada ioserv/ioserv  rou:/usr/local/bin
+ssh -i ~/.ssh/lnfab rou
+
+
+
+

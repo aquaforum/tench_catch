@@ -1,0 +1,89 @@
+<RCC>
+    <qresource prefix="/">
+        <file>mnemo/flok_0.svg</file>
+        <file>mnemo/flok_2.svg</file>
+        <file>mnemo/flok_1.svg</file>
+        <file>mnemo/flame_0.svg</file>
+        <file>mnemo/flame_1.svg</file>
+        <file>mnemo/flame_3.svg</file>
+        <file>mnemo/flame_4.svg</file>
+        <file>mnemo/val_g_0.svg</file>
+        <file>mnemo/val_g_1.svg</file>
+        <file>mnemo/val_v_0.svg</file>
+        <file>mnemo/val_v_1.svg</file>
+        <file>mnemo/gas_0.svg</file>
+        <file>mnemo/gas_1.svg</file>
+        <file>mnemo/avt.svg</file>
+        <file>mnemo/man.svg</file>
+        <file>mnemo/boilerBtn.svg</file>
+        <file>mnemo/boiler2.svg</file>
+        <file>mnemo/1.png</file>
+        <file>gaspich/mnemo/mnemo_gp.svg</file>
+        <file>mnemo/mnemo.svg</file>
+        <file>plc.list</file>
+        <file>plc/aparat.list</file>
+        <file>plc/aparatall.list</file>
+        <file>plc/bigpump.list</file>
+        <file>plc/cf.list</file>
+        <file>plc/cfall.list</file>
+        <file>plc/difuz.list</file>
+        <file>plc/fdmon.list</file>
+        <file>plc/fdmon2.list</file>
+        <file>plc/fdmonfr.list</file>
+        <file>plc/gaspich.list</file>
+        <file>plc/rou.list</file>
+        <file>plc/satur.list</file>
+        <file>plc/viparka.list</file>
+        <file>mnemo/mnemo_d.svg</file>
+        <file>mnemo/mnemo_d.ui</file>
+        <file>mnemo/mnemo_v.ui</file>
+        <file>mnemo/mnemo_v.svg</file>
+        <file>mnemo/mnemo_s.ui</file>
+        <file>mnemo/mnemo_s.svg</file>
+        <file>mnemo/one.svg</file>
+        <file>gaspich/gpmnemo.ui</file>
+        <file>mnemo/printer.png</file>
+        <file>mnemo/factory.png</file>
+        <file>mnemo/AmVoda.svg</file>
+        <file>mnemo/washCtrl.svg</file>
+        <file>mnemo/dlgregtankc.svg</file>
+        <file>mnemo/CessPool.svg</file>
+        <file>mnemo/pumpCtrl.svg</file>
+        <file>mnemo/oven.svg</file>
+        <file>mnemo/Save-icon.png</file>
+        <file alias="pl_36x34_0.png">mnemo/pl_36x34_0.png</file>
+        <file alias="pl_36x34_1.png">mnemo/pl_36x34_1.png</file>
+        <file alias="pl_36x34_2.png">mnemo/pl_36x34_2.png</file>
+        <file alias="pl_36x34_3.png">mnemo/pl_36x34_3.png</file>
+        <file alias="pr_36x34_0.png">mnemo/pr_36x34_0.png</file>
+        <file alias="pr_36x34_1.png">mnemo/pr_36x34_1.png</file>
+        <file alias="pr_36x34_2.png">mnemo/pr_36x34_2.png</file>
+        <file alias="pr_36x34_3.png">mnemo/pr_36x34_3.png</file>
+        <file>mnemo/pidagriv.svg</file>
+        <file alias="mnemo/mnemo_rou.svg">rou/mnemo/mnemo_rou.svg</file>
+        <file>text/trclist.txt</file>
+        <file>text/reg_d1.txt</file>
+        <file>text/reg_g1.txt</file>
+        <file>text/reg_rou.txt</file>
+        <file>text/reg_s1.txt</file>
+        <file>text/reg_v1.txt</file>
+        <file>text/roulist.txt</file>
+        <file>text/gplist.txt</file>
+        <file>text/gperrormsg.txt</file>
+        <file>trends.list</file>
+        <file>history.ui</file>
+        <file>text/reg_ob.txt</file>
+        <file>text/reg_ap.txt</file>
+        <file>plc/boiler2.txt</file>
+        <file>text/reg_boiler2.txt</file>
+        <file>gaspich/mnemo/arrow_down_big_on.png</file>
+        <file>gaspich/mnemo/arrow_down_small_on.png</file>
+        <file>gaspich/mnemo/arrow_up_big_on.png</file>
+        <file>gaspich/mnemo/arrow_up_small_on.png</file>
+    </qresource>
+    <qresource prefix="/cfmnemo">
+        <file alias="centrif.png">centrif/mnemo/centrif.png</file>
+        <file alias="cfmnemo.ui">centrif/mnemo/cfmnemo.ui</file>
+        <file alias="mnemo.svg">centrif/mnemo/mnemo.svg</file>
+    </qresource>
+</RCC>

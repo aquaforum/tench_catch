@@ -1,0 +1,27 @@
+_section=_begin {
+parm_ram(_ST)
+Runner(_FBD)
+fl_fb_1(_FBD)
+fl_fb_2(_FBD)
+fl_fb_3(_FBD)
+fl_fb_4(_FBD)
+ctrl_1(_ST)
+ctrl_2(_ST)
+ctrl_3(_ST)
+ctrl_4(_ST)
+main(_ST)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+off_all(_ST)
+}
+
+_section=_fblocks {
+}
+

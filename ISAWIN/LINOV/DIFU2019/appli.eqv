@@ -1,0 +1,7 @@
+#define OUT_CODE 16#31
+#define OUT_MIN 0.0
+#define OUT_MAX 16000.0
+#define SCA_MIN 0.0
+#define SCA_MAX 4000.0
+#define Tdif t#1s
+

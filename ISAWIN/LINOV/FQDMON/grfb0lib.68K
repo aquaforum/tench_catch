@@ -1,0 +1,17 @@
+#include <tasy0def.h>
+
+extern ABP fbldef_mbus_r (char *name, IBP *init, RBP *read);
+extern ABP fbldef_wd_bit (char *name, IBP *init, RBP *read);
+extern ABP fbldef_mbus_n_r (char *name, IBP *init, RBP *read);
+extern ABP fbldef_ebus_f_w (char *name, IBP *init, RBP *read);
+extern ABP fbldef_long_wd (char *name, IBP *init, RBP *read);
+
+_asm ("
+FBLDEF:
+		dc.l	fbldef_mbus_r
+		dc.l	fbldef_wd_bit
+		dc.l	fbldef_mbus_n_r
+		dc.l	fbldef_ebus_f_w
+		dc.l	fbldef_long_wd
+		dc.l	0
+");

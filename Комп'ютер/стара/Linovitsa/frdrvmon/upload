@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+ssh -i ~/.ssh/lnfab difuz rm /usr/local/bin/fqdrvmon
+scp -i ~/.ssh/lnfab ioserv/ioserv  difuz:/usr/local/bin/fqdrvmon
+ssh -i ~/.ssh/lnfab difuz
+
+
+
+

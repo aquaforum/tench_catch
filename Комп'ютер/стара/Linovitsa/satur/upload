@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+ssh -i ~/.ssh/lnfab satur rm /usr/local/bin/ioserv
+scp -i ~/.ssh/lnfab ioserv/ioserv  satur:/usr/local/bin
+ssh -i ~/.ssh/lnfab satur
+
+
+
+

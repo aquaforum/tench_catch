@@ -1,0 +1,132 @@
+#combinatory
+if NOT (Read OR NoRead) then 
+(*—юди вставить фрагмент читанн€*)
+Tper_zd := eep_n_r( 1);
+Q_zd := INT_REAL(eep_n_r( 2));
+T_v2_zd := eep_n_r( 3);
+T_v3_zd := eep_n_r( 4);
+Tst_zd := eep_n_r( 7);
+Nc_zd := eep_n_r( 8);
+f_L_ho := eep_n_r( 9);
+f_L_nz := eep_n_r( 10);
+f_L_nfs := eep_n_r( 11);
+f_L_sus := eep_n_r( 12);
+f_L_cs := eep_n_r( 13);
+f_G_cs := eep_n_r( 14);
+f_T_s := eep_n_r( 15);
+
+m_L_nz := eep_n_r( 17);
+m_L_nfs := eep_n_r( 18);
+m_L_sus := eep_n_r( 19);
+m_L_cs := eep_n_r( 20);
+s_G_cs := INT_REAL(eep_n_r( 21));
+d_L_sus_zd := eep_n_r( 22);
+Tavl_1 := eep_n_r( 23);
+Tavl_2 := eep_n_r( 24);
+Tavl_3 := eep_n_r( 25);
+
+SP_01:=INT_REAL(eep_n_r(30));
+SP_02:=INT_REAL(eep_n_r(31));
+K_01:=INT_REAL(eep_n_r(32));
+Kp_01:=INT_REAL(eep_n_r(33));
+Ti_01:=INT_REAL(eep_n_r(34));
+Td_01:=INT_REAL(eep_n_r(35));
+Xmin_01:=INT_REAL(eep_n_r(36));
+Xmax_01:=INT_REAL(eep_n_r(37));
+Rej_01:=BOO(eep_n_r(38));
+Am_01:=BOO(eep_n_r(39));
+
+Am_1_:=BOO(eep_n_r(40));
+Am_2_:=BOO(eep_n_r(41));
+Am_3_:=BOO(eep_n_r(42));
+Am_4_:=BOO(eep_n_r(43));
+Am_5_:=BOO(eep_n_r(44));
+Am_6_:=BOO(eep_n_r(45));
+Am_7_:=BOO(eep_n_r(46));
+Am_8_:=BOO(eep_n_r(47));
+Mode_01:=BOO(eep_n_r(48));
+P0_01:=INT_REAL(eep_n_r(49));
+Sca_m:=INT_REAL(eep_n_r(50));
+
+
+else
+
+if Sav_tm >t#30m then 
+
+	Sav_tm:=t#0s;
+
+	if Save then
+		Res:=eep_en();
+		Save:=FALSE;
+		Sav_ST:=1; 
+	end_if;
+
+end_if;
+
+case sav_ST of 
+1 :
+
+Res := eep_n_w( 1,Tper_zd);
+Res := eep_n_w( 2,REAL_INT(Q_zd));
+Res := eep_n_w( 3,T_v2_zd);
+Res := eep_n_w( 4,T_v3_zd);
+Res := eep_n_w( 7,Tst_zd);
+Res := eep_n_w( 8,Nc_zd);
+Res := eep_n_w( 9,f_L_ho);
+Res := eep_n_w( 10,f_L_nz);
+Res := eep_n_w( 11,f_L_nfs);
+Res := eep_n_w( 12,f_L_sus);
+Res := eep_n_w( 13,f_L_cs);
+Res := eep_n_w( 14,f_G_cs);
+Res := eep_n_w( 15,f_T_s);
+
+Res := eep_n_w( 17,m_L_nz);
+Res := eep_n_w( 18,m_L_nfs);
+Res := eep_n_w( 19,m_L_sus);
+Res := eep_n_w( 20,m_L_cs);
+Res := eep_n_w( 21,REAL_INT(s_G_cs));
+Res := eep_n_w( 22,d_L_sus_zd);
+Res := eep_n_w( 23,Tavl_1);
+Res := eep_n_w( 24,Tavl_2);
+Res := eep_n_w( 25,Tavl_3);
+Sav_ST:=Sav_ST+1;
+
+2:
+Res:=eep_n_w(30,REAL_INT(SP_01));
+Res:=eep_n_w(31,REAL_INT(SP_02));
+Res:=eep_n_w(32,REAL_INT(K_01));
+Res:=eep_n_w(33,REAL_INT(Kp_01));
+Res:=eep_n_w(34,REAL_INT(Ti_01));
+Res:=eep_n_w(35,REAL_INT(Td_01));
+Res:=eep_n_w(36,REAL_INT(Xmin_01));
+Res:=eep_n_w(37,REAL_INT(Xmax_01));
+Res:=eep_n_w(38,ANA(Rej_01));
+Res:=eep_n_w(39,ANA(Am_01));
+
+Res:=eep_n_w(40,ANA(Am_1_));
+Res:=eep_n_w(41,ANA(Am_2_));
+Res:=eep_n_w(42,ANA(Am_3_));
+Res:=eep_n_w(43,ANA(Am_4_));
+Res:=eep_n_w(44,ANA(Am_5_));
+Res:=eep_n_w(45,ANA(Am_6_));
+Res:=eep_n_w(46,ANA(Am_7_));
+Res:=eep_n_w(47,ANA(Am_8_));
+Res:=eep_n_w(48,ANA(Mode_01));
+Res:=eep_n_w(49,REAL_INT(P0_01));
+Res:=eep_n_w(50,REAL_INT(Sca_m));
+
+Sav_ST:=Sav_ST+1;
+
+	Res:=eep_pr();
+else
+	Sav_ST:=0;
+end_case;
+
+
+end_if;
+
+if Not Read then 
+	tstart(Sav_tm);
+end_if;
+
+Read:=TRUE;

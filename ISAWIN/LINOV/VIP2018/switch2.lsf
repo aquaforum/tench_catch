@@ -1,0 +1,10 @@
+#combinatory
+if CH then 
+C1:=X2;
+C2:=X1;
+else
+C1:=X1;
+C2:=X2;
+end_if;
+Q1:=C1;
+Q2:=C2;

@@ -1,0 +1,112 @@
+#ifndef __TPANEL_REG__
+#define __TPANEL_REG__
+
+#include <QtGui>
+#include <QDebug>
+#include <QDialog>
+
+class TrendChart;
+class IoDev;
+class QTimer;
+class QCloseEvent;
+class TrendLoadThead;
+
+//namespace Ui {
+//    class panelReg;
+//}
+// це для того, щоб його можна було наслідувати...
+#include "build/ui_TpanelReg.h"
+
+
+namespace Ri
+{
+    enum Index {Deskritp = 0,
+                PV_1  = 1,
+                PV_2  = 2,
+                PV_3  = 3,
+                SPR_1 = 4,
+                X     = 5,
+                SP_1  = 6,
+                SP_2  = 7,
+                SP_3  = 8,
+                AM    = 9,
+                Rej   = 10,
+                Rev   = 11,
+                Kpr   = 12,
+                TI    = 13,
+                Td    = 14,
+                Xmin  = 15,
+                Xmax  = 16,
+                K_1   = 17,
+                K_2   = 18,
+                K_3   = 19,
+                K_4   = 20,
+                Kkor  = 21,
+                Mode  = 22,
+                P0    = 23,
+                To    = 24
+                };
+}
+
+
+class TpanelReg: public QDialog
+{
+Q_OBJECT
+public:
+    TpanelReg(IoDev &source,int n=0,QWidget *p=NULL,QString cfName=":/text/reg.txt",QString tableName="trend");
+    ~TpanelReg();
+
+protected slots:
+    void changeReg(); // зміна регулятор
+    void Control(bool); // відображення-приховувавння частини вікна з настройками регулятора
+    void runTrend();
+    void updateTrend(int);
+
+    void updateData(); // поновлення даних у віджетах
+    // і тут буде ще купа сигналів від різних контролів
+    // Ctrl
+    void setCtrlValue();
+    void setCtrlValue(int v);
+    // Parm
+    void setParmValue();
+    void setParmValue(int v);
+    void setParmAM();
+    void setParmRej();
+    void setParmRev();
+    void setParmKprSig(int v);
+    void setParamMode(bool v);
+
+    void setTO(int);
+
+    
+    void setGraph(); // слот на 5ти-секундний інтервал для виводу гріфіків
+    //void startTimer();
+
+protected:
+    void closeEvent( QCloseEvent * event);
+private:
+    IoDev &src;
+    int RegNum;
+    QString tblName; // назва таблиці
+    Ui::TpanelReg *ui; // морда лиця
+
+    QVector<QStringList> RegDes; // масив опису параметрів регуляторів
+
+
+
+    TrendChart *trChart;
+    QVector<double> v; // дані для запису на графік
+    // масив для пошуку віджетів
+    QHash<QString, Ri::Index> ctrlSearch;     // хеш для пошуку тегів
+    QTimer *t1;
+
+    double kk_1 ;  // коефіцієнт корекції для K_1
+    TrendLoadThead *trLoader;
+
+    QStringList regList;
+
+};
+
+
+#endif
+

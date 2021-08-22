@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/mnemo">
+    <file>pidagriv.svg</file>
+    <file>mnemo.svg</file>
+    <file>one.svg</file>
+  </qresource>
+</RCC>

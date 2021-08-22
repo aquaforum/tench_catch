@@ -1,0 +1,1741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>History</class>
+ <widget class="QDialog" name="History">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>883</width>
+    <height>871</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Вибір графіків</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>294</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="Exit">
+     <property name="text">
+      <string>Вихід</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QTabWidget" name="tabW">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_1">
+      <attribute name="title">
+       <string>Дифузія</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QFrame" name="frame_Reg">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QPushButton" name="d1reg01_trend_0_0">
+               <property name="text">
+                <string>Температура 1 зони</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg02_trend_0_0">
+               <property name="text">
+                <string>Температура 2 зони</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg03_trend_0_0">
+               <property name="text">
+                <string>Температура 3 зони</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg04_trend_0_0">
+               <property name="text">
+                <string>Температура 4 зони</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg05_trend_0_0">
+               <property name="text">
+                <string>Температура гар. води</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg06_trend_0_0">
+               <property name="text">
+                <string>Стружка/вода</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg07_trend_0_0">
+               <property name="text">
+                <string>Рівень в зб гар. води</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg08_trend_0_0">
+               <property name="text">
+                <string>Рівень в зб. живил. води</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg09_trend_0_0">
+               <property name="text">
+                <string>Відкачка з дифузії</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg10_trend_0_0">
+               <property name="text">
+                <string>Утфельний підігрівач</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg11_trend_0_0">
+               <property name="text">
+                <string>Рівень в пульполовушці</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg13_trend_0_0">
+               <property name="text">
+                <string>Рівень в зб. ж.п. води</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1reg14_trend_0_0">
+               <property name="text">
+                <string>Температура ж.п. води</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>71</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Val">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QPushButton" name="d1level_trend_0_0">
+               <property name="text">
+                <string>Рівні дифузії</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1temp_trend_0_0">
+               <property name="text">
+                <string>Температури дифузії</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="d1water_trend_0_0">
+               <property name="text">
+                <string>Вода</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Other">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QPushButton" name="d1mass_trend_0_0">
+               <property name="text">
+                <string>Бункерні ваги</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="construct_trend_0_0">
+               <property name="text">
+                <string>Конструктор</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Сокоочистка</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QFrame" name="frame_Reg_2">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QPushButton" name="s1reg01_trend_1_0">
+               <property name="text">
+                <string>Вапно на осн. дефекацію</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg02_trend_1_0">
+               <property name="text">
+                <string>Вапна на преддефекатор</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg03_trend_1_0">
+               <property name="text">
+                <string>Вапно на деф. 2 сат.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg04_trend_1_0">
+               <property name="text">
+                <string>рН 1-ї сатурації</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg05_trend_1_0">
+               <property name="text">
+                <string>Скид газу на насос</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg06_trend_1_0">
+               <property name="text">
+                <string>Рівень в зб вапна</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg07_trend_1_0">
+               <property name="text">
+                <string>Повернення соку 1 сат.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg08_trend_1_0">
+               <property name="text">
+                <string>Повернення сусп.  сат.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg09_trend_1_0">
+               <property name="text">
+                <string>Температура на гар. деф</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg10_trend_1_0">
+               <property name="text">
+                <string>Температура 1 сат.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg11_trend_1_0">
+               <property name="text">
+                <string>Температура 2 сат.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg12_trend_1_0">
+               <property name="text">
+                <string>Подача соку на деф. 2 сат</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg13_trend_1_0">
+               <property name="text">
+                <string>Витрата сусп. 2-ї сатурації</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg14_trend_1_0">
+               <property name="text">
+                <string>рН 2-ї сатурації</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg15_trend_1_0">
+               <property name="text">
+                <string>Відкачка з холодного</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg16_trend_1_0">
+               <property name="text">
+                <string>Рівень в гар. дефекаторі</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg17_trend_1_0">
+               <property name="text">
+                <string>Газодувка</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1reg18_trend_1_0">
+               <property name="text">
+                <string>Струм </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>71</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Val_2">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QPushButton" name="s1term1_trend_1_0">
+               <property name="text">
+                <string>Температури дефекації</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1term2_trend_1_0">
+               <property name="text">
+                <string>Температури сатурації</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1termpr_trend_1_0">
+               <property name="text">
+                <string>Температури прод.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1flowvm_trend_1_0">
+               <property name="text">
+                <string>Витрати вап. мол.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1flowj_trend_1_0">
+               <property name="text">
+                <string>Витрати соків</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1flowr_trend_1_0">
+               <property name="text">
+                <string>Витрати повернення</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1levelpr_trend_1_0">
+               <property name="text">
+                <string>Рівні продувок</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1leveldef_trend_1_0">
+               <property name="text">
+                <string>Рівні дефекації</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1level1sat_trend_1_0">
+               <property name="text">
+                <string>Рівні 1 сатурації</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1level2sat_trend_1_0">
+               <property name="text">
+                <string>Рівні 2 сатурації</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1phco2_trend_1_0">
+               <property name="text">
+                <string>рН &amp; СО2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1trend00_trend_1_0">
+               <property name="text">
+                <string>Рівень сусп. 1 сфт.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_5">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Other_2">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QPushButton" name="s1bleding_trend_1_0">
+               <property name="text">
+                <string>Продувки</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="s1pump_trend_1_0">
+               <property name="text">
+                <string>Насос зб. продувок</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_6">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="construct_trend_1_0">
+               <property name="text">
+                <string>Конструктор</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Випарка</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QFrame" name="frame_3">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QFrame" name="frame_Reg_3">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QPushButton" name="v1reg16_trend_2_0">
+               <property name="text">
+                <string>Зб соку - 1к. (ЧП)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg01_trend_2_0">
+               <property name="text">
+                <string>Зб соку - 1к. (клапан)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg02_trend_2_0">
+               <property name="text">
+                <string>Рівень 1к - 2к</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg03_trend_2_0">
+               <property name="text">
+                <string>Рівень 2к - 3к</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg04_trend_2_0">
+               <property name="text">
+                <string>Рівень 3к - 4к</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg05_trend_2_0">
+               <property name="text">
+                <string>Рівень 4к - 5к</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg06_trend_2_0">
+               <property name="text">
+                <string>Рівень сиропу після 5к.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg07_trend_2_0">
+               <property name="text">
+                <string>Рівень 5к - зб сиропу</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg15_trend_2_0">
+               <property name="text">
+                <string>Розрідження 5к.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg13_trend_2_0">
+               <property name="text">
+                <string>Т сиропу</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_7">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>71</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Val_3">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_8">
+             <item>
+              <widget class="QPushButton" name="v1reg08_trend_2_0">
+               <property name="text">
+                <string>Конденсат 1к.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg09_trend_2_0">
+               <property name="text">
+                <string>Конденсат 2к.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg10_trend_2_0">
+               <property name="text">
+                <string>Конденсат 3к.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg11_trend_2_0">
+               <property name="text">
+                <string>Конденсат 4к.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg12_trend_2_0">
+               <property name="text">
+                <string>Конденсат 5к.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg14_trend_2_0">
+               <property name="text">
+                <string>Рівень зб. тепл. води</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1amvoda_trend_2_0">
+               <property name="text">
+                <string>Подача ам. води</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_8">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Other_3">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_9">
+             <item>
+              <widget class="QPushButton" name="v1temp_trend_2_0">
+               <property name="text">
+                <string>Температури випарки</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1level_trend_2_0">
+               <property name="text">
+                <string>Рівні випарки</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1presh_trend_2_0">
+               <property name="text">
+                <string>Тиски випарки</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1water_trend_2_0">
+               <property name="text">
+                <string>Рівні в зб. води</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="v1reg18_trend_2_0">
+               <property name="text">
+                <string>Температура ВКУ</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_9">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="construct_trend_2_0">
+               <property name="text">
+                <string>Конструктор</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Апарати</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QFrame" name="frame_4">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QFrame" name="frame_Reg_4">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <item>
+              <widget class="QPushButton" name="a1ap_ap1_3_0">
+               <property name="text">
+                <string>Апарат 1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="a1ap_ap2_3_1">
+               <property name="text">
+                <string>Апарат 2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="a1ap_ap3_3_2">
+               <property name="text">
+                <string>Апарат 3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Затвори</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="a1valves_ap1_3_0">
+               <property name="text">
+                <string>Апарат 1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="a1valves_ap2_3_1">
+               <property name="text">
+                <string>Апарат 2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="a1valves_ap3_3_2">
+               <property name="text">
+                <string>Апарат 3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_10">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>71</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Val_4">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_11">
+             <item>
+              <spacer name="verticalSpacer_11">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Other_4">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_12">
+             <item>
+              <widget class="QPushButton" name="a1trend_trend_3_3">
+               <property name="text">
+                <string>Збірники</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_12">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="construct_ap2_3_1">
+               <property name="text">
+                <string>Конструктор</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Центрифуги</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item>
+        <widget class="QFrame" name="frame_5">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QFrame" name="frame_Reg_5">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_13">
+             <item>
+              <widget class="QPushButton" name="Cft_cf1_4_1">
+               <property name="text">
+                <string>Центрифуга №1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Cft_cf2_4_2">
+               <property name="text">
+                <string>Центрифуга №2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Cft_cf3_4_3">
+               <property name="text">
+                <string>Центрифуга №3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Cft_cf4_4_4">
+               <property name="text">
+                <string>Центрифуга №4</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Cft_cf5_4_5">
+               <property name="text">
+                <string>Центрифуга №5</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="shib_cf3_4_3">
+               <property name="text">
+                <string>Центрифуга №3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_13">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>71</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Val_5">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_14">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Привод</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="drv_cf1_4_1">
+               <property name="text">
+                <string>Центрифуга №1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="drv_cf2_4_2">
+               <property name="text">
+                <string>Центрифуга №2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="drv_cf3_4_3">
+               <property name="text">
+                <string>Центрифуга №3</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="drv_cf4_4_4">
+               <property name="text">
+                <string>Центрифуга №4</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="drv_cf5_4_5">
+               <property name="text">
+                <string>Центрифуга №5</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="torm_cf5_4_2">
+               <property name="text">
+                <string>Центрифуга №2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_14">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Other_5">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_15">
+             <item>
+              <widget class="QPushButton" name="c1trend_trend_4_0">
+               <property name="text">
+                <string>Збірники</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_15">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="construct_ap2_3_2">
+               <property name="text">
+                <string>Конструктор</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>Газова піч</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QFrame" name="frame_6">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QFrame" name="frame_Reg_6">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_16">
+             <item>
+              <widget class="QPushButton" name="trend1_trend_5_0">
+               <property name="text">
+                <string>Дозування вугілля</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="trend2_trend_5_0">
+               <property name="text">
+                <string>Дозування вапняку</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="trend3_trend_5_0">
+               <property name="text">
+                <string>Вагонетка верх</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="trend8_trend_5_0">
+               <property name="text">
+                <string>Вагонетка низ</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="trend4_trend_5_0">
+               <property name="text">
+                <string>Збірники</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="trend5_trend_5_0">
+               <property name="text">
+                <string>Лавери</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="trend6_trend_5_0">
+               <property name="text">
+                <string>Температура зліва</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="trend7_trend_5_0">
+               <property name="text">
+                <string>Температура зправа</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="trend9_trend_5_0">
+               <property name="text">
+                <string>Т. верх/низ</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="trend10_trend_5_0">
+               <property name="text">
+                <string>Робота пробки</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_16">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>71</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Val_6">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_17">
+             <item>
+              <spacer name="verticalSpacer_17">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Other_6">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_18">
+             <item>
+              <spacer name="verticalSpacer_18">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="construct_trend_5_0">
+               <property name="text">
+                <string>Конструктор</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>РОУ</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_25">
+       <item>
+        <widget class="QFrame" name="frame_7">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QFrame" name="frame_Reg_7">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_19">
+             <item>
+              <widget class="QPushButton" name="routrend_trend_6_0">
+               <property name="text">
+                <string>Роу</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="roureg3_trend_6_0">
+               <property name="text">
+                <string>Тиск грубо</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="roureg4_trend_6_0">
+               <property name="text">
+                <string>Вприск води</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="roureg5_trend_6_0">
+               <property name="text">
+                <string>Робота привода</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="routrend1_trend_6_0">
+               <property name="text">
+                <string>Витрати пари</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="routrend2_trend_6_0">
+               <property name="text">
+                <string>Скид на чан</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_19">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>71</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Val_7">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_20">
+             <item>
+              <spacer name="verticalSpacer_20">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Other_7">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_21">
+             <item>
+              <spacer name="verticalSpacer_21">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_7">
+      <attribute name="title">
+       <string>Привода</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_26">
+       <item>
+        <widget class="QFrame" name="frame_8">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <item>
+           <widget class="QFrame" name="frame_Reg_8">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_22">
+             <item>
+              <widget class="QPushButton" name="frdrv04_trend_7_0">
+               <property name="text">
+                <string>Живильна вода</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv01_trend_7_0">
+               <property name="text">
+                <string>Дифузійний сік</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_22">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>71</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Val_8">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_23">
+             <item>
+              <widget class="QPushButton" name="frdrv02_trend_7_0">
+               <property name="text">
+                <string>Відкачка з холодного</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv11_trend_7_0">
+               <property name="text">
+                <string>Сік  з 1 сатуратора</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv12_trend_7_0">
+               <property name="text">
+                <string>Сік  на 2 сатурацію</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv14_trend_7_0">
+               <property name="text">
+                <string>Суспензія 1 сат</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv15_trend_7_0">
+               <property name="text">
+                <string>Суспензія 2 сат</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv05_trend_7_0">
+               <property name="text">
+                <string>Збірник часткового</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv03_trend_7_0">
+               <property name="text">
+                <string>Суспензія на Ф.П.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv06_trend_7_0">
+               <property name="text">
+                <string>Вода на Ф.П.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv08_trend_7_0">
+               <property name="text">
+                <string>Сік на випарку</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv09_trend_7_0">
+               <property name="text">
+                <string>Сироп з випарки</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_23">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_Other_8">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_24">
+             <item>
+              <widget class="QPushButton" name="frdrv21_trend1_7_1">
+               <property name="text">
+                <string>Вода 2 категорії</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv22_trend1_7_1">
+               <property name="text">
+                <string>Гідро №1</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="frdrv23_trend1_7_1">
+               <property name="text">
+                <string>Гідро №2</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_24">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>145</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>Exit</sender>
+   <signal>clicked()</signal>
+   <receiver>History</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>353</x>
+     <y>276</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

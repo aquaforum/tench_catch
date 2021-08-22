@@ -1,0 +1,111 @@
+#combinatory
+
+if Std> ST_OFF AND State<>ST_UPLOADING then 
+	Y_fw:=false;
+	Y_bw:=false;
+	if Std=ST_STARTDC then (*Якщо має місце відтяжка преса тоді*)
+		Y_zol:=false; (*Виключити відтяжку преса*)
+		Y_pump:=false;
+	end_if;
+	Std:=ST_OFF;
+end_if;
+
+
+case Std of
+ST_OFF: (*Все вимкнути, абсолютно все*)
+
+	if State=ST_UPLOADING then 
+		Std:=ST_STARTDC;
+	end_if;
+
+ST_STARTDC:(*Підготовка і запуск процедури розтяжки рамок*)
+	if X_kh  then (* AND X_dl якщо каретка в голові і речаг піднятий*)
+		Y_fw:=false; (*вимкнути прямий хід мотора*)
+	else
+		Y_fw:=true; (*інакше включити двигун на прямий хід*)
+	end_if;
+
+
+	if not X_ps then  (*Якщо прес не в відведеномпу положенні тоді*)
+		Y_zol:=true; (*Відтяжка преса*)
+		Y_pump:=true;
+	else (*Інакше*)
+		Y_zol:=false; (*Виключити відтяжку преса*)
+		Y_pump:=false;
+
+		if X_kh  then (* AND X_dl якщо каретка в голові і речаг піднятий*)
+			Std:=ST_MOVETAIL; (*перейти до стадії переміщення каретки в хвіст*)
+		end_if;
+
+	end_if;
+
+ST_MOVETAIL:
+		if X_kt AND NOT X_dl then (*якщо каретка в хвості і речаг звільнився*)
+			Y_bw:=false; (*вимкнути прямий хід мотора*)
+			Std:=ST_CAPTURE; (*перейти до стадії переміщення каретки в хвіст*)
+			Rc:=0; (*Обнулити лічильник*)
+		else
+			Y_bw:=true; (*інакше включити двигун на зворотній хід хід*)
+		end_if;
+ST_CAPTURE: (*Захват рамки*)	
+	Y_fw:= true; (*NOT X_pause;*) (*каретку вперед*)
+
+	if X_dl and c_T_capt then (*якщо зуб наїхав на рамку і він дійсно їхав*)
+		Std:=ST_RCAPT;
+	end_if;
+
+	if X_kh then (*а раптом вже добрались до голови фільтра*)
+		(*Std:=ST_STOP;*)
+		Std:=ST_WPAUSE;
+	end_if;
+
+ST_RCAPT:
+	if X_kh then (*а раптом вже добрались до голови фільтра*)
+		(*Std:=ST_STOP;*)
+		Std:=ST_WPAUSE;
+	end_if;
+
+	if NOT X_dl then (*якщо зуб зїхав з рамки*)
+		Std:=ST_XPAUSE; (**)
+		Y_fw:= false; (*каретку вперед*)
+	else
+		Y_fw:= true; (*каретку вперед*)
+
+	end_if;
+
+ST_XPAUSE:
+		if NOT (X_pause OR Alarm) then (*Якщо включена шморгалка або є аварія*) 
+			Std:=ST_RMBACK; (**)
+		end_if;	
+
+		if X_kh then (*  2014  *)
+			Std:=ST_STOP;
+		end_if;
+
+ST_RMBACK:
+	Y_fw:=false; (*каретку вперед*)
+	if q_T_bw  then (*ящо вийшов час*)
+ 		Std:=ST_CAPTURE; (*перейти до захвату наступної рами*)
+		Rc:=Rc+1; (*Збільшити лічильник рамок*)
+		Y_bw:=false; (*вимкнути мотор*)
+	else
+		Y_bw:= true; (*ввімкнути мотор, тягти цю раму*)
+	end_if;
+
+ST_STOP:
+
+
+ST_WPAUSE:
+	Y_fw:=false;
+	Y_bw:=false;
+
+	if Rc>52 then 
+		Std:=St_STOP;
+	end_if;
+
+	if X_pause then 
+		Std:=ST_XPAUSE;
+	end_if;
+	
+end_case;
+

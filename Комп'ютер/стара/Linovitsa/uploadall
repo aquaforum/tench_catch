@@ -1,0 +1,30 @@
+#!/bin/sh
+
+strip -s ainscada/scada/scada
+echo "difuz"
+ssh -i ~/.ssh/lnfab difuz rm /usr/local/bin/scada 
+scp -i ~/.ssh/lnfab ainscada/scada/scada  difuz:/usr/local/bin
+
+echo "satur"
+ssh -i ~/.ssh/lnfab satur rm /usr/local/bin/scada 
+scp -i ~/.ssh/lnfab ainscada/scada/scada  satur:/usr/local/bin
+
+echo "vipar"
+ssh -i ~/.ssh/lnfab vipar rm /usr/local/bin/scada 
+scp -i ~/.ssh/lnfab ainscada/scada/scada  vipar:/usr/local/bin
+
+echo "gaspich"
+ssh -i ~/.ssh/lnfab gaspich rm /usr/local/bin/scada 
+scp -i ~/.ssh/lnfab ainscada/scada/scada  gaspich:/usr/local/bin
+
+echo "rou"
+ssh -i ~/.ssh/lnfab rou rm /usr/local/bin/scada 
+scp -i ~/.ssh/lnfab ainscada/scada/scada  rou:/usr/local/bin
+
+#echo "centrif"
+#ssh -i ~/.ssh/lnfab centrif rm /usr/local/bin/scada 
+#scp -i ~/.ssh/lnfab ainscada/scada/scada  centrif:/usr/local/bin
+
+
+
+

@@ -1,0 +1,121 @@
+#combinatory
+if AM_01 then
+	C_01:=Xt_01;
+end_if;
+
+if AM_02 then
+	C_02:=xt_02;
+end_if;
+
+if AM_03 then
+	c_03:=xt_03;
+end_if;
+
+if AM_04 then
+	c_04:=xt_04;
+end_if;
+
+if AM_05 then
+	c_05:=xt_05;
+end_if;
+
+if AM_06 then
+	c_06:=xt_06;
+end_if;
+
+if AM_07 then
+	c_07:=xt_07;
+end_if;
+
+if AM_08 then
+	c_08:=xt_08;
+end_if;
+
+if AM_09 then
+	c_09:=xt_09;
+end_if;
+
+if AM_10 then
+	c_10:=xt_10;
+end_if;
+
+if AM_11 then
+	c_11:=xt_11;
+end_if;
+
+if AM_12 then
+	c_12:=xt_12;
+end_if;
+
+(*Жомопресова вода*)
+if AM_13 then
+	c_13:=xt_13;
+end_if;
+
+if AM_14 then
+	c_14:=xt_14;
+end_if;
+
+(*Облік буряка*)
+if W0001 then
+	if V0049 > last_01 then
+		iX:=hh_s;
+		if iX<8 then
+			iX:=iX+24;
+		end_if;
+		iX:=iX-8;
+		if iX>11 then
+			iX:=iX-12;
+		end_if;
+		iX:=iX*2+768;
+
+		res:=r_mb_rel(iX);
+		res:=res+REAL(weidth1)*0.01;
+		bres:=w_mb_rel(iX,res);
+	end_if;
+
+	last_01:=V0049;
+else
+	last_01:=16#7FFFFFFF;
+end_if;
+
+if W0002 then
+	if V0050 > last_02 then
+		iX:=hh_s;
+		if iX<8 then
+			iX:=iX+24;
+		end_if;
+		iX:=iX-8;
+		if iX>11 then
+			iX:=iX-12;
+		end_if;
+		iX:=iX*2+816;
+		res:=r_mb_rel(iX);
+		res:=res+REAL(weidth2)*0.01;
+		bres:=w_mb_rel(iX,res);
+	end_if;
+
+	last_02:=V0050;
+else
+	last_02:=16#7FFFFFFF;
+end_if;
+
+(*копіювання даних для звіту*)
+if redge((hh_s=8 OR hh_s=20) AND mm_s=0 AND ss_s=0,timeBackup) then
+
+for iX:=0 to 22 by 2 do
+	res:=r_mb_rel(768+iX);
+	bres:=w_mb_rel(792+iX,res);
+	bres:=w_mb_rel(768+iX,0.0);
+
+	res:=r_mb_rel(816+iX);
+	bres:=w_mb_rel(840+iX,res);
+	bres:=w_mb_rel(816+iX,0.0);
+
+end_for;
+
+end_if;
+
+
+
+

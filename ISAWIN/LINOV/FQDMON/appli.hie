@@ -1,0 +1,28 @@
+_section=_begin {
+fd_01(_FBD)
+fd_02(_FBD)
+fd_03(_FBD)
+fd_04(_FBD)
+fd_05(_FBD)
+fd_06(_FBD)
+fd_8(_FBD)
+fd_9(_FBD)
+fd_11(_FBD)
+fd_12(_FBD)
+fd_14(_FBD)
+fd_15(_FBD)
+fd_16(_FBD)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+}
+
+_section=_fblocks {
+}
+

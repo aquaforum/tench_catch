@@ -1,0 +1,4 @@
+#define ST_FILTERING 4
+#define ST_DISSUGARING 5
+#define ST_WASHING 6
+

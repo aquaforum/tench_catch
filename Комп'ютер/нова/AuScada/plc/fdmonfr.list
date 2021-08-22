@@ -1,0 +1,4 @@
+State	9	Integer	1	1	-	Статус привода
+V0001	201	Integer	1	1	-	Частота
+V0002	202	Integer	1	1	-	Струм
+V0003	203	Integer	1	1	-	Напруга

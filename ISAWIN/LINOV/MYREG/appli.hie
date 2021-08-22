@@ -1,0 +1,11 @@
+_section=_begin{
+prog(_FBD)}
+_section=_sequential{
+}
+_section=_end{
+}
+_section=_functions{
+}
+_section=_fblocks{
+pi_duo(_ST)
+pidmy(_ST)}

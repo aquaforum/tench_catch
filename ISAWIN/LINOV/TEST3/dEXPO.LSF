@@ -1,0 +1,12 @@
+#combinatory
+if PV_ >= SP_ then
+lo:=SCA_MAX-SP_;
+else
+lo:=SP_-SCA_MIN;
+end_if;
+
+d_:=(PV_-SP_)/lo;
+
+dEXPO:=(exp_*d_*d_*d_+(1.0-exp_)*d_)*lo;
+
+

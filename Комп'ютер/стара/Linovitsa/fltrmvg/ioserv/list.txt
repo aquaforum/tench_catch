@@ -1,0 +1,259 @@
+r_l	5	Bool	1	1	-	Повна вигрузка
+T_queue	6	Long	1	0	-	Фактичний час перескоку
+Q	8	Real	1	1	V_01	Об’єм соку
+V_01	10	Real	1	1	+	F з нап зб фільтр соку
+V_02	12	Real	1	1	+	F сока на випарну станцію
+V_03	14	Real	1	1	+	L зб неф соку 1 сат
+V_04	16	Real	1	1	+	L нап зб фільтр соку 1 сат
+V_05	18	Real	1	1	+	L зб сусп 1-ої сатурації
+V_06	20	Real	1	1	+	L зб фільт соку 1-ої сатурації
+V_07	22	Real	1	1	+	L зб перед деф 2 сат
+V_08	24	Real	1	1	+	L зб осв соку 2 сат
+V_09	26	Real	1	1	+	L зб після 2-го сатуратора
+V_10	28	Real	1	1	+	L нап зб фільтр сока 2-го сат
+V_11	30	Real	1	1	+	L зб перед в/с
+V_12	32	Real	1	1	+	L зб сиропа
+V_13	34	Real	1	1	+	L міш. перліта
+V_14	36	Real	1	1	+	L зб фільтров сиропа
+V_15	38	Real	1	1	+	T фільтр сока 1 сат
+V_16	40	Real	1	1	+	T сиропа
+V_17	42	Real	1	1	+	T сока 2 сат.
+V_18	44	Real	1	1	+	Т неф сока 1-ої сат
+V_19	46	Real	1	1	+	T неф сока 2-ої сат
+V_20	48	Real	1	1	+	P сока на фільтри 2-ої сат
+V_21	50	Real	1	1	+	P сока на фільтри 1 сат
+V_22	52	Real	1	1	+	P фільтрації сиропа
+V_23	54	Real	1	1	+	P контрольної фільтрації
+V_24	56	Real	1	1	+
+V_25	58	Real	1	1	+
+V_26	60	Real	1	1	+
+V_27	62	Real	1	1	+
+V_28	64	Real	1	1	+
+V_29	66	Real	1	1	+
+V_30	68	Real	1	1	+
+V_31	70	Real	1	1	+
+V_32	72	Real	1	1	+
+Di_0	74	Bool	1	1	-
+Di_1	75	Bool	1	1	-
+Di_2	76	Bool	1	1	-
+Di_3	77	Bool	1	1	-
+Di_4	78	Bool	1	1	-
+Di_5	79	Bool	1	1	-
+Di_6	80	Bool	1	1	-
+Di_7	81	Bool	1	1	-
+Di_8	82	Bool	1	1	-
+Di_9	83	Bool	1	1	-
+Di_10	84	Bool	1	1	-
+Di_11	85	Bool	1	1	-
+Di_12	86	Bool	1	1	-
+Di_13	87	Bool	1	1	-
+Di_14	88	Bool	1	1	-
+Di_15	89	Bool	1	1	-
+Dio_1_	90	Bool	1	1	-
+Dio_2_	91	Bool	1	1	-
+Dio_3_	92	Bool	1	1	-
+Dio_4_	93	Bool	1	1	-
+Dio_5_	94	Bool	1	1	-
+Dio_6_	95	Bool	1	1	-
+Amr_1_	96	Bool	1	1	-
+Amr_2_	97	Bool	1	1	-
+Amr_3_	98	Bool	1	1	-
+Amr_4_	99	Bool	1	1	-
+Amr_5_	100	Bool	1	1	-
+Amr_6_	101	Bool	1	1	-
+Cl_1_1	102	Bool	1	1	-	Кінцевик клапана №1
+Cl_1_2	103	Bool	1	1	-	Кінцевик клапана №2
+Cl_1_3	104	Bool	1	1	-	Кінцевик клапана №3
+Cl_1_4	105	Bool	1	1	-	Кінцевик клапана №4
+Cl_1_5	106	Bool	1	1	-	Кінцевик клапана №5
+Cl_1_6	107	Bool	1	1	-	Кінцевик клапана №6
+Cl_2_1	108	Bool	1	1	-	Кінцевик клапана №1
+Cl_2_2	109	Bool	1	1	-	Кінцевик клапана №2
+Cl_2_3	110	Bool	1	1	-	Кінцевик клапана №3
+Cl_2_4	111	Bool	1	1	-	Кінцевик клапана №4
+Cl_2_5	112	Bool	1	1	-	Кінцевик клапана №5
+Cl_2_6	113	Bool	1	1	-	Кінцевик клапана №6
+Cl_3_1	114	Bool	1	1	-	Кінцевик клапана №1
+Cl_3_2	115	Bool	1	1	-	Кінцевик клапана №2
+Cl_3_3	116	Bool	1	1	-	Кінцевик клапана №3
+Cl_3_4	117	Bool	1	1	-	Кінцевик клапана №4
+Cl_3_5	118	Bool	1	1	-	Кінцевик клапана №5
+Cl_3_6	119	Bool	1	1	-	Кінцевик клапана №6
+Cl_4_1	120	Bool	1	1	-	Кінцевик клапана №1
+Cl_4_2	121	Bool	1	1	-	Кінцевик клапана №2
+Cl_4_3	122	Bool	1	1	-	Кінцевик клапана №3
+Cl_4_4	123	Bool	1	1	-	Кінцевик клапана №4
+Cl_4_5	124	Bool	1	1	-	Кінцевик клапана №5
+Cl_4_6	125	Bool	1	1	-	Кінцевик клапана №6
+Vl_1_1	126	Bool	1	1	-	Команда клапана №1
+Vl_1_2	127	Bool	1	1	-	Команда клапана №2
+Vl_1_3	128	Bool	1	1	-	Команда клапана №3
+Vl_1_4	129	Bool	1	1	-	Команда клапана №4
+Vl_1_5	130	Bool	1	1	-	Команда клапана №5
+Vl_1_6	131	Bool	1	1	-	Команда клапана №6
+Vl_2_1	132	Bool	1	1	-	Команда клапана №1
+Vl_2_2	133	Bool	1	1	-	Команда клапана №2
+Vl_2_3	134	Bool	1	1	-	Команда клапана №3
+Vl_2_4	135	Bool	1	1	-	Команда клапана №4
+Vl_2_5	136	Bool	1	1	-	Команда клапана №5
+Vl_2_6	137	Bool	1	1	-	Команда клапана №6
+Vl_3_1	138	Bool	1	1	-	Команда клапана №1
+Vl_3_2	139	Bool	1	1	-	Команда клапана №2
+Vl_3_3	140	Bool	1	1	-	Команда клапана №3
+Vl_3_4	141	Bool	1	1	-	Команда клапана №4
+Vl_3_5	142	Bool	1	1	-	Команда клапана №5
+Vl_3_6	143	Bool	1	1	-	Команда клапана №6
+Vl_4_1	144	Bool	1	1	-	Команда клапана №1
+Vl_4_2	145	Bool	1	1	-	Команда клапана №2
+Vl_4_3	146	Bool	1	1	-	Команда клапана №3
+Vl_4_4	147	Bool	1	1	-	Команда клапана №4
+Vl_4_5	148	Bool	1	1	-	Команда клапана №5
+Vl_4_6	149	Bool	1	1	-	Команда клапана №6
+Alm_1_1	150	Bool	1	1	-
+Alm_1_2	151	Bool	1	1	-
+Alm_1_3	152	Bool	1	1	-
+Alm_1_4	153	Bool	1	1	-
+Alm_1_5	154	Bool	1	1	-
+Alm_1_6	155	Bool	1	1	-
+Alm_1_7	156	Bool	1	1	-
+Alm_2_1	157	Bool	1	1	-
+Alm_2_2	158	Bool	1	1	-
+Alm_2_3	159	Bool	1	1	-
+Alm_2_4	160	Bool	1	1	-
+Alm_2_5	161	Bool	1	1	-
+Alm_2_6	162	Bool	1	1	-
+Alm_2_7	163	Bool	1	1	-
+Alm_3_1	164	Bool	1	1	-
+Alm_3_2	165	Bool	1	1	-
+Alm_3_3	166	Bool	1	1	-
+Alm_3_4	167	Bool	1	1	-
+Alm_3_5	168	Bool	1	1	-
+Alm_3_6	169	Bool	1	1	-
+Alm_3_7	170	Bool	1	1	-
+Alm_4_1	171	Bool	1	1	-
+Alm_4_2	172	Bool	1	1	-
+Alm_4_3	173	Bool	1	1	-
+Alm_4_4	174	Bool	1	1	-
+Alm_4_5	175	Bool	1	1	-
+Alm_4_6	176	Bool	1	1	-
+Alm_4_7	177	Bool	1	1	-
+Half_1_	178	Bool	1	1	-
+Half_2_	179	Bool	1	1	-
+Half_3_	180	Bool	1	1	-
+Half_4_	181	Bool	1	1	-
+Full_1_	182	Bool	1	1	-
+Full_2_	183	Bool	1	1	-
+Full_3_	184	Bool	1	1	-
+Full_4_	185	Bool	1	1	-
+Man_1_	186	Bool	1	1	-
+Man_2_	187	Bool	1	1	-
+Man_3_	188	Bool	1	1	-
+Man_4_	189	Bool	1	1	-
+Am_1_	190	Bool	1	1	-
+Am_2_	191	Bool	1	1	-
+Am_3_	192	Bool	1	1	-
+Am_4_	193	Bool	1	1	-
+Alarm	194	Bool	1	1	-
+Cvit	195	Bool	1	1	-
+Tper	196	Integer	1	1	-
+Nom_Cur	197	Integer	1	1	-
+Nom_cur_of	198	Integer	1	1	-
+State_1_	199	Integer	1	1	-
+State_2_	200	Integer	1	1	-
+State_3_	201	Integer	1	1	-
+State_4_	202	Integer	1	1	-
+Tf_m_1_	203	Integer	1	0	-
+Tf_m_2_	204	Integer	1	0	-
+Tf_m_3_	205	Integer	1	0	-
+Tf_m_4_	206	Integer	1	0	-
+Tf_m_5_	207	Integer	1	0	-
+Tf_m_6_	208	Integer	1	0	-
+Tf_h_1_	209	Integer	1	0	-
+Tf_h_2_	210	Integer	1	0	-
+Tf_h_3_	211	Integer	1	0	-
+Tf_h_4_	212	Integer	1	0	-
+Tf_h_5_	213	Integer	1	0	-
+Tf_h_6_	214	Integer	1	0	-
+Tskyd_1_e	215	Long	1	0	-
+Tskyd_2_e	217	Long	1	0	-
+Tskyd_3_e	219	Long	1	0	-
+Tskyd_4_e	221	Long	1	0	-
+Tzatr_1_e	223	Long	1	0	-
+Tzatr_2_e	225	Long	1	0	-
+Tzatr_3_e	227	Long	1	0	-
+Tzatr_4_e	229	Long	1	0	-
+Tosad_1_e	231	Long	1	0	-
+Tosad_2_e	233	Long	1	0	-
+Tosad_3_e	235	Long	1	0	-
+Tosad_4_e	237	Long	1	0	-
+Tprom_1_e	239	Long	1	0	-
+Tprom_2_e	241	Long	1	0	-
+Tprom_3_e	243	Long	1	0	-
+Tprom_4_e	245	Long	1	0	-
+Tvids_1_e	247	Long	1	0	-
+Tvids_2_e	249	Long	1	0	-
+Tvids_3_e	251	Long	1	0	-
+Tvids_4_e	253	Long	1	0	-
+Q_zd	256	Real	600	0	V_01
+d_L_sus_zd	258	Integer	600	0	0 100
+Nc_zd	259	Integer	600	0	-
+Tper_zd	260	Long	600	0	-
+Tcyc_zd	262	Long	600	0	-
+Tosad_1_zd	264	Long	600	0	-
+Tosad_2_zd	266	Long	600	0	-
+Tosad_3_zd	268	Long	600	0	-
+Tosad_4_zd	270	Long	600	0	-
+Tzatr_zd	272	Long	600	0	-
+Tskyd_zd	274	Long	600	0	-
+Tprom_zd	276	Long	600	0	-
+Tvids_zd	278	Long	600	0	-
+Tst_zd	280	Long	600	0	-
+Tavl_1	282	Long	600	0	-
+Tavl_2	284	Long	600	0	-
+Tavl_3	286	Long	600	0	-
+Tavl_4	288	Long	600	0	-
+Tavl_5	290	Long	600	0	-
+Tavl_6	292	Long	600	0	-
+f_V_01	294	Integer	600	0	-
+f_V_02	295	Integer	600	0	-
+f_V_03	296	Integer	600	0	-
+f_V_04	297	Integer	600	0	-
+f_V_05	298	Integer	600	0	-
+f_V_06	299	Integer	600	0	-
+f_V_07	300	Integer	600	0	-
+f_V_08	301	Integer	600	0	-
+f_V_09	302	Integer	600	0	-
+f_V_10	303	Integer	600	0	-
+f_V_11	304	Integer	600	0	-
+f_V_12	305	Integer	600	0	-
+f_V_13	306	Integer	600	0	-
+f_V_14	307	Integer	600	0	-
+f_V_15	308	Integer	600	0	-
+f_V_16	309	Integer	600	0	-
+f_V_17	310	Integer	600	0	-
+f_V_18	311	Integer	600	0	-
+f_V_19	312	Integer	600	0	-
+f_V_20	313	Integer	600	0	-
+f_V_21	314	Integer	600	0	-
+f_V_22	315	Integer	600	0	-
+f_V_23	316	Integer	600	0	-
+f_V_24	317	Integer	600	0	-
+f_V_25	318	Integer	600	0	-
+f_V_26	319	Integer	600	0	-
+f_V_27	320	Integer	600	0	-
+f_V_28	321	Integer	600	0	-
+f_V_29	322	Integer	600	0	-
+f_V_30	323	Integer	600	0	-
+f_V_31	324	Integer	600	0	-
+f_V_32	325	Integer	600	0	-
+Tmode	326	Bool	600	0	-
+Run	327	Bool	600	0	-
+Save	328	Bool	600	0	-
+Rskyd_1_	329	Bool	600	1	-
+Rskyd_2_	330	Bool	600	1	-
+Rskyd_3_	331	Bool	600	1	-
+Rskyd_4_	332	Bool	600	1	-
+Alarm_1_	350	Bool	1	0	-
+Alarm_2_	351	Bool	1	0	-
+Alarm_3_	352	Bool	1	0	-
+Alarm_4_	353	Bool	1	0	-

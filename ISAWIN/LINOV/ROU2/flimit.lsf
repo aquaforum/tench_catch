@@ -1,0 +1,14 @@
+#combinatory
+Out:=In_;
+
+if Out>Max_ then
+	Out:=Max_;
+end_if;
+
+if Out<Min_ then
+	Out:=Min_;
+end_if;
+
+flimit:=Out;
+
+

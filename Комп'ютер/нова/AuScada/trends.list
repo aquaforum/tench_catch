@@ -1,0 +1,152 @@
+frdrv04_trend_7_0 = plcfdmom,Link0004,Run0004,Alarm0004,V0004,V0024,V0044
+frdrv01_trend_7_0 = plcfdmom,Link0001,Run0001,Alarm0001,V0001,V0021,V0041
+frdrv02_trend_7_0 = plcfdmom,Link0002,Run0002,Alarm0002,V0002,V0022,V0042
+frdrv11_trend_7_0 = plcfdmom,Link0011,Run0011,Alarm0011,V0011,V0031,V0051
+frdrv12_trend_7_0 = plcfdmom,Link0012,Run0012,Alarm0012,V0012,V0032,V0052
+frdrv14_trend_7_0 = plcfdmom,Link0014,Run0014,Alarm0014,V0014,V0034,V0054
+frdrv15_trend_7_0 = plcfdmom,Link0015,Run0015,Alarm0015,V0015,V0035,V0055
+frdrv05_trend_7_0 = plcfdmom,Link0005,Run0005,Alarm0005,V0005,V0025,V0045
+frdrv03_trend_7_0 = plcfdmom,Link0003,Run0003,Alarm0003,V0003,V0023,V0043
+frdrv06_trend_7_0 = plcfdmom,Link0006,Run0006,Alarm0006,V0006,V0026,V0046
+frdrv08_trend_7_0 = plcfdmom,Link0008,Run0008,Alarm0008,V0008,V0028,V0048
+frdrv09_trend_7_0 = plcfdmom,Link0009,Run0009,Alarm0009,V0009,V0029,V0049
+
+frdrv21_trend1_7_1 = plcbp,V0001,V0021,V0041,V0059,SP0001,AM0001,Alarm0001,V0058
+frdrv22_trend1_7_1 = plcbp,V0002,V0022,V0042,L0002
+frdrv23_trend1_7_1 = plcbp,V0003,V0023,V0043,L0003
+
+routrend_trend_6_0 = plcrou,V0001,V0002,V0003,V0004,V0005,V0023
+roureg3_trend_6_0 = plcrou,V0023,V0024,SP2003,C0003,V0017,SPR0003,AM0003,V0004,V0018
+roureg4_trend_6_0 = plcrou,V0001,C0001,SP0001,AM0001
+roureg5_trend_6_0 = plcrou,V0017,Y0013,Y0014,X0013,X0014,closeStop,X0001
+routrend1_trend_6_0 = plcrou,V0018,V0006,V0019,V0007,V0020,V0008
+routrend2_trend_6_0 = plcrou,V0024,V0023,C0005,SP0005,AM0005
+
+routrend_1 = plcrou,V0022,V0011,C0006,SP0006,AM0006
+routrend_2 = plcrou,V0022,V0012,C0007,SP0007,AM0007
+
+
+trend1_trend_5_0 = plcgpi4,V0001,Y0013,Y0005,X0011,X0012
+trend2_trend_5_0 = plcgpi4,V0002,Y0014,X0014,Y0015,Y0002
+trend3_trend_5_0 = plcgpi4,Y0009,X0007,X0003,X0004,X0005,X0008,X0009,X0010
+trend8_trend_5_0 = plcgpi4,Y0010,X0006,X0001,X0002,X0015,X0008,X0009,X0010
+trend4_trend_5_0 = plcgpi4,V0007,V0008,V0009
+trend5_trend_5_0 = plcgpi4,V0003,V0004,V0005,V0006
+trend6_trend_5_0 = plcgpi4,V0017,V0018,V0019,V0020,V0021,V0022,V0023,V0024
+trend7_trend_5_0 = plcgpi4,V0025,V0026,V0027,V0028,V0029,V0030,V0031,V0032
+trend9_trend_5_0 = plcgpi4,V0011,V0012,C0004,SP0004
+trend10_trend_5_0 = plcgpi4,Y0002,X0028,X0041,X0040,Y0015,X0029,X0042,X0039
+
+Cft_cf4_4_4 = cf4,Ob*3,Qall*40,Fott*40,2000+1600*Xsgrz-1600*Xsgrb,Fsgr*43
+Cft_cf5_4_5 = cf5,Ob*3,Qall*40,Fott*40,2000+1600*Xsgrz-1600*Xsgrb,Fsgr*44
+
+drv_cf4_4_4 = cf4,Ob*3,I_a*20,I_b*20,Y_KM1,Y_KM2,Y_KM3,Y_KM4,Y_tyr
+drv_cf5_4_5 = cf5,Ob*3,I_a*20,I_b*20,Y_KM1,Y_KM2,Y_KM3,Y_KM4,Y_tyr
+
+c1trend_trend_4_0 = plcap0,V02,V03,V04,V05,V08
+
+a1ap_ap1_3_0 = tmaap1,(Lt1a_ind*40.0),(-Pt6a_ind*40.0),(Tt4a_ind*40.0),(Dt2a_ind*40.0),(Ey20a_ind*40.0)
+a1ap_ap2_3_1 = tmaap2,(Lt1a_ind*40.0),(-Pt6a_ind*40.0),(Tt4a_ind*40.0),(Dt2a_ind*40.0),(Ey20a_ind*40.0)
+a1ap_ap3_3_2 = tmaap3,(Lt1a_ind*40.0),(-Pt6a_ind*40.0),(Tt4a_ind*40.0),(Dt2a_ind*40.0),(Ey20a_ind*40.0)
+a1valves_ap1_3_0 = tmaap1,V_l,V_m,Spr_m,X_amsir,X_sir,Y_sir,X_voda,X_amvoda
+a1valves_ap2_3_1 = tmaap2,V_l,V_m,Spr_m,X_amsir,X_sir,Y_sir,X_voda,X_amvoda
+a1valves_ap3_3_2 = tmaap3,V_l,V_m,Spr_m,X_amsir,X_sir,Y_sir,X_voda,X_amvoda
+a1trend_trend_3_3 = tmaob,V0002*40.0,V0005*40.0,V0004*40.0,V0003*40.0,V0014*40.0,V0015*40.0,V0008*40.0,V0007*40.0
+
+v1reg01_trend_2_0 = plcvipar,V_06,V_03,V_26,C_01,SP_01,SP_04,SP2_01,AM_01
+v1reg02_trend_2_0 = plcvipar,V_01,V_02,C_02,SP_02,SP_03,AM_02
+v1reg03_trend_2_0 = plcvipar,V_02,V_15,C_03,SP_03,SP_04,AM_03
+v1reg04_trend_2_0 = plcvipar,V_15,V_04,C_04,SP_04,SP_05,AM_04
+v1reg05_trend_2_0 = plcvipar,V_04,V_05,C_05,SP_05,SP_07,AM_05
+v1reg06_trend_2_0 = plcvipar,V_22,C_06,SP_06,AM_06
+v1reg07_trend_2_0 = plcvipar,V_05,V_40,V_27,C_07,SP_07,SP2_07,SP3_07,AM_07,V_10
+v1reg08_trend_2_0 = plcvipar,V_17,C_08,SP_08,AM_08,V_15
+v1reg09_trend_2_0 = plcvipar,V_18,C_09,SP_09,AM_09
+v1reg10_trend_2_0 = plcvipar,V_19,C_10,SP_10,AM_10
+v1reg11_trend_2_0 = plcvipar,V_20,C_11,SP_11,AM_11
+v1reg12_trend_2_0 = plcvipar,V_21,C_12,SP_12,AM_12
+v1reg13_trend_2_0 = plcvipar,V_39,C_13,SP_13,AM_13
+v1reg14_trend_2_0 = plcvipar,V_08,C_14,SP_14,AM_14
+v1reg15_trend_2_0 = plcvipar,V_09,C_15,SP_15,AM_15,V_53,C_20
+v1reg16_trend_2_0 = plcvipar,V_03,V_01,C_16,SP_04,SP_02,AM_16
+v1reg17 = plcvipar,V_11,C_18,SP_18,AM_18
+v1reg18 = plcvipar,V_28,V_12,SPR_19,C_19,SP_19,AM_19
+v1reg19 = plcvipar,V_09,C_20,SP_15,AM_20
+v1reg20 = plcvipar,V_29,C_21,SP_21,AM_21
+v1reg21 = plcvipar,V_33,C_22,SP_22,AM_22
+
+v1amvoda_trend_2_0 = plcvipar,X_06,Y_01,V_01,V_06,V_10,C_20,X_07
+v1temp_trend_2_0 = plcvipar,V_33,V_34,V_35,V_36,V_37,V_38,V_39,V_14
+v1level_trend_2_0 = plcvipar,V_01,V_02,V_03,V_04,V_05,V_06,V_40,V_15
+v1presh_trend_2_0 = plcvipar,V_23,V_24,V_25,V_09,V_31
+v1water_trend_2_0 = plcvipar,V_07,V_08
+v1reg18_trend_2_0 = plcvipar,V_13,V_12,SPR_19,C_19,SP_19,AM_19
+vipaka_01 = plcvipar,V_16,V_41,V_52
+
+s1reg01_trend_1_0 = plcsatur,V_04,V_02,Spr_01,C_01,SP_01,AM_01,Rej_01
+s1reg02_trend_1_0 = plcsatur,V_03,V_02,Spr_02,C_02,SP_02,AM_02,Rej_02
+s1reg03_trend_1_0 = plcsatur,V_05,V_08,Spr_03,C_03,SP_03,AM_03,Rej_03
+s1reg04_trend_1_0 = plcsatur,V_21,V_11,C_04,SP_04,AM_04,V_12,V_17,V_18
+s1reg05_trend_1_0 = plcsatur,V_17,C_05,SP_05,AM_05
+s1reg06_trend_1_0 = plcsatur,V_19,C_06,SP_06,AM_06
+s1reg07_trend_1_0 = plcsatur,V_06,V_01,Spr_07,C_07,SP_07,AM_07,Rej_07
+s1reg08_trend_1_0 = plcsatur,V_07,V_01,Spr_08,C_08,SP_08,AM_08,Rej_08
+s1reg09_trend_1_0 = plcsatur,V_25,V_24,C_09,SP_09,AM_09
+s1reg10_trend_1_0 = plcsatur,V_26,V_33,C_10,SP_10,AM_10
+s1reg11_trend_1_0 = plcsatur,V_27,V_34,C_11,SP_11,AM_11
+s1reg12_trend_1_0 = plcsatur,V_08,V_41,Spr_12,C_12,SP_12,SP2_12,AM_12,Rej_12
+s1reg13_trend_1_0 = plcsatur,V_09,C_13,SP_13,AM_13
+s1reg14_trend_1_0 = plcsatur,V_22,V_08,C_14,SP_14,AM_14,V_13,V_17,V_18
+s1reg15_trend_1_0 = plcsatur,V_11,V_14,Spr_15,C_15,SP_15,SP2_15,AM_15,Rej_15
+s1reg16_trend_1_0 = plcsatur,V_16,C_16,SP_16,AM_16
+s1reg17_trend_1_0 = plcsatur,X_09,AM_05,V_17,SP_05,C_20,V_47,V_48,V_49
+s1reg18_trend_1_0 = plcsatur,V_50,V_48,C_05,SP_21,AM_21,V_47,V_49
+s1term1_trend_1_0 = plcsatur,V_35,V_36,V_37,V_24,V_25
+s1term2_trend_1_0 = plcsatur,V_33,V_26,V_34,V_27
+s1termpr_trend_1_0 = plcsatur,V_38,V_39
+s1flowvm_trend_1_0 = plcsatur,V_03,V_04,V_05
+s1flowj_trend_1_0 = plcsatur,V_02,V_03,V_06,V_08,V_10,V_11
+s1flowr_trend_1_0 = plcsatur,V_01,V_06,V_07,V_09
+s1levelpr_trend_1_0 = plcsatur,V_15,V_12,V_13
+s1leveldef_trend_1_0 = plcsatur,V_14
+s1level1sat_trend_1_0 = plcsatur,V_12,V_41,V_42,V_43,V_45,V_46
+s1level2sat_trend_1_0 = plcsatur,V_13,V_16
+s1phco2_trend_1_0 = plcsatur,V_21,V_22,V_23,V_17,V_18
+s1trend00_trend_1_0 = plcsatur,V_45
+s1bleding_trend_1_0 = plcsatur,Y_01,Y_02,Y_04,Y_05,V_37,V_38,V_39
+s1pump_trend_1_0 = plcsatur,V_15,Y_08,X_06,X_07,AM_PUMP_01
+s1trend_1 = plcsatur,V_32,V_51,Spr_17,C_17,SP_17,AM_17
+
+d1reg01_trend_0_0 = plcdifuz,V_01,C_01,SP_01,AM_01
+d1reg02_trend_0_0 = plcdifuz,V_02,C_02,SP_02,AM_02
+d1reg03_trend_0_0 = plcdifuz,V_03,C_03,SP_03,AM_03
+d1reg04_trend_0_0 = plcdifuz,V_04,C_04,SP_04,AM_04
+d1reg05_trend_0_0 = plcdifuz,V_06,C_05,SP_05,AM_05
+d1reg06_trend_0_0 = plcdifuz,V_14,V_10,SPR_06,C_06,SP_06,AM_06,V_29
+d1reg07_trend_0_0 = plcdifuz,V_24,C_07,SP_07,AM_07
+d1reg08_trend_0_0 = plcdifuz,V_25,C_08,SP_08,AM_08
+d1reg09_trend_0_0 = plcdifuz,V_22,V_15,C_09,SP_09,SP2_09,AM_09
+d1reg10_trend_0_0 = plcdifuz,V_13,C_10,SP_10,AM_10,V_08,V_09,
+d1reg11_trend_0_0 = plcdifuz,V_27,SP_11,C_11,AM_11,V_29,V_26,V_16
+d1reg13_trend_0_0 = plcdifuz,V_26,C_13,SP_13,AM_13
+d1reg14_trend_0_0 = plcdifuz,V_28,SP_14,C_14,AM_14
+d1level_trend_0_0 = plcdifuz,V_18,V_19,V_20,V_21,V_22,V_23
+d1temp_trend_0_0 = plcdifuz,V_01,V_02,V_03,V_04,V_05,V_07
+d1water_trend_0_0 = plcdifuz,V_24,V_25,V_06,V_07,V_11
+d1mass_trend_0_0 = plcdifuz,W0001,W0002
+
+boiler_1=plck2,Ldrum,Fpara,Fwater,cPump,Sp0001,Sp0007,xDrumLH2,xDrumLH1,xDrumLl1,xDrumLl2
+boiler_2=plck2,Pair,cFan,Sp0002
+boiler_3=plck2,Pvac,cExh,Sp0003
+boiler_4=plck2,Ppara,Fpara,gGas,cGas,Sp0004,Sp0007
+boiler_5=plck2,Tpar,cTerm,Sp0005
+boiler_6=plck2,QO2fume,Pair,cFan,Sp0006
+boiler_7=plck2,Fpara,Ppara,gGas,cGas,Sp0007,Sp0004
+boiler_8=plck2,Tk,cGas,Sp0008
+boiler_9=plck2,PumpSpeed,PumpCurrent,PumpVoltage,PumpDC,linkPump,xPumpRun,xPumpAuto
+boiler_10=plck2,FanSpeed,FanCurrent,FanVoltage,FanDC,linkFan,xFanRun,xFanAuto
+boiler_11=plck2,ExhSpeed,ExhCurrent,ExhVoltage,ExhDC,linkExh,xExhRun,xExhAuto
+boiler_12=plck2,xFire1,xDrumLH2,xDrumLH1,xDrumLl1,xDrumLl2,xDrumPh,xAirPl,xVacPl,xBump,xGasPl,xGasPh,yPlcStop,ySerena
+boiler_13=plck2,xGasAuto,yGasOpen,yGasClose,gGas,cGas,xFire1,xTight,yCutofVal,yBurnerVal,ySafeVal,yLitherVal,xGasManOpen
+boiler_14=plck2,xTermAuto,yTermOpen,yTermClose,ySuppOpen,ySuppClose,gTerm,cTerm,gSupp,cSupport
+boiler_15=plck2,Fgas,Fpara,Fwater,Fair,Ldrum,Pg15a,Ppara,Pp7a,Tpar,Tv3a,Tv4a,Tk,Ta5a,Ta6a,Tp17a,Tp18a,Pair,Pvac,Pv12a,gGas,gTerm,gSupp,QO2fume,Vx,cPump,cFan,cExh,cGas,cTerm,cSupport

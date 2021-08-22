@@ -1,0 +1,12 @@
+#include <tasy0def.h>
+
+
+extern UFP uspdef_retain_x (char *name);
+extern UFP uspdef_a4_20_to (char *name);
+
+_asm ("
+USPDEF:
+		dc.l	uspdef_retain_x
+		dc.l	uspdef_a4_20_to
+		dc.l	0
+");

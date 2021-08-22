@@ -1,0 +1,20 @@
+_section=_begin {
+Runner(_FBD)
+fl_fb_1(_FBD)
+ctrl_1(_ST)
+main(_ST)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+off_all(_ST)
+}
+
+_section=_fblocks {
+}
+

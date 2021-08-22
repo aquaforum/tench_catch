@@ -1,0 +1,10 @@
+#include <tasy0def.h>
+
+
+extern UFP uspdef_r_mb_rel (char *name);
+
+_asm ("
+USPDEF:
+		dc.l	uspdef_r_mb_rel
+		dc.l	0
+");

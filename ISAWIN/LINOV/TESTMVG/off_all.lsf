@@ -1,0 +1,16 @@
+#combinatory
+		Half_1_:=false;
+		Full_1_:=false;
+
+		Half_2_:=false;
+		Full_2_:=false;
+
+		Half_3_:=false;
+		Full_3_:=false;
+
+		Half_4_:=false;
+		Full_4_:=false;
+
+
+
+off_all:=true;

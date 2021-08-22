@@ -1,0 +1,14 @@
+1. Температура 1 зони	V_01				C_01	SP_01			AM_01		Rev_01	Kpr_01	Ti_01	Td_01	Xmin_01	Xmax_01						Mode_01	P0_01	.
+2. Температура 2 зони	V_02				C_02	SP_02			AM_02		Rev_02	Kpr_02	Ti_02	Td_02	Xmin_02	Xmax_02						Mode_02	P0_02	.
+3. Температура 3 зони	V_03				C_03	SP_03			AM_03		Rev_03	Kpr_03	Ti_03	Td_03	Xmin_03	Xmax_03						Mode_03	P0_03	.
+4. Температура 4 зони	V_04				C_04	SP_04			AM_04		Rev_04	Kpr_04	Ti_04	Td_04	Xmin_04	Xmax_04						Mode_04	P0_04	.
+5. Температура гарячої води	V_06				C_05	SP_05			AM_05		Rev_05	Kpr_05	Ti_05	Td_05	Xmin_05	Xmax_05						Mode_05	P0_05	.
+6. Стружка-вода	V_14	V_10	V_29	SPR_06	C_06	SP_06		SP2_13	AM_06	Rej_06	Rev_06	Kpr_06	Ti_06	Td_06	Xmin_06	Xmax_06	K1_06	K2_06			Kkor_06	Mode_06	P0_06	.
+7. Рівень в зб гарячої води	V_24				C_07	SP_07			AM_07		Rev_07	Kpr_07	Ti_07	Td_07	Xmin_07	Xmax_07						Mode_07	P0_07	.
+8. Рівень в зб живильної води	V_25				C_08	SP_08			AM_08		Rev_08	Kpr_08	Ti_08	Td_08	Xmin_08	Xmax_08						Mode_08	P0_08	.
+9. Відкачка з дифузії	V_22	V_15			C_09	SP_09	SP2_09		AM_09		Rev_09	Kpr_09	Ti_09	Td_09	Xmin_09	Xmax_09		K2_09	K3_09			Mode_09	P0_09	.
+10. Подача на утфельний підігрівач	V_13				C_10	SP_10			AM_10		Rev_10	Kpr_10	Ti_10	Td_10	Xmin_10	Xmax_10						Mode_10	P0_10	.
+11. Рівень в пульполовушці	V_27				C_11	SP_11			AM_11		Rev_11	Kpr_11	Ti_11	Td_11	Xmin_11	Xmax_11						Mode_11	P0_11	.
+12. Рівень в трубі	V_16				C_12	SP_12			AM_12		Rev_12	Kpr_12	Ti_12	Td_12	Xmin_12	Xmax_12						Mode_12	P0_12	.
+13. Рівень в зб жом.пр води	V_26	V_29			C_13	SP_13	SP2_13		AM_13	Rej_13	Rev_13	Kpr_13	Ti_13	Td_13	Xmin_13	Xmax_13								.
+14. Температура жом.пр води	V_28				C_14	SP_14			AM_14		Rev_14	Kpr_14	Ti_14	Td_14	Xmin_14	Xmax_14								.

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/text">
+        <file>listall.txt</file>
+        <file>list.txt</file>
+    </qresource>
+</RCC>

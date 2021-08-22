@@ -1,0 +1,229 @@
+K19g_c	101	EBOOL	1	1	-	Клапан выгрузки (КОМАНДА)
+K11g_c	102	EBOOL	1	1	-	Клапан сока (КОМАНДА)
+K17g_c	103	EBOOL	1	1	-	Клапан сброса вакуума (КОМАНДА)
+K18g_c	104	EBOOL	1	1	-	Клапан малого вакуума (КОМАНДА)
+K20g_c	105	EBOOL	1	1	-	Циркулятор (КОМАНДА)
+K8g_c	106	EBOOL	1	1	-	Клапан БП (КОМАНДА)
+K14g_c	107	EBOOL	1	1	-	Пропарка стекол (КОМАНДА)
+K13g_c	108	EBOOL	1	1	-	Пропарка верхней части (КОМАНДА)
+K15g_c	109	EBOOL	1	1	-	Пропарка выгрузки (КОМАНДА)
+K10g_c	110	EBOOL	1	1	-	Клапан АммВ (КОМАНДА)
+K9g_c	111	EBOOL	1	1	-	Клапан ЗП  (КОМАНДА)
+K16g_c	112	EBOOL	1	1	-	Клапан затравки (КОМАНДА)
+K7g_c	113	EBOOL	1	1	-	Клапан сиропа  (КОМАНДА)
+K12g_c	114	EBOOL	1	1	-	Пропарка коллектора (КОМАНДА)
+K23g_c	115	EBOOL	1	1	-	Клапан отвода пропарки (КОМАНДА)
+Ap_k4	116	EBOOL	1	1	-	Режим управления  клапаном А/Р
+Ap_k6	117	EBOOL	1	0	-
+Ap_k13	118	EBOOL	1	0	-
+Ap_k14	119	EBOOL	1	0	-	Ap_k14
+Ap_k19	120	EBOOL	1	0	-	Ap_k19
+Ap_k17	121	EBOOL	1	0	-	Ap_k17
+Ap_k18	122	EBOOL	1	0	-	Ap_k18
+Ap_k8	123	EBOOL	1	0	-	Ap_k8
+Ap_k9	124	EBOOL	1	0	-	Ap_k9
+Ap_k11	125	EBOOL	1	0	-	Ap_k11
+Ap_k16	126	EBOOL	1	0	-
+Ap_k10	127	EBOOL	1	0	-
+Ap_k20	128	EBOOL	1	0	-
+Ap_k15	129	EBOOL	1	0	-
+Ap_k7	130	EBOOL	1	0	-
+Ap_k12	131	EBOOL	1	0	-
+Ap_k23	132	EBOOL	1	0	-
+A_lt2a	133	EBOOL	1	1	-	АПС уровня в сборнике сиропа
+A_lt8a	134	EBOOL	1	1	-	АПС уровня в сборнике воды
+a_lt7a	135	EBOOL	1	1	-	АПС уровня в сборнике БП
+a_lt5a	136	EBOOL	1	1	-	АПС уровня в сборнике ЗП
+A_k19	137	EBOOL	1	0	-
+A_k7	138	EBOOL	1	0	-
+A_k8	139	EBOOL	1	0	-
+A_k9	140	EBOOL	1	0	-
+A_k10	141	EBOOL	1	0	-
+A_k11	142	EBOOL	1	0	-
+A_k12	143	EBOOL	1	0	-
+A_k13	144	EBOOL	1	0	-
+A_k14	145	EBOOL	1	0	-
+A_k15	146	EBOOL	1	0	-
+A_k16	147	EBOOL	1	0	-
+A_k17	148	EBOOL	1	0	-
+A_k18	149	EBOOL	1	0	-
+A_sirop	150	EBOOL	1	1	-	Отсутствие уровня сиропа в сборнике
+A_temp	151	EBOOL	1	1	-	Нарушение температуры
+A_par	152	EBOOL	1	1	-	Нарушение давления пара
+A_vak	153	EBOOL	1	1	-	Снижение разрежения в ВА
+A_speed	154	EBOOL	1	1	-	Несоответствие оборотов ЭП
+A_power	155	EBOOL	1	1	-	Нарушение мощности ЭП
+A_kl	156	EBOOL	1	0	-
+A_msg	157	EBOOL	1	0	-
+A_signal_par	158	EBOOL	1	0	-
+A_presure	159	EBOOL	1	1	-	Снижение давления воздуха в магистрали
+A_k23	160	EBOOL	1	0	-
+K7_out	161	EBOOL	1	0	-
+K8_out	162	EBOOL	1	0	-
+K9_out	163	EBOOL	1	0	-
+K10_out	164	EBOOL	1	0	-
+K11_out	165	EBOOL	1	0	-
+K13_out	166	EBOOL	1	0	-
+K14_out	167	EBOOL	1	0	-
+K15_out	168	EBOOL	1	0	-
+K16_out	169	EBOOL	1	0	-
+K17_out	170	EBOOL	1	0	-
+K18_out	171	EBOOL	1	0	-
+K19_out	172	EBOOL	1	0	-
+K20_out	173	EBOOL	1	0	-
+K23_out	174	EBOOL	1	0	-
+K12_out	175	EBOOL	1	0	-
+msg_A_sgu	176	EBOOL	1	1	-	Сообщение НЕДОСТАТОЧНЫЙ УРОВЕНЬ НА СГУЩЕНИИ
+Rezi	177	EBOOL	1	1	-	Команда СБРОС
+msg_A_nab	178	EBOOL	1	1	-	Сообщение НЕДОСТАТОЧНЫЙ УРОВЕНЬ НАБОРА
+msg_green	179	EBOOL	1	1	-	Сообщение ОТСУТСТВИЕ УРОВНЯ В СБОРНИКЕ ЗП
+msg_Hlevel	180	EBOOL	1	1	-	Сообщение ВЫСОКИЙ УРОВЕНЬ на стадии "ПОДГОТОВКА"
+msg_Nabor	181	EBOOL	1	1	-	"Сообщение ЗАПРОС НА НАЧАЛО НАБОРА
+msg_Sirop_lim	182	EBOOL	1	1	-	Сообщение ОТСУТСТВИЕ ЛИМИТА В СБОРНИКЕ СИРОПА НА НАБОРЕ
+msg_Utfel_lim	183	EBOOL	1	1	-	Сообщение ОТСУТСТВИЕ ЛИМИТА В СБОРНИКЕ УТФЕЛЯ
+msg_vugruzka	184	EBOOL	1	1	-	Сообщение НАЧАТЬ ВЫГРУЗКУ
+msg_water	185	EBOOL	1	1	-	Сообщение ОТСУТСТВИЕ УРОВНЯ В СБОРНИКЕ ВОДЫ
+msg_white	186	EBOOL	1	1	-	Сообщение ОТСУТСТВИЕ УРОВНЯ В СБОРНИКЕ БП
+msg_zapret	187	EBOOL	1	1	-	Сообщение ЗАПРЕТ ВЫГРУЗКИ
+msg_zatr	188	EBOOL	1	1	-	Сообщение ЗАПРОС О ГОТОВНОСТИ ЗАТРАВКИ
+Temp_vak	189	EBOOL	1	1	-	Переключение регулирования температура-разрежение 0/1
+Dt_mt	190	EBOOL	1	1	-	* Выбор регулирования на готовности
+Water_avt	191	EBOOL	1	1	-	Автоматический режим включения УДЕРЖАНИЕ ВОДА
+Sy20a_stop	192	EBOOL	1	0	-
+Kod_dw	193	EBOOL	1	1	-	Кнопка "ВНИЗ"
+Kod_up	194	EBOOL	1	1	-	Кнопка "ВВЕРХ"
+Stepp	195	EBOOL	1	1	-	Команда ШАГ
+Water_key	196	EBOOL	1	1	-	Кнопка оператора УДЕРЖАНИЕ ВОДА
+Kod_blok	197	EBOOL	1	1	-	Кнопка блокировки
+Water	198	EBOOL	1	1	-	* Команда УДЕРЖАНИЕ ВОДА
+Al_c	199	EBOOL	1	1	-	Аварийная сигнализация (КОМАНДА)
+K17an_inv	200	EBOOL	1	0	-
+A_teh	201	EBOOL	1	0	-
+k17_sel	202	EBOOL	1	0	-
+plan_g	203	EBOOL	1	0	-
+A_sok_flow	204	EBOOL	1	0	-
+sok_flow_msg	205	EBOOL	1	0	-
+sok_lvl_msg	206	EBOOL	1	0	-
+Slow_par	207	EBOOL	1	0	-
+Dt2a_mah_ek	192	Integer	1	0	-	*
+Dt2a_mih_ek	193	Integer	1	0	-	*
+Pt5a_mah	194	Integer	1	0	-
+Pt5a_mah_ek	195	Integer	1	0	-
+Pt5a_mih	196	Integer	1	0	-
+Pt5a_mih_ek	197	Integer	1	0	-
+Pt6a_mah	198	Integer	1	0	-
+Pt6a_mah_ek	199	Integer	1	0	-	*
+Pt6a_mih	200	Integer	1	0	-
+Ey20a_ind	201	Integer	1	1	-	Мощность ЭП циркулятора
+Moment_ind	202	Integer	1	1	-	Индикация задания момента для стадии
+Kod	203	Integer	1	1	-	Номер стадии процесса
+Tkl_zad	204	Integer	1	1	-	Задание времени контроля работы клапанов
+Tm_nab_zad	205	Integer	1	1	-	Задание времени набора секунды
+Tm_otvod_zad	206	Integer	1	1	-	Время задержки отвода пропарки, мин
+Tm_par_zad	207	Integer	1	1	-	Задание времени пропарки минуты
+Tm_rost_zad	208	Integer	1	1	-	Задание времени роста минуты
+Tm_sgu_zad	209	Integer	1	1	-	Задание времени сгущения секунды
+Tm_vugruz_zad	210	Integer	1	1	-	Задание времени выгрузки минуты
+Tm_zatr_min_zad	211	Integer	1	1	-	Задание времени затравки минуты
+Tm_zatr_sec_zad	212	Integer	1	1	-	Задание времени затравки секунды
+Tm_zatr_zad	213	Integer	1	0	-	*
+Tp_imp_zad	214	Integer	1	1	-	Длительность интервала между импульсами регулятора пара
+Tkl_19_zad	215	Integer	1	1	-	Задание времени контроля работы клапана к19
+T_rost_ind	216	Integer	1	1	-	* Индикация времени роста
+T_zatr_ind	217	Integer	1	1	-	* Индикация времени затравки
+Moment_zad	218	Integer	1	1	-	Задание момента
+T_vugruz_ind	219	Integer	1	1	-	* Индикация времени выгрузки
+Pt6a_mih_ek	220	Integer	1	0	-	*
+Lt1a_mah	221	Integer	1	0	-
+Lt1a_mah_ek	222	Integer	1	0	-
+Lt1a_mih	223	Integer	1	0	-
+Lt1a_mih_ek	224	Integer	1	0	-
+Tt4a_mah	225	Integer	1	0	-
+Tt4a_mah_ek	226	Integer	1	0	-	*
+Tt4a_mih_ek	227	Integer	1	0	-	*
+Indication_stad	228	Integer	1	1	-	Индикация времени стадий
+dication_hour	229	Integer	1	1	-	Индикация времени цикла часы
+Indication_min	230	Integer	1	1	-	Индикация времени цикла минуты
+K4	231	Integer	1	1	-	"Задание выходного сигнала регулятора пара"
+K6	232	Integer	1	0	-
+Tv_imp_zad	233	Integer	1	1	-	Длительность интервала между импульсами регулятора вакуума
+Hod_v_zad	234	Integer	1	0	-
+Vak_max_zad	235	Integer	1	0	-
+Vak_min_zad	236	Integer	1	0	-
+Hod_p_zad	237	Integer	1	1	-	"Ход регулятора пара за один шаг"
+Par_max_zad	238	Integer	1	1	-	Макс. открытие заслонки пара
+Par_min_zad	239	Integer	1	1	-	Мин. открытие заслонки пара
+Ha20a_zad	240	Integer	1	1	-	"Задание оборотов в руч. режиме"
+K17_stmn	241	Integer	1	0	-
+K17_stmx	242	Integer	1	0	-
+K17an_max	243	Integer	1	0	-
+K17an_min	244	Integer	1	0	-
+K17_m	245	Integer	1	0	-
+T_imp_slow	246	Integer	1	0	-
+Lt1a_ind	501	Real	1	1	-	Уровень в ВА
+Uroven_ind	503	Real	1	1	-	Индикация задания уровня для стадии
+Tt4a_ind	505	Real	1	1	-	Температура в ВА
+Termo_ind	507	Real	1	1	-	Индикация задания температуры стадии
+Dt2a_ind	509	Real	1	1	-	Содержание СВ в ВА
+Cv_ind	511	Real	1	1	-	Индикация задания СВ для стадии
+Delta	513	Real	1	1	-	* Дельта температуры в ВА
+Delta_ind	515	Real	1	1	-	Индикация ДЕЛЬТА
+Pt6a_ind	517	Real	1	1	-	Разрежение в ВА
+Vakuum_ind	519	Real	1	0	-
+Sy20a_ind	521	Real	1	1	-	Обороты циркулятора
+Ob_ind	523	Real	1	1	-	Индикация задания оборотов для стадии
+Lt1a_nab_zad	525	Real	1	1	-	Задание набора ВА
+Lt1a_r1_zad	527	Real	1	1	-	Задание уровня роста 1
+Lt1a_r2_zad	529	Real	1	1	-	Задание уровня роста 2
+Lt1a_sgu_zad	531	Real	1	1	-	Задание сгущения ВА
+Lt1a_uvar_zad	533	Real	1	1	-	Задание уровня перехода на уваривание
+Lt1a_zel_zad	535	Real	1	1	-	Задание уровня перехода на зеленую
+Cv_bel_zad	537	Real	1	1	-	СВ подачи белой
+Cv_got_zad	539	Real	1	0	-
+Cv_kachka	541	Real	1	1	-	СВ подкачки
+Cv_rost1_zad	543	Real	1	1	-	СВ роста 1
+Cv_rost2_zad	545	Real	1	1	-	СВ роста 2
+Cv_uvar_zad	547	Real	1	1	-	СВ уваривания
+Ob_rost_f_zad	549	Real	1	1	-	Задание оборотов рост1 НАЧАЛО
+Ob_sgu_f_zad	551	Real	1	1	-	Задание оборотов сгущения НАЧАЛО
+Ob_sgu_s_zad	553	Real	1	1	-	Задание оборотов сгущения КОНЕЦ
+Pp_sgu_zad	555	Real	1	1	-	Дельта Т для сгущения
+Ob_rost_s_zad	557	Real	1	1	-	Задание оборотов рост1 КОНЕЦ
+Pp_rost1_zad	559	Real	1	1	-	Дельта Т для рост1
+Pp_rost2_zad	561	Real	1	1	-	Дельта Т для рост2
+Va_rost1_zad	563	Real	1	1	-	Разрежение на стадии рост1
+Va_rost2_zad	565	Real	1	1	-	Разрежение на стадии рост2
+Vv_rost1_zad	567	Real	1	1	-	Температура рост1
+Vv_rost2_zad	569	Real	1	1	-	Температура рост2
+Ob_zatr_zad	571	Real	1	1	-	Задание оборотов затравка
+Pp_zatr_zad	573	Real	1	1	-	Дельта Т для затравки
+Va_zatr_zad	575	Real	1	1	-	Разрежение на стадии затравки
+Vv_zatr_zad	577	Real	1	1	-	Температура затравки
+Zatravka	579	Real	1	1	-	Значение СВ ввода затравки
+Lt1a_bel_zad	581	Real	1	1	-	Задание уровня перехода на белую
+Ob_bel_f_zad	583	Real	1	1	-	Задание оборотов БП НАЧАЛО
+Ob_bel_s_zad	585	Real	1	1	-	Задание оборотов БП КОНЕЦ
+Pp_bel_zad	587	Real	1	1	-	Дельта Т для БП
+Va_bel_zad	589	Real	1	1	-	Разрежение на стадии БП
+Vv_bel_zad	591	Real	1	1	-	Температура БП
+Ob_uvar_zad	593	Real	1	1	-	Задание оборотов уваривания
+Pp_uvar_zad	595	Real	1	1	-	Дельта Т для уваривания
+Va_uvar_zad	597	Real	1	1	-	Разрежение на стадии уваривания
+Vv_uvar_zad	599	Real	1	1	-	Температура уваривания
+Ob_gotov_zad	601	Real	1	1	-	Задание оборотов готовности
+Ob_kachka_zad	603	Real	1	1	-	Задание оборотов подкачка
+Dt2a_mah	605	Real	1	0	-
+Dt2a_mih	607	Real	1	0	-
+Pt5a_ind	609	Real	1	1	-	Давление пара в греющей камере
+zat_max	611	Real	1	1	-	Значение коэф-та подкачки на затравке макс
+zat_min	613	Real	1	1	-	Значение коэф-та подкачки на затравке мин
+Pt6a_z	615	Real	1	0	-
+K17_delm	617	Real	1	0	-
+K17_deln	619	Real	1	0	-
+svm	621	Real	1	0	-
+K_lev	623	Real	1	0	-
+zatr_diff	625	Real	1	0	-
+DT_slow	627	Real	1	0	-
+St_i	701	Long	1	1	-	Сигнализация состояния дискретных входов
+St_i1	702	Long	1	1	-
+St_i2	703	Long	1	1	-

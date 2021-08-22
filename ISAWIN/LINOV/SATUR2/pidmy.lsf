@@ -1,0 +1,29 @@
+#combinatory
+(**)
+	Ke_:=(PV_-SP_)*Kp_;
+
+	if Mode_ then  (*Якщо ПІД регулятор*)
+		Sum_:=Sum_+Ke_*REAL(SYSTEM(SYS_TCURRENT,0))*0.001/Ti_; (*Рахувати інтегральну складову*)
+		Ke_:=Ke_+Td_; (*Добавити диференційну складову*)
+	else (*інакше якщо П-регулятор*)
+		Sum_:=P0_;		 (*інтегральна складова тупо дорівнює P0_*)
+	end_if;
+
+	Xt_:=Ke_+Sum_;
+
+	if Xt_ >Xmax_ then 
+		Sum_:=Xmax_-Ke_;
+	end_if;
+
+	if Xt_<Xmin_ then 
+		Sum_:=Xmin_-Ke_;
+	end_if;
+
+if Auto_ then (*Якщо включено автоматичний режим*)
+	Xout_:=Ke_+Sum_;
+else
+	Xout_:=X0_;         (* Виставити вихід*)
+	Sum_:=X0_-Ke_;    (* Розрахувати значення ініціалізації інтегратора *)
+end_if;
+
+Sum0_:=Sum_;

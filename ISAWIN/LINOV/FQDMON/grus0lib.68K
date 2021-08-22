@@ -1,0 +1,10 @@
+#include <tasy0def.h>
+
+
+extern UFP uspdef_wd_long (char *name);
+
+_asm ("
+USPDEF:
+		dc.l	uspdef_wd_long
+		dc.l	0
+");

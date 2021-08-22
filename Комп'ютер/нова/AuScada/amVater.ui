@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AmVater</class>
+ <widget class="QWidget" name="AmVater">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>371</width>
+    <height>627</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Подача води</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="2">
+    <widget class="QFrame" name="mMnemo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#mMnemo
+{
+	background-image: url(:/mnemo/AmVoda.svg);
+	background-repeat : no-repeat;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QCheckBox" name="cbY">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>155</y>
+        <width>25</width>
+        <height>46</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCheckBox{
+min-width: 25px;
+min-height: 46px;
+max-width: 25px;
+max-height: 46px;
+}
+QCheckBox:checked
+{
+	
+	image: url(:/butons/pict/klapan_diskrette_vert_on_na_25x26.png);
+}
+
+QCheckBox:unchecked
+{
+	image: url(:/butons/pict/klapan_diskrette_vert_off_na_25x46.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+	height: 46px;
+	width: 25px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pbPV_2">
+      <property name="geometry">
+       <rect>
+        <x>229</x>
+        <y>37</y>
+        <width>20</width>
+        <height>164</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Highlight">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>155</green>
+            <blue>55</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Highlight">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>155</green>
+            <blue>55</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Highlight">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>214</red>
+            <green>213</green>
+            <blue>211</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="maximum">
+       <number>4000</number>
+      </property>
+      <property name="value">
+       <number>1000</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pbPV_1">
+      <property name="geometry">
+       <rect>
+        <x>37</x>
+        <y>257</y>
+        <width>20</width>
+        <height>84</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Highlight">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>155</green>
+            <blue>55</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Highlight">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>155</green>
+            <blue>55</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Highlight">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>214</red>
+            <green>213</green>
+            <blue>211</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="maximum">
+       <number>4000</number>
+      </property>
+      <property name="value">
+       <number>1000</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QLCDNumber" name="ldPV_2">
+      <property name="geometry">
+       <rect>
+        <x>225</x>
+        <y>12</y>
+        <width>31</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="digitCount">
+       <number>3</number>
+      </property>
+      <property name="segmentStyle">
+       <enum>QLCDNumber::Flat</enum>
+      </property>
+      <property name="value" stdset="0">
+       <double>0.000000000000000</double>
+      </property>
+      <property name="intValue" stdset="0">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QLCDNumber" name="ldPV_1">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>230</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="digitCount">
+       <number>3</number>
+      </property>
+      <property name="segmentStyle">
+       <enum>QLCDNumber::Flat</enum>
+      </property>
+      <property name="intValue" stdset="0">
+       <number>123</number>
+      </property>
+     </widget>
+     <widget class="QSlider" name="vsSPzb">
+      <property name="geometry">
+       <rect>
+        <x>17</x>
+        <y>253</y>
+        <width>25</width>
+        <height>93</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSlider::groove:vertical {
+     background: rgba(0, 0, 0, 0);
+/*     position: absolute;  абсолютная позиция в 4px слева и справа от виджета. установка полей виджета также будет работать... */
+/*     left: 4px; right: 4px;*/
+ }
+
+ QSlider::handle:vertical {
+	image: url(:/slider/pict/SPR_1.png)
+ }
+</string>
+      </property>
+      <property name="maximum">
+       <number>4000</number>
+      </property>
+      <property name="value">
+       <number>400</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbX">
+      <property name="geometry">
+       <rect>
+        <x>53</x>
+        <y>179</y>
+        <width>16</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QCheckBox{
+min-width: 16px;
+min-height: 16px;
+max-width: 16px;
+max-height: 16px;
+}
+QCheckBox:checked
+{
+	image: url(:/butons/pict/bool_green_true_48x48.png);
+}
+
+QCheckBox:unchecked
+{
+	image: url(:/butons/pict/bool_green_false_48x48.png);
+}
+
+QCheckBox:indicator
+{
+	background: rgba(0, 0, 0, 0);
+}
+</string>
+      </property>
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QSlider" name="vsSPkr">
+      <property name="geometry">
+       <rect>
+        <x>208</x>
+        <y>33</y>
+        <width>25</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QSlider::groove:vertical {
+     background: rgba(0, 0, 0, 0);
+/*     position: absolute;  абсолютная позиция в 4px слева и справа от виджета. установка полей виджета также будет работать... */
+/*     left: 4px; right: 4px;*/
+ }
+
+ QSlider::handle:vertical {
+	image: url(:/slider/pict/SPR_1.png)
+ }
+</string>
+      </property>
+      <property name="maximum">
+       <number>4000</number>
+      </property>
+      <property name="value">
+       <number>400</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QFrame" name="frame_2">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="1" column="1">
+       <widget class="QDoubleSpinBox" name="sbSPzb">
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lbSP_1">
+        <property name="text">
+         <string>Мін рівень в зб соку</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="cbAM">
+        <item>
+         <property name="text">
+          <string>Ручний</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Автомат</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lbDSP_1">
+        <property name="text">
+         <string>Приріст рівня в збірнику</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Режим клапан</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QDoubleSpinBox" name="sbDSPzb">
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QDoubleSpinBox" name="sbSPkr">
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="lbSP_2">
+        <property name="text">
+         <string>Мін рівень в 1 корп.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QDoubleSpinBox" name="sbDSPkr">
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="lbSP_3">
+        <property name="text">
+         <string>Приріст рівеня в 1 корп.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>216</width>
+       <height>24</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="Exit">
+     <property name="text">
+      <string>Готово</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="auscada.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>Exit</sender>
+   <signal>clicked()</signal>
+   <receiver>AmVater</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>373</x>
+     <y>413</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>240</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

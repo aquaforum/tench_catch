@@ -1,0 +1,4 @@
+#define St_sync 16
+#define St_zagr 4
+#define St_fug 5
+

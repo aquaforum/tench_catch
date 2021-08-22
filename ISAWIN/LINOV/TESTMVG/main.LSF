@@ -1,0 +1,240 @@
+#combinatory
+nfw:=ana(Run_1_) + ana(Run_2_) + ana(run_3_)+ana(run_4_);
+
+if nfw>0 then (*Якщо є фільтри в роботі*)
+	Tper:=mod(time_s-Tcyc_zd,(720/Tper_zd)/nfw);
+else
+	Tper:=-1;
+end_if;
+Queue_run:=redge(Tper=0,re_Tper);
+
+if Queue_run then (*Якщо треба просунути чергу*)
+
+Nom_cur:=Nom_cur+1;
+if Nom_cur>4 then 
+	Nom_cur:=1;
+end_if;
+
+(*Пошук першого включеного фільтра в батареї*)
+Nom_first:=0;
+for i:=4 to 1 by -1 do
+	case i of
+		1:
+			if Run_1_ AND State_1_>ST_START AND Tst_1_ then 
+				Nom_first:=1;
+			end_if;
+		2:
+			if Run_2_ AND State_2_>ST_START AND Tst_2_ then 
+				Nom_first:=2;
+			end_if;
+		3:
+			if Run_3_ AND State_3_>ST_START AND Tst_3_ then 
+				Nom_first:=3;
+			end_if;
+		4:
+			if Run_4_ AND State_4_>ST_START AND Tst_4_ then 
+				Nom_first:=4;
+			end_if;
+	end_case;
+end_for;
+
+(*Пошук наступного фільтра в автоматі*)
+res:=true; (*Встановити прапор пошуку*)
+for i:=1 to 4 by 1 do
+	if res then (*Поки пошук не завершино*)
+		case Nom_cur of (*Перевіряти режими*)
+			1:
+				if Amr_1_ AND State_1_=ST_FLT AND Tst_1_ then (*Якщо автомати увімкнути  тоді*)
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=2; (*внаступному циклі перевірити другий фільтр*)
+				end_if;
+			2:(*пов*)
+				if Amr_2_ AND State_2_=ST_FLT AND Tst_2_ then 
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=3;
+				end_if;
+			3:
+				if Amr_3_ AND State_3_=ST_FLT AND Tst_3_ then 
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=4;
+				end_if;
+			4:
+				if Amr_4_ AND State_4_=ST_FLT AND Tst_4_ then 
+					res:=false ; (*Завершити пошук*)
+				else (*інакше*)
+					Nom_cur:=1;
+				end_if;
+		end_case;
+	end_if;
+end_for;
+
+
+if not res then (*Якщо прапор пошуку зкинуто, значить знайдено фільтр який можна виводити на регенерацію*)
+
+(*Виставити команду регенерації*)
+case Nom_cur of
+	1:
+		Streg_1_:=true;
+	2:
+		Streg_2_:=true;
+	3:
+		Streg_3_:=true;
+	4:
+		Streg_4_:=true;
+end_case;
+
+
+(*Вибрати режим регенерації*)
+case Nc_zd of (*Перевірити режим роботи*)
+0: (*якщо з постійною вигрузкою*)
+	r_l:=true; (*Попередній також вивантажувався*)
+	case Nom_cur of (*Незалежно від номеру фільтра завжди на вигрузку*)
+		1:
+			r_1_:=true;
+		2:
+			r_2_:=true;
+		3:
+			r_3_:=true;
+		4:
+			r_4_:=true;		
+	end_case;
+	r_l:=true;
+1:
+	case Nom_cur of (*Незалежно від номеру фільтра завжди на вигрузку*)
+		1:
+			if Nom_cur=Nom_first then 
+				r_1_:=NOT  r_1_;
+			else
+				r_1_:=NOT r_l;
+			end_if;
+			r_l:=r_1_;
+		2:
+			if Nom_cur=Nom_first then 
+				Nf:=5;
+				r_2_:=NOT  r_2_;
+			else
+				r_2_:=NOT r_l;
+			end_if;
+			r_l:=r_2_;
+		3:
+			if Nom_cur=Nom_first then 
+				r_3_:=NOT  r_3_;
+			else
+				r_3_:=NOT r_l;
+			end_if;
+			r_l:=r_3_;
+		4:
+			if Nom_cur=Nom_first then 
+				r_4_:=NOT  r_4_;
+			else
+				r_4_:=NOT r_l;
+			end_if;
+			r_l:=r_4_;
+	end_case;
+	
+2:
+	case Nom_cur of
+		1:
+			if Nom_cur=Nom_first then 
+				Nf:=3;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_1_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_1_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else
+				Nf:=Nf-1;
+				r_1_:=mod(Nf+Nc_2,3)=MODF;
+			end_if;
+			r_l:=r_1_;
+		2:
+			if Nom_cur=Nom_first then 
+				Nf:=3; (*Що це за змінна ?*)
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_2_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_2_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else
+				Nf:=Nf-1;
+				r_2_:=mod(Nf+Nc_2,3)=MODF;
+			end_if;
+			r_l:=r_2_;
+		3:
+			if Nom_cur=Nom_first then 
+				Nf:=3;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_3_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_3_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else
+				Nf:=Nf-1;
+				r_3_:=mod(Nf+Nc_2,3)=MODF;
+			end_if;
+			r_l:=r_3_;
+		4:
+			if Nom_cur=Nom_first then 
+				Nf:=3;
+				Nc_2:=Nc_2+1;(*Рахувати цикли*)
+				if Nc_2>2 then  (*якщо було дві регенерації без вивантаження тоді *)
+					Nc_2:=0;     (*поточна регенерація*)
+					r_4_:=true;  (*із вивантаженням*)
+				else (*інакше*)
+					r_4_:=false; (*регенерація без вивантаження*)
+				end_if;
+			else
+				Nf:=Nf-1;
+				r_4_:=mod(Nf+Nc_2,3)=MODF;
+			end_if;
+			r_l:=r_4_;
+
+	end_case;
+
+
+end_case;
+
+
+end_if;
+
+end_if; (* if Queue_run then *) 
+
+Nom_cur_of:=Nom_cur+119; (*Розрахувати номер вікна для панелі*)
+
+(*Визначення часу перескоку*)
+
+if Tmode then 
+	T_queue:=TMR(Tper_zd);
+else
+	Runf:=0;
+	if Amr_1_ AND Am_1_ then 
+		Runf:=Runf+1;
+	end_if;
+	if Amr_2_ AND Am_2_ then 
+		Runf:=Runf+1;
+	end_if;
+	if Amr_3_ AND Am_3_ then 
+		Runf:=Runf+1;
+	end_if;
+	if Amr_4_ AND Am_4_ then 
+		Runf:=Runf+1;
+	end_if;
+
+	if Runf>0 then
+		T_queue:=TMR(Tcyc_zd/Runf);
+	else
+		T_queue:=TMR(Tper_zd);
+	end_if;
+end_if;
+ 
+
+

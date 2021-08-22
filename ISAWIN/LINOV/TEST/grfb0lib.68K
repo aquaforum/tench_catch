@@ -1,0 +1,9 @@
+#include <tasy0def.h>
+
+extern ABP fbldef_i_7017 (char *name, IBP *init, RBP *read);
+
+_asm ("
+FBLDEF:
+		dc.l	fbldef_i_7017
+		dc.l	0
+");

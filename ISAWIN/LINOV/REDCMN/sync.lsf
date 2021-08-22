@@ -1,0 +1,19 @@
+#combinatory
+If St_new=St_sync then
+	If Not Busy AND NOT Look then
+		Look:=true;
+		Dz:=true;
+		Ts:=true;
+	End_If;
+End_If;
+If dz and St_new<>St_sync then
+	If not(St_new=St_zagr OR (St_new=St_fug AND Ob<980))
+		or Tout
+		or not Link then
+			Unlook:=true;
+			dz:=false;
+			Ts:=false;
+	End_If;
+End_If;
+
+dozvil:=dz;

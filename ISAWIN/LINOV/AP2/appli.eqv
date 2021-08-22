@@ -1,0 +1,35 @@
+#define ST_WAIT 1 (*Стадія очікування*)
+#define ST_START 2 (*Очікування до початку циклу*)
+#define ST_NABOR 3 (*Стадія набору апарату*)
+#define ST_ZGUSH 4 (*Згущення до заводки кристалу*)
+#define ST_ZATR 5 (*Введення затравки*)
+#define ST_ZG1 6 (*Згущення до підкачки*)
+#define ST_ROZK1 8 (*Перша розкачка*)
+#define ST_ZG2 9 (*Згущення після 1 розкачки*)
+#define ST_ROZK2 10 (*Друга розкачка*)
+#define ST_ZG3 11 (*Згущення після 2 розкачки*)
+#define ST_ROZK3 12 (*Третя розкачка*)
+#define ST_ZG4 13 (*Згущення після 2 розкачки*)
+#define ST_ROZK4 14 (*Четверта розкачка*)
+#define ST_ZG5 15 (*Згущення після 2 розкачки*)
+#define ST_ROZK5 16 (*п’ята розкачка*)
+#define ST_ZG6 17 (*Згущення після 2 розкачки*)
+#define ST_ROZK6 18 (*Шоста розкачка*)
+#define ST_ZG7 19 (*Згущення перед ростом 1*)
+#define ST_ROST1 20 (*Стадія*)
+#define ST_ROST2 21 (*Стадія*)
+#define ST_ROST3 22 (*Стадія*)
+#define ST_UVAR 23 (*Стадія*)
+#define ST_END 24 (*Закінчення процесу*)
+#define ST_ROZA1 25
+#define ST_ZGA2 26
+#define ST_ROZA2 27
+#define ST_ZGA3 28
+#define ST_ROZA3 29
+#define ST_ZGA4 30
+#define ST_UPLOAD 31
+ (*-------------------*)
+#define INMIN 6553
+#define INMAX 32767
+#define SPr_off -4000.0
+

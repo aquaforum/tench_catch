@@ -1,0 +1,29 @@
+#define ST_OFF 0
+#define ST_START 1
+#define ST_FLT 2
+#define ST_SKYD 3
+#define ST_STREG 4
+#define ST_REGPROM 5
+#define ST_PROM 6
+#define ST_PROM2 7
+#define ST_VIDST 8
+ (*-----------*)
+#define SCA_MIN 0.0
+#define SCA_MAX 4000.0
+#define MAXF 4
+#define MODF 0
+ (*------------*)
+#define B_START 356
+#define B_STOP 360
+#define F_START 256
+#define F_STOP 256
+#define I_START 292
+#define I_STOP 325
+#define L_START 400
+#define L_STOP 432
+#define T_START 0
+#define T_STOP 0
+#define C_START 0
+#define C_STOP 0
+#define C_RESERV 32
+

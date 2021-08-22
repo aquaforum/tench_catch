@@ -1,0 +1,10 @@
+#!/bin/sh
+
+HOST=vipar
+
+ssh -i ~/.ssh/lnfab $HOST rm /usr/local/bin/scada /usr/local/bin/ioserv
+scp -i ~/.ssh/lnfab ainscada/scada/scada viparka/ioserv/ioserv  $HOST:/usr/local/bin
+ssh -i ~/.ssh/lnfab $HOST
+
+
+

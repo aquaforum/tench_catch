@@ -1,0 +1,22 @@
+#combinatory
+if AM_ then
+	Delta:=(Xmax_-Xmin_)*REAL(SYSTEM(SYS_TCURRENT,0))/REAL(Period_);
+	if Direct then
+		Val:=Val+Delta;
+		if Val>Xmax_ then 
+			Val:=Xmax_;
+			direct:=false;
+		end_if;
+	else
+		Val:=Val-Delta;
+		if Val<Xmin_ then 
+			Val:=Xmin_;
+			direct:=true;
+		end_if;
+	end_if;
+
+else
+	Val:=X_;
+end_if;
+
+Q:=Val;

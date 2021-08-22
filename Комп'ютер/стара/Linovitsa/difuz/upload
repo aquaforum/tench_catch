@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+ssh -i ~/.ssh/lnfab difuz rm /usr/local/bin/ioserv
+scp -i ~/.ssh/lnfab  ioserv/ioserv  difuz:/usr/local/bin
+ssh -i ~/.ssh/lnfab difuz
+
+
+
+

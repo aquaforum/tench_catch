@@ -1,0 +1,184 @@
+/**********************************************************************/
+/*                                                                    */
+/*  File name : appli.H                                               */
+/*  Date      : 25.05.2020 18:25:10                                   */
+/*  ----------------------------------------------------------------  */
+/*  ISaGRAF project name : simukot                                    */
+/*                                                                    */
+/**********************************************************************/
+
+/* Global variables of the various programs */
+
+/* Programs */
+
+#define _SCC_GAZKOLEK	0X0001
+#define _SCC_LBARABAN	0X0002
+#define _SCC_AIRFAN	0X0003
+#define _SCC_UTECHKI	0X0004
+
+/* Booleans */
+
+#define _SCC_YBURNERVAL	0X0001
+#define _SCC_YCUTOFVAL	0X0002
+#define _SCC_YLITHERVAL	0X0003
+#define _SCC_YSAFEVAL	0X0004
+#define _SCC_YIGNITER	0X0005
+#define _SCC_YSTARTFAN	0X0006
+#define _SCC_YSTARTPUMP	0X0007
+#define _SCC_IO0002_07	0X0008
+#define _SCC_IO0002_08	0X0009
+#define _SCC_IO0002_09	0X000A
+#define _SCC_IO0002_0A	0X000B
+#define _SCC_IO0002_0B	0X000C
+#define _SCC_IO0002_0C	0X000D
+#define _SCC_IO0002_0D	0X000E
+#define _SCC_IO0002_0E	0X000F
+#define _SCC_IO0002_0F	0X0010
+#define _SCC_XDRUMLH2	0X0011
+#define _SCC_XDRUMLH1	0X0012
+#define _SCC_XDRUMLL1	0X0013
+#define _SCC_XDRUMLL2	0X0014
+#define _SCC_XDRUMPH	0X0015
+#define _SCC_XFIRE1	0X0016
+#define _SCC_XBUMP	0X0017
+#define _SCC_XAIRPL	0X0018
+#define _SCC_XVACPL	0X0019
+#define _SCC_XGASPH	0X001A
+#define _SCC_XGASPL	0X001B
+#define _SCC_XTIGHT	0X001C
+#define _SCC_XSAFEON	0X001D
+#define _SCC_IO0003_0D	0X001E
+#define _SCC_IO0003_0E	0X001F
+#define _SCC_AUTO	0X0020
+#define _SCC_XRES0	0X0021
+#define _SCC_XTERMAUTO	0X0022
+#define _SCC_XGASAUTO	0X0023
+#define _SCC_XALARMBN	0X0024
+#define _SCC_XSTOPBN	0X0025
+#define _SCC_XSTARTBN	0X0026
+#define _SCC_XRES2	0X0027
+#define _SCC_XRES1	0X0028
+#define _SCC_YSERENA	0X0029
+#define _SCC_YGASCLOSE	0X002A
+#define _SCC_YGASOPEN	0X002B
+#define _SCC_YSUPPCLOSE	0X002C
+#define _SCC_YSUPPOPEN	0X002D
+#define _SCC_YTERMCLOSE	0X002E
+#define _SCC_YTERMOPEN	0X002F
+#define _SCC_XFANAUTO	0X0030
+#define _SCC_XEXHAUTO	0X0031
+#define _SCC_XPUMPAUTO	0X0032
+#define _SCC_YPLCSTOP	0X0033
+#define _SCC_YLAMP	0X0034
+#define _SCC_CBOO00000001	0X0035
+#define _SCC_CBOO00000000	0X0036
+#define _SCC_DUMMYCOIL	0X0037
+#define _SCC_TMPB9	0X0038
+#define _SCC_TMPB8	0X0039
+#define _SCC_TMPB7	0X003A
+#define _SCC_TMPB6	0X003B
+#define _SCC_TMPB5	0X003C
+#define _SCC_TMPB4	0X003D
+#define _SCC_TMPB3	0X003E
+#define _SCC_TMPB2	0X003F
+#define _SCC_TMPB1	0X0040
+#define _SCC_TMPB22	0X0041
+#define _SCC_TMPB21	0X0042
+#define _SCC_TMPB20	0X0043
+#define _SCC_TMPB19	0X0044
+#define _SCC_TMPB18	0X0045
+#define _SCC_TMPB17	0X0046
+#define _SCC_TMPB16	0X0047
+#define _SCC_TMPB15	0X0048
+#define _SCC_TMPB14	0X0049
+#define _SCC_TMPB13	0X004A
+#define _SCC_TMPB12	0X004B
+#define _SCC_TMPB11	0X004C
+#define _SCC_TMPB10	0X004D
+
+/* Analogs */
+
+#define _SCC_CPUMP	0X0001
+#define _SCC_CFAN	0X0002
+#define _SCC_CEXH	0X0003
+#define _SCC_CGAS	0X0004
+#define _SCC_IO0000_04	0X0005
+#define _SCC_IO0000_05	0X0006
+#define _SCC_IO0000_06	0X0007
+#define _SCC_IO0000_07	0X0008
+#define _SCC_IO0000_08	0X0009
+#define _SCC_IO0000_09	0X000A
+#define _SCC_IO0000_0A	0X000B
+#define _SCC_IO0000_0B	0X000C
+#define _SCC_IO0000_0C	0X000D
+#define _SCC_IO0000_0D	0X000E
+#define _SCC_IO0000_0E	0X000F
+#define _SCC_IO0000_0F	0X0010
+#define _SCC_FPARA	0X0011
+#define _SCC_LDRUM	0X0012
+#define _SCC_PP7A	0X0013
+#define _SCC_PAIR	0X0014
+#define _SCC_PVAC	0X0015
+#define _SCC_FWATER	0X0016
+#define _SCC_IO0001_06	0X0017
+#define _SCC_IO0001_07	0X0018
+#define _SCC_KPAR	0X0019
+#define _SCC_BFLRIV	0X001A
+#define _SCC_PPARA	0X001B
+#define _SCC_PG15A	0X001C
+#define _SCC_FAIR	0X001D
+#define _SCC_FGAS	0X001E
+#define _SCC_VX	0X001F
+#define _SCC_QO2FUME	0X0020
+#define _SCC_GSUPP	0X0021
+#define _SCC_GTERM	0X0022
+#define _SCC_GGAS	0X0023
+#define _SCC_PV12A	0X0024
+#define _SCC_TP18A	0X0025
+#define _SCC_TP17A	0X0026
+#define _SCC_TA6A	0X0027
+#define _SCC_TA5A	0X0028
+#define _SCC_TK	0X0029
+#define _SCC_TV4A	0X002A
+#define _SCC_TV3A	0X002B
+#define _SCC_TPAR	0X002C
+#define _SCC_RANDL	0X002D
+#define _SCC_TEMP1	0X002E
+#define _SCC_CANA00000008	0X002F
+#define _SCC_CANA00001999	0X0030
+#define _SCC_CANA00004CCC	0X0031
+#define _SCC_CANA00003337	0X0032
+#define _SCC_CANA00004292	0X0033
+#define _SCC_CANA0000570C	0X0034
+#define _SCC_CANA00006667	0X0035
+#define _SCC_CANA00007EF4	0X0036
+#define _SCC_CANA000019C8	0X0037
+#define _SCC_CANA00006978	0X0038
+#define _SCC_CANA000021FC	0X0039
+#define _SCC_CANA00000FA0	0X003A
+#define _SCC_CANA00005C2A	0X003B
+#define _SCC_CANA00006B86	0X003C
+#define _SCC_CANA00000002	0X003D
+#define _SCC_CANA00007356	0X003E
+#define _SCC_CANA00000003	0X003F
+#define _SCC_CANA0000773E	0X0040
+#define _SCC_CANA00000004	0X0041
+#define _SCC_CANA00000001	0X0042
+#define _SCC_CANA00000000	0X0043
+#define _SCC_FBL_RET	0X0044
+#define _SCC_TMPI6	0X0045
+#define _SCC_TMPI4	0X0046
+#define _SCC_TMPI8	0X0047
+#define _SCC_TMPI7	0X0048
+#define _SCC_TMPI5	0X0049
+#define _SCC_TMPI2	0X004A
+
+/* Timers */
+
+#define _SCC_TM1Z	0X0001
+#define _SCC_TM2	0X0002
+#define _SCC_TM1	0X0003
+#define _SCC_CTMR00004650	0X0004
+#define _SCC_CTMR000003E8	0X0005
+#define _SCC_CTMR00000BB8	0X0006
+#define _SCC_CTMR00000000	0X0007

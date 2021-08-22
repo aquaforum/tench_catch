@@ -1,0 +1,67 @@
+#combinatory
+if Init then
+	Init:=false;
+
+
+	Adr:=1;
+	(*C_xx*)
+	for ii:=148 to 162 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+		Res:=Retain_X('N',166,Adr); 	(*Nc*)
+		Adr:=Adr+1;
+
+	Adr:=Adr+22; (*Зазор*)
+
+	(*Параметри*)
+	for ii:=350 to 474 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	for ii:=476 to 518 by 2 do
+		Res:=Retain_X('T',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	Adr:=Adr+19; (*Зазор*)
+	(*Adr:=1; треба перевырити, можливо так тоже можна*)
+
+	for ii:=1024 to 1065 by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+
+	(*Параметри*)
+	for ii:=520 to 526 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	(*Параметри oldGcl та oldGst*)
+	for ii:=184 to 186 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	(*Додаткові таймери*)
+	for ii:=528 to 538 by 2 do
+		Res:=Retain_X('T',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+
+	(*Бітові параметри*)
+	Adr:=1;
+	for ii:=800 to 823 by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+
+	res:=wdt_en(2000,true);
+
+end_if;

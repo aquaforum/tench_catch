@@ -1,0 +1,32 @@
+#define SCA_MIN 0.0
+#define SCA_MAX 4000.0
+#define Tdif t#500ms
+#define OUT_MAX 4000.0
+#define OUT_CODE 16#31
+#define PidS t#250ms
+ (*-----------------*)
+ (*--------------------------------*)
+#define STCL_ALARM -1
+#define STCL_OFF 0
+#define STCL_START 1
+#define STCL_LOADCL 2
+#define STCL_MEASCL 3
+#define STCL_WAIT 4
+ (*---------------*)
+#define ST_ALARM -1
+#define ST_OFF 0
+#define ST_ALARM1 1
+#define ST_WAITCL 2
+#define ST_PREPAREST 3
+#define ST_LOADST 4
+#define ST_POSTCL 5
+#define ST_MEASST 6
+#define ST_ARKUP 7
+#define ST_ALARM2 8
+#define ST_LIFTUP 9
+#define ST_WAITUP 10
+#define ST_LIFTDOWN 11
+#define ST_FINISH 12
+#define ST_MANLIFTUP 13
+#define ST_MANLIFTDOWN 14
+

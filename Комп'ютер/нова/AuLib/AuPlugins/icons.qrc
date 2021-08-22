@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>lampOn.png</file>
+
+    </qresource>
+</RCC>

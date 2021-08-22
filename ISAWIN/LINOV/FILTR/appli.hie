@@ -1,0 +1,11 @@
+_section=_begin{
+parm_sto(_ST)Runner(_FBD)fl_fb_1(_FBD)fl_fb_2(_FBD)fl_fb_3(_FBD)fl_fb_4(_FBD)fl_fb_5(_FBD)fl_fb_6(_FBD)fl_fb_7(_FBD)fl_fb_8(_FBD)ctrl_1(_ST)ctrl_2(_ST)ctrl_3(_ST)ctrl_4(_ST)ctrl_5(_ST)ctrl_6(_ST)ctrl_7(_ST)ctrl_8(_ST)main(_ST)}
+_section=_sequential{
+}
+_section=_end{
+}
+_section=_functions{
+off_all(_ST)mux2(_ST)}
+_section=_fblocks{
+p_p0(_ST)
+}

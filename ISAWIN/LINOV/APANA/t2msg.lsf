@@ -1,0 +1,20 @@
+#combinatory
+m_:=ANA(T_)/60000;
+h_:=m_/60; 
+m_:=m_-h_*60;
+
+if h_<10 then 
+	tm_:='0';
+end_if;
+
+tm_:=tm_+MSG(h_) + ':';
+
+if m_<10 then
+	tm_:=tm_+'0';
+end_if;
+
+tm_:=tm_+MSG(m_);
+
+t2msg:=tm_;
+
+

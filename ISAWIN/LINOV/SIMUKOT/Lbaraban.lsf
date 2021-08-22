@@ -1,0 +1,70 @@
+#combinatory
+Fwater:=cPump; (*времено*)
+if xFire1=true and bfLriv>8700 then
+bfLriv:=bfLriv-kpar;
+end_if;
+kpar:=(Fpara/4000);
+
+if Fwater>23594 then (*значенииие для баланса уровня огонь=расход воды*)
+bfLriv:=bfLriv+1;
+end_if;
+if Fwater>27526 then (*значенииие при котором расход слишком большой уровень будет рости*)
+bfLriv:=bfLriv+2;
+end_if;
+if Fwater>29526 then (*значенииие при котором расход слишком большой уровень будет рости*)
+bfLriv:=bfLriv+3;
+end_if;
+if Fwater>30526 then (*значенииие при котором расход слишком большой уровень будет рости*)
+bfLriv:=bfLriv+4;
+end_if;
+
+(*работа буйкоой камеры начало*)
+if Ldrum>13111 then 
+xDrumLl2:=true;
+else
+xDrumLl2:=false;
+end_if;
+
+if Ldrum>17042 then 
+xDrumLl1:=true;
+else
+xDrumLl1:=false;
+end_if;
+
+if Ldrum>22284 then 
+xDrumLH1:=true;
+else
+xDrumLH1:=false;
+end_if;
+
+if Ldrum>26215 then 
+xDrumLH2:=true;
+else
+xDrumLH2:=false;
+end_if;
+(*работа буйкоой камеры конец*)
+
+Ldrum:=bfLriv;(*буферная переменая для работы с уровнем*)
+
+if xFire1=true then (*наличие огня понижает уровень*)
+bfLriv:=bfLriv-1;
+end_if;
+
+if bfLriv>32500 then (*ограничения уровня*)
+bfLriv:=32500;
+end_if;
+if bfLriv<6600 then (*ограничения уровня*)
+bfLriv:=6600; 
+end_if;
+
+(*Простая симуляцыя расхода пара
+if xFire1=true and bfLriv>6700 then
+Fpara:=cPump;
+else
+Fpara:=Fpara;
+end_if;
+*)
+if cPump>27000 then (*при оборотах выше 80% появляються утечки*)
+bfLriv:=bfLriv+randL;
+end_if;
+

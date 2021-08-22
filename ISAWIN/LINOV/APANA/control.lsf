@@ -1,0 +1,745 @@
+#combinatory
+(*Ттайер Шима*)
+if T_pwm=t#0s then 
+	tstart(T_pwm);
+end_if;
+
+if T_pwm>t#20s then 
+	tstop(T_pwm);
+	T_pwm:=t#0s;
+end_if;
+
+PV:=Spr_m-V_m; (*Порахувати розузгоджуння для крайового обмеження*)
+(*Управління клапаном підкачок*)
+(*Y_pid:= (T_pwm<(t#1s+TMR(Cout*4.5)) AND PV <2.0*Spr_dm) OR PV < -2.0*Spr_dm; *)
+(*Влазимо в 20-ти секундне вікно*)
+
+
+(* if Status>ST_START AND (NOT vakume_r) then*)  (*Зупинити процес коли виключили вакуум*)
+(*	Status:=ST_START; *)
+(*end_if; *)
+
+
+a_Pusk:=redge(X_Pusk,re_Pusk);  (*виділити команду пуск*) (*Рекомендується кнопку пуска зробити апаратною*)
+
+
+HH:=ANA(Tall)/3600000; (*Годин*)
+MM:=MOD(ANA(Tall)/1000,3600)/60;
+
+(*Управління віскозиметром, можливо треба переробити*)
+Y_6 := V_vak>1600.0 AND V_l>400.0;
+
+
+(*Управління великим вакуумним клапаном*)
+if X_amvk then (*Якщо включено автоматичне управління*)
+	if X_vk AND V_vak>2400.0 then  (*Якщо малий вакуумний кран відкритий і вакуум досить великий *)
+		Y_vk:= true; (*відкрити великий вакуумний клапан*)
+	end_if;
+	if not X_vk then  (*Якщо закритий малий вакуумний клапан*)
+		Y_vk:=false; (*Закрити великий вакуумний клапан*)
+	end_if;
+else
+	Y_vk:=false;
+end_if;
+
+case State of (**)
+ST_WAIT: (*Стадія очікування *)
+	Y_sir:=false; (*Закрити продуктові клапана*)
+	Y_voda:=false;
+
+
+	Tall:=t#0s;
+	tstop(Tall);
+	State:=ST_START; (*Тут би треба написати умову переходу в стадію уварювання і провести тест віскозиметра*)
+
+	(*Це потрібно для того щоб просигналізувати про недійсне значення*)
+	SPr_R:=SPr_off;
+	SPr_M:=SPr_off;
+		
+	RegAm:=false;
+	Cout:=0.0;
+
+ST_START: (*Стадія очікування команди набор*)
+	Y_sir:=false; (*Закрити продуктові клапана*)
+	Y_voda:=false;
+
+	if a_Pusk then  (*Коли натиснули кнопку ПУСК розпочати набір*)
+		tstart(Tall);
+		State:=ST_NABOR;
+	end_if;
+
+	if redge(X_amsir, re_X_amsir) then
+		tstart(Tall);
+		if V_l < SP_H_n*1.2 then 
+			State:=ST_NABOR;
+		else 
+			State:=ST_ROST1;
+			SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+			SP_M_1:=V_m;
+		end_if;
+	end_if; 
+
+	RegAm:=false;
+	Cout:=0.0;
+
+ST_NABOR: (*Стадія набору апарату*)
+	Y_sir:=true; (*Відкрити його*)
+
+	if V_l > SP_H_n then (*Якщо рівень в апараті більше заданого тоді *)
+		(*тут би треба перевірити кондуктомерт, він повинен показувати якесь мале значення*)
+		State:=ST_ZGUSH; (*Перейти в стадію згущення*)
+		Cout:=0.0; (*Закрити аналогову заслінку*)
+	else
+		Cout:=4000.0;
+	end_if;
+	
+	RegAm:=false;
+	RPV:=V_l;
+	RSP:=SP_H_n;
+
+	SPr_R:=SPr_off;;
+	SPr_M:=SPr_off;;
+	
+	
+ST_ZGUSH: (*Стадія згущення сиропу до заводки кристалу*)
+
+		if V_l< SP_H_n-40.0  AND V_r <0.75*SP_R_zv then (*Підкачка*)
+			Y_sir:=true;
+		end_if;
+
+		if V_L>SP_H_n then 
+			Y_sir:=false;
+		end_if;
+
+	SPr_R:=SP_R_zv;		
+
+	if V_r >= SP_R_zv then (*просигналізувати про затравку*)
+		State:=ST_ZATR; (*Перейти в стадію згущення *)	
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	else
+		RegAm:=true;
+	end_if;
+
+
+	RPV:=V_l;
+	RSP:=SP_H_n;
+
+	
+ST_ZATR: (*Згущення до розкачки*)
+		Y_sir:=false;
+		Y_voda:=false;
+
+		Y_alert:=true; (*включити серену*)
+		if a_Pusk then  (*Якщо натиснули кнопку пуск*)
+			Y_alert:=false; (*включити серену*)
+			SPr_R:=SP_R_max;		
+			State:=ST_ZG1;
+		end_if;
+
+
+ST_ZG1: (*Згущення після введення затравки*)
+	Y_sir:=false; 
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	if a_Pusk then (*Якщо натиснули кнопку ПУск пора розкачувати*)	
+		if rej_p then (*Якщо підкачки йдуть по новому тоді сюди, на стадію ST_ROZK1*)
+		SPr_R_max:=V_r; (*Запамёятати покази кондуктометра*)
+
+		stepR:=(SPr_R_max-SP_R_min)/8.0; (*Розрахувати крок*)
+		H_p_start:=V_l+dH_max; (*Запамёятати рівень для захисту по приросту рівня*)
+
+		(* SPr_R:=4.0*stepR+SP_R_min+Kor;  !!! Розахункове значення кондуктометра для розкачки*)
+		SPr_R:=SP_R_min+Kor; 
+
+		if SPr_R <40.0 then
+			SPr_R := 40.0;
+		end_if;
+
+		State:=ST_ROZK1; (*Перейти до першої підкачки*)
+		else (*инакше на стадію ST_ROZA: *)
+			State:=ST_ROZA1;
+		end_if;
+	end_if;
+
+ST_ROZK1: (*Перша розкачка*)
+	Y_sir:=true; (*Відкрити клапан підкачки*)
+		RegAm:=false;
+		Cout:=4000.0;
+
+	if NOT rej_p then 
+		State:=ST_ROZA1;
+	else
+
+	(*Тут ще треба вставити мождиву підкачку водою*)
+	if rej_voda then 
+		Y_voda:=Y_dR OR V_l>H_p_start;
+	end_if;
+
+	if V_r<SPr_r OR A_pusk then (*Якщо розкачали до заданого значення тоді *)
+		SPr_R:=SP_R_min+4.0*stepR+SP_R_d; (*!!!!!!*)
+		State:=ST_ZG2;
+	end_if;
+	end_if;
+	SPr_M:=SPr_off;;
+
+ST_ZG2:(*Згущення після першої підкачки*)
+	(*все закрити*)
+	Y_sir:=false;
+	Y_voda:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	if V_r> SPr_R OR A_pusk then (*Якщо згустили до заданого*)
+		H_p_start:=V_l+dH_max; (*Запамёятати рівень для захисту по приросту рівня*)
+		
+		(*SPr_R:=3.0*stepR+SP_R_min+Kor; !!! Розахункове значення кондуктометра для розкачки*)
+		SPr_R:=SP_R_min+Kor; 
+		if SPr_R <40.0 then
+			SPr_R := 40.0;
+		end_if;
+		
+		State:=ST_ROZK2;
+	end_if;
+
+ST_ROZK2:(*Друга підкачка*)
+
+	Y_sir:=true; (*Відкрити клапан підкачки*)
+		RegAm:=false;
+		Cout:=4000.0;
+
+
+	(*Тут ще треба вставити мождиву підкачку водою*)
+	if rej_voda then 
+		Y_voda:=Y_dR OR V_l>H_p_start;
+	end_if;
+
+	if V_r<SPr_R OR A_pusk  then (*Якщо розкачали до заданого значення тоді *)
+		SPr_R:=SP_R_min+3.0*stepR+SP_R_d+Kor;
+		State:=ST_ZG3; (*Перейти до згущення*)
+	end_if;
+
+
+ST_ZG3:(*Згущення після другої підкачки*)
+	(*все закрити*)
+	Y_sir:=false;
+	Y_voda:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	if V_r> SPr_R OR A_pusk then (*Якщо згустили до заданого*)
+		H_p_start:=V_l+dH_max; (*Запамёятати рівень для захисту по приросту рівня*)
+
+		(* SPr_R:=2.0*stepR+SP_R_min+Kor;  !!! Розахункове значення кондуктометра для розкачки*)
+		SPr_R:=SP_R_min+Kor; 
+
+		if SPr_R <40.0 then
+			SPr_R := 40.0;
+		end_if;
+
+		State:=ST_ROZK3;
+	end_if;
+
+ST_ROZK3: (*Третя підкачка*)
+		Y_sir:=true; (*Відкрити клапан підкачки*)
+		RegAm:=false;
+		Cout:=4000.0;
+
+	(*Тут ще треба вставити мождиву підкачку водою*)
+	if rej_voda then 
+		Y_voda:=Y_dR OR V_l>H_p_start;
+	end_if;
+
+	if V_r<SPr_R OR A_pusk  then (*Якщо розкачали до заданого значення тоді *)
+		SPr_R:=SP_R_min+2.0*stepR+SP_R_d ; (*!!!! *)
+
+		State:=ST_ZG4; (*Перейти до згущення*)
+	end_if;
+
+ST_ZG4: (*згущення*)
+	(*все закрити*)
+	Y_sir:=false;
+	Y_voda:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	if V_r> SPr_R   then (*Якщо згустили до заданого*)
+		H_p_start:=V_l+dH_max; (*Запамёятати рівень для захисту по приросту рівня*)
+		(*SPr_R:=SP_R_min+stepR+Kor;  *)
+		SPr_R:=SP_R_min+Kor; 
+
+		if SPr_R <40.0 then
+			SPr_R := 40.0;
+		end_if;
+		State:=ST_ROZK4;
+	end_if;
+
+	if a_Pusk then  (*Якщо натиснули кнопку пуск перейти в ріст1*)
+		SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+		SP_M_1:=V_m;
+		State:=ST_ROST1;
+	end_if;
+
+ST_ROZK4: (*підкачка*)
+		Y_sir:=true; (*Відкрити клапан підкачки*)
+
+		RegAm:=false;
+		Cout:=4000.0;
+
+	if not rej_p then
+		State:=ST_ROZA1;
+	else
+
+	(*Тут ще треба вставити мождиву підкачку водою*)
+	if rej_voda then 
+		Y_voda:=Y_dR OR V_l>H_p_start;
+	end_if;
+
+	if V_r<SPr_R then (*Якщо розкачали до заданого значення тоді *)
+		SPr_R:=SP_R_min+stepR+SP_R_d; (*!!!!*)
+		State:=ST_ZG5; (*Перейти до згущення*)
+	end_if;
+	end_if;
+
+	if a_Pusk then  (*Якщо натиснули кнопку пуск перейти в ріст1*)
+		SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+		SP_M_1:=V_m;
+		State:=ST_ROST1;
+	end_if;
+
+	SPr_M:=SPr_off;;
+
+ST_ZG5: (*згущення*)
+	(*все закрити*)
+	Y_sir:=false;
+	Y_voda:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	if V_r> SPr_R then (*Якщо згустили до заданого*)
+		SPr_R:=SP_R_min+Kor; 
+		if SPr_R <40.0 then
+			SPr_R := 40.0;
+		end_if;
+
+		H_p_start:=V_l+dH_max; (*Запамёятати рівень для захисту по приросту рівня*)
+		State:=ST_ROZK5;
+	end_if;
+
+	if a_Pusk then  (*Якщо натиснули кнопку пуск перейти в ріст1*)
+		SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+		SP_M_1:=V_m;
+		State:=ST_ROST1;
+	end_if;
+
+ST_ROZK5: (*підкачка*)
+		Y_sir:=true; (*Відкрити клапан підкачки*)
+
+		RegAm:=false;
+		Cout:=4000.0;
+
+	(*Тут ще треба вставити мождиву підкачку водою*)
+	if rej_voda then 
+		Y_voda:=Y_dR OR V_l>H_p_start;
+	end_if;
+
+	if V_r<SPr_R then (*Якщо розкачали до заданого значення тоді *)
+		SPr_R:=SP_R_min+SP_R_d; (*!!!!*)
+		State:=ST_ZG6; (*Перейти до згущення*)
+	end_if;
+
+	if a_Pusk then  (*Якщо натиснули кнопку пуск перейти в ріст1*)
+		SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+		SP_M_1:=V_m;
+		State:=ST_ROST1;
+	end_if;
+
+ST_ZG6: (*згущення*)
+	(*все закрити*)
+	Y_sir:=false;
+	Y_voda:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+
+	if V_r> SPr_R then (*Якщо згустили до заданого*)
+		H_p_start:=V_l+dH_max; (*Запамёятати рівень для захисту по приросту рівня*)
+		SPr_R:=SP_R_min+Kor; 
+		if SPr_R <40.0 then
+			SPr_R := 40.0;
+		end_if;
+		State:=ST_ROZK6;
+	end_if;
+
+	if a_Pusk then  (*Якщо натиснули кнопку пуск перейти в ріст1*)
+		SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+		SP_M_1:=V_m;
+		State:=ST_ROST1;
+	end_if;
+
+ST_ROZK6: (*підкачка*)
+		Y_sir:=true; (*Відкрити клапан підкачки*)
+		RegAm:=false;
+		Cout:=4000.0;
+
+	(*Тут ще треба вставити мождиву підкачку водою*)
+	if rej_voda then 
+		Y_voda:=Y_dR OR V_l>H_p_start;
+	end_if;
+
+	if V_r<SPr_R then (*Якщо розкачали до заданого значення тоді *)
+		State:=ST_ROST1; (*Перейти в ріст*)
+		SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+		SP_M_1:=V_m;
+	end_if;
+
+	if a_Pusk then  (*Якщо натиснули кнопку пуск перейти в ріст1*)
+		SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+		SP_M_1:=V_m;
+		State:=ST_ROST1;
+	end_if;
+
+ST_ZG7: (*фінальне згущення. Чи воно потрібне ?*) 
+
+	(*все закрити*)
+	Y_sir:=false;
+	Y_voda:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	if V_r> SPr_R then (*Якщо згустили до заданого*)
+		State:=ST_ROST1; (*Перейти в ріст*)
+		SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+		SP_M_1:=V_m;
+	end_if;
+
+
+ST_ROST1: (*Ріст 1*)
+	(*Розрахунок розрахункових завдань*)
+	A:=SP_H_2-SP_H_1; (*Перепад рівня*)
+	if A=0.0 then
+		A:=0.1;
+	end_if;
+	Spr_m_l:=(V_L-SP_H_1)/A*(SP_M_2-SP_M_1)+SP_M_1+Kor; (*Внутрішнє завдання*)
+	if Spr_m_l< SP_M_1+Kor then
+		Spr_m_l:=SP_M_1+Kor;
+	end_if;
+
+
+	(*Задати поточну дельту*)
+	Spr_dm:=SP_M_d1;
+(*Вибір режиму роботи*)	
+		RegAm:=true;
+		RPV:=V_m;
+		RSP:=Spr_m_l;
+
+		Y_sir:=Y_hyst;
+		if Y_hyst then 
+ 			Spr_m:=Spr_m_l-Spr_dM;
+ 		else
+ 			Spr_m:=Spr_m_l+Spr_dM;
+ 		end_if; 
+
+	if to_voda AND X_amsir then (*Якщо треба давати воду і сироп влючено в автомат тоді *)
+		if X_amvoda then (*Якщо вода включена в автоматичний режим*)
+			Y_voda:=Y_sir; (*Замінити сиропну підкачку на водяну*)
+			y_sir:=false;
+
+			RegAm:=false;
+			Cout:=0.0;
+
+		end_if;
+	else (*інакше*)
+		a_novoda:=false; (*зняти аварію*)
+		Y_voda:=false; (*закрити воду*)
+	end_if;
+
+	(*Утримання на вводі*)
+
+	if not X_amsir AND X_amvoda then
+		Y_voda:=Y_sir;
+		Y_sir:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	end_if;
+	
+	if V_l >= SP_H_2 then 
+		State:=ST_ROST2;
+	end_if;
+
+(*Вибір продктів*)
+
+(*Умова переходу в наступну стадію*)	
+(*Управління виходом регулятора *)
+
+
+	SPr_R:=SPr_off;;
+
+ST_ROST2:(*Ріст 2*)
+	(*Розрахунок розрахункових завдань*)
+	A:=SP_H_3-SP_H_2; (*Перепад рівня*)
+	if A=0.0 then
+		A:=0.1;
+	end_if;
+	Spr_m_l:=(V_L-SP_H_2)/A*(SP_M_3-SP_M_2)+SP_M_2+Kor; (*Внутрішнє завдання*)
+
+	(*Задати поточну дельту*)
+	Spr_dm:=SP_M_d2;
+(*Вибір режиму роботи*)	
+		RegAm:=true;
+		RPV:=V_m;
+		RSP:=Spr_m_l;
+
+		Y_sir:=Y_hyst;
+		if Y_hyst then 
+ 			Spr_m:=Spr_m_l-Spr_dM;
+ 		else
+ 			Spr_m:=Spr_m_l+Spr_dM;
+ 		end_if; 
+
+	if to_voda AND X_amsir then (*Якщо треба давати воду і сироп влючено в автомат тоді *)
+		if X_amvoda then (*Якщо вода включена в автоматичний режим*)
+			Y_voda:=Y_sir; (*Замінити сиропну підкачку на водяну*)
+			y_sir:=false;
+
+			RegAm:=false;
+			Cout:=0.0;
+
+		end_if;
+	else (*інакше*)
+		a_novoda:=false; (*зняти аварію*)
+		Y_voda:=false; (*закрити воду*)
+	end_if;
+
+	(*Утримання на вводі*)
+
+	if not X_amsir AND X_amvoda then
+		Y_voda:=Y_sir;
+		Y_sir:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	end_if;
+
+(*Вибір продктів*)
+
+(*Умова переходу в наступну стадію*)	
+	if V_l >= SP_H_3 then 
+		State:=ST_ROST3;
+		Y_voda:=false;
+		Y_sir:=false;
+	end_if;
+
+ST_ROST3:(*Ріст 3*)
+
+	(*Розрахунок розрахункових завдань*)
+	A:=SP_H_f-SP_H_3; (*Перепад рівня*)
+	if A=0.0 then
+		A:=0.1;
+	end_if;
+	Spr_m_l:=(V_L-SP_H_3)/A*(SP_M_f-(SP_M_3+Kor))+(SP_M_3+Kor); (*Внутрішнє завдання*)
+
+	(*Задати поточну дельту*)
+	Spr_dm:=SP_M_d3;
+(*Вибір режиму роботи*)	
+		RegAm:=true;
+		RPV:=V_m;
+		RSP:=Spr_m_l;
+
+		Y_sir:=Y_hyst;
+
+		if Y_hyst then 
+ 			Spr_m:=Spr_m_l-Spr_dM;
+ 		else
+ 			Spr_m:=Spr_m_l+Spr_dM;
+ 		end_if; 
+
+	(*Утримання на вводі*)
+
+	if not X_amsir AND X_amvoda then
+		Y_voda:=Y_sir;
+		Y_sir:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	end_if;
+(*Вибір продктів*)
+
+(*Умова переходу в наступну стадію*)	
+	if V_l >= SP_H_f AND X_amsir then (*Можливо його тримають на воді ?*) 
+		State:=ST_UVAR;
+	end_if;
+
+
+ST_UVAR: (*Уварювання*)
+	(*Просто робимо підкачки, хоча який в цьому сенс ?*)
+	Spr_M_l:=SP_M_f; (*Завданням є фінальна вёязкість*)
+	(*Задати поточну дельту*)
+	Spr_dm:=SP_M_d3;
+
+(*Вибір режиму роботи*)	
+		RegAm:=true;
+		RPV:=V_m;
+		RSP:=Spr_m_l;
+
+
+		Y_sir:=Y_hyst;
+		if Y_hyst then 
+ 			Spr_m:=Spr_m_l-Spr_dM;
+ 		else
+ 			Spr_m:=Spr_m_l+Spr_dM;
+ 		end_if; 
+
+		
+
+ST_END: (*Фінальне уварювання*)
+
+ST_ROZA1:
+	Y_sir:=true; (*Відкрити клапан підкачки*)
+		RegAm:=false;
+		Cout:=4000.0;
+	(*Тут ще треба вставити мождиву підкачку водою*)
+	if rej_voda then 
+		Y_voda:=Y_dR OR V_l>H_p_start;
+	end_if;
+
+	SPr_r:=Rp_1+Kor;
+	if SPr_r < 0.0 then 
+		SPr_r:=40.0;
+	end_if;
+
+	if V_r<SPr_r OR A_pusk then (*Якщо розкачали до заданого значення тоді *)
+		State:=ST_ZGA2;
+	end_if;
+
+	SPr_M:=SPr_off;;
+	
+ST_ZGA2:
+	(*все закрити*)
+	Y_sir:=false;
+	Y_voda:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	SPr_R:= Rz_2 + Kor;
+	if V_r> SPr_R OR A_pusk then (*Якщо згустили до заданого*)
+		H_p_start:=V_l+dH_max; (*Запамёятати рівень для захисту по приросту рівня*)				
+		State:=ST_ROZA2;
+	end_if;
+
+ST_ROZA2:
+	Y_sir:=true; (*Відкрити клапан підкачки*)
+
+		RegAm:=false;
+		Cout:=4000.0;
+
+
+	(*Тут ще треба вставити мождиву підкачку водою*)
+	if rej_voda then 
+		Y_voda:=Y_dR OR V_l>H_p_start;
+	end_if;
+
+	SPr_r:=Rp_2+Kor;
+	if SPr_r < 0.0 then 
+		SPr_r:=40.0;
+	end_if;
+
+	if V_r<SPr_r OR A_pusk then (*Якщо розкачали до заданого значення тоді *)
+		State:=ST_ZGA3;
+	end_if;
+
+	SPr_M:=SPr_off;;
+ST_ZGA3:
+	(*все закрити*)
+	Y_sir:=false;
+	Y_voda:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	SPr_R:= Rz_3 + Kor;
+	if V_r> SPr_R OR A_pusk then (*Якщо згустили до заданого*)
+		H_p_start:=V_l+dH_max; (*Запамёятати рівень для захисту по приросту рівня*)				
+		State:=ST_ROZA3;
+	end_if;
+ST_ROZA3:
+	Y_sir:=true; (*Відкрити клапан підкачки*)
+		RegAm:=false;
+		Cout:=4000.0;
+
+	(*Тут ще треба вставити мождиву підкачку водою*)
+	if rej_voda then 
+		Y_voda:=Y_dR OR V_l>H_p_start;
+	end_if;
+
+	SPr_r:=Rp_3+Kor;
+	if SPr_r < 0.0 then 
+		SPr_r:=40.0;
+	end_if;
+
+	if V_r<SPr_r OR A_pusk then (*Якщо розкачали до заданого значення тоді *)
+		State:=ST_ZGA4;
+	end_if;
+
+	SPr_M:=SPr_off;;
+ST_ZGA4:
+	(*все закрити*)
+	Y_sir:=false;
+	Y_voda:=false;
+
+		RegAm:=false;
+		Cout:=0.0;
+
+	SPr_R:= Rz_4 + Kor;
+	if V_r> SPr_R OR A_pusk then (*Якщо згустили до заданого*)
+		State:=ST_ROST1; (*Перейти в ріст*)
+		SP_H_1:=V_l; (*Запамёятати точку початку росту*)
+		SP_M_1:=V_m;
+	end_if;
+else
+	State:=ST_WAIT;
+end_case;
+
+
+if NOT X_vk AND X_vc then  (*Якщо закрито вакуум тоді фінал*)
+	State:=ST_WAIT;
+end_if;	
+
+(*Всякі умови для показу різних вікон на панелі*)
+(*Можливо його варто спакувати в одне слово для компактності.....*)
+
+c_showzv:=State=ST_ZATR; (*Показати вікно затравки*)
+c_showrz:=State=ST_ZG1 AND V_r>SP_R_max; (*Може пора розкачати ?*)
+
+(*Якщо клапана стоять в ручному режимі - завжди вимкнути*)
+if not X_amsir then
+	Y_sir:=false;
+	Cout:=0.0; (*Ну я навіть незнаю......*)
+else
+if RegAm then
+	Cout:=t_Cout;
+end_if;
+
+end_if;
+
+if not X_amvoda then
+	Y_voda:=false;
+end_if;
+
+
+

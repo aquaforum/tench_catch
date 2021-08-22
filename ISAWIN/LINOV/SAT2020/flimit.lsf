@@ -1,0 +1,9 @@
+#combinatory
+if in<min_ then 
+flimit:=min_;
+elsif in>max_ then
+flimit:=max_;
+else
+flimit:=in;
+end_if;
+

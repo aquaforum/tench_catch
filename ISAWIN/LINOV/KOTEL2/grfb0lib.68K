@@ -1,0 +1,9 @@
+#include <tasy0def.h>
+
+extern ABP fbldef_pid_al (char *name, IBP *init, RBP *read);
+
+_asm ("
+FBLDEF:
+		dc.l	fbldef_pid_al
+		dc.l	0
+");

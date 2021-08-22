@@ -1,0 +1,3 @@
+#define sca_max 4000.0
+#define sca_min 0.0
+

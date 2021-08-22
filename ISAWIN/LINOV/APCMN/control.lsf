@@ -1,0 +1,13 @@
+#combinatory
+(*¬изначенн€ порогу дл€ п≥дкачки водою*)
+
+if (Net_1 AND State_1>ST_NABOR AND State_1 <ST_ROST1)
+OR (Net_2 AND State_2>ST_NABOR AND State_2 <ST_ROST1)
+OR (Net_3 AND State_3>ST_NABOR AND State_3 <ST_ROST1)
+then (*якщо €кийсь з апарат≥в скоро буде заводити крислал*) 
+	to_voda:= V_01 < 800.0 ;
+else
+	to_voda:= V_01 < 200.0 ;
+end_if;
+
+

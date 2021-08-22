@@ -1,0 +1,71 @@
+127.0.0.1	localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+
+192.168.15.11 plcdifuz
+192.168.15.12 difuz
+
+192.168.15.13 plcsatur
+192.168.15.14 satur
+
+192.168.15.15 plcvipar
+192.168.15.16 vipar
+
+192.168.15.17 plcffils
+192.168.15.18 ffils
+
+
+192.168.15.20 plckf0
+192.168.15.21 plckf1
+192.168.15.22 plckf2
+192.168.15.23 plckf3
+192.168.15.29 kffilter
+
+192.168.15.30 plcap0
+192.168.15.31 plcap1
+192.168.15.32 plcap2
+192.168.15.33 plcap3
+192.168.15.39 aparat
+
+192.168.15.42 plccf1
+192.168.15.41 plccf2
+192.168.15.43 plccf3
+192.168.15.44 plccf4
+192.168.15.45 plccf5
+
+192.168.15.49 centrif
+192.168.15.44 cf4
+192.168.15.45 cf5
+
+192.168.15.50 gaspich
+192.168.15.51 plcgpi4
+
+192.168.15.60 rou
+192.168.15.61 plcrou
+
+192.168.15.80 mvg
+
+192.168.15.9 rezerv
+
+192.168.2.51 tmaap1
+192.168.2.52 tmaap2
+192.168.2.53 tmaap3
+192.168.2.60 tmaob
+
+192.168.15.110 video
+
+
+192.168.15.152 plck2
+
+192.168.15.90 plcfdmom
+192.168.15.90 plcfdmon2
+192.168.15.91 plcbp
+
+192.168.15.101 fddiff1
+192.168.15.102 fdvip1
+
+192.168.15.152 flchplc

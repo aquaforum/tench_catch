@@ -1,0 +1,11 @@
+Target=ISA86M
+NbPass=2
+Constant=NO
+Label=NO
+Copy=YES
+Expression=YES
+DeadCode=NO
+Arithmetic=YES
+Boolean=YES
+BDD=NO
+NoSFC=NO

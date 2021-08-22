@@ -1,0 +1,736 @@
+#combinatory
+(*Ручне управлыння ЧП дозатора палива*)
+
+if X0019 AND X0026 AND X0027 then
+	Y0005:=true;
+end_if;
+
+if NOT ( (X0019 OR X0020) AND X0026) OR X0012 then
+	Y0005:=false;
+end_if;
+
+
+(*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*Ручне управлыння скыпом*)
+
+if X0019 then 
+	if redge(X0021,reX0021) AND X0022 then 
+		if X0009 then (*команда вверх*)
+			Y0011:=true;
+		else
+			Y0009:= true;
+		end_if;
+	end_if;
+
+	if redge(X0023,reX0023) AND X0022 then
+	 	if X0009 then (*команда вверх*)
+			Y0011:=true;
+		else
+			Y0010:= true;
+		end_if;
+	end_if;
+
+end_if;
+
+if redge(NOT (X0019 OR X0020)  (*перевели перемикач в середнє положення*)
+	or (NOT X0022) ,reX0022)  (*натиснули кнопку стоп*)
+	OR fedge(X0009,feX0009) (*привод виключився сам, наприклад по аварії*)
+	OR tonLiftTR  (*Вийшов тайме*)
+	OR X0008 (*Сигнал перевантаження по струму із ЧП*)
+	then 
+	Y0009:=false;
+	Y0010:=false;
+	Y0011:=false;
+end_if;
+
+
+if Y0011 then
+	tmTInv:=tInv;
+end_if;
+
+
+
+
+(*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*Робота по кінцевиках. *)
+if dwStop then
+	Y0010:=false;
+	Y0011:=false;
+
+end_if;
+
+if upStop then
+	Y0009:=false;
+	Y0011:=false;
+
+(*
+	if cntX0018=0 then 
+		almX0018:=true;
+	end_if;
+*)
+
+end_if;
+
+(*Це попереднє положення, для зниження швидкості*)
+if tonDwSlow AND Y0010 then
+	Y0011:=false;
+end_if;
+
+
+if tonTUSlow  AND Y0009 then
+	Y0011:=false;
+end_if;
+
+(*Скид швидкості по таймеру*)
+if tonTTorm then 
+	Y0011:=false;
+end_if;
+
+(*Ручне управління транспортером вугірря*)
+if X0019 AND X0033 AND X0034 then
+	Y0013:=true;
+end_if;
+
+if NOT ( (X0019 OR X0020) AND X0033 )then
+	Y0013:=false;
+end_if;
+
+(*Ручне управління  пластинчатим транспотрером*)
+
+if X0019 AND X0035 AND X0036 then
+	Y0014:=true;
+end_if;
+
+if not ((X0019 OR X0020) AND  X0035) then
+	Y0014:=false;
+end_if;
+
+(*Ручне управління поворотом лопати*)
+if X0019 AND X0037 AND X0038 then
+	Y0001:=true;
+end_if;
+
+if not ((X0019 OR X0020) AND X0037) then
+	Y0001:=false;
+end_if;
+
+
+(*Ручне управління підйомом-опусканням пробки*)
+if X0019 then
+		Y0015:=X0039 AND NOT (tonTCork OR X0042) ; (*Тут треба подописувати кінцевики*)
+		Y0002:=X0040 AND NOT (X0028 OR X0041) ;
+end_if;
+
+(*Автомат вимикання і опускання пробки та поворотом лопати*)
+if X0020 then
+	if Y0015 and (tonTCork OR X0042) then 
+		Y0015:=false;
+		Y0001:=true;
+	end_if;
+
+	if Y0002 and (X0028 OR X0041) then 
+		Y0002:=false;
+	end_if;
+
+
+	(*Коли скіп їде вниз і спрацював кінцевк*)
+	if redge (State=ST_LIFTDOWN AND X0007,reX0007) then 
+		Y0002:=true; (*Дати команду на опускання пробки*)
+	end_if;
+
+	if tonPDown AND Y0002 then 
+		Error:=11;
+		Y0002:=false;
+		zdMode:=0;
+		oneShot:=false;
+	end_if;
+
+	
+
+
+	(*Команда підняття пробки в автоматичному режимі*)
+	if tonArk then 
+		Y0015:=true;
+	end_if;
+
+	if tonTShovel then 
+		Y0001:=false;
+	end_if;
+
+end_if;
+
+
+(*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- *)
+
+if TlastLoad>t#12h  then 
+		tstop(TLastLoad);
+end_if; 
+
+(*Лічильник імпульсів з кінцевика лопати*)
+if redge(Y0009 AND Y0011,reY0911) then
+	cntX0018:=0;
+	almX0018:=false;
+
+end_if;
+
+if redge(X0018,reX0018) then 
+	cntX0018:=cntX0018+1;
+end_if;
+
+(*Фіксація ваги в ручному режимі для ручного звіту*)
+
+if X0019 then (**)
+	
+	if redge(Y0013,reY0013) (*По включенню транспортера вугілля*)
+		and V0001< maxTaGcl (*І якщо тара менше заданої*)
+	then (*Зафіксувати тару*)
+		tareGcl:=V0001;
+	end_if;
+	
+	if redge(X0011,reX0011) (*По включенню дозатора вугілля*)
+		and V0001>maxTaGcl (*і якщо там справді щось лежить*)
+	then
+		Gcl:=V0001-tareGcl;
+	end_if;
+
+
+	if redge(Y0014,reY0014)  (*так само тара вапняку *)
+		and V0002< maxTaGst
+	then
+		tareGst:=V0002;
+	end_if;
+
+	if redge(Y0009,reY0009) 
+		and V0002 > maxTaGst 
+	then
+		Gst:=V0002-tareGst;
+	end_if;
+
+	if fedge(X0048,feX0048) then
+		Nc:=Nc+1;
+	end_if;
+	
+
+end_if;
+(*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+
+if  X0019 AND Statecl>STCL_OFF then (*Якщо дозатор вугілля набраний і включили ручний режим тоді вимкнути програму завантаження вугілля *)
+
+	Statecl:=STCL_OFF;
+
+	Y0013:=false;
+	tstop(tmGcl);
+
+end_if;
+
+
+(*Автопідхват набраного дозатора вугілля*)
+if redge(X0020,reX0020) 
+	AND V0001> zdGcl*0.9 
+	AND StateCL=STCL_OFF 
+	then
+	StateCL:=STCL_WAIT;
+	dozGcl:=V0001-tareGcl;
+
+end_if;
+	
+
+
+(*Кінцевий автомат завантаження дозатора вугілля*)
+case Statecl of
+
+STCL_ALARM:
+	Y0013:=false;
+
+	if not X0020 then	
+		Statecl:=STCL_OFF;
+	end_if;
+	clFULL:=false;
+	tstop(tmGcl);
+
+STCL_OFF:
+	(*Стою, чекаю, нічого не роблю*)	
+
+STCL_START:
+	if rdGcl AND(*Якщо сигнал з ваги не шумить*)
+	V0001 < maxTaGcl  (*Тара менше максимальної дозволеної*)
+	then
+		   tareGcl:=V0001;
+			(*Розрахувати завдання на дозатори*)
+
+			
+			spGcl:= tmpGcl + tareGcl+ oldGcl-subGcl;
+
+			if spGcl<tareGcl then  (*Перевірити ти при необхідності розрахувати понову*)
+				oldGcl:=0.0;
+				spGcl:= tmpGcl + tareGcl+ oldGcl-subGcl;
+		
+			end_if;
+
+		
+				
+			Statecl:=STCL_LOADCL;
+			tmGcl:=t#0s;
+
+			tstart(tmGcl);
+
+			(* preGcl:=0.0; *) 
+			postGcl:=0.0;
+		
+	end_if;
+
+	if tonStartWait then (*Якщо вийшов заданий час а зтарувати не вдалося - виключити програму*)
+		Error:=2;
+		State:=STCL_ALARM;
+		zdMode:=0;		
+	end_if;
+
+
+STCL_LOADCL:
+(*3 - насипати вугілля в дозатор вугілля*)
+		Y0013:=true;
+		if V0001>spGcl then (*Якщо насипали скільки треба*)
+			Y0013:=false;
+			tstop(tmGcl);
+			Statecl:=STCL_MEASCL; (*петейти до фінального зважування*)
+		end_if;
+
+		if tonLoadCl then 
+			Error:=4;
+			Statecl:=STCL_ALARM;
+			zdMode:=0;
+		end_if;
+
+STCL_MEASCL:
+(*4 - витримка часу щоб заспокоїлося*)
+(*5 - зафіксувати вагу вугілля*)
+	if tonMeasCl (*якщо вийшов час заспокоювання*)
+	AND rdGcl (*і сигнал стабілізувався*)
+	then 	
+		preGcl:=V0001;
+		dozGcl:=preGcl-tareGcl; (*Попередній розрахунок ваги вугілля*)
+
+		if iKGcl>0.01 then 
+			oldGcl:=(tmpGcl-dozGcl)*iKGcl+oldGcl; (*!!!!!  новий алгоритм коригування завантаження вугілля, інтегральний !!!! *)
+		else
+			oldGcl:=0.0;
+		end_if;
+
+		if oldGcl> 600.0 then 
+			oldGcl:=600.0 ;
+		end_if;
+
+
+
+		Statecl:=STCL_WAIT;
+		tstop(tmGcl);
+
+	end_if;
+		
+STCL_WAIT:
+	(*Завантажений, стою, чекаю, поки вивантажать*)
+	if State=ST_MEASST
+	AND V0001<0.85*preGcl (*Якщо вивантажили дозатор хоча б на 85 %*)
+	or  fedge(Y0013,feY0013) 
+	then 
+		dozGcl:=0.0;
+		Statecl:=STCL_OFF;
+	end_if;
+
+else
+	Statecl:=STCL_OFF;
+end_case;
+
+(*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- *)
+(*Автомати засипки шихти в скіп*)
+
+(*Хріновий варіант, треба переробити*)
+if not X0020 and State>ST_OFF then  (*Якщо раптом щось виключили з автомата*)
+	State:=ST_OFF; (*все зупитити*)
+
+	Y0009:=false;
+	Y0010:=false;
+	Y0011:=false;
+
+	Y0013:=false;
+	Y0014:=false;
+	Y0015:=false;
+	Y0016:=false;
+	
+	tstop(Tall);
+	tstop(tmGst);
+
+end_if;
+
+l_clOff:= clOff AND zdGcl=0.0; (*не дуже добре але може бути*)
+
+(*Кінцевий автомат завантаження печі*)
+case State of
+ST_ALARM:
+	oneShot:=false;
+	Y0016:=runAlarm;
+
+	Y0005:=false;
+
+	Y0009:=false;
+	Y0010:=false;
+	Y0011:=false;
+
+	Y0013:=false;
+	Y0014:=false;
+	Y0015:=false;
+	Y0002:=false;
+	Y0016:=false;
+	
+	Y0001:=false;	
+
+	if not X0020  then 
+		State:=ST_OFF;
+		Y0016:=false;
+		zdMode:=0; (*На всякий випадок виключити*)
+	end_if;
+	
+	tstop(tmGst);
+	tstop(Tall);
+		
+ST_OFF: (*Очікування початкових умов для виконання однієї загрузки*)
+
+	if dwStop (*Скіп знаходиться внизу*)
+	(* AND (X0003 AND X0004) І верхні кінцевики також справні*)
+	AND X0020 (*Включено в автомат всі механізми*)
+	AND not X0015 (*трос не провис*)
+	AND not (X0009 OR X0011) (*Всі механізми виключені*)	
+	
+	(*Купол і скіп можуть бути не в автоматичному режимі, для роботи алгоритму дозування це неважливо*)
+	(*Тут можливо ще треба буде дописати умов*)
+	then 
+
+		Error:=0; (*Скинути повідомлення про помилку*)
+
+		case zdMode of
+		1: (*Робота по штанзі*)
+			if tonProbeWait then 
+				oneShot:=true;
+			end_if;
+		2: (*Кожен час старт по штанзі*)
+			if redge(mod(time_s,(3600/nomLoad-1))=0 , p_01) then 
+				oneShot:=X0014;
+			end_if;
+
+		else
+			stLOAD:=false;
+		end_case;
+
+
+		if oneShot  then
+			Tall:=t#0s;
+			tstart(Tall);
+
+			oneShot:=false;
+			Error:=0;
+			tmGst:=t#0s;
+
+			State:=ST_ALARM1;
+
+			(*Всю математику на ноль *)
+			Gst:=0.0;
+			(*preGcl:=0.0;*)
+			preGst:=0.0;
+			postGcl:=0.0;
+			postGst:=0.0;
+(*
+			if TlastLoad> t#12h then 
+				oldGcl:=0.0;
+				oldGst:=0.0;
+			end_if;  *)
+
+			tstop(tmGst);
+			tmGst:=t#0s;
+
+		end_if;
+
+
+	end_if;
+(*Словесний алгоритм*)
+(*1 - Тарування дозаторів, розрахунок завдань на завантаження*)
+(*2 - довгий сигнал потім пауза силнал*)
+(*3 - насипати вугілля в дозатор вугілля*)
+(*4 - витримка часу щоб заспокоїлося*)
+(*5 - зафіксувати вагу вугілля*)
+(*6 - запустити вивантаження вугілля в вагонетку*)
+(*7 - з витрмкою часу запустити пластинчатий транспортер*)
+(*8 - по досягненні заданої ваги виключити пластинчатий транспорет та дозатор вугілля*)
+(*9 - з витримкою часу зафіксувати вагу шихти в скіпу та перевірити вагу дозатора вугілля*)
+
+(*12 - дати подвійний сигнал*)
+(*13 - відправити скіп вверх*)
+(*14 - вітримати час, відправити скіа вниз *)
+
+(*10н під час ходу скіпа вниз коли спрацював кінцевик Х0007 відкрити-закртити пробку  *)
+
+(*15 - дочекатися опускання скіпа вниз*)
+(*14 - зтарувати скіп, розрахувати фактичну масу висипаної шихти*)
+(*15 - перейти на початок програми*)
+
+
+(*----------------------------------------*)
+(*10 - якщо автоматичний режим скіпа та купола виключено - перейти на крок 16 *)
+(*11 - відкрити та закрити купол*)
+
+(*16 - відслідкувати підйом та опускання скіпа по нижніх кінцевиках*)
+(*17 - перейти на початок програми*)
+
+
+	
+ST_ALARM1:
+(*2 - довгий сигнал потім пауза силнал*)
+	Y0016:=runAlarm;
+	if tonAlarmStart then 
+		Y0016:=false;
+
+	if not l_clOff then (*Якщо не відкочено завантаження вугілля*)
+		if Statecl=STCL_WAIT then (*Якщо дозатор вугілля готовий *)
+			State:=ST_PREPAREST; (*Перейти на стадію підготовки завантаження шихти*)
+		else
+			if Statecl=STCL_OFF then (*Якщо дозатор вугілля досі вислючений*)
+				tmpGcl:=zdGcl; (*Завдання на завантаження *)
+				Statecl:=STCL_START; (*Запустити завантаження вугілля*)
+			end_if;
+			if Statecl=STCL_ALARM then (*Якщо дозатор вугілля  в аварійному стані*)
+					(*Error:=State;  То і в нас тут теж аварія*)
+					State:=ST_ALARM;
+			else
+				State:=ST_WAITCL; (*Чекати закінчення завантаження вугілля*)
+			end_if;
+		end_if;
+	else (*інакше перейти далі*)
+			State:=ST_PREPAREST; (*Перейти на стадію підготовки завантаження шихти*)
+	end_if;
+		
+	end_if;
+
+ST_WAITCL:
+	if Statecl=STCL_WAIT then (*Якщо завантажили вугілля в дозатор*)
+		State:=ST_PREPAREST;
+	end_if;
+
+	if Statecl=STCL_ALARM then (*Якщо не змогли завантажити вугілля*)
+		(*Error:=State;*)
+		State:=ST_ALARM;
+	end_if;
+
+
+ST_PREPAREST:
+	if V0002<MaxTaGst (*Якщо тара в межах норми*)
+	and rdGst (*Вага не шумить*)
+	then 
+		tareGst:=V0002;
+
+		spGst:=tareGst+zdGst+oldGst-subGst; (*Розрахувати завдання*)
+
+		if spGst< tareGst then
+			oldGst:=0.0;
+			spGst:=tareGst+zdGst+oldGst-subGst; (*Розрахувати завдання*)
+		end_if;
+
+		Gcl:=dozGcl;
+		State:=ST_LOADST;
+
+	end_if;
+	
+	if tonPrepareST then 
+		Error:=1;
+		State:=ST_ALARM;
+	end_if;
+
+
+ST_LOADST:
+(*7 - з витрмкою часу запустити пластинчатий транспортер*)
+	if l_clOff then (*Якщо відключено завантаження вугілля*)
+		Y0014:=true; (*Включити пластинчатий*)
+	else
+
+	Y0005:=true;
+
+	if tmGst=t#0s and tonDelayCl then 
+		tstart(tmGst);
+	end_if;
+
+	Y0014:= tonDelayCl;
+
+	end_if;
+
+(*8 - по досягненні заданої ваги виключити пластинчатий транспорет та дозатор вугілля*)
+	if V0002>spGst then  (*Коли напсипали задану вагу*)
+		Y0014:=false;
+		tstop(tmGst);
+		State:=ST_POSTCL;
+	end_if;
+	
+	if tonLoadSt then (*Якщо за заданий час не насипали скільки треба*)
+(*		Error:=3;
+		State:=ST_ALARM; *)
+
+		Y0014:=false;
+		State:=ST_POSTCL;
+
+	end_if;
+
+ST_POSTCL:
+	if tonPostCl 
+	OR l_clOff (*відключено завантаження вугілля*)
+	then 
+		Y0005:=false; (*все виключити*)
+		State:=ST_MEASST;
+	end_if;
+
+ST_MEASST:
+(*9 - з витримкою часу зафіксувати вагу шихти в скіпу та перевірити вагу дозатора вугілля*)
+	if tonMeasSt 
+	and rdGst and rdGcl
+	then 
+		preGst:=V0002; (*Зафіксувати вагу шихти*)
+		Gst:= zdGst; (* preGst-tareGst; Попередній розрахунок ваги шихти*)
+		
+		if iKGst>0.01 then 
+			oldGst:=(zdGst-Gst)*iKGst+oldGst;
+		else
+			oldGst:=0.0;
+		end_if;
+
+
+		if oldGst>600.0 then 
+			oldGst:=600.0;
+		end_if;
+
+
+			State:=ST_ALARM2;
+
+	end_if;
+	
+ST_ALARM2:
+(*12 - дати подвійний сигнал*)
+	Y0016:=runAlarm;
+	if tonAlarm2  then
+			State:=ST_LIFTUP;
+			Y0009:=true; (*Дати команду на підйом вагонетки*)
+	end_if;
+
+
+ST_LIFTUP:
+(*13 - відправити скіп вверх*)
+
+	if tonTaccelUP then  (*Включити прискорення*)
+		Y0011:=true;
+	end_if;	
+
+	if upStop AND NOT X0009 then  (*Приїхали вверх і частотник виключився*)
+		State:=ST_WAITUP;
+	end_if;
+
+ST_WAITUP:
+(*14 - вітримати час, відправити скіа вниз *)
+	if tonUpWait then 
+		State:=ST_LIFTDOWN;
+		Y0010:=true;
+
+
+	(*Команда на набирання дозатора вугілля. Виконується один раз *)
+	if ( X0020 AND (Statecl=STCL_OFF  OR (Statecl=STCL_WAIT) ) ) AND not l_clOff then (*Якщо включено в автомати дозатор вугілля*)
+			tmpGcl:=Gst*kW; (* !!!!! Завдання *)
+			Statecl:=STCL_START; (*Запустити дозатор вугілля*)
+			
+	end_if;
+
+
+	end_if;
+
+ST_LIFTDOWN:
+
+	if tonTaccelDown then
+		Y0011:=true;
+	end_if;
+
+
+
+(*15 - дочекатися опускання скіпа вниз*)
+	if dwStop AND NOT X0009 then  (* Приїхали вниз і частотник виключився*)
+		State:=ST_FINISH;
+	end_if;
+
+ST_FINISH:
+	if tonFinish (*В кінці всього*)
+	and rdGst
+	then 
+
+(*14 - зтарувати скіп, розрахувати фактичну масу висипаної шихти*)
+		postGst:=V0002;
+		(* Gst:=preGst-postGst; Фінальна вага шихти*)
+
+		(*таймер часу останьього завантаження*)
+		TlastLoad:=t#0s;
+		tstart(TlastLoad);
+
+(*15 - перейти на початок програми*)
+		tstop(Tall);
+		Nc:=Nc+1;
+
+		State:=ST_OFF;
+	end_if;		
+
+else
+	State:=ST_OFF;
+end_case;
+
+(**)
+if State>ST_OFF then 
+	lastState:=State;
+end_if;
+
+
+
+if Y0011 then 
+	C0001:=4000.0;
+else
+	C0001:=100.0;
+end_if;
+
+
+(*Аварії по кінцевиках *)
+
+if X0008 then 
+	Error:=7;
+end_if;
+
+if X0015 then
+	Error:=5;
+end_if;
+
+
+if X0005 then 
+	Error:=6;
+end_if;
+
+
+if X0010 then 
+	Error:=8;
+end_if;
+
+
+if tonTTorm then
+	Error:=10;
+end_if;
+
+
+if tonLiftTr then
+	Error:=9;
+end_if;
+
+
+if X0019 and Error>0 then 
+	Error:=0;
+end_if;
+
+
+

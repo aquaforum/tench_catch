@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/text">
+        <file>list.txt</file>
+        <file>alert.txt</file>
+        <file>list2.txt</file>
+        <file>listfr.txt</file>
+    </qresource>
+</RCC>

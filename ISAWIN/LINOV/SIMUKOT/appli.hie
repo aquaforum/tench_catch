@@ -1,0 +1,19 @@
+_section=_begin {
+gazKolek(_ST)
+Lbaraban(_ST)
+AirFan(_ST)
+Utechki(_FBD)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+}
+
+_section=_fblocks {
+}
+

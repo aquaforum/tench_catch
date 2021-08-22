@@ -1,0 +1,95 @@
+#ifndef __AUMELSEC_H__
+#define __AUMELSEC_H__
+
+
+// даний клас реалізує інтерфейс доступу до пам’яті контролера.
+
+
+#include <QObject>
+#include <auplcdrive.h>
+#include <QTcpSocket>
+
+#define  ASYNC
+
+class QString;
+class QTimer;
+
+
+//цей клас реалізує методи шкалювання даних
+//class ScaleDev;
+
+// клас базується на шаблонному класі IoDev
+// треба написати документацію
+
+class AuMelsec:  public AuPlcDrive
+{
+    Q_OBJECT
+public:
+        AuMelsec(AuBase &base,quint16 index, QObject *parrent=nullptr); // кноструктор, треба уточнити
+        ~AuMelsec(); // поки-що тривіальний деструктор
+
+        int loadList(QString fileName);
+        void setHostName(QString hostName);
+        void setPort(int Port);
+        int start();
+        void setPlcAddr(qint8 v) { plcAddr=v;}
+
+//signals:
+//    void updateData(); // сигнал висилається коли отримано новідані не наслідується
+//    void Alert(QString); // будуть висилатися сигнали згідно із станом зв’язку
+
+//public slots:
+//            void sendValue(QString tag,qint16 v);
+//            void sendValue(QString tag,qint32 v);
+//            void sendValue(QString tag,double v);
+//            void sendValue(QString tag,QVector<qint16> &v);
+
+
+private slots:
+    void slotConnected (); // приєдналися
+    void slotNewConnect();
+    void slotTimeout(); // таймаут отримання даних від сервера
+    void slotDisconnect(); // відєднання зі сторони сервера
+
+    void slotError(QAbstractSocket::SocketError);
+
+    void slotRead();
+    //void slotSend();
+public slots:
+    void setData(qint32 , QVector<qint16> & );
+
+private:
+    int nPort; // номер порта, за замовчанням має бути 502
+    int nC;  // порядковий номер в query_list або прапор-вказівник на query_queue
+    qint8 plcAddr;
+
+
+    QTcpSocket *pS; //сокет для зв’язку
+    // QString sHostname; // ім’я чи IP-адреса контролера
+    qint16 nI; // це буде індекс пакунка
+    int nLen; // довжина наступноно бока даних
+
+    //QTimer *connSend; // таймер для відправки чергового запиту
+    QTimer *connWait; // тайсер очікування перед спробою встановити нове з’єднання
+    QTimer *connTimeout; // таймер таймауту з’єднання, можливо в нових версіях QT цей алгоритм буде непотрібен
+
+
+    // Список запитів
+    QVector<QByteArray> query_list;
+    QVector<int> dataLen; // довжина відповіді в словах
+
+    QVector<qint16> query_read,local_read; // це що таке ?
+
+#ifdef ASYNC
+    QQueue<QByteArray> query_queue; // черга на відправку даних в контролер
+#endif
+
+    QVector<int> Index; // сюди занесені індекси, куди писати дані.
+
+    QHash<QString,qint8>  cmdpref; // це буде перекодувальник типу адреси
+
+    bool linkOk;
+};
+
+
+#endif // RXMODBUS_H

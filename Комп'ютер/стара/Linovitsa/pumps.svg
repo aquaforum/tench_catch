@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg19292"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="pumps.svg">
+  <defs
+     id="defs19294">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient19483">
+      <stop
+         style="stop-color:#6d6d6d;stop-opacity:1"
+         offset="0"
+         id="stop19485" />
+      <stop
+         id="stop19512"
+         offset="0.78882211"
+         style="stop-color:#e5e5e5;stop-opacity:1" />
+      <stop
+         style="stop-color:#494949;stop-opacity:1"
+         offset="1"
+         id="stop19487" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient19483"
+       id="radialGradient19489"
+       cx="-61.207146"
+       cy="757.14081"
+       fx="-61.207146"
+       fy="757.14081"
+       r="12"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-70.710678,-97.479721)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient19483"
+       id="radialGradient19536"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-71.720831,-57.073619)"
+       cx="-61.207146"
+       cy="757.14081"
+       fx="-61.207146"
+       fy="757.14081"
+       r="12" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient19483"
+       id="radialGradient19552"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-71.215754,-13.63706)"
+       cx="-61.207146"
+       cy="757.14081"
+       fx="-61.207146"
+       fy="757.14081"
+       r="12" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient19483"
+       id="radialGradient19568"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-71.215754,28.789349)"
+       cx="-61.207146"
+       cy="757.14081"
+       fx="-61.207146"
+       fy="757.14081"
+       r="12" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient19483"
+       id="radialGradient19652"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-70.710678,-97.479721)"
+       cx="-61.207146"
+       cy="757.14081"
+       fx="-61.207146"
+       fy="757.14081"
+       r="12" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient19483"
+       id="radialGradient19654"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(135.75143,-56.568543)"
+       cx="-61.207146"
+       cy="757.14081"
+       fx="-61.207146"
+       fy="757.14081"
+       r="12" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient19483"
+       id="radialGradient19656"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(136.25651,-13.131984)"
+       cx="-61.207146"
+       cy="757.14081"
+       fx="-61.207146"
+       fy="757.14081"
+       r="12" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient19483"
+       id="radialGradient19658"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(136.25651,29.294425)"
+       cx="-61.207146"
+       cy="757.14081"
+       fx="-61.207146"
+       fy="757.14081"
+       r="12" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="-147.49589"
+     inkscape:cy="287.05196"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1060"
+     inkscape:window-x="-2"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata19297">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       inkscape:connector-curvature="0"
+       id="path40701"
+       d="m 75.382662,822.28385 0,4.45118 3.094029,0 0,1.2876 -6.777396,0 0,-1.54506 1.39968,0 0,-2.94296 -0.01237,-0.0518"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_1.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path40703"
+       d="m 58.832132,822.28385 0,4.45118 -3.094028,0 0,1.2876 6.777396,0 0,-1.54506 -1.39968,0 0,-2.94296 0.01237,-0.0518"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_1.png" />
+    <path
+       sodipodi:nodetypes="cccccsscccccccc"
+       id="path40705"
+       d="m 87.758473,803.0782 -2.798441,0 0,-1.70563 -7.436606,0.0138 c 2.303599,2.6287 3.57584,6.00503 3.58032,9.5018 0,7.97322 -6.457175,14.43679 -14.422535,14.43679 -7.965354,0 -14.422528,-6.46357 -14.422528,-14.43679 0,-7.97323 6.457174,-14.4368 14.422528,-14.4368 0.196383,0.003 0.392652,0.009 0.588678,0.0207 l -0.01413,-0.008 17.692376,0 0,-2.13605 2.810097,0 0,9.02991 z"
+       style="fill:#cecece;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_1.png" />
+    <ellipse
+       cy="810.81781"
+       cx="66.600052"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_1.png"
+       id="path41177"
+       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       rx="9"
+       ry="8.9886084" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 80.278057,872.0467 0,4.45118 3.094029,0 0,1.2876 -6.777396,0 0,-1.54506 1.39968,0 0,-2.94296 -0.01237,-0.0518"
+       id="path19903"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_0.png" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 63.727527,872.0467 0,4.45118 -3.094028,0 0,1.2876 6.777396,0 0,-1.54506 -1.39968,0 0,-2.94296 0.01237,-0.0518"
+       id="path19905"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_0.png" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:connector-curvature="0"
+       style="fill:#cecece;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 92.653868,852.84105 -2.798441,0 0,-1.70563 -7.436606,0.0138 c 2.303599,2.6287 3.57584,6.00503 3.58032,9.5018 0,7.97322 -6.457175,14.43679 -14.422535,14.43679 -7.965354,0 -14.422528,-6.46357 -14.422528,-14.43679 0,-7.97323 6.457174,-14.4368 14.422528,-14.4368 0.196383,0.003 0.392652,0.009 0.588678,0.0207 l -0.01413,-0.008 17.692376,0 0,-2.13605 2.810097,0 0,9.02991 z"
+       id="path19907"
+       sodipodi:nodetypes="cccccsscccccccc"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_0.png" />
+    <ellipse
+       ry="8.9886084"
+       rx="9"
+       style="fill:#606060;fill-opacity:1;stroke:none"
+       id="ellipse19909"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       cx="71.495453"
+       cy="860.58069" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19911"
+       d="m 74.920914,773.23813 0,4.45118 3.094029,0 0,1.2876 -6.777396,0 0,-1.54506 1.39968,0 0,-2.94296 -0.01237,-0.0518"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_2.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19913"
+       d="m 58.370384,773.23813 0,4.45118 -3.094028,0 0,1.2876 6.777396,0 0,-1.54506 -1.39968,0 0,-2.94296 0.01237,-0.0518"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_2.png" />
+    <path
+       sodipodi:nodetypes="cccccsscccccccc"
+       id="path19915"
+       d="m 87.296725,754.03248 -2.798441,0 0,-1.70563 -7.436606,0.0138 c 2.303599,2.6287 3.57584,6.00503 3.58032,9.5018 0,7.97322 -6.457175,14.43679 -14.422535,14.43679 -7.965354,0 -14.422528,-6.46357 -14.422528,-14.43679 0,-7.97323 6.457174,-14.4368 14.422528,-14.4368 0.196383,0.003 0.392652,0.009 0.588678,0.0207 l -0.01413,-0.008 17.692376,0 0,-2.13605 2.810097,0 0,9.02991 z"
+       style="fill:#cecece;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_2.png" />
+    <ellipse
+       cy="761.77216"
+       cx="66.138306"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_2.png"
+       id="ellipse19917"
+       style="fill:#1aff00;fill-opacity:1;stroke:none"
+       rx="9"
+       ry="8.9886084" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 132.36186,819.06956 0,4.45118 -3.09403,0 0,1.2876 6.7774,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+       id="path19927"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_1.png" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 148.91239,819.06956 0,4.45118 3.09403,0 0,1.2876 -6.77739,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+       id="path19929"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_1.png" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:connector-curvature="0"
+       style="fill:#cecece;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 119.98605,799.86391 2.79844,0 0,-1.70563 7.43661,0.0138 c -2.3036,2.6287 -3.57584,6.00503 -3.58032,9.5018 0,7.97322 6.45717,14.43679 14.42253,14.43679 7.96536,0 14.42253,-6.46357 14.42253,-14.43679 0,-7.97323 -6.45717,-14.4368 -14.42253,-14.4368 -0.19638,0.003 -0.39265,0.009 -0.58867,0.0207 l 0.0141,-0.008 -17.69238,0 0,-2.13605 -2.8101,0 0,9.02991 z"
+       id="path19931"
+       sodipodi:nodetypes="cccccsscccccccc"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_1.png" />
+    <ellipse
+       ry="8.9886084"
+       rx="9"
+       style="fill:#ff0000;fill-opacity:1;stroke:none"
+       id="ellipse19933"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       cx="-141.14445"
+       cy="807.60352"
+       transform="scale(-1,1)" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19935"
+       d="m 136.75219,868.83241 0,4.45118 -3.09403,0 0,1.2876 6.77739,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_0.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19937"
+       d="m 153.30272,868.83241 0,4.45118 3.09402,0 0,1.2876 -6.77739,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_0.png" />
+    <path
+       sodipodi:nodetypes="cccccsscccccccc"
+       id="path19939"
+       d="m 124.37637,849.62676 2.79845,0 0,-1.70563 7.4366,0.0138 c -2.3036,2.6287 -3.57584,6.00503 -3.58032,9.5018 0,7.97322 6.45718,14.43679 14.42254,14.43679 7.96535,0 14.42252,-6.46357 14.42252,-14.43679 0,-7.97323 -6.45717,-14.4368 -14.42252,-14.4368 -0.19639,0.003 -0.39266,0.009 -0.58868,0.0207 l 0.0141,-0.008 -17.69238,0 0,-2.13605 -2.81009,0 0,9.02991 z"
+       style="fill:#cecece;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_0.png" />
+    <ellipse
+       cy="857.36639"
+       cx="-145.53477"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_0.png"
+       id="ellipse19941"
+       style="fill:#606060;fill-opacity:1;stroke:none"
+       rx="9"
+       ry="8.9886084"
+       transform="scale(-1,1)" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 131.39504,770.02384 0,4.45118 -3.09403,0 0,1.2876 6.77739,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+       id="path19943"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_2.png" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 147.94557,770.02384 0,4.45118 3.09402,0 0,1.2876 -6.77739,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+       id="path19945"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_2.png" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:connector-curvature="0"
+       style="fill:#cecece;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 119.01922,750.81819 2.79845,0 0,-1.70563 7.4366,0.0138 c -2.3036,2.6287 -3.57584,6.00503 -3.58032,9.5018 0,7.97322 6.45718,14.43679 14.42254,14.43679 7.96535,0 14.42252,-6.46357 14.42252,-14.43679 0,-7.97323 -6.45717,-14.4368 -14.42252,-14.4368 -0.19639,0.003 -0.39266,0.009 -0.58868,0.0207 l 0.0141,-0.008 -17.69238,0 0,-2.13605 -2.81009,0 0,9.02991 z"
+       id="path19947"
+       sodipodi:nodetypes="cccccsscccccccc"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_2.png" />
+    <ellipse
+       ry="8.9886084"
+       rx="9"
+       style="fill:#1aff00;fill-opacity:1;stroke:none"
+       id="ellipse19949"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       cx="-140.17764"
+       cy="758.55786"
+       transform="scale(-1,1)" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19951"
+       d="m 134.17296,715.72814 0,4.45118 -3.09403,0 0,1.2876 6.77739,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_3.png" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19953"
+       d="m 150.72349,715.72814 0,4.45118 3.09402,0 0,1.2876 -6.77739,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+       style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_3.png" />
+    <path
+       sodipodi:nodetypes="cccccsscccccccc"
+       id="path19955"
+       d="m 121.79714,696.52249 2.79845,0 0,-1.70563 7.4366,0.0138 c -2.3036,2.6287 -3.57584,6.00503 -3.58032,9.5018 0,7.97322 6.45718,14.43679 14.42254,14.43679 7.96535,0 14.42252,-6.46357 14.42252,-14.43679 0,-7.97323 -6.45717,-14.4368 -14.42252,-14.4368 -0.19639,0.003 -0.39266,0.009 -0.58868,0.0207 l 0.0141,-0.008 -17.69238,0 0,-2.13605 -2.81009,0 0,9.02991 z"
+       style="fill:#cecece;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.49999994;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_3.png" />
+    <ellipse
+       cy="704.26215"
+       cx="-142.95557"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_3.png"
+       id="ellipse19957"
+       style="fill:#fffb00;fill-opacity:1;stroke:none"
+       rx="9"
+       ry="8.9886084"
+       transform="scale(-1,1)" />
+    <g
+       id="g19594"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:connector-curvature="0"
+         id="path19919"
+         d="m -125.22899,668.52263 0,4.45118 3.09403,0 0,1.2876 -6.7774,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:connector-curvature="0"
+         id="path19921"
+         d="m -138.62284,668.37786 0,4.45118 -3.09402,0 0,1.2876 6.77739,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         y="648.05212"
+         x="-131.60353"
+         height="5.3571429"
+         width="11.5625"
+         id="rect19491"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         r="11.65"
+         cy="659.66107"
+         cx="-131.91782"
+         id="path19481"
+         style="fill:url(#radialGradient19489);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         y="646.98572"
+         x="-120.04343"
+         height="7.705492"
+         width="2.0958114"
+         id="rect19493"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         r="5.5"
+         transform="scale(1,-1)"
+         cy="-659.55676"
+         cx="-131.92171"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         id="ellipse19925"
+         style="fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1" />
+    </g>
+    <g
+       id="g19684"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         d="m -126.23914,708.92873 0,4.45118 3.09403,0 0,1.2876 -6.7774,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+         id="path19524"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         d="m -139.63299,708.78396 0,4.45118 -3.09402,0 0,1.2876 6.77739,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+         id="path19526"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png" />
+      <rect
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect19528"
+         width="11.5625"
+         height="5.3571429"
+         x="-132.61368"
+         y="688.45825" />
+      <circle
+         style="fill:url(#radialGradient19536);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle19530"
+         cx="-132.92796"
+         cy="700.0672"
+         r="11.65" />
+      <rect
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect19532"
+         width="2.0958114"
+         height="7.705492"
+         x="-121.05358"
+         y="687.39185" />
+      <circle
+         style="fill:#00bf15;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="circle19534"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         cx="-132.93185"
+         cy="-699.96289"
+         transform="scale(1,-1)"
+         r="5.5" />
+    </g>
+    <g
+       id="g19676"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:connector-curvature="0"
+         id="path19540"
+         d="m -125.73407,752.36529 0,4.45118 3.09403,0 0,1.2876 -6.7774,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:connector-curvature="0"
+         id="path19542"
+         d="m -139.12792,752.22052 0,4.45118 -3.09402,0 0,1.2876 6.77739,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         y="731.89478"
+         x="-132.10861"
+         height="5.3571429"
+         width="11.5625"
+         id="rect19544"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         r="11.65"
+         cy="743.50372"
+         cx="-132.4229"
+         id="circle19546"
+         style="fill:url(#radialGradient19552);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         y="730.82837"
+         x="-120.5485"
+         height="7.705492"
+         width="2.0958114"
+         id="rect19548"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         r="5.5"
+         transform="scale(1,-1)"
+         cy="-743.39941"
+         cx="-132.42679"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         id="circle19550"
+         style="fill:#ff0013;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1" />
+    </g>
+    <g
+       id="g19660"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         d="m -125.73407,794.7917 0,4.45118 3.09403,0 0,1.2876 -6.7774,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+         id="path19556"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         d="m -139.12792,794.64693 0,4.45118 -3.09402,0 0,1.2876 6.77739,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+         id="path19558"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png" />
+      <rect
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect19560"
+         width="11.5625"
+         height="5.3571429"
+         x="-132.10861"
+         y="774.32117" />
+      <circle
+         style="fill:url(#radialGradient19568);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle19562"
+         cx="-132.4229"
+         cy="785.93011"
+         r="11.65" />
+      <rect
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect19564"
+         width="2.0958114"
+         height="7.705492"
+         x="-120.5485"
+         y="773.25476" />
+      <circle
+         style="fill:#686868;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="circle19566"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         cx="-132.42679"
+         cy="-785.82581"
+         transform="scale(1,-1)"
+         r="5.5" />
+    </g>
+    <g
+       id="g19602"
+       transform="matrix(-1,0,0,1,-207.47226,0.50507627)"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         d="m -125.22899,668.52263 0,4.45118 3.09403,0 0,1.2876 -6.7774,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+         id="path19604"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         d="m -138.62284,668.37786 0,4.45118 -3.09402,0 0,1.2876 6.77739,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+         id="path19606"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png" />
+      <rect
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect19608"
+         width="11.5625"
+         height="5.3571429"
+         x="-131.60353"
+         y="648.05212" />
+      <circle
+         style="fill:url(#radialGradient19652);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle19610"
+         cx="-131.91782"
+         cy="659.66107"
+         r="11.65" />
+      <rect
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect19612"
+         width="2.0958114"
+         height="7.705492"
+         x="-120.04343"
+         y="646.98572" />
+      <circle
+         style="fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="circle19614"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         cx="-131.92171"
+         cy="-659.55676"
+         transform="scale(1,-1)"
+         r="5.5" />
+    </g>
+    <g
+       id="g19708"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:connector-curvature="0"
+         id="path19616"
+         d="m -81.233124,709.43381 0,4.45118 -3.09403,0 0,1.2876 6.7774,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:connector-curvature="0"
+         id="path19618"
+         d="m -67.839274,709.28904 0,4.45118 3.09402,0 0,1.2876 -6.77739,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         transform="scale(-1,1)"
+         y="688.96332"
+         x="74.858589"
+         height="5.3571429"
+         width="11.5625"
+         id="rect19620"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         transform="scale(-1,1)"
+         r="11.65"
+         cy="700.57227"
+         cx="74.544304"
+         id="circle19622"
+         style="fill:url(#radialGradient19654);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         transform="scale(-1,1)"
+         y="687.89691"
+         x="86.418686"
+         height="7.705492"
+         width="2.0958114"
+         id="rect19624"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         r="5.5"
+         transform="scale(-1,-1)"
+         cy="-700.46796"
+         cx="74.540413"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         id="circle19626"
+         style="fill:#00bf15;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1" />
+    </g>
+    <g
+       id="g19716"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         d="m -81.738194,752.87037 0,4.45118 -3.09403,0 0,1.2876 6.7774,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+         id="path19628"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         d="m -68.344344,752.7256 0,4.45118 3.09402,0 0,1.2876 -6.77739,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+         id="path19630"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png" />
+      <rect
+         transform="scale(-1,1)"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect19632"
+         width="11.5625"
+         height="5.3571429"
+         x="75.363655"
+         y="732.39984" />
+      <circle
+         transform="scale(-1,1)"
+         style="fill:url(#radialGradient19656);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle19634"
+         cx="75.04937"
+         cy="744.00879"
+         r="11.65" />
+      <rect
+         transform="scale(-1,1)"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect19636"
+         width="2.0958114"
+         height="7.705492"
+         x="86.923767"
+         y="731.33344" />
+      <circle
+         style="fill:#ff0013;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1"
+         id="circle19638"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90"
+         cx="75.045479"
+         cy="-743.90448"
+         transform="scale(-1,-1)"
+         r="5.5" />
+    </g>
+    <g
+       id="g19668"
+       inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pl_36x34_0.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:connector-curvature="0"
+         id="path19640"
+         d="m -81.738194,795.29678 0,4.45118 -3.09403,0 0,1.2876 6.7774,0 0,-1.54506 -1.39968,0 0,-2.94296 0.0124,-0.0518"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         inkscape:connector-curvature="0"
+         id="path19642"
+         d="m -68.344344,795.15201 0,4.45118 3.09402,0 0,1.2876 -6.77739,0 0,-1.54506 1.39968,0 0,-2.94296 -0.0124,-0.0518"
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <rect
+         transform="scale(-1,1)"
+         y="774.82623"
+         x="75.363655"
+         height="5.3571429"
+         width="11.5625"
+         id="rect19644"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         transform="scale(-1,1)"
+         r="11.65"
+         cy="786.43518"
+         cx="75.04937"
+         id="circle19646"
+         style="fill:url(#radialGradient19658);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         transform="scale(-1,1)"
+         y="773.75983"
+         x="86.923767"
+         height="7.705492"
+         width="2.0958114"
+         id="rect19648"
+         style="fill:#9e9e9e;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         r="5.5"
+         transform="scale(-1,-1)"
+         cy="-786.33087"
+         cx="75.045479"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/vanessa/src/qt4/Linovitsa/ainscada/scada/mnemo/pr_36x34_3.png"
+         id="circle19650"
+         style="fill:#686868;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

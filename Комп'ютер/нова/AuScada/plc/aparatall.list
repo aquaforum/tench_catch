@@ -1,0 +1,248 @@
+A_ai1_min	102	EBOOL	1	1	-
+A_ai10_max	103	EBOOL	1	1	-
+A_ai10_min	104	EBOOL	1	1	-
+A_ai11_max	105	EBOOL	1	1	-
+A_ai11_min	106	EBOOL	1	1	-
+A_ai2_max	107	EBOOL	1	1	-
+A_ai2_min	108	EBOOL	1	1	-
+A_ai3_max	109	EBOOL	1	1	-
+A_ai3_min	110	EBOOL	1	1	-
+A_ai4_max	111	EBOOL	1	1	-
+A_ai4_min	112	EBOOL	1	1	-
+A_ai5_max	113	EBOOL	1	1	-
+A_ai5_min	114	EBOOL	1	1	-
+A_ai6_max	115	EBOOL	1	1	-
+A_ai6_min	116	EBOOL	1	1	-
+A_ai7_max	117	EBOOL	1	1	-
+A_ai7_min	118	EBOOL	1	1	-
+A_ai8_max	119	EBOOL	1	1	-
+A_ai8_min	120	EBOOL	1	1	-
+A_ai9_max	121	EBOOL	1	1	-
+A_ai9_min	122	EBOOL	1	1	-
+A_k1_1	123	EBOOL	1	1	-
+A_k1_2	124	EBOOL	1	1	-
+Al_c	125	EBOOL	1	1	-
+Ap_k1_1	126	EBOOL	1	1	-	swiching of ytfel_raskachka
+D_1_a	127	EBOOL	1	1	-
+D_1_inv	128	EBOOL	1	1	-
+D_1_m	129	EBOOL	1	1	-
+D_2_a	130	EBOOL	1	1	-
+D_2_inv	131	EBOOL	1	1	-
+D_2_m	132	EBOOL	1	1	-
+D_3_a	133	EBOOL	1	1	-
+D_3_inv	134	EBOOL	1	1	-
+D_3_m	135	EBOOL	1	1	-
+Do1_i	136	EBOOL	1	1	-
+Do2_i	137	EBOOL	1	1	-
+Do3_i	138	EBOOL	1	1	-
+Do4_i	139	EBOOL	1	1	-
+Do5_i	140	EBOOL	1	1	-
+Do6_i	141	EBOOL	1	1	-
+Do7_i	142	EBOOL	1	1	-
+Do8_i	143	EBOOL	1	1	-
+K1_1f_in	144	EBOOL	1	1	-
+K1_1g_c	145	EBOOL	1	1	-
+K1_2f_in	146	EBOOL	1	1	-
+K1_2g_c	147	EBOOL	1	1	-
+K2f_in	148	EBOOL	1	1	-
+K3f_in	149	EBOOL	1	1	-
+K4f_in	150	EBOOL	1	1	-
+K5f_in	151	EBOOL	1	1	-
+K6f_in	152	EBOOL	1	1	-
+K7f_in	153	EBOOL	1	1	-
+R	154	EBOOL	1	1	-
+A_k1	155	EBOOL	1	1	-
+A_k2	156	EBOOL	1	1	-
+A_k3	157	EBOOL	1	1	-
+K1_1_m	158	EBOOL	1	1	-
+K1_2_m	159	EBOOL	1	1	-
+Ap_k1_2	160	EBOOL	1	1	-	swiching of ytfel_raskachka 2
+P1_a	161	EBOOL	1	1	-
+P1_inv	162	EBOOL	1	1	-
+P2_a	201	EBOOL	1	1	-
+P2_inv	202	EBOOL	1	1	-
+P3_a	203	EBOOL	1	1	-
+P3_inv	204	EBOOL	1	1	-
+M1_a	205	EBOOL	1	1	-
+M2_a	206	EBOOL	1	1	-
+Eb206	207	EBOOL	1	1	-	Закривачка дірки
+A_kbp	208	EBOOL	1	1	-
+A_kzp	209	EBOOL	1	1	-
+Kbp_out	210	EBOOL	1	1	-
+Kzp_out	211	EBOOL	1	1	-
+Ap_kbp	212	EBOOL	1	1	-
+Ap_kzp	213	EBOOL	1	1	-
+M213	214	EBOOL	1	1	-	Закривачка дірки
+Kbpf_in	215	EBOOL	1	1	-
+Kzpf_in	216	EBOOL	1	1	-
+Bp	217	EBOOL	1	1	-
+Zp	218	EBOOL	1	1	-
+Va1_n	2	Integer	1	1	-	*unloading VA1
+Va2_n	3	Integer	1	1	-	*unloading VA2
+Va3_n	4	Integer	1	1	-	*unloading VA3
+St_lim_net	11	Integer	1	1	-	* сост. Лим. сб. по сети
+St_al_net	12	Integer	1	1	-	*Сост. Авар. ур. сб. по сети
+Va1_st_i	22	Integer	1	1	-
+Va2_st_i	23	Integer	1	1	-
+Va3_st_i	24	Integer	1	1	-
+Ai1_mn_ek	201	Integer	1	1	-
+Ai1_mx_ek	202	Integer	1	1	-
+Ai10_mn_ek	203	Integer	1	1	-
+Ai10_mx_ek	204	Integer	1	1	-
+Ai11_mn_ek	205	Integer	1	1	-
+Ai11_mx_ek	206	Integer	1	1	-
+Ai2_mn_ek	207	Integer	1	1	-
+Ai2_mx_ek	208	Integer	1	1	-
+Ai3_mn_ek	209	Integer	1	1	-
+Ai3_mx_ek	210	Integer	1	1	-
+Ai4_mn_ek	211	Integer	1	1	-
+Ai4_mx_ek	212	Integer	1	1	-
+Ai5_mn_ek	213	Integer	1	1	-
+Ai5_mx_ek	214	Integer	1	1	-
+Ai6_mn_ek	215	Integer	1	1	-
+Ai6_mx_ek	216	Integer	1	1	-
+Ai7_mn_ek	217	Integer	1	1	-
+Ai7_mx_ek	218	Integer	1	1	-
+Ai8_mn_ek	219	Integer	1	1	-
+Ai8_mx_ek	220	Integer	1	1	-
+Ai9_mn_ek	221	Integer	1	1	-
+Ai9_mx_ek	222	Integer	1	1	-
+T_ns	223	Integer	1	1	-
+Tzel_zad	224	Integer	1	1	-
+Tzel_2_zad	225	Integer	1	1	-
+Tkl_zad	226	Integer	1	1	-
+Ai12_mn_ek	227	Integer	1	1	-
+Ai12_mx_ek	228	Integer	1	1	-
+P1_m	229	Integer	1	1	-
+P1_max	230	Integer	1	1	-
+P1_p	231	Integer	1	1	-
+P1_i	232	Integer	1	1	-
+P1_d	233	Integer	1	1	-
+P1_min	234	Integer	1	1	-
+P1_ts	235	Integer	1	1	-
+Ai1_i	501	Real	1	1	-	Рівень в утфелемішалці
+Ai1_lim	503	Real	1	1	-
+Ai1_max	505	Real	1	1	-
+Ai1_min	507	Real	1	1	-
+Ai1_mn_sc	509	Real	1	1	-
+Ai1_mx_sc	511	Real	1	1	-
+Ai10_i	513	Real	1	1	-	Тиск гріючої пари
+Ai10_max	515	Real	1	1	-
+Ai10_min	517	Real	1	1	-
+Ai10_mn_sc	519	Real	1	1	-
+Ai10_mx_sc	521	Real	1	1	-
+Ai11_i	523	Real	1	1	-	Тиск пари на грів сиропу і паток
+Ai11_max	525	Real	1	1	-
+Ai11_min	527	Real	1	1	-
+Ai11_mn_sc	529	Real	1	1	-
+Ai11_mx_sc	531	Real	1	1	-
+Ai2_i	533	Real	1	1	-	Рівень в збірнику сиропу
+Ai2_lim	535	Real	1	1	-
+Ai2_max	537	Real	1	1	-
+Ai2_min	539	Real	1	1	-
+Ai2_mn_sc	541	Real	1	1	-
+Ai2_mx_sc	543	Real	1	1	-
+Mw454	545	Real	1	1	-
+Ai3_i	547	Real	1	1	-	Рівень в збірнику зеленої патоки (апарати)
+Ai3_max	549	Real	1	1	-
+Ai3_min	551	Real	1	1	-
+Ai3_mn_sc	553	Real	1	1	-
+Ai3_mx_sc	555	Real	1	1	-
+Ai4_i	557	Real	1	1	-	Рівень в збірнику білої патоки (апарати)
+Ai4_max	559	Real	1	1	-
+Ai4_min	561	Real	1	1	-
+Ai4_mn_sc	563	Real	1	1	-
+Ai4_mx_sc	565	Real	1	1	-
+Ai5_i	567	Real	1	1	-	Рівень в збірнику аміачної води
+Ai5_max	569	Real	1	1	-
+Ai5_min	571	Real	1	1	-
+Ai5_mn_sc	573	Real	1	1	-
+Ai5_mx_sc	575	Real	1	1	-
+Ai6_i	577	Real	1	1	-	Температура сиропу
+Ai6_max	579	Real	1	1	-
+Ai6_min	581	Real	1	1	-
+Ai6_mn_sc	583	Real	1	1	-
+Ai6_mx_sc	585	Real	1	1	-
+Ai7_i	587	Real	1	1	-	Температура зеленої патоки (збірник)
+Ai7_max	589	Real	1	1	-
+Ai7_min	591	Real	1	1	-
+Ai7_mn_sc	593	Real	1	1	-
+Ai7_mx_sc	595	Real	1	1	-
+Ai8_i	597	Real	1	1	-	Температура білої патоки (збірник)
+Ai8_max	599	Real	1	1	-
+Ai8_min	601	Real	1	1	-
+Ai8_mn_sc	603	Real	1	1	-
+Ai8_mx_sc	605	Real	1	1	-
+Ai9_i	607	Real	1	1	-	Розрідження (колектор)
+Ai9_max	609	Real	1	1	-
+Ai9_min	611	Real	1	1	-
+Ai9_mn_sc	613	Real	1	1	-
+Ai9_mx_sc	615	Real	1	1	-
+D_1_del	617	Real	1	1	-
+D_1_zad	619	Real	1	1	-
+D_2_del	621	Real	1	1	-
+D_2_zad	623	Real	1	1	-
+D_3_del	625	Real	1	1	-
+D_3_zad	627	Real	1	1	-
+Ai12_mn_sc	629	Real	1	1	-
+Ai12_mx_sc	631	Real	1	1	-
+Ai12_i	633	Real	1	1	-
+P1_z	635	Real	1	1	-
+R_z	797	Long	1	1	-
+R_t	799	Real	1	1	-
+R_d	801	Real	1	1	-
+R_ts	803	Real	1	1	-
+F_s	805	Real	1	1	-
+R_ds	807	Real	1	1	-
+F_s1	809	Real	1	1	-
+F_s2	811	Real	1	1	-
+F_s3	813	Real	1	1	-
+T_vs	815	Long	1	1	-
+Ai14_mn_sc	817	Real	1	1	-
+Ai14_mx_sc	819	Real	1	1	-
+Ai14_i	821	Real	1	1	-	Рівень в збірнику білої патоки (низ)
+Mw822	823	Real	1	1	-
+Ai15_mn_sc	825	Real	1	1	-
+Ai15_mx_sc	827	Real	1	1	-
+Ai15_i	829	Real	1	1	-	Рівень в збірнику зеленої патоки (низ)
+Ai14_min	831	Real	1	1	-
+Ai14_max	833	Real	1	1	-
+Ai15_min	835	Real	1	1	-
+Ai15_max	837	Real	1	1	-
+Ai16_mn_sc	839	Real	1	1	-
+Ai16_mx_sc	841	Real	1	1	-
+Ai16_i	843	Real	1	1	-	Температура зеленої патоки
+Ai17_mn_sc	845	Real	1	1	-
+Ai17_mx_sc	847	Real	1	1	-
+Ai17_i	849	Real	1	1	-	Температура білої патоки
+St_i	1001	Integer	1	1	-	 состояния входов
+Mw1001	1002	Integer	1	1	-
+Mw1002	1003	Integer	1	1	-
+Mw1003	1004	Integer	1	1	-
+Mw1004	1005	Integer	1	1	-
+P2_p	1006	Integer	1	1	-
+P2_min	1007	Integer	1	1	-
+P2_max	1008	Integer	1	1	-
+P2_m	1009	Integer	1	1	-
+P2_i	1010	Integer	1	1	-
+P2_d	1011	Integer	1	1	-
+P2_z	1012	Integer	1	1	-
+Mw1012	1013	Integer	1	1	-
+Mw1013	1014	Integer	1	1	-
+P3_d	1015	Integer	1	1	-
+P3_i	1016	Integer	1	1	-
+P3_m	1017	Integer	1	1	-
+P3_max	1018	Integer	1	1	-
+P3_min	1019	Integer	1	1	-
+P3_p	1020	Integer	1	1	-
+Mw1020	1021	Integer	1	1	-
+P3_z	1022	Integer	1	1	-
+Mw1022	1023	Integer	1	1	-
+Ai14_mn_ek	1024	Integer	1	1	-
+Ai14_mx_ek	1025	Integer	1	1	-
+Ai15_mn_ek	1026	Integer	1	1	-
+Ai15_mx_ek	1027	Integer	1	1	-
+Ai16_mx_ek	1028	Integer	1	1	-
+Ai17_mn_ek	1029	Integer	1	1	-
+Ai17_mx_ek	1030	Integer	1	1	-
+Ai16_mn_ek	1031	Integer	1	1	-

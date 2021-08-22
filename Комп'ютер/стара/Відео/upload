@@ -1,0 +1,13 @@
+#!/bin/sh
+
+HOST=scada@video
+
+strip -s scada/scada
+
+ssh -i ~/.ssh/lnfab $HOST rm /home/scada/scada
+scp -i ~/.ssh/lnfab scada/scada   $HOST:/home/scada
+ssh -i ~/.ssh/lnfab $HOST
+
+
+
+

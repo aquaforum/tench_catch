@@ -1,0 +1,18 @@
+_section=_begin {
+init(_ST)
+tast(_FBD)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+para(_ST)
+}
+
+_section=_fblocks {
+}
+

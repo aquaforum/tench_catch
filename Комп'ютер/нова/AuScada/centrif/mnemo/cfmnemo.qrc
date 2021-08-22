@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/cfmnemo">
+        <file>mnemo.svg</file>
+        <file>one.svg</file>
+        <file>cfmnemo.ui</file>
+    </qresource>
+    <qresource prefix="/indicators">
+        <file>arrow_u_0.png</file>
+        <file>arrow_u_1.png</file>
+        <file>val_1.png</file>
+        <file>val_0.png</file>
+        <file>lamp_0.png</file>
+        <file>lamp_g.png</file>
+        <file>lamp_r.png</file>
+        <file>arrow_d_0.png</file>
+        <file>arrow_d_1.png</file>
+        <file>valve_l_0.png</file>
+        <file>valve_l_1.png</file>
+        <file>valve_r_0.png</file>
+        <file>valve_r_1.png</file>
+        <file>cf_bn.png</file>
+        <file>sgr_g.png</file>
+        <file>sgr_g_0.png</file>
+        <file>sgr_g_1.png</file>
+        <file>sgr_w.png</file>
+        <file>sgr_w_0.png</file>
+        <file>sgr_w_1.png</file>
+    </qresource>
+</RCC>

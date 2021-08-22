@@ -1,0 +1,107 @@
+#combinatory
+if NOT Read  then 
+(*—юди вставить фрагмент читанн€*)
+kf_Psusp:=eep_n_r(1);
+kf_Poil:=eep_n_r(2);
+Gsusp_zd:=INT_REAL(eep_n_r(3));
+Psusp_zd:=INT_REAL(eep_n_r(4));
+Qvs_zd:=INT_REAL(eep_n_r(5));
+Qvw_zd:=INT_REAL(eep_n_r(6));
+Ns_min_zd:=INT_REAL(eep_n_r(7));
+Ns_st_zd:=INT_REAL(eep_n_r(8));
+Nv_min_zd:=INT_REAL(eep_n_r(9));
+Kp:=INT_REAL(eep_n_r(10));
+Kp_v:=INT_REAL(eep_n_r(11));
+k_Qv:=INT_REAL(eep_n_r(12));
+Ls_min:=INT_REAL(eep_n_r(13));
+Ls_max:=INT_REAL(eep_n_r(14));
+Ls_start:=INT_REAL(eep_n_r(15));
+
+Tnp_zd:=TMR(eep_n_r(16));
+Tf_zd:=TMR(eep_n_r(17));
+Tp_zd:=TMR(eep_n_r(18));
+Tb_zd:=TMR(eep_n_r(19));
+Trp_zd:=TMR(eep_n_r(20));
+Ta_zd:=TMR(eep_n_r(21));
+Tbw_zd:=TMR(eep_n_r(22));
+
+
+Tpo_zd:=TMR(eep_n_r(25));
+Ttoff_zd:=TMR(eep_n_r(26));
+
+
+zdTY_ij:=TMR(eep_n_r(27));
+
+n_kf:=eep_n_r(100);
+P_off:=BOO(eep_n_r(101));
+
+Tunclamp_zd:=TMR(eep_n_r(102));
+Tpause_zd:=TMR(eep_n_r(103));
+
+
+Read:=TRUE;
+tstart (Sav_tm);
+else
+
+if Sav_tm >t#30m then 
+
+	Sav_tm:=t#0s;
+
+	if Save then
+		Res:=eep_en();
+		Save:=FALSE;
+		Sav_ST:=1; 
+	end_if;
+
+end_if;
+
+case sav_ST of 
+1 :
+Res:=eep_n_w(1,kf_Psusp);
+Res:=eep_n_w(2,kf_Poil);
+Res:=eep_n_w(3,REAL_INT(Gsusp_zd));
+Res:=eep_n_w(4,REAL_INT(Psusp_zd));
+Res:=eep_n_w(5,REAL_INT(Qvs_zd));
+Res:=eep_n_w(6,REAL_INT(Qvw_zd));
+Res:=eep_n_w(7,REAL_INT(Ns_min_zd));
+Res:=eep_n_w(8,REAL_INT(Ns_st_zd));
+Res:=eep_n_w(9,REAL_INT(Nv_min_zd));
+Res:=eep_n_w(10,REAL_INT(Kp));
+Res:=eep_n_w(11,REAL_INT(Kp_v));
+Res:=eep_n_w(12,REAL_INT(k_Qv));
+Res:=eep_n_w(13,REAL_INT(Ls_min));
+Res:=eep_n_w(14,REAL_INT(Ls_max));
+Res:=eep_n_w(15,REAL_INT(Ls_start));
+
+Res:=eep_n_w(16,ANA(Tnp_zd));
+Res:=eep_n_w(17,ANA(Tf_zd));
+Res:=eep_n_w(18,ANA(Tp_zd));
+Res:=eep_n_w(19,ANA(Tb_zd));
+Res:=eep_n_w(20,ANA(Trp_zd));
+Res:=eep_n_w(21,ANA(Ta_zd));
+Res:=eep_n_w(22,ANA(Tbw_zd));
+
+Res:=eep_n_w(25,ANA(Tpo_zd));
+Res:=eep_n_w(26,ANA(Ttoff_zd));
+Res:=eep_n_w(27,ANA(zdTY_ij));
+
+	res:=eep_n_w(100,n_kf);
+Res:=eep_n_w(101,ANA(P_off));
+
+Res:=eep_n_w(102,ANA(Tunclamp_zd));
+Res:=eep_n_w(103,ANA(Tpause_zd));
+
+
+
+  Sav_ST:=Sav_ST+1;
+2:
+  Sav_ST:=Sav_ST+1;
+	Res:=eep_pr();
+else
+	Sav_ST:=0;
+end_case;
+
+
+end_if;
+
+

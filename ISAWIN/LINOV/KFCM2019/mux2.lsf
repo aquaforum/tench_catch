@@ -1,0 +1,7 @@
+#combinatory
+if sel_ then 
+	mux2:=in2;
+else
+	mux2:=in1;
+end_if;
+

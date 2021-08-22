@@ -1,0 +1,11 @@
+#combinatory
+if X_kt then (*Виставити лічильник рамок*)
+	Rc:=54; 
+end_if;
+
+if redge(p,re) then 
+	Rc:=Rc-1;
+end_if;
+
+
+	

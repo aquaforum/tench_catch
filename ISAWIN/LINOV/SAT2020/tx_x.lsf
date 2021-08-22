@@ -1,0 +1,95 @@
+#combinatory
+if AM_01 then
+	C_01:=Xt_01;
+end_if;
+
+if AM_02 then
+	C_02:=xt_02;
+end_if;
+
+if AM_03 then
+	c_03:=xt_03;
+end_if;
+
+if AM_04 then
+	c_04:=xt_04;
+end_if;
+
+if AM_05 then
+	if X_09 then (*Якщо включено частотник газодувки*)
+		if AM_21 then
+			C_05:=Xt_21; (*Закрити заслінку*)
+		end_if;
+		C_20:=XT_20;
+	else
+		c_05:=xt_05;
+	end_if;
+end_if;
+
+if AM_06 then
+		c_06:=xt_06;
+end_if;
+
+if AM_07 then
+	c_07:=xt_07;
+end_if;
+
+if AM_08 then
+	c_08:=xt_08;
+end_if;
+
+if AM_09 then
+	c_09:=xt_09;
+end_if;
+
+if AM_10 then
+	c_10:=xt_10;
+end_if;
+
+if AM_11 then
+	c_11:=xt_11;
+end_if;
+
+if AM_12 then
+	c_12:=xt_12;
+end_if;
+
+if AM_13 then
+	c_13:=xt_13;
+end_if;
+if AM_14 then
+	c_14:=xt_14;
+end_if;
+
+if AM_15 then
+	c_15:=xt_15;
+end_if;
+
+if AM_16 then
+	c_16:=xt_16;
+end_if;
+
+if AM_17 then
+	c_17:=xt_17;
+end_if;
+
+if AM_18 then
+	c_18:=xt_18;
+end_if;
+
+if AM_19 then
+	c_19:=xt_19;
+end_if;
+
+
+
+if AM_22 then
+	C_22:=KC_22*V_51;
+	Y_15:=NOT X_10;
+end_if;
+
+if AM_23 then
+	Y_16:=NOT X_10;
+	C_23:=KC_23*C_12;
+end_if;
+

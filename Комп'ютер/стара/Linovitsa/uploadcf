@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "centrif"
+ssh -i ~/.ssh/lnfab centrif rm /usr/local/bin/scada 
+scp -i ~/.ssh/lnfab ainscada/scada/scada  centrif:/usr/local/bin
+
+
+
+

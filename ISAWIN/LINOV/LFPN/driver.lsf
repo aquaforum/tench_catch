@@ -1,0 +1,104 @@
+#combinatory
+(*Перевірка струмів*)
+c_alm:= I_a>c_max or I_b>c_max or ABS(I_a-I_b)>c_f_max;
+if dr_fail then
+	cf_fail:=ABS(I_a-I_b)>c_f_max;
+	drv_fail:=I_a>c_max or I_b>c_max;
+	State:=St_off;
+end_if;
+
+(*Перевірка завдання на  швидкість*)
+	
+if NOT x_Torm then 
+	State:=St_off;
+elsif sp_spd<> pv_spd and ((km_min and I_low) OR pv_spd=0) then
+(*	cf_fail:=false;*)
+	State:=St_KM_pere;
+end_if;
+
+if Status=ST_START then
+	drv_fail:=false;
+	cf_fail:=false;
+end_if;
+	
+
+
+
+case State of
+	St_off:(*--------------------------------------------------------------------------------------------------------------*)
+		y_km1:=false;
+		y_km2:=false;
+		y_km3:=false;
+		y_km4:=false;
+		I_low:=true;
+		pv_spd:=0;
+		Ob_t:=0;
+	St_KM1:(*--------------------------------------------------------------------------------------------------------------*)
+		y_km1:=true;
+		y_km2:=false;
+		y_km3:=false;
+		y_km4:=false;
+
+		I_low:=I_avg<c_sw_1;
+		Ob_t:=70;
+
+	St_KM2:(*--------------------------------------------------------------------------------------------------------------*)
+		y_km1:=false;
+		y_km2:=true;
+		y_km3:=false;
+		y_km4:=false;
+
+		I_low:=I_avg<c_sw_2;
+		Ob_t:=215;
+	St_KM3:(*--------------------------------------------------------------------------------------------------------------*)
+		y_km1:=false;
+		y_km2:=false;
+		y_km3:=true;
+		y_km4:=false;
+
+		I_low:=I_avg<c_sw_3;
+		Ob_t:=490;
+	St_KM4:(*--------------------------------------------------------------------------------------------------------------*)
+		y_km1:=false;
+		y_km2:=false;
+		y_km3:=false;
+		y_km4:=true;
+
+		I_low:=I_avg<c_sw_4;
+
+		if dz_test and I_low and km_min then  (*Вимикання інтегратора струму*)
+			dz_test:=false;
+		end_if;
+
+		Ob_t:=980;
+	St_KM_pere: (*фаза перемикання контакторів*)
+		y_tyr:=false;
+		if Ts_tyr_off then 
+			y_km1:=false;
+			y_km2:=false;
+			y_km3:=false;
+			y_km4:=false;
+			
+			if I_a < c_sw_m and I_b < c_sw_m then   (*якщо струм відсутній тоді перемкнути контактор*)
+					if sp_spd>pv_spd then 
+						if pv_spd=0 then (*якщо пуск з нуля*)
+							pv_spd:=2;
+						else
+							pv_spd:=pv_spd+1;
+						end_if;
+					else
+						pv_spd:=pv_spd-1;
+					end_if;
+					State:=pv_spd; (**)	
+			end_if;
+
+		end_if;
+
+		if Ts_tyr_pere then (*несправність системи*)
+			State:=St_off; (*Вимкнути все*)
+		end_if;
+		
+else
+	State:=St_off;
+end_case;
+

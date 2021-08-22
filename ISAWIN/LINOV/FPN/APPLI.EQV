@@ -1,0 +1,38 @@
+#define St_test -1
+#define St_stop 0
+#define St_start 1
+#define St_reg 2
+#define St_wait 3
+#define St_zag 4
+#define St_fug 5
+#define St_prsir 6
+#define St_prsir_1 7
+#define St_pr_i1 8
+#define St_pr_p1 9
+#define St_pr_i2 10
+#define St_pr_p2 11
+#define St_pr_i3 12
+#define St_sush 13
+#define St_torm 14
+#define St_vigr 15
+#define St_sync 16
+ (*-----------------------------*)
+#define St_off 0
+#define ST_KM1 1
+#define ST_KM2 2
+#define ST_KM3 3
+#define ST_KM4 4
+#define st_KM_pere 5
+ (*--------------------------------*)
+#define SPD_STOP 0
+#define SPD_ZAG 2
+#define SPD_VIGR 1
+#define SPD_FUG 4
+ (*---------------------------------*)
+#define DZS_READY 0
+#define DZS_POS 1
+#define DZS_WAIT 2
+#define DZS_BREAK 3
+#define DZS_RESCAL 4
+#define DZS_POSCAL 5
+

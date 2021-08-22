@@ -1,0 +1,5 @@
+#combinatory
+xAirPl:=yStartFan and cFan>6553;
+xVacPl:=yStartFan and cExh>6553;
+Pair:=19660+cFan/2;
+Pvac:=19660-cExh/2;

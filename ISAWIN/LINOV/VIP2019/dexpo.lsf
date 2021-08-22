@@ -1,0 +1,4 @@
+#combinatory
+d_:=(PV_-SP_)/4000.0;
+dEXPO:=(exp_*d_*d_*d_+(1.0-exp_)*d_)*4000.0;
+

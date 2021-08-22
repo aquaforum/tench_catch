@@ -1,0 +1,16 @@
+@AGEC0
+@GROUP
+9:bus7000
+@ENDGROUP
+@BRD
+9-0:remot
+R:A:+I:1:1:0205
+#
+@PARAM
+#AH:ref,9
+#LA:com_port,3
+#LA:com_baud,9600
+#AA:host_watchdog,0
+#AA:watchdog_timer,1E
+@ENDBRD
+@ENDAGEC0

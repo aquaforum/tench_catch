@@ -1,0 +1,22 @@
+_section=_begin {
+parm_sto(_ST)
+fd_21(_FBD)
+fd_22(_FBD)
+fd_23(_FBD)
+tx_x(_ST)
+start(_FBD)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+mux2(_ST)
+}
+
+_section=_fblocks {
+}
+

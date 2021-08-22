@@ -1,0 +1,21 @@
+_section=_begin {
+parm_sto(_ST)
+analog(_FBD)
+timers(_FBD)
+main(_ST)
+driver(_ST)
+dispatch(_FBD)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+}
+
+_section=_fblocks {
+}
+

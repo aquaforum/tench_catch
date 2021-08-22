@@ -1,0 +1,2 @@
+1. Температура білої патоки	Ai17_i				P3_m	P3_z			P3_a		P3_inv	P3_p	P3_i	P3_d	P3_min	P3_max								.
+2. Температура зеленої патоки	Ai16_i				P2_m	P2_z			P2_a		P2_inv	P2_p	P2_i	P2_d	P2_min	P2_max								.

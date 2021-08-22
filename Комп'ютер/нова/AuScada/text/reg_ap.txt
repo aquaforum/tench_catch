@@ -1,0 +1,3 @@
+1. Подача гріючої пари	Tt4a_ind	Pt5a_ind		Delta	K4	Delta_ind			Ap_k4	Sok_flow_msg		Hod_p_zad	Tp_imp_zad		Par_min_zad	Par_max_zad								.
+2. Розрідження в вакуум-апараті	Pt6a_ind	Tt4a_ind		Vakuum_ind	K6	Pt6a_z			Ap_k6			Hod_v_zad	Tv_imp_zad		Vak_min_zad	Vak_max_zad								.
+3. Скидання вакууму	Pt6a_ind				K17_m	Pt6a_z			Ap_k17		K17an_inv				K17an_min	K17an_max	K17_delm	K17_deln	K17_stmx	K17_stmn				.

@@ -1,0 +1,41 @@
+/**********************************************************************/
+/*                                                                    */
+/*  File name : CTRL_7.H                                              */
+/*  Date      : 15.09.2018 12:03:12                                   */
+/*  ----------------------------------------------------------------  */
+/*  ISaGRAF project name : filtr                                      */
+/*  ISaGRAF program name : CTRL_7                                     */
+/*                                                                    */
+/**********************************************************************/
+
+/* Local variables of the program */
+
+/* Programs */
+
+
+/* Booleans */
+
+
+/* Analogs */
+
+#define _SCC_CTRL_7_LS_START	0X0081
+
+/* Timers */
+
+
+/* Functions */
+
+
+/* Function blocks */
+
+
+
+
+
+
+
+
+
+
+
+

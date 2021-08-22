@@ -1,0 +1,13 @@
+#combinatory
+m_:=tm/60;
+s_:=tm-m_*60;
+
+res:=MSG(m_);
+if s_<10 then 
+	res:=res+'0';
+end_if;
+
+res:=res+MSG(s_);
+
+totime:=res;
+

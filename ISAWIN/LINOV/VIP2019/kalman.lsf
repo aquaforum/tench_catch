@@ -1,0 +1,11 @@
+#combinatory
+if Run_ then (*Робота фільтра*)
+
+State:=State+F_*(Xin_-State);
+
+else (*Ігіціалізація фільтра*)
+State:=Xin_;
+
+end_if;
+
+State_:=State;

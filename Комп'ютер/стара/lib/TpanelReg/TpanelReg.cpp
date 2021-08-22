@@ -1,0 +1,1168 @@
+#include "TpanelReg.h"
+// #include "ui_panelReg.h"
+
+#include "../iodev.h"
+#include "../trendchar/trendchart.h"
+#include <math.h>
+
+#include <QString>
+#include <QStringList>
+
+#include <QtSql>
+#include <QEvent>
+#include <QDesktopWidget>
+
+#include <QMessageBox>
+
+#include "../panelReg/trendloadthead.h"
+#include "../keyboardwin/keyboardwin.h"
+
+#define TOTEXT(X) QString("%1").arg(src.getValueScaled(X),0,'f',1)
+
+TpanelReg::TpanelReg(IoDev &source,int n/*=0*/,QWidget *p/*=NULL*/ ,QString cfName,QString tableName) :QDialog(p),
+    src(source)  ,
+    RegNum(n) ,
+    tblName(tableName),
+    ui(new Ui::TpanelReg)
+{
+    ui->setupUi(this);
+    QSettings set;
+
+
+    int w=set.value("ranelReg/width",912).toInt();
+    int h=set.value("ranelReg/height",562).toInt();
+
+#if QT_VERSION >= 0x050000
+    QRect pos=qApp->desktop()->screenGeometry(0);
+    pos.setY((pos.height()-h)/2);
+    pos.setX((pos.width()-w)/2);
+    pos.setWidth(w);
+    pos.setHeight(h);
+#else
+    QRect pos=QRect((qApp->desktop()->size().width()-w)/2,(qApp->desktop()->size().height()-h)/2,w,h);
+#endif
+    this->setGeometry(pos);
+
+    // на замовлення Поліщученка
+    //ui->label->hide();
+    //ui->regRev->hide();
+
+    ui->RegParm->hide(); // сховати область настройки регулятора
+    //resize(size()-QSize(0,159)); // зменшити розмір вікна
+    
+    connect(ui->Exit,SIGNAL(clicked()),this,SLOT(close()));
+    connect(ui->Setting,SIGNAL(clicked(bool)),this,SLOT(Control(bool)));
+
+    // реакції користувацького інтерфейсу
+    connect(ui->vsX,SIGNAL(valueChanged(int)),this,SLOT(setCtrlValue(int)));
+    connect(ui->sbX,SIGNAL(clicked()),this,SLOT(setCtrlValue()));
+    // SP_1
+    connect(ui->vsSP_1,SIGNAL(valueChanged(int)),this,SLOT(setParmValue(int)));
+    connect(ui->sbSP_1,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // SP_2
+    connect(ui->vsSP_2,SIGNAL(valueChanged(int)),this,SLOT(setParmValue(int)));
+    connect(ui->sbSP_2,SIGNAL(clicked()),this,SLOT(setParmValue()));
+    // SP_3
+    connect(ui->vsSP_3,SIGNAL(valueChanged(int)),this,SLOT(setParmValue(int)));
+    connect(ui->sbSP_3,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // Kpr
+    connect(ui->dialKpr,SIGNAL(valueChanged(int)),this,SLOT(setParmValue(int)));
+    connect(ui->sbKpr,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // Ti
+    connect(ui->dialTi,SIGNAL(valueChanged(int)),this,SLOT(setParmValue(int)));
+    connect(ui->sbTi,SIGNAL(clicked()),this,SLOT(setParmValue()));
+    // Td
+    connect(ui->dialTd,SIGNAL(valueChanged(int)),this,SLOT(setParmValue(int)));
+    connect(ui->sbTd,SIGNAL(clicked()),this,SLOT(setParmValue()));
+    // Xmin
+    connect(ui->sbXmin,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // Xmax
+    connect(ui->sbXmax,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // K_1
+    connect(ui->sbK_1,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // K_2
+    connect(ui->sbK_2,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // K_3
+    connect(ui->sbK_3,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // K_4
+    connect(ui->sbK_4,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // Kkor
+    connect(ui->sbKkor,SIGNAL(clicked()),this,SLOT(setParmValue()));
+
+    // AM
+    connect(ui->cbAM,SIGNAL(clicked()),this,SLOT(setParmAM()));
+    // Rej
+    connect(ui->cbRej,SIGNAL(clicked()),this,SLOT(setParmRej()));
+    // pRev
+    connect(ui->pRev,SIGNAL(clicked()),this,SLOT(setParmRev()));
+    connect(ui->rRev,SIGNAL(clicked()),this,SLOT(setParmRev()));
+    // Rev
+    connect(ui->regRev,SIGNAL(stateChanged(int)),this,SLOT(setParmKprSig(int)));
+
+    // P0
+    connect(ui->sbP0,SIGNAL(clicked()),this,SLOT(setParmValue()));
+    connect(ui->slP0,SIGNAL(valueChanged(int)),this,SLOT(setParmValue(int)));
+    // Mode
+    connect(ui->regMode,SIGNAL(clicked(bool)),this,SLOT(setParamMode(bool)));
+
+
+    // to
+    connect(ui->to,SIGNAL(currentIndexChanged(int)),this,SLOT(setTO(int)));
+
+
+    // хеш для співставлення назв віджетів із індексами
+    ctrlSearch["cbAM"]=Ri::AM;
+    ctrlSearch["cbRej"]=Ri::Rej;
+
+    ctrlSearch["vsSP_1"]=Ri::SP_1;
+    ctrlSearch["sbSP_1"]=Ri::SP_1;
+
+    ctrlSearch["vsSP_2"]=Ri::SP_2;
+    ctrlSearch["sbSP_2"]=Ri::SP_2;
+
+    ctrlSearch["vsSP_3"]=Ri::SP_3;
+    ctrlSearch["sbSP_3"]=Ri::SP_3;
+
+    ctrlSearch["sbKkor"]=Ri::Kkor;
+
+    ctrlSearch["sbK_1"]=Ri::K_1;
+    ctrlSearch["sbK_2"]=Ri::K_2;
+    ctrlSearch["sbK_3"]=Ri::K_3;
+    ctrlSearch["sbK_4"]=Ri::K_4;
+
+    ctrlSearch["dialKpr"]=Ri::Kpr;
+    ctrlSearch["sbKpr"]=Ri::Kpr;
+
+    ctrlSearch["dialTi"]=Ri::TI;
+    ctrlSearch["sbTi"]=Ri::TI;
+
+    ctrlSearch["dialTd"]=Ri::Td;
+    ctrlSearch["sbTd"]=Ri::Td;
+
+    ctrlSearch["sbXmin"]=Ri::Xmin;
+    ctrlSearch["sbXmax"]=Ri::Xmax;
+
+    ctrlSearch["slP0"]=Ri::P0;
+    ctrlSearch["sbP0"]=Ri::P0;
+    ctrlSearch["cbMode"]=Ri::Mode;
+
+
+    // --------------------------------------------------
+
+    // завантажити дані
+    QFile f(cfName);
+    if(f.open(QIODevice::ReadOnly))
+    {
+        for(int i=0;!f.atEnd();++i)
+        {
+            QStringList sl=QString::fromUtf8(f.readLine()).trimmed().split("\t"); // читаємо дані із файла
+            if(sl.size()> 22) // якщо прочитано всі рядки
+            {
+                //ui->regList->addItem(sl[Ri::Deskritp]); // додати до списку регуляторів
+                regList << sl[Ri::Deskritp];
+                // sl.removeAt(0); // видалити перший елемент бо в ньому Опис регулятора
+                RegDes << sl; // зберегти
+                //qDebug() << i << sl.size() << sl ;
+            }
+
+            else
+            {
+                qDebug() << "Reg load error " << sl.size() << sl ;
+            }
+        }
+    }
+    else
+    {
+        qDebug() << "panelReg: file not open "  << f.errorString();
+    }
+    //qDebug() << RegDes;
+    
+    // запустити таймер поновлення надих. може краще переробити на сигнал ?
+    QTimer *t=new QTimer(this);
+    t->setInterval(1000);
+    connect(t,SIGNAL(timeout()),this,SLOT(updateData()));
+    t->start();
+
+    // графік
+    QVBoxLayout *tL=new QVBoxLayout(ui->trendChar);
+    trChart=new TrendChart(ui->trendChar);
+    tL->addWidget(trChart);
+    ui->trendChar->setLayout(tL);
+    tL->setContentsMargins(4,10,4,30);
+
+    t1 = new QTimer(this);
+    t1->setInterval(5000);
+    t1->start();
+    connect(t1,SIGNAL(timeout()),this,SLOT(setGraph()));
+
+
+    // -------------
+    trLoader = new TrendLoadThead(trChart);
+    connect(trLoader,SIGNAL(finished()),t1,SLOT(start()));
+
+    ui->regList->setText(regList[n]); // setCurrentIndex(n);
+    connect(ui->regList,SIGNAL(clicked()),this,SLOT(changeReg()));
+
+    ui->scaleX->setScaleMinMax(0.0,100.0);
+    changeReg();
+
+}
+
+TpanelReg::~TpanelReg()
+{
+
+    delete ui;
+
+    if(trLoader->isRunning())
+    {
+        trLoader->terminate();
+    }
+
+    delete trLoader;
+}
+
+void TpanelReg::changeReg() // зміна регулятор
+{
+    int Index=0;
+    RegNum=Index;
+    //qDebug() << "RegNum"         << RegNum;
+
+    ui->Value_1->setText(src.getDescription(RegDes[RegNum][Ri::PV_1]));
+    ui->Value_2->setText(src.getDescription(RegDes[RegNum][Ri::PV_2].split('.')[0]));
+    ui->Value_3->setText(src.getDescription(RegDes[RegNum][Ri::PV_3]));
+    ui->Valve->setText(src.getDescription(RegDes[RegNum][Ri::X]));
+
+    //ui->min_PV1->setText(QString("%1").arg(src.scaleZero(RegDes[RegNum][Ri::PV_1]),3,'f',0));
+    //ui->max_PV1->setText(QString("%1").arg(src.scaleFull(RegDes[RegNum][Ri::PV_1]),3,'f',0));
+
+    ui->scalePV_1->setScaleMinMax(src.scaleZero(RegDes[RegNum][Ri::PV_1]),src.scaleFull(RegDes[RegNum][Ri::PV_1]));
+
+/*
+    if(fabs(src.scaleFull(RegDes[RegNum][Ri::PV_1]))<20)
+    {
+        ui->sbSP_1->setDecimals(2);
+        ui->sbSP_1->setSingleStep(0.01);
+    }
+    else
+    {
+        ui->sbSP_1->setDecimals(0);
+        ui->sbSP_1->setSingleStep(1);
+    }
+*/
+
+    // показати-сховати потрібне
+    // PV_2
+    QString PV_2=RegDes[RegNum][Ri::PV_2].split('.').at(0);
+    if(src.getTags().contains(PV_2))
+    {
+        ui->Parametr_2->show();
+        //ui->min_PV2->setText(QString("%1").arg(src.scaleZero(RegDes[RegNum][Ri::PV_2]),3,'f',0));
+        //ui->max_PV2->setText(QString("%1").arg(src.scaleFull(RegDes[RegNum][Ri::PV_2]),3,'f',0));
+        ui->scalePV_2->setScaleMinMax(src.scaleZero(PV_2),src.scaleFull(PV_2));
+
+    }
+    else
+    {
+        ui->Parametr_2->hide();
+    }
+
+    // PV_3
+    if(src.getTags().contains(RegDes[RegNum][Ri::PV_3]))
+    {
+        ui->Parametr_3->show();
+        //ui->min_PV3->setText(QString("%1").arg(src.scaleZero(RegDes[RegNum][Ri::PV_3]),3,'f',0));
+        //ui->max_PV3->setText(QString("%1").arg(src.scaleFull(RegDes[RegNum][Ri::PV_3]),3,'f',0));
+        ui->scalePV_3->setScaleMinMax(src.scaleZero(RegDes[RegNum][Ri::PV_3]),src.scaleFull(RegDes[RegNum][Ri::PV_3]));
+    }
+    else
+    {
+        ui->Parametr_3->hide();
+    }
+
+    // SPR_1
+    if(src.getTags().contains(RegDes[RegNum][Ri::SPR_1]))
+    {
+        ui->leSPR_1->show();
+        ui->vsSPR_1->show();
+        ui->labelSPR_1->show();
+    }
+    else
+    {
+        ui->leSPR_1->hide();
+        ui->vsSPR_1->hide();
+        ui->labelSPR_1->hide();
+    }
+
+    // SP_2
+    QString SP_2 =RegDes[RegNum][Ri::SP_2].split('.').at(0);
+    if(src.getTags().contains(SP_2))
+    {
+        ui->sbSP_2->show();
+        ui->vsSP_2->show();
+
+    }
+    else
+    {
+        ui->sbSP_2->hide();
+        ui->vsSP_2->hide();
+	
+    }
+
+    // SP_3
+    if(src.getTags().contains(RegDes[RegNum][Ri::SP_3]))
+    {
+        ui->sbSP_3->show();
+        ui->vsSP_3->show();
+    }
+    else
+    {
+        ui->sbSP_3->hide();
+        ui->vsSP_3->hide();
+
+    }
+
+    // K_1
+    //qDebug() << RegDes[RegNum][Ri::K_1];
+    if(src.getTags().contains(RegDes[RegNum][Ri::K_1]))
+    {
+        ui->sbK_1->show();
+        ui->labelK1->show();
+    }
+    else
+    {
+        ui->sbK_1->hide();
+        ui->labelK1->hide();
+    }
+
+    // K_2
+    if(src.getTags().contains(RegDes[RegNum][Ri::K_2]))
+    {
+        ui->sbK_2->show();
+        ui->labelK2->show();
+    }
+    else
+    {
+        ui->sbK_2->hide();
+        ui->labelK2->hide();
+    }
+
+    // K_3
+    if(src.getTags().contains(RegDes[RegNum][Ri::K_3]))
+    {
+        ui->sbK_3->show();
+        ui->labelK3->show();
+    }
+    else
+    {
+        ui->sbK_3->hide();
+        ui->labelK3->hide();
+    }
+
+    // K_4
+    if(src.getTags().contains(RegDes[RegNum][Ri::K_4]))
+    {
+        ui->sbK_4->show();
+        ui->labelK4->show();
+    }
+    else
+    {
+        ui->sbK_4->hide();
+        ui->labelK4->hide();
+    }
+
+    // Kkor
+    if(src.getTags().contains(RegDes[RegNum][Ri::Kkor]))
+    {
+        ui->sbKkor->show();
+        ui->labelKkor->show();
+    }
+    else
+    {
+        ui->sbKkor->hide();
+        ui->labelKkor->hide();
+    }
+
+    // cbRej
+    //qDebug() << RegDes[RegNum][Ri::Rej] << src.getTags().contains(RegDes[RegNum][Ri::Rej]);
+    if(src.getTags().contains(RegDes[RegNum][Ri::Rej]))
+    {
+        ui->cbRej->show();
+        ui->labelRej->show();
+    }
+    else
+    {
+        ui->cbRej->hide();
+        ui->labelRej->hide();
+    }
+
+// код перенесено із updateData
+// ініціалізація контролів, це буде погано працювати коли в мережі будуть кількі клієнтів 
+// одночасно працювати із одним регулятором. Ситуація малоймовірна але можлива
+
+
+//     // SP_1
+//    ui->sbSP_1->blockSignals(true);
+
+/*
+    if(src.scaleZero(RegDes[RegNum][Ri::SP_1])<src.scaleFull(RegDes[RegNum][Ri::SP_1]))
+    {
+        ui->sbSP_1->setMinimum(src.scaleZero(RegDes[RegNum][Ri::SP_1]));
+        ui->sbSP_1->setMaximum(src.scaleFull(RegDes[RegNum][Ri::SP_1]));
+
+    }
+    else
+    {
+        ui->sbSP_1->setMaximum(src.scaleZero(RegDes[RegNum][Ri::SP_1]));
+        ui->sbSP_1->setMinimum(src.scaleFull(RegDes[RegNum][Ri::SP_1]));
+    }
+*/
+    ui->sbSP_1->setText(QString("%1").arg(src.getValueScaled(RegDes[RegNum][Ri::SP_1]),0,'f',1));
+//    ui->sbSP_1->blockSignals(false);
+
+    ui->vsSP_1->blockSignals(true);
+    ui->vsSP_1->setValue(src.getValueFloat(RegDes[RegNum][Ri::SP_1]));
+    ui->vsSP_1->blockSignals(false);
+
+    // SP_2
+    if(src.getTags().contains(SP_2))
+    {
+//        ui->sbSP_2->blockSignals(true);
+//        ui->sbSP_2->setMinimum(src.scaleZero(SP_2));
+//        ui->sbSP_2->setMaximum(src.scaleFull(SP_2));
+
+        ui->sbSP_2->setText(TOTEXT(SP_2));
+/*
+        if(RegDes[RegNum][Ri::SP_2].split('.').size()>1)
+        {
+            int dp=RegDes[RegNum][Ri::SP_2].split('.').at(1).toInt();
+            double pr=    dp==1?0.1:1.0;
+            ui->sbSP_2->setDecimals(dp);
+            ui->sbSP_2->setSingleStep(pr);
+        }
+*/
+
+
+        ui->sbSP_2->blockSignals(false);
+	
+        ui->vsSP_2->blockSignals(true);
+        ui->vsSP_2->setValue(src.getValueFloat(SP_2));
+        ui->vsSP_2->blockSignals(false);
+    }
+    
+    // SP_3
+    if(src.getTags().contains(RegDes[RegNum][Ri::SP_3]))
+    {
+        ui->sbSP_3->show();
+//        ui->sbSP_3->blockSignals(true);
+
+//        ui->sbSP_3->setMinimum(src.scaleZero(RegDes[RegNum][Ri::SP_3]));
+//        ui->sbSP_3->setMaximum(src.scaleFull(RegDes[RegNum][Ri::SP_3]));
+
+        ui->sbSP_3->setText(TOTEXT(RegDes[RegNum][Ri::SP_3]));
+//       qDebug() << "changeReg SP_3" << src.getValueScaled(RegDes[RegNum][Ri::SP_3]);
+//        ui->sbSP_3->blockSignals(false);
+
+        ui->vsSP_3->show();
+        ui->vsSP_3->blockSignals(true);
+        ui->vsSP_3->setValue(src.getValueFloat(RegDes[RegNum][Ri::SP_3]));
+        ui->vsSP_3->blockSignals(false);
+    }
+    else
+    {
+        ui->sbSP_3->hide();
+        ui->vsSP_3->hide();
+    }
+
+
+
+    // Kpr
+    double t=fabs(src.getValueFloat(RegDes[RegNum][Ri::Kpr]));
+    //qDebug() << "Kpr"<< RegDes[RegNum][Ri::Kpr] << ":" << t;
+    //ui->sbKpr->blockSignals(true);
+    ui->sbKpr->setText(QString("%1").arg(t,0,'f',2));
+    //ui->sbKpr->blockSignals(false);
+/*
+    if(t>=0.5)
+    {
+        if(ui->sbKpr->singleStep()!=0.1)
+            ui->sbKpr->setSingleStep(0.1);
+    }
+    else if( t<0.5 && t>=0.2)
+    {
+        if(ui->sbKpr->singleStep()!=0.05)
+            ui->sbKpr->setSingleStep(0.05);
+    }
+    else
+    {
+        if(ui->sbKpr->singleStep()!=0.01)
+            ui->sbKpr->setSingleStep(0.01);
+    }
+*/
+
+
+    ui->dialKpr->blockSignals(true);
+    ui->dialKpr->setValue(fabs(t*100.0));
+    ui->dialKpr->blockSignals(false);
+
+    ui->regRev->blockSignals(true);
+    ui->regRev->setChecked(src.getValueFloat(RegDes[RegNum][Ri::Kpr])<0.0);
+    ui->regRev->blockSignals(false);
+
+    // KTi
+    //qDebug() << "Ti"<< RegDes[RegNum][Ri::TI] << ":" << src.getValueFloat(RegDes[RegNum][Ri::TI]);
+    ui->sbTi->setText(QString("%1").arg(src.getValueFloat(RegDes[RegNum][Ri::TI])/60.0,0,'f',2));
+
+    ui->dialTi->blockSignals(true);
+    ui->dialTi->setValue(src.getValueFloat(RegDes[RegNum][Ri::TI])*100.0/60.0);
+    ui->dialTi->blockSignals(false);
+
+    // KTd
+    //qDebug() << "Td"<< RegDes[RegNum][Ri::Td] << ":" << src.getValueFloat(RegDes[RegNum][Ri::Td]);
+    ui->sbTd->setText(QString("%1").arg(src.getValueFloat(RegDes[RegNum][Ri::Td])/1000.0,0,'f',2));
+
+    ui->dialTd->blockSignals(true);
+    ui->dialTd->setValue(src.getValueFloat(RegDes[RegNum][Ri::Td]));
+    ui->dialTd->blockSignals(false);
+    
+    // Xmin
+    ui->sbXmin->setText(QString("%1").arg(src.getValueFloat(RegDes[RegNum][Ri::Xmin])/40.0,0,'f',0));
+    
+    // Xmax
+    ui->sbXmax->setText(QString("%1").arg(src.getValueFloat(RegDes[RegNum][Ri::Xmax])/40.0,0,'f',0));
+    
+    // K_1
+    if(src.getTags().contains(RegDes[RegNum][Ri::K_1]))
+    {
+
+        kk_1=(src.scaleFull(RegDes[RegNum][Ri::PV_2]) -src.scaleZero(RegDes[RegNum][Ri::PV_2])) /
+              (src.scaleFull(RegDes[RegNum][Ri::PV_1]) -src.scaleZero(RegDes[RegNum][Ri::PV_1])) / 100.0;
+
+        ui->sbK_1->setText(QString("%1").arg(src.getValueFloat(RegDes[RegNum][Ri::K_1])/kk_1,0,'f',2)); //треба шкалювати
+    }
+    else
+        kk_1=1;
+    
+    
+    // K_2
+    if(src.getTags().contains(RegDes[RegNum][Ri::K_2]))
+    {
+        ui->sbK_2->setText(TOTEXT(RegDes[RegNum][Ri::K_2])); //треба шкалювати
+    }
+
+    // K_3
+    if(src.getTags().contains(RegDes[RegNum][Ri::K_3]))
+    {
+        ui->sbK_3->setText(TOTEXT(RegDes[RegNum][Ri::K_3])); //треба шкалювати
+    }
+
+    // K_4
+    if(src.getTags().contains(RegDes[RegNum][Ri::K_4]))
+    {
+        ui->sbK_4->setText(TOTEXT(RegDes[RegNum][Ri::K_4]));
+    }
+
+    // Kkor
+    if(src.getTags().contains(RegDes[RegNum][Ri::Kkor]))
+    {
+        ui->sbKkor->setText(TOTEXT(RegDes[RegNum][Ri::Kkor]));
+    }
+
+    // X
+    ui->sbX->setText(TOTEXT(RegDes[RegNum][Ri::X]));
+
+    ui->vsX->blockSignals(true);
+    ui->vsX->setValue(src.getValueFloat(RegDes[RegNum][Ri::X]));
+    ui->vsX->blockSignals(false);
+
+
+    // AM
+    ui->cbAM->setText(src.getValue16(RegDes[RegNum][Ri::AM])?"АВТ":"РУЧ");
+
+    if(src.getValue16(RegDes[RegNum][Ri::AM])) // вимкнути чи ввімкнути управління змінною X
+    {
+        ui->sbX->blockSignals(true);
+        ui->vsX->blockSignals(true);
+    }
+    else
+    {
+        ui->sbX->blockSignals(false);
+        ui->vsX->blockSignals(false);
+    }
+
+    // Rej
+    if(src.getTags().contains(RegDes[RegNum][Ri::Rej]))
+    {
+        ui->cbRej->setText((src.getValue16(RegDes[RegNum][Ri::Rej])?1:0)?"РОЗР":"ПОСТ");
+    }
+
+    // Rev
+    if(src.getTags().contains(RegDes[RegNum][Ri::Rev]))
+    {
+        ui->gbRev->show();
+        if(src.getValue16(RegDes[RegNum][Ri::Rev]))
+        {
+            ui->rRev->blockSignals(true);
+            ui->rRev->setChecked(true);
+            ui->rRev->blockSignals(false);
+        }
+        else
+        {
+            ui->pRev->blockSignals(true);
+            ui->pRev->setChecked(true);
+            ui->pRev->blockSignals(false);
+        }
+    }
+    else
+        ui->gbRev->hide();
+
+
+    // P0
+    //qDebug() << RegDes[RegNum][Ri::P0];
+
+    if(src.getTags().contains(RegDes[RegNum][Ri::P0]))
+    {
+        ui->sbP0->show();
+        ui->sbP0->setText(QString("%1").arg(src.getValueFloat(RegDes[RegNum][Ri::P0])/40.0,0,'f',1));
+
+        ui->slP0->show();
+        ui->slP0->blockSignals(true);
+        ui->slP0->setValue(src.getValueFloat(RegDes[RegNum][Ri::P0]));
+        ui->slP0->blockSignals(false);
+    }
+    else
+    {
+        ui->slP0->hide();
+        ui->sbP0->hide();
+    }
+
+    // Mode
+    if(src.getTags().contains(RegDes[RegNum][Ri::Mode]))
+    {
+        ui->regMode->show();
+        ui->regMode->setChecked(src.getValue16(RegDes[RegNum][Ri::Mode]));
+    }
+    else
+    {
+        ui->regMode->hide();
+
+    }
+
+    // To
+    if(src.getTags().contains(RegDes[RegNum][Ri::To]))
+    {
+        ui->label_6->show();
+        ui->to->show();
+        ui->to->blockSignals(true);
+
+        int v=src.getValue16(RegDes[RegNum][Ri::To]);
+        if (v<0) v=0;
+        if (v>2) v=2;
+
+        ui->to->setCurrentIndex(v);
+        ui->to->blockSignals(false);
+    }
+    else
+    {
+        ui->label_6->hide();
+        ui->to->hide();
+    }
+
+
+    updateTrend(0);
+    
+    updateData();
+    trChart->addPoint(v); //
+}
+
+void TpanelReg::updateTrend(int len)
+{
+    // перезарядити таймер
+    int ti[3]={5000,2500,1250},tm[3]={3600,1800,900};
+    t1->stop();
+    t1->setInterval(ti[len]);
+
+    QString sQuery="SELECT Dt,%1 FROM %4 WHERE Dt BETWEEN %2 AND %3 ORDER BY Dt";
+    QString fields=RegDes[RegNum][Ri::PV_1];
+
+    for(int i=2;i<9;++i)
+    {
+        fields+=",";
+        if(RegDes[RegNum][i].size() > 0)
+            fields+=RegDes[RegNum][i].split('.')[0];
+        else
+            fields+="0";
+    }
+    //qDebug() << sQuery.arg(RegDes[RegNum].field).arg(dt.toTime_t()-3600).arg(dt.toTime_t());
+
+    QDateTime dt=QDateTime::currentDateTime();
+    trLoader->setQuery(sQuery.arg(fields).arg(dt.toTime_t()-tm[len]).arg(dt.toTime_t()).arg(tblName));
+    trLoader->setLen(len);
+
+    trLoader->start();
+
+
+}
+
+void TpanelReg::runTrend() // зміна регулятор
+{
+
+}
+
+void TpanelReg::Control(bool v) // відображення-приховувавння частини вікна з настройками регулятора
+{
+    bool bAccess=true;
+#ifndef WIN32
+    // перевірка наявності файлу розмежування доступу
+    QFile fAccess("/usr/etc/ac.list");
+
+    if(fAccess.exists())
+    {
+        bAccess=false;
+        QDir dlist("/dev/disk/by-uuid");
+        QStringList list=dlist.entryList();
+        list.removeAt(0); // видалити два перших елементи
+        list.removeAt(0);
+        fAccess.open(QIODevice::ReadOnly);
+        for(;!fAccess.atEnd();)
+        {
+            QString key=fAccess.readLine().trimmed();
+            if(list.contains(key)) bAccess=true;
+        }
+
+        if(!bAccess)
+        {
+            QMessageBox::information(this,tr("Повідомлення"),tr("Ключ доступу не знайдено.\nЗміну параметрів заборонено"));
+        }
+
+    }
+
+#endif
+    if(bAccess){
+        ui->RegParm->setVisible(v);
+
+    }
+    //qDebug() << size().height();
+}
+
+void TpanelReg::updateData() // поновлення даних у віджетах
+{
+    v.clear();
+    
+    // PV_1
+    if(fabs(src.scaleFull(RegDes[RegNum][Ri::PV_1])<50.0 && src.scaleFull(RegDes[RegNum][Ri::PV_1]))>20.0)
+        ui->lePV_1->setText(QString("%1").arg(src.getValueScaled(RegDes[RegNum][Ri::PV_1]),4,'f',1));
+    else if (fabs(src.scaleFull(RegDes[RegNum][Ri::PV_1]))<=20.0)
+        ui->lePV_1->setText(QString("%1").arg(src.getValueScaled(RegDes[RegNum][Ri::PV_1]),4,'f',2));
+    else
+       ui->lePV_1->setText(QString("%1").arg(src.getValueScaled(RegDes[RegNum][Ri::PV_1]),3,'f',0));
+
+    int t1 = src.getValueFloat(RegDes[RegNum][Ri::PV_1]);
+    if(t1<0) t1=0;
+    if(t1>4000) t1=4000;
+
+    ui->pbPV_1->setValue(t1);
+
+    v << src.getValueFloat(RegDes[RegNum][Ri::PV_1]);
+    
+    // PV_2
+    QStringList PV_2 = RegDes[RegNum][Ri::PV_2].split('.');
+    if(src.getTags().contains(PV_2[0]))
+    {
+     if(PV_2.size()==1)
+     {
+        if(src.scaleFull(RegDes[RegNum][Ri::PV_2])<50.0)
+            ui->lePV_2->setText(QString("%1").arg(src.getValueScaled(PV_2[0]),4,'f',1));
+	else
+            ui->lePV_2->setText(QString("%1").arg(src.getValueScaled(PV_2[0]),3,'f',0));
+
+     }
+     else
+     {
+        ui->lePV_2->setText(QString("%1").arg(src.getValueScaled(PV_2[0]),3,'f',PV_2[1].toInt()));
+     }
+
+     int t1 = src.getValueFloat(PV_2[0]);
+     if(t1<0) t1=0;
+     if(t1>4000) t1=4000;
+     ui->pbPV_2->setValue(t1);
+
+     v << src.getValueFloat(PV_2[0]);
+
+    }
+    else
+        v << 0.0;
+
+    // PV_3
+    if(src.getTags().contains(RegDes[RegNum][Ri::PV_3]))
+    {
+        if(src.scaleFull(RegDes[RegNum][Ri::PV_3])<50.0)
+            ui->lePV_3->setText(QString("%1").arg(src.getValueScaled(RegDes[RegNum][Ri::PV_3]),4,'f',1));
+	else
+            ui->lePV_3->setText(QString("%1").arg(src.getValueScaled(RegDes[RegNum][Ri::PV_3]),3,'f',0));
+
+        int t1 = src.getValueFloat(RegDes[RegNum][Ri::PV_3]);
+        if(t1<0) t1=0;
+        if(t1>4000) t1=4000;
+
+        ui->pbPV_3->setValue(t1);
+
+        v << src.getValueFloat(RegDes[RegNum][Ri::PV_3]);
+    }
+    else
+        v << 0.0;
+
+    
+    // SPR_1
+    if(src.getTags().contains(RegDes[RegNum][Ri::SPR_1]))
+    {
+        int fw=3,pr=0;
+        int d=src.scaleFull(RegDes[RegNum][Ri::SPR_1])-src.scaleZero(RegDes[RegNum][Ri::SPR_1]);
+        if(d<=10.0)
+        {
+            fw=5;
+            pr=2;
+        }
+        else if(d<=50.0)
+        {
+            fw=4;
+            pr=1;
+        }
+        else
+        {
+            fw=3;
+            pr=0;
+        }
+
+        ui->leSPR_1->setText(QString("%1").arg(src.getValueScaled(RegDes[RegNum][Ri::SPR_1]),fw,'f',pr));
+
+        ui->vsSPR_1->setValue(qint32(src.getValueFloat(RegDes[RegNum][Ri::SPR_1])));
+        v << src.getValueFloat(RegDes[RegNum][Ri::SPR_1]);
+    }
+    else
+        v << 0.0;
+
+    
+    // X
+    if(ui->cbAM->text()=="АВТ") // якщо в автоматичному режимі то поновити дані
+    {
+        ui->sbX->setText(TOTEXT(RegDes[RegNum][Ri::X]));
+        ui->vsX->setValue(src.getValueFloat(RegDes[RegNum][Ri::X]));
+    }
+    v << src.getValueFloat(RegDes[RegNum][Ri::X]);
+
+// малювати графіки 
+//     // SP_1
+    v << src.getValueFloat(RegDes[RegNum][Ri::SP_1]);
+
+    // SP_2
+    if(src.getTags().contains(RegDes[RegNum][Ri::SP_2].split('.')[0]))
+        v << src.getValueFloat(RegDes[RegNum][Ri::SP_2].split('.')[0]);
+    else
+        v << 0.0;
+	
+    // SP_3
+    if(src.getTags().contains(RegDes[RegNum][Ri::SP_3]))
+        v << src.getValueFloat(RegDes[RegNum][Ri::SP_3]);
+    else
+        v << 0.0;
+
+    // qDebug() << "to graph " <<  v;
+}
+
+void TpanelReg::setGraph()
+{
+    trChart->addPoint(v);
+}
+
+void TpanelReg::setCtrlValue()
+{
+    //qDebug() << sender()->objectName() << v;
+    double v= qobject_cast<QPushButton*>(sender())->text().toDouble();
+    KeyboardWin kbd(v,0.0,1000.0,this);
+    kbd.exec();
+    v=kbd.value();
+    qobject_cast<QPushButton*>(sender())->setText(QString("%1").arg(v,0,'f',1));
+
+    src.sendValueScaled(RegDes[RegNum][Ri::X],v);
+
+    ui->vsX->blockSignals(true);
+    ui->vsX->setValue((double)v*40.0);
+    ui->vsX->blockSignals(false);
+
+}
+
+void TpanelReg::setCtrlValue(int v)
+{
+    qDebug() << sender()->objectName() << v;
+    double td=v;
+
+    src.sendValue(RegDes[RegNum][Ri::X],td);
+
+    ui->sbX->setText(QString("%1").arg(td/40.0,0,'f',1));
+
+}
+
+void TpanelReg::setParmValue() // слот відправки даних
+{
+    double v= qobject_cast<QPushButton*>(sender())->text().toDouble();
+    KeyboardWin kbd(v,0.0,1000.0,this);
+    kbd.exec();
+    v=kbd.value();
+    qobject_cast<QPushButton*>(sender())->setText(QString("%1").arg(v,0,'f',1));
+
+    if(ctrlSearch.contains(sender()->objectName())) // пошукати вадправника
+  { // якщо не знайдено
+    Ri::Index ix=ctrlSearch[sender()->objectName()];
+    //qDebug() << "Tag" << RegDes[RegNum][ix];
+
+    switch( ix )
+    {
+        case Ri::Kpr : // sbKpr
+            src.sendValue(RegDes[RegNum][Ri::Kpr],v* (ui->regRev->isChecked()?-1.0:1.0));
+
+            ui->dialKpr->blockSignals(true);
+            ui->dialKpr->setValue(v*100.0);
+            ui->dialKpr->blockSignals(false);
+	    break;
+        case Ri::TI : // sbTi
+            src.sendValue(RegDes[RegNum][Ri::TI],v*60.0);
+
+            ui->dialTi->blockSignals(true);
+            ui->dialTi->setValue(abs(v*100.0));
+            ui->dialTi->blockSignals(false);
+	    break;
+        case Ri::Td : // sbTd
+            src.sendValue(RegDes[RegNum][Ri::Td],v*1000.0);
+
+            ui->dialTd->blockSignals(true);
+            ui->dialTd->setValue(v*1000.0);
+            ui->dialTd->blockSignals(false);
+	    break;
+
+        case Ri::Xmin: // sbXmin
+        case Ri::Xmax: // sbXmax
+            src.sendValue(RegDes[RegNum][ix],v*40.0);
+	    break;
+        case Ri::K_1: // sbK_1
+            src.sendValue(RegDes[RegNum][ix],v*kk_1);
+            break;
+
+        case Ri::K_2: // sbK_2
+        case Ri::K_3: // sbK_3
+        case Ri::K_4: // sbK_4
+        case Ri::Kkor: // sbKkor
+            //qDebug() << "sendPAram" << RegDes[RegNum][ix];
+            src.sendValue(RegDes[RegNum][ix],v);
+	    break;
+
+        case Ri::SP_1: // sbSP_1
+            src.sendValueScaled(RegDes[RegNum][ix],v);
+
+            ui->vsSP_1->blockSignals(true);
+            ui->vsSP_1->setValue((v-src.scaleZero(RegDes[RegNum][ix]))/(src.scaleFull(RegDes[RegNum][ix]) - src.scaleZero(RegDes[RegNum][ix])) *4000.0);
+            ui->vsSP_1->blockSignals(false);
+
+	    break;
+        case Ri::SP_2: // sbSP_2
+
+            src.sendValueScaled(RegDes[RegNum][ix].split('.')[0],v);
+
+            ui->vsSP_2->blockSignals(true);
+            ui->vsSP_2->setValue((v-src.scaleZero(RegDes[RegNum][ix].split('.')[0]))/(src.scaleFull(RegDes[RegNum][ix].split('.')[0]) - src.scaleZero(RegDes[RegNum][ix].split('.')[0])) *4000.0);
+            ui->vsSP_2->blockSignals(false);
+	    break;
+        case Ri::SP_3: // sbSP_3
+            src.sendValueScaled(RegDes[RegNum][ix],v);
+
+            ui->vsSP_3->blockSignals(true);
+            ui->vsSP_3->setValue((v-src.scaleZero(RegDes[RegNum][ix]))/(src.scaleFull(RegDes[RegNum][ix]) - src.scaleZero(RegDes[RegNum][ix])) *4000.0);
+            ui->vsSP_3->blockSignals(false);
+	    break;
+        case Ri::P0: // sbP0
+            src.sendValue(RegDes[RegNum][ix],v*40.0);
+
+            ui->slP0->blockSignals(true);
+            ui->slP0->setValue(v*40.0);
+            ui->slP0->blockSignals(false);
+            break;
+	default: // якщо щось незрозуміле то не відправляти
+            qDebug() << "Index not fount" << sender()->objectName();
+	    break;
+    }
+    src.sendValue("Save",qint16(-1));
+
+  }
+  else
+      qDebug() << "Sender not found" << sender()->objectName();
+}
+
+void TpanelReg::setParmValue(int v)
+{
+    qDebug() << "setParmValue(int v)" << sender()->objectName() << ":" << v;
+
+  if(ctrlSearch.contains(sender()->objectName())) // пошукати вадправника
+  { // якщо не знайдено
+    Ri::Index ix=ctrlSearch[sender()->objectName()];
+    //qDebug() << "Tag" << RegDes[RegNum][ix];
+      switch( ix )
+      {
+        case Ri::SP_1: // vsSP_1
+            src.sendValue(RegDes[RegNum][ix],(double)v);
+
+            ui->sbSP_1->setText(QString("%1").arg(
+                        (double)v/4000.0*(src.scaleFull(RegDes[RegNum][ix])-src.scaleZero(RegDes[RegNum][ix])) + src.scaleZero(RegDes[RegNum][ix])
+                        ,0,'f',1)
+                        )
+                    ;
+	    break;
+        case Ri::SP_2: // vsSP_2
+            src.sendValue(RegDes[RegNum][ix].split('.')[0],(double)v);
+
+            ui->sbSP_2->setText(QString("%1").arg(
+                        (double)v/4000.0*(src.scaleFull(RegDes[RegNum][ix].split('.')[0])-src.scaleZero(RegDes[RegNum][ix].split('.')[0])) + src.scaleZero(RegDes[RegNum][ix].split('.')[0])
+                    ,0,'f',1));
+	    break;
+        case Ri::SP_3: // vsSP_3
+            src.sendValue(RegDes[RegNum][ix],(double)v);
+
+            ui->sbSP_3->setText(QString("%1").arg(
+                        ((double)v/4000.0*(src.scaleFull(RegDes[RegNum][ix])-src.scaleZero(RegDes[RegNum][ix])) + src.scaleZero(RegDes[RegNum][ix]) )
+                        ,0,'f',1));
+
+          break;
+        case Ri::Kpr: // dialKpr
+            src.sendValue(RegDes[RegNum][ix],(double)v/100.0*(ui->regRev->isChecked()?-1.0:1.0));
+
+            ui->sbKpr->setText(QString("%1").arg((double)v/100.0,0,'f',1));
+	    break;
+        case Ri::TI: // dialTi
+            src.sendValue(RegDes[RegNum][ix],(double)v/100.0*60.0);
+
+            ui->sbTi->setText(QString("%1").arg((double)v/100.0,0,'f',1));
+	    break;
+        case Ri::Td: // dialTd
+            src.sendValue(RegDes[RegNum][ix],(double)v);
+
+            ui->sbTd->setText(QString("%1").arg((double)v/1000.0,0,'f',1));
+
+          break;
+        case Ri::P0:
+            src.sendValue(RegDes[RegNum][ix],(double)v);
+
+            ui->sbP0->setText(QString("%1").arg((double)v/40.0,0,'f',1));
+            break;
+
+	default: // якщо щось незрозуміле то не відправляти
+            qDebug() << sender()->objectName();
+	    break;
+    }
+      src.sendValue("Save",qint16(-1));
+  }
+  else
+      qDebug() << "Sender not found" << sender()->objectName();
+
+}
+
+void TpanelReg::setParmKprSig(int v)
+{
+    double tmp;
+
+    tmp=ui->sbKpr->text().toDouble() * (v?-1.0:1.0);
+
+    //qDebug() << sender()->objectName() << tmp;
+
+    src.sendValue(RegDes[RegNum][Ri::Kpr],tmp);
+    src.sendValue("Save",qint16(-1));
+}
+
+
+// насту група функцій - заточка під міцубісі
+// при створенні бібліотеки треба переробляти
+void TpanelReg::setParmAM()
+{
+    int v=src.getValue16(RegDes[RegNum][Ri::AM]);
+    v=QMessageBox::information(this,tr("Режим регулятора"),QString("Поточний режим: %1\nНовий режим").arg(v==0?"Ручий":"Автомат"),
+                               "Автомат","Ручний");
+    //qDebug() << sender()->objectName() << v;
+
+    if(v==0)
+    {
+        ui->sbX->blockSignals(true);
+        ui->vsX->blockSignals(true);
+        ui->cbAM->setText("АВТ");
+    }
+    else
+    {
+        ui->sbX->blockSignals(false);
+        ui->vsX->blockSignals(false);
+        ui->cbAM->setText("РУЧ");
+    }
+
+    src.sendValue(RegDes[RegNum][Ri::AM],qint16(v==0?-1:0));
+    src.sendValue("Save",qint16(-1));
+}
+
+void TpanelReg::setParmRej()
+{
+    int v=src.getValue16(RegDes[RegNum][Ri::Rej]);
+    v=QMessageBox::information(this,tr("Режим регулятора"),QString("Поточний режим: %1\nНовий режим").arg(v==0?"Постійний":"Розрахунковий"),
+                               "Розрахунковий","Постійний");
+    ui->cbRej->setText(v?"ПОСТ":"РОЗР");
+
+    //qDebug() << sender()->objectName() << v;
+    src.sendValue(RegDes[RegNum][Ri::Rej],qint16(v==0?-1:0));
+    src.sendValue("Save",qint16(-1));
+}
+
+void TpanelReg::setParmRev()
+{
+    //qDebug() << sender()->objectName();
+    short v=0;
+
+    if(sender()->objectName()=="rRev")
+        v=1;
+
+    src.sendValue(RegDes[RegNum][Ri::Rev],qint16(-v));
+    src.sendValue("Save",qint16(-1));
+
+}
+
+
+void TpanelReg::setParamMode(bool v)
+{
+    src.sendValue(RegDes[RegNum][Ri::Mode],qint16(v?-1:0));
+    src.sendValue("Save",qint16(-1));
+
+}
+
+void TpanelReg::closeEvent( QCloseEvent * event) // при закритті зберегти розміри вікна на майбутнє.
+{
+    QSettings set;
+    set.setValue("ranelReg/width",size().width());
+    set.setValue("ranelReg/height",size().height());
+
+    event->accept();
+}
+
+/*
+void TpanelReg::startTimer()
+{
+    t1->start();
+}
+*/
+
+
+void TpanelReg::setTO(int v)
+{
+    src.sendValue(RegDes[RegNum][Ri::To],qint16(v));
+
+}

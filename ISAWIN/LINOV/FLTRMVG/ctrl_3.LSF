@@ -1,0 +1,184 @@
+#combinatory
+(*Вимикання стейт-машини*)
+if (NOT Amr_3_ OR Alarm_3_ OR NOT Dio_3_) AND State_3_>ST_START then 
+	State_3_:=ST_OFF;
+end_if;
+
+(*Вмикання стейт-машини*)
+(*if redge(Amr_3_,re_Amr) then 
+	State_3_:=ST_START;
+end_if;*)
+
+IF State_3_>ST_START then 
+	if Tfckl then 
+		Tf_3_:=Tf_3_+1;
+	end_if;
+	Tf_m_3_:=MOD(Tf_3_,60);
+	Tf_h_3_:=Tf_3_/60;
+else
+	Tf_m_3_:=0;
+	Tf_h_3_:=0;
+end_if;
+
+if State_3_ > ST_START AND NOT AM_3_ then  (*???? ?????????? ?? ?????? ?????*)
+(* Залишити клапана в останньому положені
+	Vl_3_1:=false;
+	Vl_3_2:=false;
+	Vl_3_3:=false;
+	Vl_3_4:=false;
+	Vl_3_5:=false;
+	Vl_3_6:=false;*)
+	State_3_:=ST_START; (*????????? ST_START ????? ?????? ???????????????? ??? ??????? ??????????*)
+end_if;
+
+(*Головна стейт-машина управління фільтром*)
+case State_3_ of
+
+ST_OFF: (*Все вимкнути*)
+	Vl_3_1:=false;
+	Vl_3_2:=false;
+	Vl_3_3:=false;
+	Vl_3_4:=false;
+	Vl_3_5:=false;
+	Vl_3_6:=false;
+
+	Alm_3_7:=false; (*Зняти аварію останньої вигрузки*)
+
+	res:=off_all();
+(*
+	if Alarm_3_ then  
+		Am_3_:=false; 
+	end_if;
+*)
+
+	State_3_:=ST_START;
+
+ST_START: (*Запуск фільтра в роботу*)
+
+	if Tfr_3_ then (*Зкид таймера фільтрування ?*)
+		Tf_3_:=0;
+	end_if;
+
+(*	Streg_3_:=false;*)
+if Am_3_ then 
+	Full_3_:=false;
+	Half_3_:=false;
+
+	Streg_3_:=false;
+	Man_3_:=false; (*Зняти команду ручного запуску регенерації*)
+	
+	if NOT (Cl_3_1 OR Cl_3_2 OR Cl_3_3 OR Cl_3_4 OR Cl_3_5 OR Cl_3_6) then (*Якщо закриті всі клапана*)
+		(*Відкрити клапана*)
+		State_3_:=ST_FLT;
+	end_if;
+
+end_if;
+
+ST_FLT: (*Стадія фільтрування*)
+		Vl_3_5:=true;
+		if Cl_3_5 then  (*Якщо четвертий відкрився *)
+			Vl_3_1:=true; (*Відкрити перший*)
+		end_if;
+
+		(*тут треба вписати умову закінчення фільтрації*)
+		if Streg_3_ OR Man_3_ then 
+			Vl_3_1:=false; (*Закрити клапана *)
+			Vl_3_5:=false;
+
+			if Rskyd_3_ then 
+				State_3_:=ST_SKYD;
+			else
+				if r_3_ then (*Якщо регенерація із вигрузкою*)
+					Full_3_:=true;
+					Half_3_:=false;
+					State_3_:=ST_STREG;
+				else
+					Full_3_:=false;
+					Half_3_:=true;
+					State_3_:=ST_PROM2; (*Це визначити потом*)
+				end_if;
+
+			end_if;
+		end_if;
+
+ST_SKYD: (*Стадія скиду*)
+	if NOT (Cl_3_1 OR Cl_3_2 OR Cl_3_3 OR Cl_3_4 OR Cl_3_5 OR Cl_3_6) then (*Якщо закриті всі клапана*)
+		(*Відкрити клапана*)
+		Vl_3_4:=true;
+	end_if;
+
+	if Tskyd_3_ then 
+		Vl_3_4:=false;
+				if r_3_ then (*Якщо регенерація із вигрузкою*)
+					Full_3_:=true;
+					Half_3_:=false;
+					State_3_:=ST_STREG;
+				else
+					Full_3_:=false;
+					Half_3_:=true;
+					State_3_:=ST_PROM2; (*Це визначити потом*)
+				end_if;
+	end_if;
+
+
+St_STREG: (*Розпочати регенерацюю, закрити клапант 4 *)
+(*Стадія регенерації із вивантаженням*)
+
+	if NOT (Cl_3_1 OR Cl_3_2 OR Cl_3_4  OR Cl_3_5 OR Cl_3_6) then (*Якщо закриті всі клапана*)
+		Vl_3_3:=true;
+	end_if;
+
+	if Tzatr_3_ then 
+		State_3_:=ST_REGPROM;
+	end_if;
+
+ST_REGPROM: (*Промивка з вигрузкою*)
+	Vl_3_6:=true;
+	if Tosad_3_ then 
+		Vl_3_3:=false;
+		State_3_:=ST_PROM;
+	end_if;
+
+ST_PROM: (*Промивка*)
+	if NOT Cl_3_3 then
+		Vl_3_2:=true;
+	end_if;
+
+	if Tprom_3_ then
+		Vl_3_2:=false;
+		Vl_3_6:=false;
+		State_3_:=ST_VIDST;
+	end_if;	
+
+
+ST_PROM2: (*Промивка без вигрузки*)
+	
+	if NOT (Cl_3_1 OR CL_3_3 OR Cl_3_4  OR Cl_3_5 OR Cl_3_6) then (*Якщо закриті всі клапана*)
+		Vl_3_2:=true;
+	end_if;
+
+	if Cl_3_2 then
+		Vl_3_6:=true;
+	end_if;
+
+	if Tprom_3_ then
+		Vl_3_2:=false;
+		Vl_3_6:=false;
+		State_3_:=ST_VIDST;
+	end_if;	
+
+ST_VIDST: (*Відстій*)
+	if Tvids_3_ then 
+		State_3_:=ST_START;
+		Streg_3_:=false;
+	end_if;
+
+
+
+
+else
+	State_3_:=ST_OFF;
+
+end_case;
+
+

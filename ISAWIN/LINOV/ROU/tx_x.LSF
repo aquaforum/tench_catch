@@ -1,0 +1,55 @@
+#combinatory
+if NOT AM0003 then
+	Y0013:=  X0010 AND ( Y0001 OR X0011 );
+	Y0014:= X0009 AND  (Y0002 OR X0012 );
+	C0003:=3000.0;
+else
+	Y0013:= X0010 AND tY0013;
+	Y0014:= X0009 AND tY0014;
+end_if;
+
+
+(*«упинка частотника по к≥нцевиках*)
+if NOT X0010  then 
+	Y0013:=false; 
+end_if;
+
+if NOT  X0009 then 
+	Y0014:=false;
+end_if;
+
+
+
+(*–еалызацы€ переходу ручний-автомат*)
+if AM0001 then 
+	C0001:=Xt0001;
+end_if;
+
+if AM0002 then 
+	C0002:=Xt0002;
+end_if;
+
+
+
+if AM0004 then 
+	C0004:=Xt0004;
+end_if;
+
+if AM0005 then 
+	C0005:=Xt0005;
+end_if;
+
+if AM0006 then 
+	C0006:=Xt0006;
+end_if;
+
+if AM0007 then 
+	C0007:=Xt0007;
+end_if;
+
+if AM0008 then 
+	C0008:=Xt0008;
+end_if;
+
+
+

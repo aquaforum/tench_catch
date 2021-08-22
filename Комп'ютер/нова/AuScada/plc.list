@@ -1,0 +1,22 @@
+plcdifuz      ; :/plc/difuz.list     ; 1 ; Дифузія
+plcsatur      ; :/plc/satur.list     ; 1 ; Сатурація
+plcvipar      ; :/plc/viparka.list   ; 1 ; Випарка
+plcrou        ; :/plc/rou.list       ; 1 ; РОУ
+plcgpi4       ; :/plc/gaspich.list   ; 1 ; Газова піч
+
+tmaob         ; :/plc/aparatall.list ; 1 ; Апарати загальний     ; 5 ; 1
+tmaap1        ; :/plc/aparat.list    ; 1 ; Апарат №1             ; 5 ; 1
+tmaap2        ; :/plc/aparat.list    ; 1 ; Апарат №2             ; 5 ; 1
+tmaap3        ; :/plc/aparat.list    ; 1 ; Апарат №3             ; 5 ; 1
+
+plcap0        ; :/plc/cfall.list     ; 1 ; Центрифуги загальний
+plccf4           ; :/plc/cf.list        ; 1 ; Центрифуга №3         ; 1
+plccf5           ; :/plc/cf.list        ; 1 ; Центрифуга №4         ; 1
+
+plcbp         ; :/plc/bigpump.list   ; 1 ; Тракт подачі буряка
+
+plcfdmom      ; :/plc/fdmon2.list    ; 1 ; Монітор частотників
+fddiff1       ; :/plc/fdmonfr.list   ; 1 ; ЧП насос сирого соку
+fdvip1        ; :/plc/fdmonfr.list   ; 1 ; ЧП випарки 0-1к
+
+plck2         ; :/plc/boiler2.txt    ; 0 ; Котел №2              ; 1

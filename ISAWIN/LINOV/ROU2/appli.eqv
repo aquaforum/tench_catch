@@ -1,0 +1,5 @@
+#define SCA_MIN 0.0
+#define SCA_MAX 4000.0
+#define Tdif t#500ms (*t#500ms*)
+#define PidS t#1s
+

@@ -1,0 +1,19 @@
+#combinatory
+if AM_01 then 
+	if not X_05 then 
+		Y_01:= true;
+	end_if;
+	if X_06 then 
+		Y_01:=false;
+	end_if;
+	if V_05<201.0 then
+		AM_01:=false;
+	end_if;
+end_if;
+
+if fedge(AM_01,fe_am_01) then
+	Y_01:=false;
+end_if;
+
+
+

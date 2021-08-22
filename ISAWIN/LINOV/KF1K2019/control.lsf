@@ -1,0 +1,399 @@
+#combinatory
+(*Читати дискретні входи*)
+X_B:= NOT %IX1.1;
+X_F:= NOT %IX1.2;
+X_E:= NOT %IX1.3;
+X_D:= NOT %IX1.4;
+X_C:= NOT %IX1.5;
+X_A:= NOT %IX1.6;
+X_H:= NOT %IX1.7;
+X_G:= NOT %IX1.8;
+X_kh:= (n_kf<>3) XOR  %IX1.9;
+(* X_kh:=  not   %IX1.9;*) (*це переробка під індукційний кінцевик, який встановлено на ф№3*)
+X_kt:= NOT %IX1.10;
+X_dl:= %IX1.11;
+(* цей код змінено при заміні кінцевиків на шторках на індукційні
+X_ps:= NOT %IX1.12;
+X_pa:= NOT %IX1.13;
+*)
+X_tauto:= %IX1.12;
+X_ton:= %IX1.13;
+
+X_pause:= NOT %IX1.14;
+X_presh:= NOT %IX1.15;
+
+X_power := true ;(*%IX1.16;*)
+
+
+
+if Alarm and State >ST_WAIT AND State <> ST_UPLOADING then  (*якщо є глобальна аварія *)
+(*тут треба все вимкнути*)
+	State:=ST_STOPALL; (*перейти в стадію очікування*)	
+(*!!!!!!!можливо під час вивантаження не слід закривати шторки ванни*)
+end_if;
+
+(*Цей фрагмент стосується регулятора подачі суспензії. Гістерезис по рівню в зб суспензії*)
+if Lsusp<Ls_min then (*Якщо малий рівень в зб суспензії*)
+	fReg_run:=false; (*вимкнут регулятор*)
+end_if;
+if Lsusp>Ls_max OR NOT Net Then (*Якщо рівень достатній чи немає мережі*)
+	fReg_run:=true; (*ввімкнут регулятор*)
+end_if;
+
+if aY_pump  then (*якщо масляна станція сильно довго працює*)
+	Y_pump:=false; (*Вимкнути насос*)
+	State:=ST_WAIT; (*зупинити програму*)
+end_if;
+
+
+Lock:=State>ST_WAIT; (*Бокування кнопки тестування*)
+if redge(Lock,re_Lock) then 
+	tstart(Tall);
+end_if;
+
+case State of
+ST_TEST: (*це для тестування*)
+
+ST_WAIT: (*Очікування*)
+	(*тут би треба було б ще реалізувати автоматичний пуск фільтра.... Узгодити проблеми техніки безпеки*)
+
+	tstY_ij:=false;
+
+	if Start then (*якщо натиснуто  кнопку старт*)
+		if Net then 
+			State:=ST_START;
+			T_wait:=t#2s; (*таймер гудка*)
+		else
+			State:=ST_STARTQUERY;
+		end_if;
+	end_if;
+
+ST_STARTQUERY: (*При відсутності звязку з КЗП запитати про пуск*)
+(*звідси можливо два варіанти, або пуститися або зупинитися*)
+(*вихід звідси без панелі неможливий*)
+
+ST_START: (*Передстартова підготовка*)
+	(*Скинути лічильники*)
+	Qsusp:=0.0;
+	Qvs:=0.0;
+	Qvw:=0.0;
+	Tall:=t#0s;
+	Tfilt:=t#0s;
+	Tvs:=t#0s;
+	tvw:=t#0s;
+	Tf:=t#0s;
+
+	L_IJ:=false;
+
+	Y_IJ:=false; (*Закрити шторки ванни, якщо були відкриті*)
+	(*пока що не знаю що робити, буде просто гудок*)	
+	if not (X_kh ) then (* AND X_dl якщо кратека не в вихідному положенні*)
+			Y_fw:=true; (*посунути каретку в голову*)
+	else
+		Y_fw:=false; (*можливо тягли каретку в голову*)
+		Y_alarm:=true; (*дати гудок*)
+		s_wait:=true; 
+		if q_wait then  (*після закінчення сигналу*)
+			s_wait:=false;
+			Y_alarm:=false;
+			State:=ST_PRESH; (*дати команду стискання фільтра можливо стискання слід проводити зразу ж після вивантаження*)
+			Gs_latch:=false; (*земок на витрату суспунзії*)
+		end_if;
+	end_if;	
+ST_PRESH: (*Стискання преса*)
+	Y_pump:=true; (*включити маслонасос*)
+
+	if q_trp then (*якщо спрацював таймер затримки стискання*)
+		Y_pump:=false; (*включити маслонасос*)
+		if Nf=0 then (* Якщо всі фільтри зупинено або на допоміжних операція. 4==заборона пуску*)
+			State:=ST_FILTERING;
+		end_if;
+		if Nf=4 then (*Якщо немає суспензії - запитати*)
+			State:=ST_NOSUSP;
+		end_if;
+	end_if;
+
+	if X_pa (*аба спрацював кінцевик аварійного положення преса*)
+	(*можливо сюди треба додати ще якісь умови*)
+	then (*тоді*)
+		Y_pump:=false; (*включити маслонасос*)
+		State:=ST_WAIT; (*перервати виконання програми*)
+
+	end_if;
+
+ST_NOSUSP:
+	(*Вихід із цього стану по команді з панелі*)
+
+ST_FILTERING: (*Фільтрування*)
+(*	Qsusp:=t_Qsusp;*)
+(*позакривати зайві клапани*)
+	Y_F:=false;
+	Y_E:=false;
+	Y_D:=false;
+	Y_H:=false;
+	Y_IJ:=false;
+
+	Tfilt:=t_Tfilt;
+	Tnp:=t_Tnp;
+	Y_C:=true; (*вихід правої секції*)
+	Y_G:=true; (*перемичка*)
+
+	if not q_Trp then (*якщо немає тиску масла*)
+		Y_B:=false; (*клапан подічі*)
+		Y_pump:=true; (*включити насос масла*)
+	else
+		Y_B:=true; (*клапан подічі*)
+		Y_pump:=false; (*виключити насос масла*)
+	end_if; 
+
+	if Tfilt>t#1m and Ns_zd>3200.0 and Gsusp<Gsusp_zd AND Gs_latch then 
+		Y_B:=false; (*клапан подічі*)
+		Y_C:=false; (*вихід правої секції*)
+		State:=ST_DISSUGARING ;
+	end_if;
+
+	if Psusp > 1.2*Psusp_zd AND NOT P_off then (*Перевірити на аварійне значення тиску*)
+		State:=ST_STOPALL; (*Аварійна сигналізація *)
+	end_if;
+ST_DISSUGARING: (*Висолодження*)
+(*позакривати зайві клапани*)
+	Y_B:=false;
+	Y_F:=false;
+	Y_E:=false;
+	Y_C:=false;
+	Y_H:=false;
+	Y_IJ:=false;
+
+(*	Qvs:=t_Qvs;*)
+	Tvs:=t_Tvs;
+
+
+
+	Y_G:=true; (*перемичка*)
+
+	if q_Trp then (*перевірити тиск масла*)
+		Y_pump:=false; (*виключити насос масла*)
+		Y_D:= NOT X_B; (*клапан подачі води*)
+	else
+		Y_pump:=true; (*виключити насос масла*)
+	end_if;
+
+	if Qvs>Qvs_zd OR Q_t_vs	then (*якщо набрали об`єм або вийшов час тоді *)
+		Y_G:=false; (*перемичка*)
+		State:=ST_WASHING; (*перейти на наступну стадію*)
+	end_if;
+
+
+ST_WASHING: (*Промивка*)
+(*позакривати зайві клапани*)
+	Y_B:=false;
+	Y_F:=false;
+	Y_E:=false;
+	Y_C:=false;
+	Y_G:=false;
+	Y_IJ:=false;
+
+(*	Qvw:=t_Qvw;*)
+	Tvw:=t_Tvw;
+
+	Y_H:=true; (*клапан промиву*)
+
+	if q_Trp then (*перевірити тиск масла*)
+		Y_pump:=false; (*виключити насос масла*)
+		Y_D:=true; (*клапан подачі води*)
+	else
+		Y_pump:=true; (*виключити насос масла*)
+		Y_D:=false; (*клапан подачі води*)
+
+		Nv_zd:=Nv_min_zd; (*Знизити оберти оберти*)
+	end_if;
+
+
+	if Qvw>Qvw_zd OR Q_t_vw	then (*якщо набрали об`єм або вийшов час тоді *)
+		Y_D:=false; (*клапан подачі води*)
+		Y_H:=false; (*клапан промиву*)
+		State:=ST_SCAVENGING; (*перейти на наступну стадію*)
+	end_if;
+
+ST_SCAVENGING:(*Продувка*)
+(*позакривати зайві клапани*)
+	Y_B:=false;
+	Y_E:=false;
+	Y_D:=false;
+	Y_C:=false;
+	Y_H:=false;
+	Y_G:=false;
+	Y_IJ:=false;
+
+	if q_Trp then (*перевірити тиск масла*)
+		Y_pump:=false; (*виключити насос масла*)
+
+		Y_F:=NOT X_D AND NOT X_H; (*відкрити крани продувки центрального каналу коли закрито клапан води*)
+		if q_t_p then (*якщо вийшов час тоді *)
+			Y_F:=false; (*закрити клапан*)
+			State:=ST_DRYING; (*перейти на наступну стадію*)
+		end_if;
+	else
+		Y_pump:=true; (*виключити насос масла*)
+		Y_F:=false; (*клапан подачі води*)
+	end_if;
+
+ST_DRYING: (*Просушка*)
+(*позакривати зайві клапани*)
+	Y_B:=false;
+	Y_F:=false;
+	Y_D:=false;
+	Y_C:=false;
+	Y_G:=false;
+	Y_IJ:=false;
+
+	Tf:=t_Tf;
+	if q_Trp then (*перевірити тиск масла*)
+		Y_pump:=false; (*виключити насос масла*)
+
+		Y_E:=true; (*клапан подачі повітря*)
+		Y_H:=true; (*клапан промивки*)
+		if q_t_f then (*Якщо вийшов час тоді*)
+			Y_E:=false; (*клапан подачі повітря*)
+			Nc:=Nc+1;
+			State:=ST_BLEED; (*Перейти на наступну стадію*)
+		end_if; 
+
+	else
+		Y_pump:=true; (*виключити насос масла*)
+		Y_E:=false; (*клапан подачі води*)
+	end_if;
+
+ST_BLEED: (*Ліквідація тиску*)
+(*позакривати зайві клапани*)
+	Y_B:=false;
+	Y_F:=false;
+	Y_E:=false;
+	Y_D:=false;
+	Y_C:=false;
+	Y_G:=false;
+	Y_IJ:=false;
+
+	Y_H:=true ; (*клапан промивки якщо закрито клапан D*)
+	if q_t_b then (*Якщо вийшов час тоді*)
+		Y_H:=false; (*клапан подачі повітря*)
+		State:=ST_UNCLAMP; (*Перейти на наступну стадію*)
+	end_if; 
+
+ST_UPLOADQUERY:
+
+ST_UNCLAMP: (*запит дозволу на вивантаження, скоріше це пеотрібно щоб оператор вручну пустив ПТС*)
+(*позакривати зайві клапани*)
+	Y_B:=false;
+	Y_F:=false;
+	Y_E:=false;
+	Y_D:=false;
+	Y_C:=false;
+	Y_H:=false;
+	Y_G:=false;
+	
+	if not bUnclamp then
+		Y_pump:=true;
+		Y_zol:=true;
+	else
+		Y_pump:=false;
+		Y_zol:=false;
+		pts_q:=true; (*Запросити запуск ПТС*)
+	end_if;
+
+	if bPause then		
+		State:=ST_STARTPTS;
+			Y_iJ:=true; (*Y_IJ:=true; *) (*відкрити шторки ванни*)
+	end_if;
+
+
+
+(*тут мабуть треба ввести додаткову станію із запитом на вивантаження*)
+ST_STARTPTS: (*Запуск ПТС*)
+(*позакривати зайві клапани*)
+	Y_B:=false;
+	Y_F:=false;
+	Y_E:=false;
+	Y_D:=false;
+	Y_C:=false;
+	Y_H:=false;
+	Y_G:=false;
+
+			Y_iJ:=true; (*Y_IJ:=true; *) (*відкрити шторки ванни*)
+			L_IJ:=true; (*Вастановити прапор вивантаження*)
+			
+	if Not Net   (*Якщо мережа недоступна то відбувається зупинка для наступного ручного запуску*)
+	OR q_S_out then (*або якщо вийшов час запуску а воно не запустилося*)
+		State:=ST_UPLOADQUERY; (*запитита дозвіл на вивантаження*)
+	end_if;
+
+	pts_q:=true; (*Запросити запуск ПТС*)
+	if pts_p then (*якщо ПТС запущено*)
+		Y_tstart:=true; (*включити свій транспортер*)
+		if X_ton AND X_I AND NOT X_J then (*Якщо все включилося і шторки відкриті*)
+			State:= ST_UPLOADING; (*Запустити програму розтяжки*)
+		end_if;
+	end_if;
+
+
+  
+
+ST_UPLOADING:(*Вивантаження*)
+	(*Експериментальний шматок кода якймає лікувати проблему із закриттям шторок*)
+	if L_IJ then 
+		Y_IJ:=true;
+		IF fedge( X_J,fe_X_J) then (**)
+			Y_IJ:=false;
+		end_if;
+	end_if; 
+
+	if Std=ST_STOP then (*якщо якщо закінчилась програма розтяжки*)
+   (*if X_kh AND X_dl  then Якщо каретка добралася до голови*)
+		Y_IJ:=false; (*закрити шторки ванни, якщо були відкриті*)
+		L_IJ:=false;
+
+		State:=ST_WAIT; (*Вивантаження закінчено, перейти в стадію очікування*)
+		tstop(Tall);
+	end_if;
+
+ST_STOPALL:
+	Y_B:=false;
+	Y_F:=false;
+	Y_E:=false;
+	Y_D:=false;
+	Y_C:=false;
+	Y_H:=false;
+	Y_G:=false;
+	Y_zol:=false;
+	Y_pump:=false;
+	Y_fw:=false;
+	Y_bw:=false;
+	Y_tstart:=false;
+	pts_q:=false;
+	Y_alarm:=false;
+	State:=ST_WAIT;
+	tstop(Tall);
+
+ST_PALARM:
+	(*Припинити подачу суспензії*)
+	Ns_zd:=Ns_min_zd;
+	Y_B:=false; (*клапан подічі*)
+	Y_C:=false; (*вихід правої секції*)
+	Y_G:=false; (*перемичка*)
+	if Psusp < 0.95*Psusp_zd then 
+		State:=ST_FILTERING;
+	end_if;
+
+else (*Раптом стався якийсь глюк - значить треба перейти в стадію очікування*)
+	State:=ST_WAIT;
+
+end_case;
+
+ul_run :=State=ST_UPLOADING; (*показати вікно вивантаження на панелі*)
+
+if q_Ttoff then (*Якщо спрацював таймер затримки вимиканя транстортера тоді*)
+		Y_tstart:=false; (*зупинити транспортери*)
+		pts_q:=false;
+end_if;
+
+

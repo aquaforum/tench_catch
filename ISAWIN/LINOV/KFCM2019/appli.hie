@@ -1,0 +1,21 @@
+_section=_begin {
+parm_sto(_ST)
+ios(_FBD)
+manage(_ST)
+ctrlpts(_FBD)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+mux2(_ST)
+}
+
+_section=_fblocks {
+preg(_ST)
+}
+

@@ -1,0 +1,24 @@
+#combinatory
+Delta:=(Max_-Min_)/REAL(Tup_)*REAL(SYSTEM(SYS_TCURRENT,0));
+
+
+if  first then
+	if In_<Max_ then 
+		if(In_>LocOut+Delta) then 
+			LocOut:=LocOut+Delta;
+		elsif(In_<LocOut-Delta) then
+			LocOut:=LocOut-Delta;;
+		else
+			LocOut:=In_;
+		end_if;
+	else
+		LocOut:=In_;
+	end_if;
+
+else
+	LocOut:=In_;
+	first:=true;
+end_if;
+
+Out_:=LocOut;
+

@@ -1,0 +1,11 @@
+_section=_begin{
+parm_sto(_ST)ios(_FBD)control(_ST)}
+_section=_sequential{
+}
+_section=_end{
+}
+_section=_functions{
+dEXPO(_ST)
+t2msg(_ST)totime(_ST)}
+_section=_fblocks{
+}

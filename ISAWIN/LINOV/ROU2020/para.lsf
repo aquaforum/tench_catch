@@ -1,0 +1,51 @@
+#combinatory
+(*Коригування тиску*)
+if Presh+1.01325<15.0 then
+	P_:=15.0;
+elsif Presh+1.01325 > 25.0 then
+	P_:=25.0;
+else
+	P_:=Presh+1.01325;
+end_if;
+
+(*Індекс тиску*)
+if P_ < 20.0 then
+iX:=2048;
+P_:=P_-15.0;
+else
+iX:=2080;
+P_:=P_-20.0;
+end_if;
+
+(*Коришування температури та індекс температури*)
+if Term<300.0 then
+	iY:=0;
+	T_:=300.0;
+elsif Term>440.0 then
+	iY:=28;
+	if Term> 450.0 then
+		T_:=450.0;
+	else
+		T_:=Term;
+	end_if;
+else
+	iY:=(ANA(Term-300.0)/10)*2;
+	T_:=Term;
+end_if;
+
+T_:=T_-(300.0+REAL(iY)*5.0);
+
+min0:=r_mb_rel(iX+iY);
+min1:=r_mb_rel(iX+iY+2);
+
+max0:=r_mb_rel(iX+iY+32);
+max1:=r_mb_rel(iX+iY+32+2);
+
+
+r0:=min0+(max0-min0)*P_/5.0;
+r1:=min1+(max1-min1)*P_/5.0;
+
+
+para:=r0+(r1-r0)*T_/10.0;
+
+

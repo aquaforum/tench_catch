@@ -1,0 +1,64 @@
+#combinatory
+if Init then
+	Init:=false;
+
+
+(*Таймера*)
+if T_STOP>T_START then
+	Adr:=1; 
+	for ii:=T_START to T_STOP by 2 do
+		Res:=Retain_X('T',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+end_if;
+
+(*int*)
+if I_STOP>I_START then 
+	Adr:=1;
+	for ii:=I_START to I_STOP by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+end_if;
+
+(*long*)
+if L_STOP>L_START then
+	Adr:=512; (*тому що всіх змінних типу N максиму 1024 друша половина під двойні слова *)
+	for ii:=L_START to L_STOP by 2 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+end_if;
+
+
+
+ (*bit*)
+if B_STOP>B_START then
+	Adr:=1;
+	for ii:=B_START to B_STOP by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+end_if;
+
+(*real/float*)
+if  F_START>0 then 
+	Adr:=1;
+	for ii:=F_START to F_STOP by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+end_if;
+
+(*real/float Виходи регуляторів*)
+if C_STOP>C_START then
+	Adr:=1024 - c_reserv;
+	for ii:=c_START to c_STOP by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+end_if;
+
+
+
+end_if;

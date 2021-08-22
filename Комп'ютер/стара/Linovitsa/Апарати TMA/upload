@@ -1,0 +1,12 @@
+#!/bin/sh
+
+
+strip -s ioserv/ioserv ../ainscada/scada/scada
+
+ssh -i ~/.ssh/lnfab centrif rm /usr/local/bin/scada /home/vanessa/ioserv
+scp -i ~/.ssh/lnfab ../ainscada/scada/scada  centrif:/usr/local/bin
+scp -i ~/.ssh/lnfab ioserv/ioserv  centrif:/home/vanessa
+ssh -i ~/.ssh/lnfab centrif
+
+
+

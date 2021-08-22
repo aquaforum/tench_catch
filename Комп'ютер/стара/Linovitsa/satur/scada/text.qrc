@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/trend">
+        <file>../../../pict/exit_32x32.png</file>
+        <file>../../../pict/calendar_48x48.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>text/reg.txt</file>
+        <file>mnemo/pumpCtrl.svg</file>
+        <file>text/reg_1</file>
+        <file>text/reg_2</file>
+        <file>text/reg_3</file>
+        <file>text/reg_4</file>
+        <file>text/reg_5</file>
+        <file>text/reg_6</file>
+        <file>text/reg_7</file>
+        <file>text/reg_8</file>
+        <file>text/reg_9</file>
+        <file>text/reg_10</file>
+        <file>text/reg_11</file>
+        <file>text/reg_12</file>
+        <file>text/reg_13</file>
+        <file>text/reg_14</file>
+        <file>text/reg_15</file>
+        <file>text/bleding</file>
+        <file>text/term1</file>
+        <file>text/term2</file>
+        <file>text/termpr</file>
+        <file>text/flowvm</file>
+        <file>text/flowj</file>
+        <file>text/flowr</file>
+        <file>text/levelpr</file>
+        <file>text/leveldef</file>
+        <file>text/level1sat</file>
+        <file>text/level2sat</file>
+        <file>text/phco2</file>
+        <file>text/pump</file>
+    </qresource>
+</RCC>

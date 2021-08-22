@@ -1,0 +1,21 @@
+_section=_begin {
+parm_ram(_ST)
+analog(_FBD)
+Control(_FBD)
+tx_x(_ST)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+mux2(_ST)
+}
+
+_section=_fblocks {
+p_p0(_ST)
+}
+

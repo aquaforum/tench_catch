@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>text/Cft1</file>
+        <file>text/Cft2</file>
+        <file>text/Cft3</file>
+        <file>text/Cft4</file>
+        <file>text/Cft5</file>
+        <file>text/Cft6</file>
+        <file>text/Cft7</file>
+        <file>text/Cft8</file>
+        <file>text/drv</file>
+        <file>text/trend</file>
+        <file>text/shib</file>
+        <file>text/upload</file>
+        <file>text/other</file>
+        <file>text/Cft</file>
+        <file>text/Cfd</file>
+        <file>text/Cfu</file>
+        <file>mnemo/centrif.png</file>
+        <file>text/c1trend</file>
+        <file>text/torm</file>
+    </qresource>
+</RCC>

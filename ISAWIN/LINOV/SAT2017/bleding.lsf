@@ -1,0 +1,100 @@
+#combinatory
+if redge(time_s=0,re_Ts0) then 
+	CBT:=CBT+1;
+end_if;
+
+
+if redge(mod(time_s-Tm_zd_01,kr_p_01)=0 and en_p_01, p_01) then 
+	Tp_01:=t#0s;
+	tstart(Tp_01);
+	Y_01:=true;
+end_if;
+
+if Tp_01>TMR(Tp_zd_01*1000) then
+	Y_01:=false;
+	CB_01:=CB_01+1;
+	tstop(Tp_01);
+	Tp_01:=t#0s;
+end_if;
+(*-----------------------------------------------------------------------------*)
+if redge(mod(time_s-Tm_zd_02,kr_p_02)=0 and en_p_02, p_02) then 
+	Tp_02:=t#0s;
+	tstart(Tp_02);
+	Y_02:=true;
+end_if;
+
+if Tp_02>TMR(Tp_zd_02*1000) then
+	Y_02:=false;
+	CB_02:=CB_02+1;
+	tstop(Tp_02);
+	Tp_02:=t#0s;
+end_if;
+(*-----------------------------------------------------------------------------*)
+if redge(mod(time_s-Tm_zd_03,kr_p_03)=0 and en_p_03, p_03) then 
+	Tp_03:=t#0s;
+	tstart(Tp_03);
+	Y_03:=true;
+end_if;
+
+if Tp_03>TMR(Tp_zd_03*1000) then
+	Y_03:=false;
+	CB_03:=CB_03+1;
+	tstop(Tp_03);
+	Tp_03:=t#0s;
+end_if;
+(*-----------------------------------------------------------------------------*)
+if redge(mod(time_s-Tm_zd_04,kr_p_04)=0 and en_p_04, p_04) then 
+	Tp_04:=t#0s;
+	tstart(Tp_04);
+	Y_04:=true;
+end_if;
+
+if Tp_04>TMR(Tp_zd_04*1000) then
+	Y_04:=false;
+	CB_04:=CB_04+1;
+	tstop(Tp_04);
+	Tp_04:=t#0s;
+end_if;
+(*----------------------------------------------------*)
+if redge(mod(time_s-Tm_zd_05,kr_p_05)=0 and en_p_05, p_05) then 
+	Tp_05:=t#0s;
+	tstart(Tp_05);
+	Y_05:=true;
+end_if;
+
+if Tp_05>TMR(Tp_zd_05*1000) then
+	Y_05:=false;
+	CB_05:=CB_05+1;
+	tstop(Tp_05);
+	Tp_05:=t#0s;
+end_if;
+(*-----------------------------------------------------------------------------*)
+if redge(mod(time_s-Tm_zd_06,kr_p_06)=0 and en_p_06, p_06) then 
+	Tp_06:=t#0s;
+	tstart(Tp_06);
+	Y_06:=true;
+
+	oC_13:=C_13; (*Продувка труби суспензії, зроблено по замовленню Н.І.*)
+	C_13:=4000.0; (*В 2012 році треба буде це прибрати із програми.*)
+end_if;
+
+if Tp_06>TMR(Tp_zd_06*1000) then
+	Y_06:=false;
+	CB_06:=CB_06+1;
+	tstop(Tp_06);
+	Tp_06:=t#0s;
+
+	C_13:=oC_13;(*Це продовження попереднього, також потрібно прибрати*)	
+end_if;
+
+(*Управління насосом відкачки із збірника продувок*)
+IF AM_PUMP_01 AND X_07 then 
+	if V_15>max_V_17 then 
+		Y_07:= true;
+	end_if;
+	if V_15<min_V_17 then 
+		Y_07:=false;
+	end_if;
+end_if;
+
+

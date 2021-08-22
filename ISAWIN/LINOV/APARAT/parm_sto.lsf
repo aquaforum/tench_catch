@@ -1,0 +1,124 @@
+#combinatory
+
+
+if not Read AND NOT %IX11.4 then 
+f_V_temp:=eep_n_r(1);
+f_V_vak:=eep_n_r(2);
+f_V_l:=eep_n_r(3);
+f_V_r:=eep_n_r(4);
+f_V_m:=eep_n_r(5);
+f_V_6:=eep_n_r(6);
+f_V_7:=eep_n_r(7);
+f_V_8:=eep_n_r(8);
+
+SP_H_n:=INT_REAL(eep_n_r(9));
+SP_R_zv:=INT_REAL(eep_n_r(10));
+SP_H_2:=INT_REAL(eep_n_r(11));
+SP_H_3:=INT_REAL(eep_n_r(12));
+SP_H_f:=INT_REAL(eep_n_r(13));
+SP_M_d1:=INT_REAL(eep_n_r(14));
+SP_M_2:=INT_REAL(eep_n_r(15));
+SP_M_d2:=INT_REAL(eep_n_r(16));
+SP_M_3:=INT_REAL(eep_n_r(17));
+SP_M_d3:=INT_REAL(eep_n_r(18));
+SP_M_f:=INT_REAL(eep_n_r(19));
+SP_R_min:=INT_REAL(eep_n_r(20));
+SP_R_d:=INT_REAL(eep_n_r(21));
+Kpr:=INT_REAL(eep_n_r(22));
+Ti:=INT_REAL(eep_n_r(23));
+Td:=INT_REAL(eep_n_r(24));
+(*Kor:=INT_REAL(eep_n_r(25));*)
+dR_max:=INT_REAL(eep_n_r(26));
+dH_max:=INT_REAL(eep_n_r(27));
+
+TM_zd:=TMR(eep_n_r(28));
+
+rej_rost:=BOO(eep_n_r(29));
+rej_voda:=BOO(eep_n_r(30));
+SP_R_max:=INT_REAL(eep_n_r(31));
+Ap_nom:=eep_n_r(32);
+
+Rp_1:=INT_REAL(eep_n_r(33));
+Rp_2:=INT_REAL(eep_n_r(34));
+Rp_3:=INT_REAL(eep_n_r(35));
+Rz_2:=INT_REAL(eep_n_r(36));
+Rz_3:=INT_REAL(eep_n_r(37));
+Rz_4:=INT_REAL(eep_n_r(38));
+rej_p:=BOO(eep_n_r(39));
+
+
+end_if;
+
+Read := true;
+
+if Sav_tm=t#0s then 
+	tstart(Sav_tm);
+end_if;
+
+if Sav_tm >t#30m then 
+
+	Sav_tm:=t#1s;
+
+	if Save then
+		Res:=eep_en();
+		Save:=FALSE;
+		Sav_ST:=1; 
+	end_if;
+
+end_if;
+
+case sav_ST of 
+1 :
+Sav_ST:=Sav_ST+1;
+Res:=eep_n_w(1,f_V_temp);
+Res:=eep_n_w(2,f_V_vak);
+Res:=eep_n_w(3,f_V_l);
+Res:=eep_n_w(4,f_V_r);
+Res:=eep_n_w(5,f_V_m);
+Res:=eep_n_w(6,f_V_6);
+Res:=eep_n_w(7,f_V_7);
+Res:=eep_n_w(8,f_V_8);
+
+Res:=eep_n_w(9,REAL_INT(SP_H_n));
+Res:=eep_n_w(10,REAL_INT(SP_R_zv));
+Res:=eep_n_w(11,REAL_INT(SP_H_2));
+Res:=eep_n_w(12,REAL_INT(SP_H_3));
+Res:=eep_n_w(13,REAL_INT(SP_H_f));
+Res:=eep_n_w(14,REAL_INT(SP_M_d1));
+Res:=eep_n_w(15,REAL_INT(SP_M_2));
+Res:=eep_n_w(16,REAL_INT(SP_M_d2));
+Res:=eep_n_w(17,REAL_INT(SP_M_3));
+Res:=eep_n_w(18,REAL_INT(SP_M_d3));
+Res:=eep_n_w(19,REAL_INT(SP_M_f));
+Res:=eep_n_w(20,REAL_INT(SP_R_min));
+Res:=eep_n_w(21,REAL_INT(SP_R_d));
+Res:=eep_n_w(22,REAL_INT(Kpr));
+Res:=eep_n_w(23,REAL_INT(Ti));
+Res:=eep_n_w(24,REAL_INT(Td));
+(*Res:=eep_n_w(25,REAL_INT(Kor));*)
+Res:=eep_n_w(26,REAL_INT(dR_max));
+Res:=eep_n_w(27,REAL_INT(dH_max));
+
+Res:=eep_n_w(28,ANA(TM_zd));
+
+Res:=eep_n_w(29,ANA(rej_rost));
+Res:=eep_n_w(30,ANA(rej_voda));
+Res:=eep_n_w(31,REAL_INT(SP_R_max));
+
+Res:=eep_n_w(32,Ap_nom);
+
+
+Res:=eep_n_w(33,REAL_INT(Rp_1));
+Res:=eep_n_w(34,REAL_INT(Rp_2));
+Res:=eep_n_w(35,REAL_INT(Rp_3));
+Res:=eep_n_w(36,REAL_INT(Rz_2));
+Res:=eep_n_w(37,REAL_INT(Rz_3));
+Res:=eep_n_w(38,REAL_INT(Rz_4));
+Res:=eep_n_w(39,ANA(rej_p));
+
+Res:=eep_pr();
+else
+	Sav_ST:=0;
+end_case;
+
+

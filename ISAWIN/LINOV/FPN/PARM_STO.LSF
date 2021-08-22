@@ -1,0 +1,178 @@
+#combinatory
+if NOT (Read OR %IX11.4) then 
+(*—юди вставить фрагмент читанн€*)
+Psir_min := eep_n_r( 1);
+Tvod_zd := eep_n_r( 2);
+Imp := eep_n_r( 3);
+T_zag_zd := eep_n_r( 4);
+T_fug_zd := eep_n_r( 5);
+T_sir_zd := eep_n_r( 6);
+T_p := eep_n_r( 7);
+(*Tnt_zd := eep_n_r( 8);*)
+Ts_z_zd := eep_n_r( 9);
+Ts_b_zd := eep_n_r( 10);
+Tn_n := eep_n_r( 11);
+T_vigr_zd := eep_n_r( 12);
+T_c_max := eep_n_r( 13);
+Fott_zd := eep_n_r( 14);
+kf_I_m := eep_n_r( 15);
+kf_Ob := eep_n_r( 16);
+kf_Fott := eep_n_r( 17);
+kf_Fsgr := eep_n_r( 18);
+Q_reg_zd := INT_REAL(eep_n_r( 19));
+Q_prl_zd := INT_REAL(eep_n_r( 20));
+Q_man_zd := INT_REAL(eep_n_r( 21));
+Q_k := INT_REAL(eep_n_r( 22));
+kf_prl := INT_REAL(eep_n_r( 23));
+kf_pr := INT_REAL(eep_n_r( 24));
+K_imp := INT_REAL(eep_n_r( 25));
+kV_1 := INT_REAL(eep_n_r( 26));
+kV_2 := INT_REAL(eep_n_r( 27));
+max_I_m := INT_REAL(eep_n_r( 28));
+max_Ob := INT_REAL(eep_n_r( 29));
+max_Fott := INT_REAL(eep_n_r( 30));
+max_Fsgr := INT_REAL(eep_n_r( 31));
+max_Gzag := INT_REAL(eep_n_r( 32));
+min_Fott := INT_REAL(eep_n_r( 33));
+min_Fsgr := INT_REAL(eep_n_r( 34));
+min_Gzag := INT_REAL(eep_n_r( 35));
+Gzag_zd := INT_REAL(eep_n_r( 36));
+c_sw_m := INT_REAL(eep_n_r( 37));
+c_sw_1 := INT_REAL(eep_n_r( 38));
+c_sw_2 := INT_REAL(eep_n_r( 39));
+c_sw_3 := INT_REAL(eep_n_r( 40));
+c_sw_4 := INT_REAL(eep_n_r( 41));
+c_f_max := INT_REAL(eep_n_r( 42));
+
+c_max:= INT_REAL(eep_n_r( 49));
+
+Gzag_s_zd := INT_REAL(eep_n_r( 43));
+(*rej_nepr := BOO(eep_n_r( 44));*)
+rej_sir := BOO(eep_n_r( 45));
+rej_tvod := BOO(eep_n_r( 46));
+rej_fug := BOO(eep_n_r( 47));
+
+
+Tz_prl:= eep_n_r( 48);
+(*Run := BOO(eep_n_r( 49));*)
+
+Cf_nom := eep_n_r( 50);
+lo_Gzag := INT_REAL(eep_n_r( 51));
+hi_Gzag := INT_REAL(eep_n_r( 52));
+a_Gzag := INT_REAL(eep_n_r( 53));
+b_Gzag := INT_REAL(eep_n_r( 54));
+Gzag_offset := INT_REAL(eep_n_r( 55));
+
+T_qout := eep_n_r( 57);
+rej_sync := BOO(eep_n_r( 58));
+
+T_km := TMR(eep_n_r( 61));
+
+rej_sgr := BOO(eep_n_r( 62));
+
+if T_km<t#2s OR T_km>t#15s  then 
+	T_km:=t#4s;
+end_if;
+
+
+
+else
+
+if (Status=St_vigr AND Status_Old=St_torm) OR (Status=0 AND Status_Old=-1) then 
+
+	if Save  then
+		Res:=eep_en();
+		Save:=FALSE;
+		Sav_ST:=1; 
+	end_if;
+
+end_if;
+Status_old:=Status;
+
+case sav_ST of 
+
+1 :
+Res := eep_n_w( 1,Psir_min);
+Res := eep_n_w( 2,Tvod_zd);
+Res := eep_n_w( 3,Imp);
+Res := eep_n_w( 4,T_zag_zd);
+Res := eep_n_w( 5,T_fug_zd);
+Res := eep_n_w( 6,T_sir_zd);
+Res := eep_n_w( 7,T_p);
+(*Res := eep_n_w( 8,Tnt_zd);*)
+Res := eep_n_w( 9,Ts_z_zd);
+Res := eep_n_w( 10,Ts_b_zd);
+Res := eep_n_w( 11,Tn_n);
+Res := eep_n_w( 12,T_vigr_zd);
+Res := eep_n_w( 13,T_c_max);
+Res := eep_n_w( 14,Fott_zd);
+Res := eep_n_w( 15,kf_I_m);
+Res := eep_n_w( 16,kf_Ob);
+Res := eep_n_w( 17,kf_Fott);
+Res := eep_n_w( 18,kf_Fsgr);
+Res := eep_n_w( 19,REAL_INT(Q_reg_zd));
+Res := eep_n_w( 20,REAL_INT(Q_prl_zd));
+Res := eep_n_w( 21,REAL_INT(Q_man_zd));
+Res := eep_n_w( 22,REAL_INT(Q_k));
+Res := eep_n_w( 23,REAL_INT(kf_prl));
+Res := eep_n_w( 24,REAL_INT(kf_pr));
+Res := eep_n_w( 25,REAL_INT(K_imp));
+Res := eep_n_w( 26,REAL_INT(kV_1));
+Res := eep_n_w( 27,REAL_INT(kV_2));
+Res := eep_n_w( 28,REAL_INT(max_I_m));
+Res := eep_n_w( 29,REAL_INT(max_Ob));
+Res := eep_n_w( 30,REAL_INT(max_Fott));
+Res := eep_n_w( 31,REAL_INT(max_Fsgr));
+Res := eep_n_w( 32,REAL_INT(max_Gzag));
+Res := eep_n_w( 33,REAL_INT(min_Fott));
+Res := eep_n_w( 34,REAL_INT(min_Fsgr));
+Res := eep_n_w( 35,REAL_INT(min_Gzag));
+Res := eep_n_w( 36,REAL_INT(Gzag_zd));
+Res := eep_n_w( 37,REAL_INT(c_sw_m));
+Res := eep_n_w( 38,REAL_INT(c_sw_1));
+Res := eep_n_w( 39,REAL_INT(c_sw_2));
+Res := eep_n_w( 40,REAL_INT(c_sw_3));
+Res := eep_n_w( 41,REAL_INT(c_sw_4));
+Res := eep_n_w( 42,REAL_INT(c_f_max));
+Res := eep_n_w( 49,REAL_INT(c_max));
+Res := eep_n_w( 43,REAL_INT(Gzag_s_zd));
+(*Res := eep_n_w( 44,ANA(rej_nepr));*)
+Res := eep_n_w( 45,ANA(rej_sir));
+Res := eep_n_w( 46,ANA(rej_tvod));
+Res := eep_n_w( 47,ANA(rej_fug));
+
+Res := eep_n_w( 48,Tz_prl);
+(*Res := eep_n_w( 49,ANA(Run));*)
+
+Sav_ST:=Sav_ST+1;
+
+ 2:
+Res := eep_n_w( 50,Cf_nom);
+Res := eep_n_w( 51,REAL_INT(lo_Gzag));
+Res := eep_n_w( 52,REAL_INT(hi_Gzag));
+Res := eep_n_w( 53,REAL_INT(a_Gzag));
+Res := eep_n_w( 54,REAL_INT(b_Gzag));
+Res := eep_n_w( 55,REAL_INT(Gzag_offset));
+
+
+
+Res := eep_n_w(61,ANA(T_km));
+
+
+Res := eep_n_w( 57,T_qout);
+Res := eep_n_w( 58,ANA(rej_sync));
+
+Res := eep_n_w(62,ANA(Rej_sgr));
+
+
+Sav_ST:=Sav_ST+1;
+	Res:=eep_pr();
+else
+	Sav_ST:=0;
+end_case;
+
+
+end_if;
+
+Read:=TRUE;
+

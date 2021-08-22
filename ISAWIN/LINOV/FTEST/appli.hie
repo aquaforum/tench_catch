@@ -1,0 +1,23 @@
+_section=_begin {
+fl_fb_1(_FBD)
+fl_fb_2(_FBD)
+fl_fb_3(_FBD)
+fl_fb_4(_FBD)
+fl_fb_5(_FBD)
+fl_fb_6(_FBD)
+fl_fb_7(_FBD)
+fl_fb_8(_FBD)
+}
+
+_section=_sequential {
+}
+
+_section=_end {
+}
+
+_section=_functions {
+}
+
+_section=_fblocks {
+}
+

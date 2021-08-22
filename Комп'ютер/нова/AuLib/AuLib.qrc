@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="AuLib">
+    <file alias="SP_1.png">../pict/SP_1.png</file>
+    <file alias="SP_2.png">../pict/SP_2.png</file>
+    <file alias="SP_3.png">../pict/SP_3.png</file>
+    <file alias="SPR_1.png">../pict/SPR_1.png</file>
+    <file alias="exit.png">../pict/exit_32x32.png</file>
+    <file alias="calendar.png">../pict/calendar_48x48.png</file>
+
+  </qresource>
+</RCC>

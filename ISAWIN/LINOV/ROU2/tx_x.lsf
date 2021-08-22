@@ -1,0 +1,99 @@
+#combinatory
+if C0003>40.0 then
+
+	if Xt0003>V0017+k40003*20.0 then
+		tY0013:=true;
+	end_if;
+	if Xt0003<V0017+k40003*5.0 then
+		tY0013:=false;
+	end_if;
+
+end_if;
+
+
+if zeroPos and not closeStop then (*Якщо степінь відкриття менше 0,5% *)
+	tY0014:= not closeStop; (*Затягти до зупинки ЧП*)
+else
+	if Xt0003<V0017-k40003*20.0 then
+		tY0014:=true;
+	end_if;
+	if Xt0003>V0017-k40003*5.0 then
+		tY0014:=false;
+	end_if;
+
+end_if;
+
+
+if NOT (AM0003 OR AM0008) then
+	Y0013:= ( tY0001 OR X0011 ) AND NOT X0005;
+	Y0014:=  (tY0002 OR X0012 ) AND not closeStop  AND NOT X0005;
+
+	vC0003:=2000.0;
+
+else
+
+
+	if C0003>20.0 then
+		vC0003:=K20003*400.0 + ABS(Xt0003-V0017)*K30003;
+	else
+		vC0003:=2000.0;
+	end_if;
+
+
+	Y0013:= tY0013  AND NOT X0005 AND X0001;
+	Y0014:= not closeStop AND tY0014  AND NOT X0005 AND X0001;
+	
+
+end_if;
+
+(*Блокування привода*)
+if savePos then
+	lockPos:=V0017;
+end_if;
+
+
+
+
+(*Реалызацыя переходу ручний-автомат*)
+if AM0001 then 
+	if Xt0003>200.0 then
+		C0001:=Xt0001;
+	else
+		C0001:=0.0;
+	end_if;
+end_if;
+
+if AM0002 then 
+	C0002:=Xt0002;
+end_if;
+
+if AM0003 then 
+	C0003:=Xt0003;
+else
+	C0003:=V0017;
+
+end_if;
+
+
+if AM0004 then 
+	C0004:=Xt0004;
+end_if;
+
+if AM0005 then 
+	C0005:=Xt0005;
+end_if;
+
+if AM0006 then 
+	C0006:=Xt0006;
+end_if;
+
+if AM0007 then 
+	C0007:=Xt0007;
+end_if;
+
+if AM0008 then 
+	C0008:=Xt0008;
+end_if;
+
+
+

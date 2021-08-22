@@ -1,0 +1,352 @@
+V_01	10	Real	1	1	+	Температура 1 зони
+V_02	12	Real	1	1	+	Температура 2 зони
+V_03	14	Real	1	1	+	Температура 3 зони
+V_04	16	Real	1	1	+	Температура 4 зони
+V_05	18	Real	1	1	+	Температура дифсоку
+V_06	20	Real	1	1	+	Температури гарячої води
+V_07	22	Real	1	1	+	Температура живильної води
+V_08	24	Real	1	1	+	Температура до утфельного підігрівача
+V_09	26	Real	1	1	+	Температура після утфельного підігрівача
+V_10	28	Real	1	1	+	Витрата стружки
+V_11	30	Real	1	1	+	рН живильної води
+V_12	32	Real	1	1	+	Тиск гріючої пари
+V_13	34	Real	1	1	+	Рівень в зб. Дифузійного соку
+V_14	36	Real	1	1	+	Витрата живильної води
+V_15	38	Real	1	1	+	Витрата дифузійного соку
+V_16	40	Real	1	1	+	Рівень в трубі
+V_17	42	Real	1	1	-	Резерв
+V_18	44	Real	1	1	+	Рівень в 1 зоні
+V_19	46	Real	1	1	+	Рівень в 2 зоні
+V_20	48	Real	1	1	+	Рівень в 3 зоні
+V_21	50	Real	1	1	+	РІвень в 4 зоні
+V_22	52	Real	1	1	+	Рівень до сита
+V_23	54	Real	1	1	+	Рівень за ситом
+V_24	56	Real	1	1	+	Рівень в зб гарячої води
+V_25	58	Real	1	1	+	Рівень в зб живильної води
+C_01	60	Real	1	1	0 100	Температура 1 зони
+C_02	62	Real	1	1	0 100	Температура 2 зони
+C_03	64	Real	1	1	0 100	Температура 3 зони
+C_04	66	Real	1	1	0 100	Температура 4 зони
+C_05	68	Real	1	1	0 100	Температура гарячої води
+C_06	70	Real	1	1	0 100	Стружка-вода
+C_07	72	Real	1	1	0 100	Рівень в зб гарячої води
+C_08	74	Real	1	1	0 100	Рівень в зб живильної води
+C_09	76	Real	1	1	0 100	Відкачка з дифузії
+C_10	78	Real	1	1	0 100	Насос дифузійного соку
+C_11	80	Real	1	1	0 100	Оберти пульполовушки
+C_12	82	Real	1	1	0 100	Рівень в трубі
+X_01	84	Bool	1	1	-
+X_02	85	Bool	1	1	-
+X_03	86	Bool	1	1	-
+X_04	87	Bool	1	1	-
+X_05	88	Bool	1	1	-
+X_06	89	Bool	1	1	-
+X_07	90	Bool	1	1	-
+X_08	91	Bool	1	1	-
+X_09	92	Bool	1	1	-
+X_10	93	Bool	1	1	-
+X_11	94	Bool	1	1	-
+X_12	95	Bool	1	1	-
+X_13	96	Bool	1	1	-
+X_14	97	Bool	1	1	-
+X_15	98	Bool	1	1	-
+X_16	99	Bool	1	1	-
+Y_01	100	Bool	1	1	-
+Y_02	101	Bool	1	1	-
+Y_03	102	Bool	1	1	-
+Y_04	103	Bool	1	1	-
+Y_05	104	Bool	1	1	-
+Y_06	105	Bool	1	1	-
+Y_07	106	Bool	1	1	-
+Y_08	107	Bool	1	1	-
+Y_09	108	Bool	1	1	-
+Y_10	109	Bool	1	1	-
+Y_11	110	Bool	1	1	-
+Y_12	111	Bool	1	1	-
+Y_13	112	Bool	1	1	-
+Y_14	113	Bool	1	1	-
+Y_15	114	Bool	1	1	-
+Y_16	115	Bool	1	1	-
+X_17	116	Bool	1	1	-
+X_18	117	Bool	1	1	-
+X_19	118	Bool	1	1	-
+X_20	119	Bool	1	1	-
+X_21	120	Bool	1	1	-
+X_22	121	Bool	1	1	-
+X_23	122	Bool	1	1	-
+X_24	123	Bool	1	1	-
+X_25	124	Bool	1	1	-
+X_26	125	Bool	1	1	-
+X_27	126	Bool	1	1	-
+X_28	127	Bool	1	1	-
+X_29	128	Bool	1	1	-
+X_30	129	Bool	1	1	-
+X_31	130	Bool	1	1	-
+SPR_06	131	Real	1	1	V_14
+TPV_09	133	Real	1	1	-
+TSP_09	135	Real	1	1	-
+V_26	137	Real	1	1	+	Рівень в збірнику
+V_27	139	Real	1	1	+	Рівень в пульполовушці
+V_28	141	Real	1	1	+	Температура ж.п. води
+V_29	143	Real	1	1	+	Витрата ж.п. води
+C_13	145	Real	1	1	0 100	Насос
+C_14	147	Real	1	1	0 100	Клапан
+Run	254	Bool	300	0	-
+Save	255	Bool	300	0	-
+f_V_01	256	Integer	300	0	-
+f_V_02	257	Integer	300	0	-
+f_V_03	258	Integer	300	0	-
+f_V_04	259	Integer	300	0	-
+f_V_05	260	Integer	300	0	-
+f_V_06	261	Integer	300	0	-
+f_V_07	262	Integer	300	0	-
+f_V_08	263	Integer	300	0	-
+f_V_09	264	Integer	300	0	-
+f_V_10	265	Integer	300	0	-
+f_V_11	266	Integer	300	0	-
+f_V_12	267	Integer	300	0	-
+f_V_13	268	Integer	300	0	-
+f_V_14	269	Integer	300	0	-
+f_V_15	270	Integer	300	0	-
+f_V_16	271	Integer	300	0	-
+f_V_17	272	Integer	300	0	-
+f_V_18	273	Integer	300	0	-
+f_V_19	274	Integer	300	0	-
+f_V_20	275	Integer	300	0	-
+f_V_21	276	Integer	300	0	-
+f_V_22	277	Integer	300	0	-
+f_V_23	278	Integer	300	0	-
+f_V_24	279	Integer	300	0	-
+f_V_25	280	Integer	300	0	-
+Kpr_01	300	Real	300	0	-
+Kpr_02	302	Real	300	0	-
+Kpr_03	304	Real	300	0	-
+Kpr_04	306	Real	300	0	-
+Kpr_05	308	Real	300	0	-
+Kpr_06	310	Real	300	0	-
+Kpr_07	312	Real	300	0	-
+Kpr_08	314	Real	300	0	-
+Kpr_09	316	Real	300	0	-
+Kpr_10	318	Real	300	0	-
+Kpr_11	320	Real	300	0	-
+Kpr_12	322	Real	300	0	-
+Ti_01	324	Real	300	0	-
+Ti_02	326	Real	300	0	-
+Ti_03	328	Real	300	0	-
+Ti_04	330	Real	300	0	-
+Ti_05	332	Real	300	0	-
+Ti_06	334	Real	300	0	-
+Ti_07	336	Real	300	0	-
+Ti_08	338	Real	300	0	-
+Ti_09	340	Real	300	0	-
+Ti_10	342	Real	300	0	-
+Ti_11	344	Real	300	0	-
+Ti_12	346	Real	300	0	-
+Td_01	348	Real	300	0	-
+Td_02	350	Real	300	0	-
+Td_03	352	Real	300	0	-
+Td_04	354	Real	300	0	-
+Td_05	356	Real	300	0	-
+Td_06	358	Real	300	0	-
+Td_07	360	Real	300	0	-
+Td_08	362	Real	300	0	-
+Td_09	364	Real	300	0	-
+Td_10	366	Real	300	0	-
+Td_11	368	Real	300	0	-
+Td_12	370	Real	300	0	-
+P0_01	372	Real	300	0	-
+P0_02	374	Real	300	0	-
+P0_03	376	Real	300	0	-
+P0_04	378	Real	300	0	-
+P0_05	380	Real	300	0	-
+P0_06	382	Real	300	0	-
+P0_07	384	Real	300	0	-
+P0_08	386	Real	300	0	-
+P0_09	388	Real	300	0	-
+P0_10	390	Real	300	0	-
+P0_11	392	Real	300	0	-
+P0_12	394	Real	300	0	-
+Xmin_01	396	Real	300	0	-
+Xmin_02	398	Real	300	0	-
+Xmin_03	400	Real	300	0	-
+Xmin_04	402	Real	300	0	-
+Xmin_05	404	Real	300	0	-
+Xmin_06	406	Real	300	0	-
+Xmin_07	408	Real	300	0	-
+Xmin_08	410	Real	300	0	-
+Xmin_09	412	Real	300	0	-
+Xmin_10	414	Real	300	0	-
+Xmin_11	416	Real	300	0	-
+Xmin_12	418	Real	300	0	-
+Xmax_01	420	Real	300	0	-
+Xmax_02	422	Real	300	0	-
+Xmax_03	424	Real	300	0	-
+Xmax_04	426	Real	300	0	-
+Xmax_05	428	Real	300	0	-
+Xmax_06	430	Real	300	0	-
+Xmax_07	432	Real	300	0	-
+Xmax_08	434	Real	300	0	-
+Xmax_09	436	Real	300	0	-
+Xmax_10	438	Real	300	0	-
+Xmax_11	440	Real	300	0	-
+Xmax_12	442	Real	300	0	-
+SP_01	444	Real	300	1	V_01
+SP_02	446	Real	300	1	V_02
+SP_03	448	Real	300	1	V_03
+SP_04	450	Real	300	1	V_04
+SP_05	452	Real	300	1	V_06
+SP_06	454	Real	300	1	V_14
+SP_07	456	Real	300	1	V_24
+SP_08	458	Real	300	1	V_25
+SP_09	460	Real	300	1	V_22
+SP_10	462	Real	300	1	V_13
+SP_11	464	Real	300	1	V_27
+SP_12	466	Real	300	1	V_16
+Kkor_06	468	Real	300	0	-
+K1_06	470	Real	300	0	-
+K2_09	472	Real	300	0	-
+K3_09	474	Real	300	0	-
+SP2_09	476	Real	300	1	V_15
+AM_01	512	Bool	300	1	-	Авт режим
+AM_02	513	Bool	300	1	-	Авт режим
+AM_03	514	Bool	300	1	-	Авт режим
+AM_04	515	Bool	300	1	-	Авт режим
+AM_05	516	Bool	300	1	-	Авт режим
+AM_06	517	Bool	300	1	-	Авт режим
+AM_07	518	Bool	300	1	-	Авт режим
+AM_08	519	Bool	300	1	-	Авт режим
+AM_09	520	Bool	300	1	-	Авт режим
+AM_10	521	Bool	300	1	-	Авт режим
+AM_11	522	Bool	300	1	-	Авт режим
+AM_12	523	Bool	300	1	-	Авт режим
+Mode_01	524	Bool	300	0	-
+Mode_02	525	Bool	300	0	-
+Mode_03	526	Bool	300	0	-
+Mode_04	527	Bool	300	0	-
+Mode_05	528	Bool	300	0	-
+Mode_06	529	Bool	300	0	-
+Mode_07	530	Bool	300	0	-
+Mode_08	531	Bool	300	0	-
+Mode_09	532	Bool	300	0	-
+Mode_10	533	Bool	300	0	-
+Mode_11	534	Bool	300	0	-
+Mode_12	535	Bool	300	0	-
+Rev_01	536	Bool	300	0	-
+Rev_02	537	Bool	300	0	-
+Rev_03	538	Bool	300	0	-
+Rev_04	539	Bool	300	0	-
+Rev_05	540	Bool	300	0	-
+Rev_06	541	Bool	300	0	-
+Rev_07	542	Bool	300	0	-
+Rev_08	543	Bool	300	0	-
+Rev_09	544	Bool	300	0	-
+Rev_10	545	Bool	300	0	-
+Rev_11	546	Bool	300	0	-
+Rev_12	547	Bool	300	0	-
+Rej_06	548	Bool	300	0	-
+AM_13	549	Bool	300	1	-	Режим
+AM_14	550	Bool	300	1	-	Режим
+Rev_13	551	Bool	300	0	-
+Rev_14	552	Bool	300	0	-
+f_V_26	553	Integer	300	0	-
+f_V_27	554	Integer	300	0	-
+f_V_28	555	Integer	300	0	-
+f_V_29	556	Integer	300	0	-
+SP_13	557	Real	300	1	V_26	Завдання
+Kpr_13	559	Real	300	0	-
+Ti_13	561	Real	300	0	-
+Td_13	563	Real	300	0	-
+Xmin_13	565	Real	300	0	-
+Xmax_13	567	Real	300	0	-
+SP_14	569	Real	300	1	V_28	Завдання
+Kpr_14	571	Real	300	0	-
+Ti_14	573	Real	300	0	-
+Td_14	575	Real	300	0	-
+Xmin_14	577	Real	300	0	-
+Xmax_14	579	Real	300	0	-
+K2_06	581	Real	300	0	-
+kr_p_01	583	Integer	300	0	-
+kr_p_02	584	Integer	300	0	-
+kr_p_03	585	Integer	300	0	-
+kr_p_04	586	Integer	300	0	-
+kr_p_05	587	Integer	300	0	-
+kr_p_06	588	Integer	300	0	-
+Tp_zd_01	589	Integer	300	0	-
+Tp_zd_02	590	Integer	300	0	-
+Tp_zd_03	591	Integer	300	0	-
+Tp_zd_04	592	Integer	300	0	-
+Tp_zd_05	593	Integer	300	0	-
+Tp_zd_06	594	Integer	300	0	-
+Tm_zd_01	595	Integer	300	0	-
+Tm_zd_02	596	Integer	300	0	-
+Tm_zd_03	597	Integer	300	0	-
+Tm_zd_04	598	Integer	300	0	-
+Tm_zd_05	599	Integer	300	0	-
+Tm_zd_06	600	Integer	300	0	-
+en_p_01	601	Bool	300	0	-
+en_p_02	602	Bool	300	0	-
+en_p_03	603	Bool	300	0	-
+en_p_04	604	Bool	300	0	-
+en_p_05	605	Bool	300	0	-
+en_p_06	606	Bool	300	0	-
+Rej_13	607	Bool	300	1	-	Режим
+SP2_13	608	Real	300	1	V_29	Задана витрата
+yy_s	761	Integer	300	0	-
+Mon_s	762	Integer	300	0	-
+dd_s	763	Integer	300	0	-
+hh_s	764	Integer	300	0	-
+mm_s	765	Integer	300	0	-
+ss_s	766	Integer	300	0	-
+time_set	767	Bool	300	0	-
+V0001	768	Real	1	0	-	Бурячні ваги №1
+V0002	770	Real	1	0	-	1
+V0003	772	Real	1	0	-	2
+V0004	774	Real	1	0	-	3
+V0005	776	Real	1	0	-	4
+V0006	778	Real	1	0	-	5
+V0007	780	Real	1	0	-	6
+V0008	782	Real	1	0	-	7
+V0009	784	Real	1	0	-	8
+V0010	786	Real	1	0	-	9
+V0011	788	Real	1	0	-	10
+V0012	790	Real	1	0	-	11
+V0013	792	Real	1	0	-	12
+V0014	794	Real	1	0	-	13
+V0015	796	Real	1	0	-	14
+V0016	798	Real	1	0	-	15
+V0017	800	Real	1	0	-	16
+V0018	802	Real	1	0	-	17
+V0019	804	Real	1	0	-	18
+V0020	806	Real	1	0	-	19
+V0021	808	Real	1	0	-	20
+V0022	810	Real	1	0	-	21
+V0023	812	Real	1	0	-	22
+V0024	814	Real	1	0	-	23
+V0025	816	Real	1	0	-	Бурячні ваги №2
+V0026	818	Real	1	0	-	1
+V0027	820	Real	1	0	-	2
+V0028	822	Real	1	0	-	3
+V0029	824	Real	1	0	-	4
+V0030	826	Real	1	0	-	5
+V0031	828	Real	1	0	-	6
+V0032	830	Real	1	0	-	7
+V0033	832	Real	1	0	-	8
+V0034	834	Real	1	0	-	9
+V0035	836	Real	1	0	-	10
+V0036	838	Real	1	0	-	11
+V0037	840	Real	1	0	-	12
+V0038	842	Real	1	0	-	13
+V0039	844	Real	1	0	-	14
+V0040	846	Real	1	0	-	15
+V0041	848	Real	1	0	-	16
+V0042	850	Real	1	0	-	17
+V0043	852	Real	1	0	-	18
+V0044	854	Real	1	0	-	19
+V0045	856	Real	1	0	-	20
+V0046	858	Real	1	0	-	21
+V0047	860	Real	1	0	-	22
+V0048	862	Real	1	0	-	23
+V0049	864	Integer	1	0	-
+V0050	866	Integer	1	0	-
+W0001	868	Bool	1	1	-
+W0002	869	Bool	1	1	-

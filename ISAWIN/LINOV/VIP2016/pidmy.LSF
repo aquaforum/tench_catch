@@ -1,0 +1,59 @@
+#combinatory
+(*Регулятор рівня-температури барометричної води*)
+
+(*Перший запуск*)
+if not firstRun then
+	 Rej:=SP_<-40.0;
+end_if;
+firstRun:=true;
+ 
+
+if SP_>0.0 AND NOT Rej then (*Якщо температура білтша заданої тоді регулюємо температуру*)
+	Rej:=true; 
+	Sum_:= X0_-SP_*Kp_*Ksp_;(*Зкоригувати інтегральну поправку*)
+end_if;
+
+if SP_<-40.0 AND Rej then (*якщо температура  менжа заданою на 1% тоді регулюємо рівень*)
+	Rej:=false;
+	Sum_:=X0_-PV_*kp_*Kpv_; (*Зкоригувати інтегральну поправку*)
+end_if;
+
+
+
+(**)
+if Rej then
+	Ke_:=SP_*Kp_*Ksp_;
+else
+	Ke_:=PV_*Kp_*Kpv_;
+end_if;
+
+
+	if Mode_ then  (*Якщо ПІД регулятор*)
+		Sum_:=Sum_+Ke_*REAL(SYSTEM(SYS_TCURRENT,0))*0.001/Ti_; (*Рахувати інтегральну складову*)
+		(* Ke_:=Ke_+Td_; Добавити диференційну складову*)
+	else (*інакше якщо П-регулятор*)
+		Sum_:=P0_;		 (*інтегральна складова тупо дорівнює P0_*)
+	end_if;
+
+	Xt_:=Ke_+Sum_;
+
+	if Xt_ >Xmax_ then 
+		Sum_:=Xmax_-Ke_;
+	end_if;
+
+	if Xt_<Xmin_ then 
+		Sum_:=Xmin_-Ke_;
+	end_if;
+
+if Auto_ then (*Якщо включено автоматичний режим*)
+	Xout_:=Ke_+Sum_;
+else
+	Xout_:=X0_;         (* Виставити вихід*)
+	Sum_:=X0_-Ke_;    (* Розрахувати значення ініціалізації інтегратора *)
+end_if;
+
+Sum0_:=Sum_;
+
+Rej_:=Rej;
+
+

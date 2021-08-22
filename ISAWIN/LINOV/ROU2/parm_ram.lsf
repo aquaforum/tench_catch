@@ -1,0 +1,43 @@
+#combinatory
+if Init then
+	Init:=false;
+
+
+	Adr:=1;
+	(*C_xx*)
+	for ii:=58 to 72 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	Adr:=20; (*Зазор*)
+
+	(*Параметри*)
+	for ii:=256 to 370 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+(*
+	for ii:=476 to 518 by 2 do
+		Res:=Retain_X('T',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+*)
+
+
+	Adr:=Adr+0; (*Зазор*)
+
+	for ii:=512 to 535 by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+	(*Бітові параметри*)
+	Adr:=1;
+	for ii:=768 to 790 by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+end_if;

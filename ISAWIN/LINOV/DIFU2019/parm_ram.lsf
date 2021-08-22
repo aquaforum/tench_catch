@@ -1,0 +1,85 @@
+#combinatory
+if Init then
+	Init:=false;
+
+	Adr:=1;
+
+	(*Аналогові виходи*)
+	for ii:=60 to 82 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+	(*Параметри*)
+	for ii:=300 to 476 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+	Adr:=Adr+10; (*Резерв на 10 змінних*)
+	for ii:=256 to 280 by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	(*Зберігаю дані з бункерних вагів*)
+	for ii:=768 to 862 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	for ii:=864 to 866 by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+
+
+	(*Жомопресова вода*)
+	for ii:=553 to 556 by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	for ii:=557 to 581 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+
+	(*С_13 & C_14*)
+	for ii:=145 to 147 by 2 do
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+(*Пробувки*)
+	for ii:=583 to 600 by 1 do
+		Res:=Retain_X('N',ii,Adr);
+		Adr:=Adr+1;
+	end_for; 
+	
+		ii:=608; (*Завдання на витрату жомопресової води*)
+		Res:=Retain_X('F',ii,Adr);
+		Adr:=Adr+1;
+
+	(*Бітові параметри*)
+	Adr:=1;
+	for ii:=512 to 552 by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+	for ii:=601 to 607 by 1 do
+		Res:=Retain_X('B',ii,Adr);
+		Adr:=Adr+1;
+	end_for;
+
+
+	(*Таймери*)
+(*	for ii:=526 to 548 by 2 do
+		Res:=Retain_X('T',ii,Adr);
+		Adr:=Adr+1;
+	end_for; *)
+
+end_if;

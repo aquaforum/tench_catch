@@ -1,0 +1,73 @@
+#combinatory
+
+(**)
+	Ke_p:=(PV_-SP_)*Kpr_p;
+	Ke_n:=-(PV_-SP_)*Kpr_n; (*Тягнути в протилежний бік*)
+
+	Sum_p:=Sum_+Ke_p*REAL(SYSTEM(SYS_TCURRENT,0))*0.001/Ti_p; (*Рахувати інтегральну складову*)
+	Sum_n:=Sum_+Ke_n*REAL(SYSTEM(SYS_TCURRENT,0))*0.001/Ti_n; (*Рахувати інтегральну складову*)
+
+
+	Xt_p:=Ke_p+Sum_p;
+	Xt_n:=Ke_n+Sum_n;
+
+
+(*тут треба вибрати оди*)
+if NOT Zone_ then (*працює позитивний регулятор*)
+	Sum_:=Sum_p;
+	Sum_n:=Xmin_n-Ke_n;
+
+	if Xt_p > Xmax_p then (*Вихід за верхню межу*)
+		Sum_:=Xmax_p-Ke_p;
+	end_if;
+
+	if Xt_p < Xmin_p then (**)
+		if Sum_n+Ke_n> Xmin_n then
+			Zone_:=true; (*Переключити регулятор*)
+			Sum_:=Xmin_n-Ke_n;
+		else
+			Sum_:=Xmin_p-Ke_p;
+		end_if; 
+	end_if;
+
+else (*працює негативний регулятор*)
+	Sum_:=Sum_n;
+	Sum_p:=Xmin_p-Ke_p;
+
+	if Xt_n > Xmax_n then
+		Sum_:=Xmax_n-Ke_n;
+	end_if;
+
+	if Xt_n< Xmin_n then
+		if Sum_p+Ke_p>Xmin_p then
+			Zone_:=false;
+			Sum_:=Xmin_p-Ke_p;
+		else
+			Sum_:=Xmin_n-Ke_n;
+		end_if;
+
+	end_if;
+
+
+end_if;
+
+if Am_p then
+	Xout_p:=Sum_+Ke_p;
+else
+	Sum_p:=X0_p-Ke_p;
+	Xout_p:=X0_p;
+end_if;
+
+if Am_n then
+	Xout_n:=Sum_+Ke_n;
+else
+	Sum_n:=X0_n-Ke_n;
+	Xout_n:=X0_n;
+end_if;
+
+
+Sum0_:=Sum_;
+Zone0_:=Zone_;
+
+
+

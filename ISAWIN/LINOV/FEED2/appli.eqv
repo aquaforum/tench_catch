@@ -1,0 +1,3 @@
+#define PidS t#250ms
+#define Tdif t#500ms
+

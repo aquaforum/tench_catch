@@ -1,0 +1,165 @@
+#combinatory
+(*Дискретні входи*)
+
+(*Управління температурою в збірнику промивної води*)
+if AM_Tv then 
+
+	if Tvoda >Tv_max then (*Якщо температура води більше заданої*)
+		Y_09:=false; (*Закрити клапан гарячої води*)
+		Y_08:=q_Y_off; (*ключити коли вийде час*)
+	end_if;
+
+	if Tvoda < Tv_min then 
+		Y_08:=false; (*Закрити клапан холодної води*)
+		Y_09:=q_Y_off;
+	end_if;
+
+	if Lvoda<Lv_min then (*Якщо рівень малий - долити води*)
+		Y_08:=q_Y_off; (*відкрити обидва клапани зразу*)
+		Y_09:=q_Y_off;
+	end_if;
+
+	if Lvoda>Lv_max then (*Якщо рівень більше заданого вимкнути клапана або ще не вийщов час*)	
+		Y_08:=false; (*закрити обидва клапани зразу*)
+		Y_09:=false;
+	end_if;
+end_if;
+
+
+(*Вибір фільтра для управління насосом суспензії*)
+if State_1=ST_FILTERING AND Net_1 then  (*Провірити перший фільтр*)
+	Nf:=1;
+elsif State_2=ST_FILTERING AND Net_2 then (*Провірити другий фільтр*)
+	Nf:=2;
+elsif State_3=ST_FILTERING AND Net_3 then (*Провірити третій фільтр*)
+	Nf:=3;
+elsif Lsusp<Lsusp_max then (*Провірит збірник суспензії*)
+	Nf:=4;
+else
+	Nf:=0;
+end_if;	
+
+
+(*Управління в залежності від включеного філтра*)
+case Nf of
+1:
+	Psusp:=P_1;
+	Psusp_zd:=Pzd_1;
+	Tnp:=Tnp_1;
+	Yp:=Yp_1;
+2:
+	Psusp:=P_2;
+	Psusp_zd:=Pzd_2;
+	Tnp:=Tnp_2;
+	Yp:=Yp_2;
+
+3:
+	Psusp:=P_3;
+	Psusp_zd:=Pzd_3;
+	Tnp:=Tnp_3;
+	Yp:=Yp_3;
+
+else
+	
+end_case;
+
+(*Гістерезисний вимикач регулятора падачі суспензії при відсутності останньої*)
+if Lsusp<Ls_min then 
+	q_am_01:=false;
+end_if;
+
+if Lsusp>Ls_start then 
+	q_am_01:=true;
+end_if;
+
+if Am_01 then (*Якщо регулятор працює в автоматичному режимі режіми*)
+	if Nf>0 and Nf<4 then  (*Якщо працює якийсь фільтр тоді *)
+		if Yp then  (*Якщо включився маслонасос*)
+			amr_01:=false;
+			Xv_01:=Xs_zd_min; (*Крутитися на мінімільних обертах*)
+		else
+			if q_Tnp then (*Якщо вийшов час наповнення*)
+				if q_am_01 then 
+					amr_01:=true; (**)
+					Xv_01:=Xr_01; (*Автоматичний режи регулятора*)
+				else
+					amr_01:=false; (**)
+					Xv_01:=Xs_zd_min; 
+				end_if;
+			else
+				amr_01:=false;
+				Xv_01:=Xs_np_zd;
+			end_if;
+		end_if;
+	else
+			amr_01:=false;
+			Xv_01:=Xs_zd_min; (*Крутитися на мінімільних обертах*)
+	end_if;
+else
+	amr_01:=false;
+end_if;
+
+
+
+(*Вибір фільтра для управління насосом води*)
+if( State_1=ST_DISSUGARING or State_1=ST_WASHING	) AND Net_1 then 
+	Nf_2:=1;
+elsif( State_2=ST_DISSUGARING or State_2=ST_WASHING	) AND Net_2 then 
+	Nf_2:=2;
+elsif( State_3=ST_DISSUGARING or State_3=ST_WASHING	) AND Net_3 then 
+	Nf_2:=3;
+else
+	Nf_2:=0;
+end_if;	
+
+(*Управління в залежності від включеного філтра*)
+case Nf_2 of
+1:
+(*	Psusp:=P_1;
+	Pvoda_zd:=Pzd_1; *)
+	Tnp:=Tnp_1;
+	Yp:=Yp_1;
+2:
+(*	Psusp:=P_2;
+	Pvoda_zd:=Pzd_2;*) 
+	Tnp:=Tnp_2;
+	Yp:=Yp_2;
+
+3:
+(*	Psusp:=P_3;
+	Pvoda_zd:=Pzd_3;*)
+	Tnp:=Tnp_3;
+	Yp:=Yp_3;
+	
+end_case;
+
+if Am_02 then (*Якщо регулятор працює в автоматичному режимі режіми*)
+	if Nf_2>0 then 
+		if Yp then  (*Якщо включився маслонасос*)
+			amr_02:=false;
+			Xv_02:=Xv_zd_min; (*Крутитися на мінімільних обертах*)
+		else
+			amr_02:=true;
+			Xv_02:=Xr_02; (*Автоматичний режи регулятора*)
+		end_if;
+	else
+			amr_02:=false;
+			Xv_02:=Xv_zd_min; (*Крутитися на мінімільних обертах*)
+	end_if;
+else
+	amr_02:=false;
+end_if;
+
+
+
+(*Управління підігрівом води на газ-піч*)
+
+if Am_12 then 
+	Y_14:=tY_14;
+end_if;
+
+if Am_13 then 
+	Y_15:=tY_15;
+end_if;
+
+

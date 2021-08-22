@@ -1,0 +1,17 @@
+#combinatory
+if AUTO_ then
+	Xt_:=Kp_*(Sp_-Pv_)+P0_*13.3333333333;
+else
+	Xt_:=X0_;
+end_if;
+
+
+if Xt_>Xmax_ then
+	Xt_:=Xmax_;
+end_if;
+if Xt_<Xmin_ then
+	Xt_:=Xmin_;
+end_if;
+
+Xout_:=Xt_;
+

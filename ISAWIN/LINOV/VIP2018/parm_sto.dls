@@ -1,0 +1,6 @@
+@WSLV1EDT
+Sav_tm(parm_sto)
+Save
+Sav_ST(parm_sto)
+Read(parm_sto)
+@END_WSLV1EDT

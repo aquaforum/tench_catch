@@ -1,0 +1,11 @@
+slave=1
+time_out=2
+retry=1
+serial_port=255
+baud_rate=19200
+data_bit=8
+stop_bit=1
+handshake=0
+parity=N
+socket=192.168.15.51
+socket_port=502

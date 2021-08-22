@@ -1,0 +1,122 @@
+#combinatory
+if NOT Read  then 
+(*—юди вставить фрагмент читанн€*)
+
+
+Read:=TRUE;
+tstart (Sav_tm);
+else
+
+if Sav_tm >t#30m then 
+
+	Sav_tm:=t#0s;
+
+	if Save then
+		Res:=eep_en();
+		Save:=FALSE;
+		Sav_ST:=1; 
+	end_if;
+
+end_if;
+
+case sav_ST of 
+1 :
+Res:=eep_n_w(1,REAL_INT(Fs_01));
+Res:=eep_n_w(2,REAL_INT(Fs_02));
+Res:=eep_n_w(3,REAL_INT(Fs_03));
+Res:=eep_n_w(4,REAL_INT(Fs_04));
+Res:=eep_n_w(5,REAL_INT(Fs_05));
+Res:=eep_n_w(6,REAL_INT(Fs_06));
+Res:=eep_n_w(7,REAL_INT(Fs_07));
+Res:=eep_n_w(8,REAL_INT(Fs_08));
+Res:=eep_n_w(9,REAL_INT(Fs_09));
+Res:=eep_n_w(10,REAL_INT(Fs_10));
+Res:=eep_n_w(11,REAL_INT(Fs_11));
+Res:=eep_n_w(12,Kf_01);
+Res:=eep_n_w(13,Kf_02);
+Res:=eep_n_w(14,Kf_03);
+Res:=eep_n_w(15,Kf_04);
+Res:=eep_n_w(16,Kf_05);
+Res:=eep_n_w(17,Kf_06);
+Res:=eep_n_w(18,Kf_07);
+Res:=eep_n_w(19,Kf_08);
+  Sav_ST:=Sav_ST+1;
+
+
+Kf_01:=16#1A;
+KF_02:=2#0101011;
+Kf_02:=123;
+Tw_1:=t#1s;
+2:
+
+Res:=eep_n_w(20,Kf_09);
+Res:=eep_n_w(21,Kf_10);
+Res:=eep_n_w(22,Kf_11);
+
+Res:=eep_n_w(23,ANA(Tw_1));
+Res:=eep_n_w(24,ANA(Tw_2));
+Res:=eep_n_w(25,ANA(Tw_3));
+
+Res:=eep_n_w(26,REAL_INT(Xs_zd_min));
+Res:=eep_n_w(27,REAL_INT(Xv_zd_min));
+Res:=eep_n_w(28,REAL_INT(Lsusp_max));
+
+
+Res:=eep_n_w(29,REAL_INT(Lv_min));
+Res:=eep_n_w(30,REAL_INT(Lv_max));
+Res:=eep_n_w(31,REAL_INT(Tv_min));
+Res:=eep_n_w(32,REAL_INT(Tv_max));
+
+  Sav_ST:=Sav_ST+1;
+3:
+Res:=eep_n_w(33,ANA(AM_Tv));
+Res:=eep_n_w(34,ANA(AM_01));
+Res:=eep_n_w(35,ANA(AM_02));
+Res:=eep_n_w(36,REAL_INT(Xs_np_zd));
+Res:=eep_n_w(37,REAL_INT(KP_01));
+Res:=eep_n_w(38,REAL_INT(KP_02));
+Res:=eep_n_w(39,REAL_INT(TI_01));
+Res:=eep_n_w(40,REAL_INT(TI_02));
+Res:=eep_n_w(41,REAL_INT(TD_01));
+Res:=eep_n_w(42,REAL_INT(TD_02));
+Res:=eep_n_w(43,REAL_INT(Xmin_01));
+Res:=eep_n_w(44,REAL_INT(Xmin_02));
+Res:=eep_n_w(45,REAL_INT(Xmax_01));
+Res:=eep_n_w(46,REAL_INT(Xmax_02));
+Res:=eep_n_w(47,REAL_INT(Ls_min));
+Res:=eep_n_w(48,REAL_INT(Ls_start));
+
+Res:=eep_n_w(49,ANA(Rev_01));
+Res:=eep_n_w(50,ANA(Rev_02));
+Res:=eep_n_w(51,REAL_INT(Pvoda_zd));
+
+  Sav_ST:=Sav_ST+1;
+
+4:
+Res:=eep_n_w(52,Kf_12);
+Res:=eep_n_w(53,Kf_13);
+Res:=eep_n_w(54,REAL_INT(Fs_12));
+Res:=eep_n_w(55,REAL_INT(Fs_13));
+Res:=eep_n_w(56,REAL_INT(SP_12));
+Res:=eep_n_w(57,REAL_INT(SP_13));
+Res:=eep_n_w(58,REAL_INT(DSP_12));
+Res:=eep_n_w(59,REAL_INT(DSP_13));
+Res:=eep_n_w(60,REAL_INT(MSP_12));
+Res:=eep_n_w(61,REAL_INT(XSP_13));
+
+Res:=eep_n_w(62,ANA(AM_12));
+Res:=eep_n_w(63,ANA(AM_13));
+
+Res:=eep_n_w(64,REAL_INT(Gsusp_zd));
+Res:=eep_n_w(65,ANA(Mode_01));
+
+  Sav_ST:=Sav_ST+1;
+	Res:=eep_pr();
+else
+	Sav_ST:=0;
+end_case;
+
+
+end_if;
+
+

@@ -1,0 +1,11 @@
+#combinatory
+#info=WSED1EDT-2
+@@NBID=4
+@BOX:1,Y=N,P=(19,9),S=(4,3),C=(2,1),X=para
+@VAR:2,Y=N,P=(10,10),S=(8,1),C=(1,1),X=P
+@VAR:3,Y=N,P=(10,11),S=(8,1),C=(1,1),X=T
+@VAR:4,Y=N,P=(25,11),S=(8,1),C=(1,1),X=Res
+@ARC:D=0,Y=N,Z=(50,50),F=(2,0),T=(1,0)
+@ARC:D=1,Y=N,Z=(50,50),F=(3,0),T=(1,1)
+@ARC:D=2,Y=N,Z=(50,50),F=(1,0),T=(4,0)
+#endinfo

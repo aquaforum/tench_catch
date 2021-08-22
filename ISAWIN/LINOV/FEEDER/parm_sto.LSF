@@ -1,0 +1,109 @@
+#combinatory
+
+
+if not Read  then 
+SP0001:=INT_REAL(eep_n_r(1));
+SP0002:=INT_REAL(eep_n_r(2));
+SP0003:=INT_REAL(eep_n_r(3));
+SP0004:=INT_REAL(eep_n_r(4));
+Kp0001:=INT_REAL(eep_n_r(5));
+Kp0002:=INT_REAL(eep_n_r(6));
+Kp0003:=INT_REAL(eep_n_r(7));
+Kp0004:=INT_REAL(eep_n_r(8));
+Ti0001:=INT_REAL(eep_n_r(9));
+Ti0002:=INT_REAL(eep_n_r(10));
+Ti0003:=INT_REAL(eep_n_r(11));
+Ti0004:=INT_REAL(eep_n_r(12));
+Td0001:=INT_REAL(eep_n_r(13));
+Td0002:=INT_REAL(eep_n_r(14));
+Td0003:=INT_REAL(eep_n_r(15));
+Td0004:=INT_REAL(eep_n_r(16));
+Xmin0001:=INT_REAL(eep_n_r(17));
+Xmin0002:=INT_REAL(eep_n_r(18));
+Xmin0003:=INT_REAL(eep_n_r(19));
+Xmin0004:=INT_REAL(eep_n_r(20));
+Xmax0001:=INT_REAL(eep_n_r(21));
+Xmax0002:=INT_REAL(eep_n_r(22));
+Xmax0003:=INT_REAL(eep_n_r(23));
+Xmax0004:=INT_REAL(eep_n_r(24));
+
+kal1:=INT_REAL(eep_n_r(25));
+
+
+AM0001:=eep_b_r(1);
+AM0002:=eep_b_r(2);
+AM0003:=eep_b_r(3);
+AM0004:=eep_b_r(4);
+mC0001:=eep_b_r(5);
+mC0002:=eep_b_r(6);
+mC0003:=eep_b_r(7);
+mC0004:=eep_b_r(8);
+
+
+end_if;
+
+Read := true;
+
+if Sav_tm=t#0s then 
+	tstart(Sav_tm);
+end_if;
+
+if Sav_tm >t#30m then 
+
+	Sav_tm:=t#1s;
+
+	if Save then
+		Res:=eep_en();
+		Save:=FALSE;
+		Sav_ST:=1; 
+	end_if;
+
+end_if;
+
+case sav_ST of 
+1 :
+Sav_ST:=Sav_ST+1;
+
+Res:=eep_n_w(1,REAL_INT(SP0001));
+Res:=eep_n_w(2,REAL_INT(SP0002));
+Res:=eep_n_w(3,REAL_INT(SP0003));
+Res:=eep_n_w(4,REAL_INT(SP0004));
+Res:=eep_n_w(5,REAL_INT(Kp0001));
+Res:=eep_n_w(6,REAL_INT(Kp0002));
+Res:=eep_n_w(7,REAL_INT(Kp0003));
+Res:=eep_n_w(8,REAL_INT(Kp0004));
+Res:=eep_n_w(9,REAL_INT(Ti0001));
+Res:=eep_n_w(10,REAL_INT(Ti0002));
+Res:=eep_n_w(11,REAL_INT(Ti0003));
+Res:=eep_n_w(12,REAL_INT(Ti0004));
+Res:=eep_n_w(13,REAL_INT(Td0001));
+Res:=eep_n_w(14,REAL_INT(Td0002));
+Res:=eep_n_w(15,REAL_INT(Td0003));
+Res:=eep_n_w(16,REAL_INT(Td0004));
+Res:=eep_n_w(17,REAL_INT(Xmin0001));
+Res:=eep_n_w(18,REAL_INT(Xmin0002));
+Res:=eep_n_w(19,REAL_INT(Xmin0003));
+Res:=eep_n_w(20,REAL_INT(Xmin0004));
+Res:=eep_n_w(21,REAL_INT(Xmax0001));
+Res:=eep_n_w(22,REAL_INT(Xmax0002));
+Res:=eep_n_w(23,REAL_INT(Xmax0003));
+Res:=eep_n_w(24,REAL_INT(Xmax0004));
+Res:=eep_n_w(25,REAL_INT(kal1));
+
+
+Res:=eep_b_w(1,AM0001);
+Res:=eep_b_w(2,AM0002);
+Res:=eep_b_w(3,AM0003);
+Res:=eep_b_w(4,AM0004);
+Res:=eep_b_w(5,mC0001);
+Res:=eep_b_w(6,mC0002);
+Res:=eep_b_w(7,mC0003);
+Res:=eep_b_w(8,mC0004);
+
+
+Res:=eep_pr();
+else
+	Sav_ST:=0;
+end_case;
+
+

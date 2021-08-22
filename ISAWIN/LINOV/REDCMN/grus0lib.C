@@ -1,0 +1,10 @@
+#include <tasy0def.h>
+
+
+extern UFP uspdef_a4_20_to (char *name);
+extern UFP uspdef_real_int (char *name);
+
+UFP_LIST USPDEF[] = {
+   uspdef_a4_20_to,
+   uspdef_real_int,
+NULL };

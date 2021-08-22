@@ -1,0 +1,64 @@
+#combinatory
+Pp7a:=cGas;
+
+If ySafeVal=false and yBurnerVal=false and yCutofVal=true then
+  xTight:=true;
+end_if;
+
+if ySafeVal=true and yBurnerVal=true and yCutofVal=false then
+  xTight:=false; 
+end_if;
+
+ if ySafeVal=true and yBurnerVal=false and yCutofVal=true then
+  xTight:=true; 
+end_if;
+
+	 if ySafeVal=true and yBurnerVal=true and yCutofVal=true then
+  xTight:=true; 
+end_if;
+        
+(* вариант при котором герметичность котла исправна*)   
+if  xTight=true then
+temp1:=1;
+else
+temp1:=0;
+end_if;
+
+if temp1=1 and ySafeVal=false and yBurnerVal=false and yCutofVal=false  then 
+tstart(tm1);
+end_if;
+
+if tm1>tm1z then 
+ xTight:=false;
+tm1:=t#0s;
+end_if;
+if  xTight=true and ySafeVal=true and yBurnerVal=false then 
+tm1z:=t#18s;
+end_if;
+if  xTight=true and yBurnerVal=true and yCutofVal=false and tm1>t#1s then
+tm1z:=t#3s;
+end_if;
+
+(* вариант при котором герметичность котла исправна*) 
+if yCutofVal=true then 
+xTight:=true;
+tm1:=t#0s;
+end_if;
+
+
+
+(*ПРОГРАМА РОЗПАЛУ КОТЛА *) 
+
+if yIgniter=true and yLitherVal=true then
+tstart(tm2);
+end_if;
+if tm2>t#3s then
+tstop(tm2);
+xFire1:=true;
+tm2:=t#0s;
+end_if;
+
+if yCutofVal=false then 
+xFire1:=false;
+end_if;
+

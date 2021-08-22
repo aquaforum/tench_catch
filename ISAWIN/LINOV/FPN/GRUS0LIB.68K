@@ -1,0 +1,22 @@
+#include <tasy0def.h>
+
+
+extern UFP uspdef_eep_n_r (char *name);
+extern UFP uspdef_eep_n_w (char *name);
+extern UFP uspdef_eep_pr (char *name);
+extern UFP uspdef_eep_en (char *name);
+extern UFP uspdef_real_int (char *name);
+extern UFP uspdef_int_real (char *name);
+extern UFP uspdef_v0_10_to (char *name);
+
+_asm ("
+USPDEF:
+		dc.l	uspdef_eep_n_r
+		dc.l	uspdef_eep_n_w
+		dc.l	uspdef_eep_pr
+		dc.l	uspdef_eep_en
+		dc.l	uspdef_real_int
+		dc.l	uspdef_int_real
+		dc.l	uspdef_v0_10_to
+		dc.l	0
+");

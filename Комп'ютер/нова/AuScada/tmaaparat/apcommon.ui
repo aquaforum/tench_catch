@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ApCommon</class>
+ <widget class="QWidget" name="ApCommon">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1890</width>
+    <height>930</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#ApCommon{
+	background-image: url(:/images/zagaln.svg);
+	background-repeat: no-repeat;
+}</string>
+  </property>
+  <widget class="AuLamp" name="M1_a">
+   <property name="geometry">
+    <rect>
+     <x>1563</x>
+     <y>778</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/offLamp.png</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="tmaaparat.qrc">:/images/onLamp.png</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="M2_a">
+   <property name="geometry">
+    <rect>
+     <x>1638</x>
+     <y>777</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/offLamp.png</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="tmaaparat.qrc">:/images/onLamp.png</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="K5f_in">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>860</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/onLamp.png</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="tmaaparat.qrc">:/images/AlarLamp.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="reg_1">
+   <property name="geometry">
+    <rect>
+     <x>1515</x>
+     <y>296</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="tmaaparat.qrc">
+     <normaloff>:/images/r_gval.svg</normaloff>
+     <normalon>:/images/g_gval.svg</normalon>:/images/r_gval.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="reg_2">
+   <property name="geometry">
+    <rect>
+     <x>1677</x>
+     <y>296</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="tmaaparat.qrc">
+     <normaloff>:/images/r_gval.svg</normaloff>
+     <normalon>:/images/g_gval.svg</normalon>:/images/r_gval.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="pAi1_i">
+   <property name="geometry">
+    <rect>
+     <x>704</x>
+     <y>810</y>
+     <width>20</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="pAi14_i">
+   <property name="geometry">
+    <rect>
+     <x>1355</x>
+     <y>733</y>
+     <width>20</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="pAi15_i">
+   <property name="geometry">
+    <rect>
+     <x>1821</x>
+     <y>741</y>
+     <width>20</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="pAi4_i">
+   <property name="geometry">
+    <rect>
+     <x>1353</x>
+     <y>301</y>
+     <width>20</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="pAi3_i">
+   <property name="geometry">
+    <rect>
+     <x>1823</x>
+     <y>320</y>
+     <width>20</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="pAi2_i">
+   <property name="geometry">
+    <rect>
+     <x>1439</x>
+     <y>130</y>
+     <width>20</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="pAi5_i">
+   <property name="geometry">
+    <rect>
+     <x>1803</x>
+     <y>85</y>
+     <width>20</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai4_i">
+   <property name="geometry">
+    <rect>
+     <x>1342</x>
+     <y>280</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai2_i">
+   <property name="geometry">
+    <rect>
+     <x>1428</x>
+     <y>110</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai5_i">
+   <property name="geometry">
+    <rect>
+     <x>1793</x>
+     <y>64</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai3_i">
+   <property name="geometry">
+    <rect>
+     <x>1814</x>
+     <y>300</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai14_i">
+   <property name="geometry">
+    <rect>
+     <x>1345</x>
+     <y>712</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai15_i">
+   <property name="geometry">
+    <rect>
+     <x>1812</x>
+     <y>720</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai8_i">
+   <property name="geometry">
+    <rect>
+     <x>1380</x>
+     <y>340</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai6_i">
+   <property name="geometry">
+    <rect>
+     <x>1370</x>
+     <y>170</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai7_i">
+   <property name="geometry">
+    <rect>
+     <x>1780</x>
+     <y>340</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_44">
+   <property name="geometry">
+    <rect>
+     <x>1420</x>
+     <y>340</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>°С</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_45">
+   <property name="geometry">
+    <rect>
+     <x>1410</x>
+     <y>170</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>°С</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_46">
+   <property name="geometry">
+    <rect>
+     <x>1790</x>
+     <y>360</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>°С</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai17_i">
+   <property name="geometry">
+    <rect>
+     <x>1440</x>
+     <y>500</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai16_i">
+   <property name="geometry">
+    <rect>
+     <x>1720</x>
+     <y>503</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_47">
+   <property name="geometry">
+    <rect>
+     <x>1480</x>
+     <y>501</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>°С</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_48">
+   <property name="geometry">
+    <rect>
+     <x>1760</x>
+     <y>505</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>°С</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai11_i">
+   <property name="geometry">
+    <rect>
+     <x>1800</x>
+     <y>180</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>1843</x>
+     <y>180</y>
+     <width>41</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>кПа</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai1_i">
+   <property name="geometry">
+    <rect>
+     <x>694</x>
+     <y>790</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai9_i">
+   <property name="geometry">
+    <rect>
+     <x>1257</x>
+     <y>120</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>1300</x>
+     <y>120</y>
+     <width>41</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>кПа</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>1780</x>
+     <y>20</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Ам.вода</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>1430</x>
+     <y>60</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>сироп</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>1340</x>
+     <y>220</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>біла</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>1290</x>
+     <y>820</y>
+     <width>161</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>біла (біля цф)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>1710</x>
+     <y>820</y>
+     <width>191</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>зелена (біля цф)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>1800</x>
+     <y>240</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>зелена</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>860</y>
+     <width>351</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ai10_i">
+   <property name="geometry">
+    <rect>
+     <x>1226</x>
+     <y>350</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>1270</x>
+     <y>350</y>
+     <width>41</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>DejaVu Sans Mono</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>true</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>кПа</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frameAp1">
+   <property name="geometry">
+    <rect>
+     <x>1</x>
+     <y>136</y>
+     <width>439</width>
+     <height>542</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frameAp3">
+   <property name="geometry">
+    <rect>
+     <x>809</x>
+     <y>136</y>
+     <width>439</width>
+     <height>542</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frameAp2">
+   <property name="geometry">
+    <rect>
+     <x>399</x>
+     <y>136</y>
+     <width>439</width>
+     <height>542</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="P3_m">
+   <property name="geometry">
+    <rect>
+     <x>1550</x>
+     <y>340</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="P2_m">
+   <property name="geometry">
+    <rect>
+     <x>1640</x>
+     <y>340</y>
+     <width>41</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnApSg_0">
+   <property name="geometry">
+    <rect>
+     <x>1515</x>
+     <y>160</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="tmaaparat.qrc">
+     <normaloff>:/images/0_gval.svg</normaloff>
+     <normalon>:/images/g_gval.svg</normalon>:/images/0_gval.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnApSg_1">
+   <property name="geometry">
+    <rect>
+     <x>1816</x>
+     <y>430</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="tmaaparat.qrc">
+     <normaloff>:/images/0_gval.svg</normaloff>
+     <normalon>:/images/g_gval.svg</normalon>:/images/0_gval.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnApSg_2">
+   <property name="geometry">
+    <rect>
+     <x>1349</x>
+     <y>440</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="tmaaparat.qrc">
+     <normaloff>:/images/0_gval.svg</normaloff>
+     <normalon>:/images/g_gval.svg</normalon>:/images/0_gval.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bnApSg_3">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>720</y>
+     <width>42</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="tmaaparat.qrc">
+     <normaloff>:/images/0_gval.svg</normaloff>
+     <normalon>:/images/g_gval.svg</normalon>:/images/0_gval.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="Ap_kbp">
+   <property name="geometry">
+    <rect>
+     <x>1390</x>
+     <y>420</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/hand.png</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="P3_a">
+   <property name="geometry">
+    <rect>
+     <x>1560</x>
+     <y>280</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/hand.png</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="P2_a">
+   <property name="geometry">
+    <rect>
+     <x>1720</x>
+     <y>280</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/hand.png</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="Ap_kzp">
+   <property name="geometry">
+    <rect>
+     <x>1860</x>
+     <y>410</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/hand.png</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="D_1_a">
+   <property name="geometry">
+    <rect>
+     <x>1550</x>
+     <y>140</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/hand.png</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="Ap_k1_1">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>700</y>
+     <width>16</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/hand.png</pixmap>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="A_kbp">
+   <property name="geometry">
+    <rect>
+     <x>1336</x>
+     <y>450</y>
+     <width>4</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="tmaaparat.qrc">:/images/Alarm.png</pixmap>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="A_k1">
+   <property name="geometry">
+    <rect>
+     <x>1560</x>
+     <y>170</y>
+     <width>4</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="tmaaparat.qrc">:/images/Alarm.png</pixmap>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="A_kzp">
+   <property name="geometry">
+    <rect>
+     <x>1810</x>
+     <y>440</y>
+     <width>4</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="tmaaparat.qrc">:/images/Alarm.png</pixmap>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="A_k1_1">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>730</y>
+     <width>4</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="tmaaparat.qrc">:/images/Alarm.png</pixmap>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_22">
+   <property name="geometry">
+    <rect>
+     <x>1260</x>
+     <y>144</y>
+     <width>151</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Від ВКУ</string>
+   </property>
+  </widget>
+  <widget class="AuLamp" name="K6f_in">
+   <property name="geometry">
+    <rect>
+     <x>722</x>
+     <y>860</y>
+     <width>16</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="lampOff">
+    <pixmap resource="tmaaparat.qrc">:/images/redRect.png</pixmap>
+   </property>
+   <property name="lampOn">
+    <pixmap resource="tmaaparat.qrc">:/images/onRect.png</pixmap>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>720</y>
+     <width>421</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: yellow;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>1</number>
+    </property>
+    <property name="topMargin">
+     <number>1</number>
+    </property>
+    <property name="rightMargin">
+     <number>1</number>
+    </property>
+    <property name="bottomMargin">
+     <number>1</number>
+    </property>
+    <property name="spacing">
+     <number>1</number>
+    </property>
+    <item row="0" column="0" rowspan="2">
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: yellow;
+background-color: black;
+</string>
+      </property>
+      <property name="text">
+       <string>№1.1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="va1_msg1">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: yellow;</string>
+      </property>
+      <property name="text">
+       <string>До кінця стадії #### сек.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="va1_msg2">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: yellow;</string>
+      </property>
+      <property name="text">
+       <string>Варка триває вже ## год ## хв</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>783</y>
+     <width>421</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: yellow;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <property name="leftMargin">
+     <number>1</number>
+    </property>
+    <property name="topMargin">
+     <number>1</number>
+    </property>
+    <property name="rightMargin">
+     <number>1</number>
+    </property>
+    <property name="bottomMargin">
+     <number>1</number>
+    </property>
+    <property name="spacing">
+     <number>1</number>
+    </property>
+    <item row="0" column="0" rowspan="2">
+     <widget class="QLabel" name="label_10">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: yellow;
+background-color: black;
+</string>
+      </property>
+      <property name="text">
+       <string>№1.2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="va2_msg1">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: yellow;</string>
+      </property>
+      <property name="text">
+       <string>До кінця стадії #### сек.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="va2_msg2">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: yellow;</string>
+      </property>
+      <property name="text">
+       <string>Варка триває вже ## год ## хв</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="frame_3">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>845</y>
+     <width>421</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: yellow;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <property name="leftMargin">
+     <number>1</number>
+    </property>
+    <property name="topMargin">
+     <number>1</number>
+    </property>
+    <property name="rightMargin">
+     <number>1</number>
+    </property>
+    <property name="bottomMargin">
+     <number>1</number>
+    </property>
+    <property name="spacing">
+     <number>1</number>
+    </property>
+    <item row="0" column="0" rowspan="2">
+     <widget class="QLabel" name="label_12">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: yellow;
+background-color: black;
+</string>
+      </property>
+      <property name="text">
+       <string>№1.3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="va3_msg1">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: yellow;</string>
+      </property>
+      <property name="text">
+       <string>До кінця стадії #### сек.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="va3_msg2">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: yellow;</string>
+      </property>
+      <property name="text">
+       <string>Варка триває вже ## год ## хв</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AuLamp</class>
+   <extends>QWidget</extends>
+   <header>AuWidget/aulamp.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="tmaaparat.qrc"/>
+ </resources>
+ <connections/>
+</ui>

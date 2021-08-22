@@ -1,0 +1,12 @@
+Target=SIMULATE
+Target=ISA86M
+NbPass=2
+Constant=YES
+Label=YES
+Copy=YES
+Expression=YES
+DeadCode=YES
+Arithmetic=YES
+Boolean=YES
+BDD=YES
+NoSFC=NO

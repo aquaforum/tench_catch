@@ -1,0 +1,105 @@
+#combinatory
+if AM_01 then
+	C_01:=Xt_01;
+end_if;
+
+if AM_02 then
+	C_02:=xt_02;
+end_if;
+
+if AM_03 then
+	c_03:=xt_03;
+end_if;
+
+if AM_04 then
+	c_04:=xt_04;
+end_if;
+
+if AM_05 then
+	c_05:=xt_05;
+end_if;
+
+if AM_06 then
+	c_06:=xt_06;
+end_if;
+
+if AM_07 then
+	c_07:=xt_07;
+end_if;
+
+if AM_08 then
+	c_08:=xt_08;
+end_if;
+
+if AM_09 then
+	c_09:=xt_09;
+end_if;
+
+if AM_10 then
+	c_10:=xt_10;
+end_if;
+
+if AM_11 then
+	c_11:=xt_11;
+end_if;
+
+if AM_12 then
+	c_12:=xt_12;
+end_if;
+
+if AM_13 then
+	c_13:=xt_13;
+end_if;
+if AM_14 then
+	c_14:=xt_14;
+end_if;
+
+if AM_15 then
+	c_15:=xt_15;
+end_if;
+
+if AM_16 then
+	c_16:=xt_16;
+end_if;
+
+
+if AM_18 then
+	c_18:=xt_18;
+end_if;
+if AM_19 then
+	c_19:=xt_19;
+end_if;
+
+if AM_20 then
+	c_20:=xt_20;
+end_if;
+
+if AM_21 then
+	c_21:=xt_21;
+end_if;
+
+(*Лічильник води на дискові фільтри*)
+if redge(X_05,reX_05) then
+	V_41:=V_41+KV_41;
+end_if;
+
+
+(*Лічильник аміачної води*)
+if redge(X_07,reX_07) AND X_06 then
+	V_16:=V_16+KV_41;
+end_if;
+
+
+
+(*Управління подачею аміачної води в збірник*)
+if AMV_01 then
+	if V_06 < SPV_01 AND V_01 < SPV_02 then 
+		Y_01:=true;
+	end_if;
+
+	if V_06 > SPV_01+ DSPV_01 OR V_01 > SPV_02+DSPV_02 then
+		Y_01:=false;
+	end_if;
+end_if;
+
+
